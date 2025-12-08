@@ -4,13 +4,17 @@ import type { ChildProps } from "./AboutSection";
 interface FeatureSectionProps {
   title: string;
   subtitle: string;
+  desc?: string;
   features: ChildProps[];
+  type: string;
 }
 
 export function FeaturesSection({
   title,
   subtitle,
+  desc,
   features,
+  type,
 }: FeatureSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -40,11 +44,24 @@ export function FeaturesSection({
 
   return (
     <div className="mt-[50px] md:mt-[100px] 2xl:px-[100px] bg-[#F6FAFF] dark:bg-[#181818] pt-[20px]">
-      <div className="flex flex-col justify-center items-center">
+      <div
+        className={`flex flex-col justify-center ${
+          type == "normal" ? "items-center" : "items-start"
+        }`}
+      >
         <h2 className="text-[#1783F7] dark:text-white text-2xl">{title}</h2>
-        <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4 xl:px-[300px] px-0">
+        <p
+          className={`text-[#687DA9] dark:text-white  text-5xl mt-4  px-0 ${
+            type == "normal" ? "text-center xl:px-[300px]" : "pr-[300px]"
+          }`}
+        >
           {subtitle}
         </p>
+        {desc && (
+          <p className="text-[#667085] mt-4 dark:text-white text-base font-normal leading-[1.5] md:w-[768px] md:h-[72px] pr-2 md:pr-0">
+            {desc}
+          </p>
+        )}
       </div>
 
       <div

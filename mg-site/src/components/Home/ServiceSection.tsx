@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 interface ServiceCard {
   id: number;
@@ -15,7 +16,7 @@ const services: ServiceCard[] = [
     description:
       "Unlock the power of data and AI to automate decisions, predict outcomes, and drive business growth. We handle everything from strategy and pipelines to real-time analytics and model deployment",
     image: "assets/updated/Ai&data.svg",
-    link: "#",
+    link: "AI&DI_Services",
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ const services: ServiceCard[] = [
     description:
       "Design, build, and support powerful business applications with a focus on performance, scalability, and user experience. From custom development to lifecycle management, we ensure your apps evolve with your business",
     image: "assets/updated/Appl&dev.svg",
-    link: "#",
+    link: "AppDevServices",
   },
   {
     id: 3,
@@ -31,7 +32,7 @@ const services: ServiceCard[] = [
     description:
       "Keep your SAP systems running smoothly with expert support across application performance, cloud hosting, upgrades, and business continuity planning.",
     image: "assets/updated/SAP-enterprise.svg",
-    link: "#",
+    link: "SapEnterpriseServices",
   },
   {
     id: 4,
@@ -39,7 +40,7 @@ const services: ServiceCard[] = [
     description:
       "Connect customer engagement and business operations with smart, scalable CRM and ERP platforms tailored to your needs.",
     image: "assets/updated/CRM.svg",
-    link: "#",
+    link: "CRM&ERPServices",
   },
   {
     id: 5,
@@ -47,7 +48,7 @@ const services: ServiceCard[] = [
     description:
       "Deploy, scale, and manage your cloud environment (AWS, Azure, GCP) with ease—ensuring performance, security, and cost-efficiency every step of the way.",
     image: "assets/updated/Cloud-infra.svg",
-    link: "#",
+    link: "CloudInfrastructureServices",
   },
   {
     id: 6,
@@ -55,7 +56,7 @@ const services: ServiceCard[] = [
     description:
       "Drive innovation and digital maturity with strategic guidance across business and technology domains—focused on sectors like energy, defence, BFSI, healthcare, and logistics.",
     image: "assets/updated/Consulting.svg",
-    link: "#",
+    link: "Consulting&AdvisoryServices",
   },
 ];
 
@@ -126,14 +127,16 @@ export function ServicesSection() {
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
           {services.map((service) => (
-            <a
+            <Link
               key={service.id}
-              href={service.link}
+              to={service.link}
               className="h-full block group"
             >
-              <div className="service-card flex flex-col items-start p-2 gap-0 md:gap-8 
+              <div
+                className="service-card flex flex-col items-start p-2 gap-0 md:gap-8 
               h-full opacity-0 translate-y-10 transition-all duration-700 hover:scale-105 
-              hover:shadow-lg  p-6">
+              hover:shadow-lg  p-6"
+              >
                 <img
                   src={service.image}
                   className="h-[11rem]"
@@ -148,7 +151,7 @@ export function ServicesSection() {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

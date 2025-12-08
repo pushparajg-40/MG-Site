@@ -1,11 +1,8 @@
-import React from "react";
 import Header from "../../components/casestudies/Header";
 import AtAGlance from "../../components/casestudies/AtGlance";
 import Challenge from "../../components/casestudies/Challenge";
 import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
-import Solution from "../../components/casestudies/Solution";
-import TechnologiesUsed from "../../components/casestudies/TechnologyUsed";
 import TechUsed from "../../components/casestudies/TechUsed";
 import SolutionList from "../../components/casestudies/SolutionList";
 

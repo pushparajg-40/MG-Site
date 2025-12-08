@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -68,19 +68,19 @@ export default function LocationsMap({
       const nowDark = document.documentElement.classList.contains("dark");
       const wasDark = isDark;
 
-    //   if (
-    //     nowDark !== wasDark &&
-    //     tilesRef.current.light &&
-    //     tilesRef.current.dark
-    //   ) {
-    //     if (nowDark) {
-    //       map.removeLayer(tilesRef.current.light);
-    //       map.addLayer(tilesRef.current.dark);
-    //     } else {
-    //       map.removeLayer(tilesRef.current.dark);
-    //       map.addLayer(tilesRef.current.light);
-    //     }
-    //   }
+      //   if (
+      //     nowDark !== wasDark &&
+      //     tilesRef.current.light &&
+      //     tilesRef.current.dark
+      //   ) {
+      //     if (nowDark) {
+      //       map.removeLayer(tilesRef.current.light);
+      //       map.addLayer(tilesRef.current.dark);
+      //     } else {
+      //       map.removeLayer(tilesRef.current.dark);
+      //       map.addLayer(tilesRef.current.light);
+      //     }
+      //   }
     });
 
     observer.observe(document.documentElement, {

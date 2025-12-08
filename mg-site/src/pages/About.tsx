@@ -139,7 +139,6 @@ const AboutUs: React.FC = () => {
   }, []);
 
   useEffect(() => {
-
     const setupObservers = (
       sectionId: string,
       boxClass: string,
@@ -603,8 +602,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Why Choose Us section (Partial HTML provided, converted to end of main content) */}
-      {/* Why Choose Us section */}
+      {/* 5. Why Choose Us section */}
       <section
         className="dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
         id="choose-us-section"

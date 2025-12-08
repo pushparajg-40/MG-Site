@@ -1,7 +1,6 @@
 import IndustriesHero from "../components/IndustriesHero";
 import IndustrySection from "../components/IndustrySection";
 
-
 const INDUSTRIES_DATA = [
   {
     id: "energy",
@@ -49,7 +48,7 @@ const INDUSTRIES_DATA = [
     ],
     caseStudyTitle:
       "Integrated Mobile Platform for National Employment & Upskilling",
-    caseStudyLink: "casestudies/Healthcare",
+    caseStudyLink: "Healthcare",
     caseStudyImage: "assets/updated/healthCareCaseStudy.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
   },
@@ -97,7 +96,7 @@ const INDUSTRIES_DATA = [
       "Streamlined compliance reporting and risk governance",
     ],
     caseStudyTitle: "AI-Driven Loan Origination & Collection Optimization",
-    caseStudyLink: "/casestudies/BFSI",
+    caseStudyLink: "BFSI",
     caseStudyImage: "assets/updated/bfsiCaseStudy.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
   },
@@ -122,7 +121,7 @@ const INDUSTRIES_DATA = [
     ],
     caseStudyTitle:
       "Enhance telecom networks with smart monitoring, automation, and secure communication",
-    caseStudyLink: "/casestudies/Telecom",
+    caseStudyLink: "Telecom",
     caseStudyImage: "assets/updated/telecomCaseStudy.png",
     bgColor: "bg-white dark:bg-black",
   },
@@ -147,7 +146,7 @@ const INDUSTRIES_DATA = [
     ],
     caseStudyTitle:
       "AI-Driven Jewelry Design Innovation – GenAI Design Smith Platform",
-    caseStudyLink: "casestudies/Manufacturing",
+    caseStudyLink: "Manufacturing",
     caseStudyImage: "assets/updated/manufacturingCaseStudy.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
   },

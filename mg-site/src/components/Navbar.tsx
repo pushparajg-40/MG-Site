@@ -19,6 +19,13 @@ const Navbar = () => {
       img.src = newSrc;
     });
   }
+
+  function updateDarkMode() {
+    setDarkMode(!darkMode);
+    if (darkMode) localStorage.setItem("theme", "light");
+    else localStorage.setItem("theme", "dark");
+  }
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -120,7 +127,7 @@ const Navbar = () => {
 
           {/* Industries mega menu */}
           <div
-            className="absolute hidden  top-10 left-1/2 -translate-x-1/2 bg-[#F3F3F3]
+            className="absolute  hidden  top-10 left-1/2 -translate-x-1/2 bg-[#F3F3F3]
             border shadow-lg rounded-lg w-[1000px] max-w-[95vw] p-5"
           >
             <h2 className="text-2xl font-bold text-[#687DA9] mb-3">
@@ -128,25 +135,48 @@ const Navbar = () => {
             </h2>
             <div className="grid grid-cols-3 gap-4">
               {[
-                ["Energy & Utilities", "EneryIcon.svg"],
-                ["Airports", "AirportsIcon.svg"],
-                ["Telecom", "TelecomIcon.svg"],
-                ["Healthcare", "HealthCareIcon.svg"],
-                ["BFSI", "BFSIIcon.svg"],
-                ["Manufacturing", "ManufacturingIcon.svg"],
-              ].map(([title, icon]) => (
+                [
+                  "Energy & Utilities",
+                  "EneryIcon.svg",
+                  "We help energy providers and utility companies transition into intelligent, sustainable enterprises.",
+                ],
+                [
+                  "Airports",
+                  "AirportsIcon.svg",
+                  "From landside to airside, we help airports digitize their infrastructure, optimize resource allocation, and enhance the passenger experience. ",
+                ],
+                [
+                  "Telecom",
+                  "TelecomIcon.svg",
+                  "We support telecom operators in improving service quality, customer retention, and network intelligence with scalable AI and real-time data analytics.",
+                ],
+                [
+                  "Healthcare",
+                  "updated/HealthCareIconUpdated.svg",
+                  "Mindgraph enables healthcare providers to modernize operations and improve patient outcomes through AI, secure data platforms, and predictive diagnostics.",
+                ],
+                [
+                  "BFSI",
+                  "updated/BFSIIconUpdated.svg",
+                  "Mindgraph empowers financial institutions with AI-first digital solutions to reduce risk, detect fraud, enhance customer journeys, and meet regulatory demands.",
+                ],
+                [
+                  "Manufacturing",
+                  "ManufacturingIcon.svg",
+                  "We help manufacturers digitize plant operations, optimize supply chains, and improve product quality using AI and IoT-enabled solutions.",
+                ],
+              ].map(([title, icon, desc]) => (
                 <div
                   key={title}
                   className="p-3 rounded-xl hover:bg-white/60 cursor-pointer flex gap-2"
                 >
+                  
                   <img src={`/assets/${icon}`} className="w-20" />
                   <div>
                     <h3 className="text-lg font-semibold text-[#757575]">
                       {title}
                     </h3>
-                    <p className="text-sm text-[#667085]">
-                      Explore our AI transformations.
-                    </p>
+                    <p className="text-sm text-[#667085]">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -166,7 +196,7 @@ const Navbar = () => {
           <input
             type="checkbox"
             checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
+            onChange={() => updateDarkMode()}
             className="sr-only peer"
           />
           <div className="w-14 h-7 bg-gray-300 peer-checked:bg-gray-700 rounded-full transition" />

@@ -21,6 +21,7 @@ const aboutImageData: AboutProps = {
   title: "Who Uses Mathops?",
   subtitle: "A Tool Built for Every Role in the IT Chain",
   desc: "",
+  image:"assets/mathops/mathops-image.png",
   childs: [
     {
       title: "IT Managers",
@@ -78,6 +79,8 @@ const featureSectionData = {
   subtitle:
     "Smart Tools for Proactive, Predictive, and Reliable IT Operations.",
   features: features,
+  type: "start",
+  desc: "MathOps combines AI-driven monitoring, predictive analytics, and intelligent automation to help IT teams detect issues early, optimize performance, and ensure system reliability—before problems arise.",
 };
 
 const heroSectionProps: HeroSectionProps = {
@@ -91,24 +94,54 @@ const heroSectionProps: HeroSectionProps = {
   arrowIconDark: "assets/updated/crossArrow.svg",
 };
 
+const whyChooseData: AboutProps = {
+  title: "Why Choose Mathops?",
+  subtitle: "Smarter Operations. Stronger Systems.",
+  desc: "",
+  image:"assets/mathops/mathops-image-2.png",
+  childs: [
+    {
+      title: "IT Management",
+      point:
+        "Shift from reactive firefighting to intelligent foresight with predictive alerting and continuous optimization.",
+    },
+    {
+      title: "Seamless Integrations",
+      point:
+        "Plug into your existing ecosystem with support for ITSM, cloud tools, messaging platforms, and third-party APIs.",
+    },
+    {
+      title: "AI-Powered Intelligence",
+      point:
+        "Use AI and machine learning to uncover hidden patterns and make informed decisions faster.",
+    },
+    {
+      title: "Adaptability",
+      point:
+        "Whether you're in finance, healthcare, e-commerce, or logistics, MathOps flexes to fit your unique operational needs.",
+    },
+    {
+      title: "Unified Collaboration",
+      point:
+        "Enable better cross-team coordination with shared dashboards, unified alerts, and collaborative workflows.",
+    },
+    {
+      title: "Full-Stack Visibility",
+      point:
+        "Ensure uptime, detect issues early, and manage all IT assets in one place — from apps to infrastructure.",
+    },
+  ],
+};
+
 function Mathops() {
   return (
     <>
       <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
         <HeroSection {...heroSectionProps} />
-        <AboutSection
-          title={aboutSectionData.title}
-          subtitle={aboutSectionData.subtitle}
-          desc={aboutSectionData.desc}
-          childs={aboutSectionData.childs}
-        />
-        <AboutImageSection {...aboutImageData}></AboutImageSection>
-        <FeaturesSection
-          title={featureSectionData.title}
-          subtitle={featureSectionData.subtitle}
-          features={featureSectionData.features}
-        />
-        {/* <DashboardSection imageSrc={"assets/customerDash.png"} /> */}
+        <AboutSection {...aboutSectionData} />
+        <AboutImageSection {...aboutImageData} />
+        <FeaturesSection {...featureSectionData} />
+        <AboutImageSection {...whyChooseData} />
       </div>
     </>
   );

@@ -122,6 +122,7 @@ function CustomerDlens() {
           title={featureSectionData.title}
           subtitle={featureSectionData.subtitle}
           features={featureSectionData.features}
+          type={"normal"}
         />
         <DashboardSection imageSrc={"assets/customerDash.png"} />
       </div>

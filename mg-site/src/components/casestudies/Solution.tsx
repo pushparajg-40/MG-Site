@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { ChevronUp } from "lucide-react";
 
-export default function Solution({ items }: { items: any[] }) {
+export default function Solution({
+  items,
+  desc,
+}: {
+  items: any[];
+  desc: string;
+}) {
   const [openId, setOpenId] = useState(1);
 
   return (
@@ -9,6 +15,7 @@ export default function Solution({ items }: { items: any[] }) {
       <h2 className="text-2xl text-[#1783F7] dark:text-white mb-6">
         Our Solution
       </h2>
+      {desc.length > 0 && <p>{desc}</p>}
 
       <div className="space-y-3">
         {items.map((item: any) => (

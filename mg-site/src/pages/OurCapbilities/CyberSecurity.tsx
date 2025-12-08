@@ -1,80 +1,79 @@
-import OfferCard from "../components/OfferCard";
-import StrengthCard from "../components/StrengthCard";
-
+import OfferCard from "../../components/OfferCard";
+import StrengthCard from "../../components/StrengthCard";
 
 const offerCardsData = [
   {
     number: "01",
-    title: "Natural Language Processing (NLP)",
+    title: "Security Operations Center (SOC) as a Service",
     description:
-      "Build conversational agents (chatbots, virtual assistants), automate document processing, and perform sentiment and intent analysis using advanced language models.",
-    image: "assets/aiOffer1.png",
+      "24/7 monitoring, threat detection, and incident response powered by advanced analytics and automation.",
+    image: "assets/cyberOffer1.png",
   },
   {
     number: "02",
-    title: "Computer Vision Applications",
+    title: "Threat Intelligence, SIEM, and Real-Time Monitoring",
     description:
-      "Implement AI models that analyze images and videos for tasks such as object detection, facial recognition, defect detection, and real-time quality control in manufacturing.",
-    image: "assets/aiOffer2.png",
+      "Unified SIEM with contextual threat intelligence for dynamic, real-time visibility and rapid response.",
+    image: "assets/cyberOffer2.png",
   },
   {
     number: "03",
-    title: "Predictive Analytics",
+    title: "Vulnerability Assessment & Penetration Testing (VAPT)",
     description:
-      "Use machine learning algorithms to forecast trends, identify customer churn, detect anomalies, and support proactive business planning across industries.",
-    image: "assets/aiOffer3.png",
+      "Regular scanning and ethical hacking to detect, validate, and mitigate vulnerabilities across systems.",
+    image: "assets/cyberOffer3.png",
   },
   {
     number: "04",
-    title: "Recommendation & Personalization Engines",
+    title: "Cloud and Infrastructure Security",
     description:
-      "Deliver hyper-personalized user experiences with AI-powered recommendation systems for e-commerce, entertainment platforms, and digital content.",
-    image: "assets/aiOffer4.png",
+      "Secure cloud and on-prem environments with hardened configurations, encryption, and continuous compliance.",
+    image: "assets/cyberOffer4.png",
   },
   {
     number: "05",
-    title: "Custom AI Model Development",
+    title: "Regulatory Compliance and Governance",
     description:
-      "Design and deploy AI models tailored to specific industry domains such as healthcare (diagnostic support, medical imaging), BFSI (fraud detection, risk scoring), and manufacturing (predictive maintenance, process optimization).",
-    image: "assets/aiOffer5.png",
+      "Support for ISO 27001, NIST CSF, HIPAA, and GDPR to keep your business audit-ready and compliant.",
+    image: "assets/cyberOffer5.png",
   },
 ];
 
 const strengthCardsData = [
   {
-    title: "AI Accelerators for Rapid Deployment",
+    title: "Zero Trust Architecture Enablement",
     description:
-      "Pre-built models, reusable frameworks, and toolkits that reduce time-to-market and expedite AI integration into existing systems.",
-    image: "assets/aiKey1.png",
+      "Design and implementation of Zero Trust models to ensure strict access control and trust verification across users, devices, and networks.",
+    image: "assets/cyberKey1.png",
   },
   {
-    title: "Model Lifecycle Management with MLOps",
+    title: "AI-Powered Threat Detection and Automated Response",
     description:
-      "End-to-end machine learning operations (MLOps) to ensure scalable, reproducible, and continuous model development, testing, deployment, and monitoring.",
-    image: "assets/aiKey2.png",
+      "Leverage machine learning and behavioral analytics for early threat identification and rapid, automated incident containment.",
+    image: "assets/cyberKey2.png",
   },
   {
-    title: "Ethical and Responsible AI",
+    title: "Operational Technology (OT) Security",
     description:
-      "We incorporate transparency, fairness, and accountability into our AI models, ensuring compliance with ethical standards and regulatory requirements.",
-    image: "assets/aiKey3.png",
+      "Specialized protection for critical infrastructure and industrial environments, minimizing risk to SCADA, PLCs, and other control systems.",
+    image: "assets/cyberKey3.png",
   },
   {
-    title: "Cloud-Native AI Architectures",
+    title: "Proactive Incident Handling and Forensics",
     description:
-      "Leverage cloud platforms (AWS, Azure, GCP) to deploy and scale AI solutions securely and cost-effectively, supporting hybrid and multi-cloud environments.",
-    image: "assets/aiKey4.png",
+      "End-to-end incident response capabilities including root cause analysis, threat containment, and digital forensics to support recovery and legal proceedings.",
+    image: "assets/cyberKey4.png",
   },
 ];
 
-function AIMachineLearning() {
+function CyberSecurity() {
   return (
     <div className="overflow-x-hidden dark:bg-black transition-all duration-500 ease-in">
       <section className="relative bg-white pt-16 pb-12 md:pb-32 dark:bg-[#000000] transition-all duration-500 ease-in">
         <div className="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
           <div className="z-10">
-            <h1 className="md:text-4xl text-5xl font-bold text-[#1783F7] dark:text-white mb-4 px-4">
-              AI & Machine Learning
+            <h1 className="text-5xl md:text-5xl  font-bold text-[#1783F7] dark:text-white mb-4 px-4">
+              Cybersecurity
             </h1>
             <div className="md:hidden">
               <img
@@ -83,27 +82,28 @@ function AIMachineLearning() {
                 className="w-full h-auto object-cover max-h-[400px] lg:max-h-none"
               />
             </div>
-            <h2 className="md:text-lg text-3xl font-semibold text-[#1783F7] dark:text-white mb-2 px-4 mt-6 md:mt-0">
+            <h2 className="md:text-2xl text-3xl font-semibold text-[#1783F7] dark:text-white mb-2 px-4 mt-6 md:mt-0">
               Overview
             </h2>
 
             <p className="text-[#667085] dark:text-white leading-relaxed text-sm sm:text-base px-4">
-              At Mindsight, we specialize in delivering bespoke Artificial
-              Intelligence (AI) and Machine Learning (ML) solutions that drive
-              intelligent automation, improve operational efficiency, and unlock
-              transformative insights. Our team leverages cutting-edge
-              techniques across deep learning, natural language processing
-              (NLP), computer vision, and predictive modeling to empower
-              enterprises with data-driven decision-making capabilities. Whether
-              it's enhancing customer experiences, streamlining workflows, or
-              building scalable AI systems, we help businesses realize tangible
-              value from their data.
+              In today’s hyper-connected world, cybersecurity is more than just
+              a technical requirement — it’s a strategic imperative. At
+              Mindgraph, we deliver comprehensive cybersecurity services that
+              help organizations stay ahead of evolving threats across both
+              Information Technology (IT) and Operational Technology (OT)
+              landscapes. Our approach combines real-time threat intelligence,
+              automated defense mechanisms, and compliance readiness to ensure
+              resilient and secure digital environments. Whether you're
+              protecting cloud-native applications, securing industrial control
+              systems, or navigating complex regulatory landscapes, we provide
+              end-to-end solutions tailored to your risk profile.
             </p>
           </div>
 
           <div className="relative lg:absolute top-10 right-0 w-full lg:w-[48%] z-0 hidden md:block">
             <img
-              src="assets/aiOverview.png"
+              src="assets/cyberOverview.png"
               alt="AI chip"
               className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[400px] lg:max-h-none xl:h-[31rem]"
             />
@@ -164,4 +164,4 @@ function AIMachineLearning() {
   );
 }
 
-export default AIMachineLearning;
+export default CyberSecurity;

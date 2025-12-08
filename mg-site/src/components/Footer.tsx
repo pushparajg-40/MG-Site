@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -73,16 +74,18 @@ const Footer: React.FC = () => {
           data-delay="100"
         >
           <div className="sm:flex sm:flex-col sm:items-center">
-            <img
-              src="/assets/updated/MgLogo.svg"
-              alt="MindGraph Logo"
-              className="h-12 hidden dark:block"
-            />
-            <img
-              src="/assets/mindgraphLogo.png"
-              alt="MG logo"
-              className="h-12 dark:hidden"
-            />
+            <Link to="/">
+              <img
+                src="/assets/updated/MgLogo.svg"
+                alt="MindGraph Logo"
+                className="h-12 hidden dark:block"
+              />
+              <img
+                src="/assets/mindgraphLogo.png"
+                alt="MG logo"
+                className="h-12 dark:hidden"
+              />
+            </Link>
             <p className="text-black dark:text-white leading-[120%] text-[20px] mt-5 sm:w-[80%]">
               Driving Industry Transformation with Secure and Scalable
               Enterprise AI-Powered Solutions
@@ -100,36 +103,36 @@ const Footer: React.FC = () => {
           </h6>
           <ul className="space-y-3 sm:space-y-2">
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
-                href="/index.html"
+                to="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
-                href="/about.html"
+                to="/aboutus"
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
-                href="/service.html"
+                to="/services"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
-                href="/product.html"
+                to="/products"
               >
                 Products
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -139,49 +142,51 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="300"
         >
-          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
-            Products
-          </h6>
+          <Link to={"/products"}>
+            <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+              Products
+            </h6>
+          </Link>
           <ul className="space-y-3 sm:space-y-2">
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/mathops.html"
+                to="/mathops"
               >
                 MATHOPS
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/smartSustain.html"
+                to="/smartSustain"
               >
                 SmartSustain.AI
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/opsbeat.html"
+                to="/opsbeat"
               >
                 OpsBeat
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/customerDlens.html"
+                to="/customerDlens"
               >
                 CustomerDlens
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/optiSaas.html"
+                to="/optiSaas"
               >
                 OptiSaaS
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -196,36 +201,36 @@ const Footer: React.FC = () => {
           </h6>
           <ul className="space-y-3 sm:space-y-2">
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/"
+                to="/"
               >
                 Documentation
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/cookies.html"
+                to="/cookies"
               >
                 Cookies Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/privacy.html"
+                to="/privacy"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                href="/terms.html"
+                to="/terms"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

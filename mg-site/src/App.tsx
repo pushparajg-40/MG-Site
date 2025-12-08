@@ -15,9 +15,23 @@ import CloudInfrastructureServices from "./pages/Services/CloudInfrastructureSer
 import Consulting_AdvisoryServices from "./pages/Services/Consulting_AdvisoryServices";
 import Mathops from "./pages/Products/Mathops";
 import Energy_Utilities from "./pages/CaseStudies/Energy_Utilities";
-import AIMachineLearning from "./pages/AI&MachineLearning";
+import AIMachineLearning from "./pages/OurCapbilities/AI&MachineLearning";
 import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
+import OpsBeat from "./pages/Products/OpsBeat";
+import OptiSaasPage from "./pages/Products/OptiSaas";
+import { SmartSustain } from "./pages/Products/SmartSustain";
+import HealthCare from "./pages/CaseStudies/HealthCare";
+import Manufacturing from "./pages/CaseStudies/Manufacturing";
+import Bfsi from "./pages/CaseStudies/Airports";
+import BankingServices from "./pages/CaseStudies/BFSI";
+import Telecom from "./pages/CaseStudies/Telecom";
+import CyberSecurity from "./pages/OurCapbilities/CyberSecurity";
+import Cloud_Infrastructure from "./pages/OurCapbilities/Cloud&Infrastructure";
+import ERP_CRM_AI_Ecosystem from "./pages/OurCapbilities/ERP_CRM_AI_Ecosystem";
+import Terms from "./pages/Terms";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const routes = [
   {
@@ -79,12 +93,64 @@ const routes = [
     element: <Energy_Utilities></Energy_Utilities>,
   },
   {
-    path: "/AIMachineLearning",
+    path: "/AI&MachineLearning",
     element: <AIMachineLearning></AIMachineLearning>,
   },
   {
     path: "/contactUs",
     element: <ContactUs></ContactUs>,
+  },
+  {
+    path: "/opsBeat",
+    element: <OpsBeat></OpsBeat>,
+  },
+  {
+    path: "/optiSaas",
+    element: <OptiSaasPage></OptiSaasPage>,
+  },
+  {
+    path: "/smartSustain",
+    element: <SmartSustain></SmartSustain>,
+  },
+  {
+    path: "/Healthcare",
+    element: <HealthCare></HealthCare>,
+  },
+  {
+    path: "/Manufacturing",
+    element: <Manufacturing></Manufacturing>,
+  },
+  {
+    path: "/BFSI",
+    element: <BankingServices></BankingServices>,
+  },
+  {
+    path: "/telecom",
+    element: <Telecom></Telecom>,
+  },
+  {
+    path: "/CyberSecurity",
+    element: <CyberSecurity></CyberSecurity>,
+  },
+  {
+    path: "/Cloud_Infrastructure",
+    element: <Cloud_Infrastructure></Cloud_Infrastructure>,
+  },
+  {
+    path: "/ERP_CRM&AI_Ecosystem",
+    element: <ERP_CRM_AI_Ecosystem></ERP_CRM_AI_Ecosystem>,
+  },
+  {
+    path: "terms",
+    element: <Terms></Terms>,
+  },
+  {
+    path: "cookies",
+    element: <CookiesPolicy></CookiesPolicy>,
+  },
+  {
+    path: "privacy",
+    element: <PrivacyPolicy></PrivacyPolicy>,
   },
 ];
 

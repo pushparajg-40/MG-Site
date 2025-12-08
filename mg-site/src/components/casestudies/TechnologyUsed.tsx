@@ -12,7 +12,7 @@ export default function TechnologiesUsed() {
       <h2 className="text-2xl font-extrabold text-[#1783F7] dark:text-white mb-6">
         Technologies Used
       </h2>
-      <div className="flex bg-white dark:bg-[#181818] rounded-2xl justify-evenly py-6 px-6 overflow-x-auto">
+      <div className="flex bg-white dark:bg-white rounded-2xl justify-evenly py-6 px-6 overflow-x-auto lg:pr-[400px]">
         {TECHNOLOGIES.map((tech, idx) => (
           <img
             key={idx}

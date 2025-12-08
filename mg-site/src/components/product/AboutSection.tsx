@@ -9,6 +9,7 @@ export interface AboutProps {
   subtitle: string;
   desc: string;
   childs: ChildProps[];
+  image?: string;
 }
 
 export function AboutSection({ title, subtitle, desc, childs }: AboutProps) {
@@ -30,7 +31,7 @@ export function AboutSection({ title, subtitle, desc, childs }: AboutProps) {
       </div>
 
       {/* Child Sections */}
-      {childs && childs.length>0 && (
+      {childs && childs.length > 0 && (
         <div className="grid md:grid-cols-2 px-[60px] pt-[80px] dark:bg-black transition-all duration-500 ease-in gap-8">
           {childs.map((child, index) => (
             <div key={index} className="lg:pr-[80px]">

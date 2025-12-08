@@ -1,7 +1,14 @@
-import React from "react";
 import type { AboutProps } from "./AboutSection";
 
-function AboutImageSection({ title, subtitle, desc, childs }: AboutProps) {
+function AboutImageSection({
+  title,
+  subtitle,
+  desc,
+  childs,
+  image,
+}: AboutProps) {
+  const gridCols = childs.length > 4 ? 3 : 4;
+
   return (
     <>
       <div className="pt-[100px] dark:bg-[#181818] transition-all duration-500 ease-in">
@@ -14,7 +21,9 @@ function AboutImageSection({ title, subtitle, desc, childs }: AboutProps) {
           </p>
         </section>
 
-        <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-10 justify-items-center items-start dark:bg-[#000000] transition-all duration-500 ease-in">
+        <section
+          className={`w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${gridCols} gap-10 p-10 justify-items-center items-start dark:bg-[#000000] transition-all duration-500 ease-in`}
+        >
           {childs.map((child) => {
             return (
               <>
@@ -32,7 +41,7 @@ function AboutImageSection({ title, subtitle, desc, childs }: AboutProps) {
         </section>
 
         <div className="flex justify-center pt-10 dark:bg-[#000000] transition-all duration-500 ease-in">
-          <img src="assets/mathops/mathops-image-2.png" alt="image" />
+          <img src={image} alt="image" />
         </div>
       </div>
     </>

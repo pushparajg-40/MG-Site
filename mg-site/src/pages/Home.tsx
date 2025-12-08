@@ -94,6 +94,34 @@ const Home: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // --- Scroll Animation Logic (Replicating original JS) ---
+  const animatedRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = parseInt(
+              entry.target.getAttribute("data-delay") || "0",
+              10
+            );
+            setTimeout(() => {
+              entry.target.classList.remove("opacity-0", "translate-y-10");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }, delay);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    animatedRefs.current.forEach((el) => el && observer.observe(el));
+
+    // Cleanup function
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const setupObservers = (
       sectionId: string,
@@ -368,7 +396,6 @@ const Home: React.FC = () => {
               alt="Data Innovation"
               className="h-full w-full object-cover "
             />
-           
           </div>
 
           {/* Card 2 */}
@@ -415,7 +442,159 @@ const Home: React.FC = () => {
               alt="GCCs"
               className="h-full w-full object-cover "
             />
-          
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Why Choose Us section */}
+      <section
+        className="dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
+        id="choose-us-section"
+      >
+        <div className="px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+          {/* Heading */}
+          <div
+            className="flex gap-2 md:items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            data-delay="100"
+          >
+            <h2 className="text-3xl md:text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
+              Why MindGraph
+            </h2>
+            <img
+              src="/assets/updated/line.svg"
+              className="pt-3 mr-4"
+              alt="Decorative Line"
+            />
+          </div>
+          <h1
+            className="text-4xl text-[#687DA9] dark:text-[#055CC0] mb-4 leading-tight md:px-0 font-extrabold text-radiant opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            data-delay="200"
+          >
+            Shaping Purpose fit AI Innovation
+          </h1>
+          <p
+            className="text-md text-[#667085] dark:text-[#FFFFFF] font-normal mb-4 leading-[26px] opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            data-delay="300"
+          >
+            We deliver more than services — we deliver outcomes. At Mindgraph,
+            we fuse deep industry insight with intelligent technology to build
+            future-ready enterprises. Our approach is bold, agile, and
+            engineered for business impact—from rapid deployments to long-term
+            transformation.
+          </p>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 flex flex-wrap justify-start mt-8">
+          {/* Box 1 */}
+          <div
+            className="choose-box 
+            bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
+            dark:bg-none dark:bg-black
+            
+            grid p-6 pb-4 border w-[250px] h-[240px] 
+            items-center-safe opacity-0 scale-75 
+            transition-all duration-700 ease-out"
+            data-delay="400"
+          >
+            <img
+              src="/assets/AINative.svg"
+              alt="AI Platform"
+              className="mb-4 theme-image"
+              data-light="/assets/AINative.svg"
+              data-dark="/assets/updated/choose1.svg"
+            />
+            <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold">
+              AI-Driven Platforms Built for Performance
+            </h3>
+          </div>
+
+          {/* Box 2 */}
+          <div
+            className="choose-box 
+            bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
+            dark:bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000] 
+            grid p-6 pb-4 border w-[250px] h-[240px] 
+            items-center-safe opacity-0 scale-75 
+            transition-all duration-700 ease-out"
+            data-delay="500"
+          >
+            <img
+              src="/assets/ownershipEducation.svg"
+              data-light="/assets/ownershipEducation.svg"
+              data-dark="/assets/updated/choose2.svg"
+              alt="Ownership"
+              className="mb-4 theme-image"
+            ></img>
+            <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold ">
+              Complete Ownership — From Vision to Value
+            </h3>
+          </div>
+
+          {/* Box 3 */}
+          <div
+            className="choose-box 
+            bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
+            dark:bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000] 
+            grid p-6 pb-4 border w-[250px] h-[240px] 
+            items-center-safe opacity-0 scale-75 
+            transition-all duration-700 ease-out"
+            data-delay="600"
+          >
+            <img
+              src="/assets/migrating.svg"
+              data-light="/assets/migrating.svg"
+              data-dark="/assets/updated/choose3.svg"
+              alt="Implementation"
+              className="mb-4 theme-image"
+            ></img>
+            <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold ">
+              Accelerated Implementation, Measurable Results
+            </h3>
+          </div>
+
+          {/* Box 4 */}
+          <div
+            className="choose-box 
+            bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
+            dark:bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000] 
+            grid p-6 pb-4 border w-[250px] h-[240px] 
+            items-center-safe opacity-0 scale-75 
+            transition-all duration-700 ease-out"
+            data-delay="700"
+          >
+            <img
+              src="/assets/frictionlessIntegration.svg"
+              data-light="/assets/frictionlessIntegration.svg"
+              data-dark="/assets/updated/choose4.svg"
+              alt="Integration"
+              className="mb-4 theme-image"
+            ></img>
+            <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold ">
+              Seamless Integration with Your Ecosystem
+            </h3>
+          </div>
+
+          {/* Box 5 */}
+          <div
+            className="choose-box 
+            bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
+            dark:bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000] 
+            grid p-6 pb-4 border w-[250px] h-[240px] 
+            items-center-safe opacity-0 scale-75 
+            transition-all duration-700 ease-out"
+            data-delay="800"
+          >
+            <img
+              src="/assets/enterprise.svg"
+              data-light="/assets/enterprise.svg"
+              data-dark="/assets/updated/choose5.svg"
+              alt="Support"
+              className="mb-4 theme-image"
+            ></img>
+            <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold ">
+              Enterprise-Grade Support. Always On. Always Aligned.
+            </h3>
           </div>
         </div>
       </section>

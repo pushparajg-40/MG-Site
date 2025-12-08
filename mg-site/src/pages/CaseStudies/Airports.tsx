@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import AirportsHeader from "../../components/casestudies/Header";
 import AtAGlance from "../../components/casestudies/AtGlance";
 import Challenge from "../../components/casestudies/Challenge";
 import Solution from "../../components/casestudies/Solution";
@@ -87,7 +85,7 @@ export default function Airports() {
       <Header {...headerProps} />
       <AtAGlance {...glanceProps} />
       <Challenge {...challengeProps} />
-      <Solution items={items} />
+      <Solution items={items} desc="" />
       <TechnologiesUsed />
       <OutcomesAndBenefits items={outcomes} />
       <OtherCaseStudies />
