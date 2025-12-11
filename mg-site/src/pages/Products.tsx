@@ -1,4 +1,5 @@
 import HeroBanner from "../components/HeroBanner";
+import PageTransition from "../components/PageTransition";
 import ProductCard from "./ProductsCard";
 
 const productsData = [
@@ -24,22 +25,39 @@ const productsData = [
       },
     ],
   },
+  // {
+  //   title: "OptiSaas.AI",
+  //   subtitle: "The Future of SaaS & Cloud Management",
+  //   description:
+  //     "Gain complete control over your SaaS ecosystem with OptiSaas.AI designed to reduce costs, prevent shadow IT, and align SaaS investments with business goals.",
+  //   image: "assets/optiSaas.png",
+  //   bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
+  //   imagePosition: "right" as const,
+  //   buttonLink: "/optiSaas",
+  //   capabilities: [
+  //     { text: "Unified dashboard for SaaS and cloud spend visibility" },
+  //     { text: "AI-driven SaaS Advisor for usage optimization" },
+  //     { text: "Multicloud monitoring with budget threshold alerts" },
+  //     { text: "Centralized SaaS marketplace with reviews and insights" },
+  //     { text: "Automated contract lifecycle and renewal tracking" },
+  //     { text: "Portfolio management across departments and teams" },
+  //   ],
+  // },
   {
-    title: "OptiSaas.AI",
-    subtitle: "The Future of SaaS & Cloud Management",
+    title: "MathOps",
+    subtitle: "Empowering IT Operations with AI-Driven Analytics",
     description:
-      "Gain complete control over your SaaS ecosystem with OptiSaas.AI designed to reduce costs, prevent shadow IT, and align SaaS investments with business goals.",
-    image: "assets/optiSaas.png",
+      "Move from reactive to proactive IT management with real-time monitoring, predictive insights, and unified dashboards.",
+    image: "assets/mathopsImage.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
     imagePosition: "right" as const,
-    buttonLink: "/optiSaas",
+    buttonLink: "/mathops",
     capabilities: [
-      { text: "Unified dashboard for SaaS and cloud spend visibility" },
-      { text: "AI-driven SaaS Advisor for usage optimization" },
-      { text: "Multicloud monitoring with budget threshold alerts" },
-      { text: "Centralized SaaS marketplace with reviews and insights" },
-      { text: "Automated contract lifecycle and renewal tracking" },
-      { text: "Portfolio management across departments and teams" },
+      { text: "Real-time infrastructure and app performance monitoring" },
+      { text: "Predictive analytics for anomaly detection and root cause" },
+      { text: "Customizable dashboards with 360° entity views" },
+      { text: "Automated ticket generation and multichannel alerts" },
+      { text: "Seamless integration with ticketing and notification tools" },
     ],
   },
   {
@@ -104,57 +122,46 @@ const productsData = [
       { text: "Extensible workflow engine for custom automation" },
     ],
   },
-  {
-    title: "MathOps",
-    subtitle: "Empowering IT Operations with AI-Driven Analytics",
-    description:
-      "Move from reactive to proactive IT management with real-time monitoring, predictive insights, and unified dashboards.",
-    image: "assets/mathopsImage.png",
-    bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
-    imagePosition: "right" as const,
-    buttonLink: "/mathops",
-    capabilities: [
-      { text: "Real-time infrastructure and app performance monitoring" },
-      { text: "Predictive analytics for anomaly detection and root cause" },
-      { text: "Customizable dashboards with 360° entity views" },
-      { text: "Automated ticket generation and multichannel alerts" },
-      { text: "Seamless integration with ticketing and notification tools" },
-    ],
-  },
 ];
 
 function Products() {
   return (
-    <div className="dark:bg-black">
-      <HeroBanner title="Products" image="assets/background.png" type="parent" />
-
-      <div className="py-[30px] md:py-[100px] dark:bg-[#000000] transition-all duration-500 ease-in">
-        <p className="text-[#687da9] dark:text-white text-4xl md:text-5xl text-center font-extrabold">
-          Empowering Innovation with AI-Driven Solutions
-        </p>
-        <p className="text-[#666666] dark:text-white text-base text-center tracking-[0.08px] leading-5 mt-[20px] mx-[20px] md:mx-auto md:max-w-4xl lg:max-w-5xl">
-          At Mindgraph, we build intelligent platforms that empower
-          organizations to make smarter decisions, automate operations, and
-          unlock data-driven insights. Explore our product suite built to
-          transform diverse domains—from customer experience to IT operations,
-          healthcare, ESG compliance, and document management.
-        </p>
-      </div>
-
-      {productsData.map((product, idx) => (
-        <ProductCard
-          key={idx}
-          title={product.title}
-          subtitle={product.subtitle}
-          description={product.description}
-          image={product.image}
-          bgColor={product.bgColor}
-          imagePosition={product.imagePosition}
-          buttonLink={product.buttonLink}
-          capabilities={product.capabilities}
+    <PageTransition>
+      <div className="dark:bg-black">
+        <HeroBanner
+          title="Products"
+          image="assets/background.png"
+          type="parent"
         />
-      ))}
-    </div>
+
+        <div className="py-[30px] md:py-[100px] dark:bg-[#000000] transition-all duration-500 ease-in">
+          <p className="text-[#687da9] dark:text-white text-4xl md:text-5xl text-center font-extrabold">
+            Empowering Innovation with AI-Driven Solutions
+          </p>
+          <p className="text-[#666666] dark:text-white text-base text-center tracking-[0.08px] leading-5 mt-[20px] mx-[20px] md:mx-auto md:max-w-4xl lg:max-w-5xl">
+            At Mindgraph, we build intelligent platforms that empower
+            organizations to make smarter decisions, automate operations, and
+            unlock data-driven insights. Explore our product suite built to
+            transform diverse domains—from customer experience to IT operations,
+            healthcare, ESG compliance, and document management.
+          </p>
+        </div>
+
+        {productsData.map((product, idx) => (
+          <ProductCard
+            key={idx}
+            title={product.title}
+            subtitle={product.subtitle}
+            description={product.description}
+            image={product.image}
+            bgColor={product.bgColor}
+            imagePosition={product.imagePosition}
+            buttonLink={product.buttonLink}
+            capabilities={product.capabilities}
+          />
+        ))}
+      </div>
+    </PageTransition>
   );
 }
 

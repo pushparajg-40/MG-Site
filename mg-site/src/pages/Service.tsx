@@ -1,12 +1,13 @@
 import ServiceSection from "./ServicesSection";
 import HeroBanner from "../components/HeroBanner";
+import PageTransition from "../components/PageTransition";
 
 const servicesData = [
   {
     title: "AI & Data Intelligence Services",
     description:
       "Unlock the power of data and AI to automate decisions, predict outcomes, and drive business growth. We handle everything from strategy and pipelines to real-time analytics and model deployment.",
-    image: "assets/aiService.png",
+    image: "assets/aiServiceUpdated.png",
     bgColor: "bg-white dark:bg-black",
     buttonLink: "/AI&DI_Services",
     whatWeOffer: [
@@ -118,7 +119,7 @@ const servicesData = [
     title: "Consulting & Advisory Services",
     description:
       "Drive innovation and digital maturity with strategic guidance across business and technology domains—focused on sectors like energy, defence, BFSI, healthcare, and logistics.",
-    image: "assets/consultingService.png",
+    image: "assets/consultingServiceUpdated.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
     buttonLink: "/Consulting&AdvisoryServices",
     whatWeOffer: [
@@ -142,24 +143,26 @@ const servicesData = [
 function Service() {
   return (
     <>
-      <HeroBanner
-        title="Services"
-        image="assets/servicesBanner.png"
-        type="parent"
-      />
-
-      {servicesData.map((service, idx) => (
-        <ServiceSection
-          key={idx}
-          title={service.title}
-          description={service.description}
-          image={service.image}
-          bgColor={service.bgColor}
-          buttonLink={service.buttonLink}
-          whatWeOffer={service.whatWeOffer}
-          whyChooseUs={service.whyChooseUs}
+      <PageTransition>
+        <HeroBanner
+          title="Services"
+          image="assets/servicesBanner.png"
+          type="parent"
         />
-      ))}
+
+        {servicesData.map((service, idx) => (
+          <ServiceSection
+            key={idx}
+            title={service.title}
+            description={service.description}
+            image={service.image}
+            bgColor={service.bgColor}
+            buttonLink={service.buttonLink}
+            whatWeOffer={service.whatWeOffer}
+            whyChooseUs={service.whyChooseUs}
+          />
+        ))}
+      </PageTransition>
     </>
   );
 }

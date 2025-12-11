@@ -5,6 +5,7 @@ import TechnologiesUsed from "../../components/casestudies/TechnologyUsed";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
 import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import Header from "../../components/casestudies/Header";
+import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
   title: "Telecom",
@@ -98,19 +99,21 @@ const outcomes = [
 
 export default function Telecom() {
   return (
-    <div className="dark:bg-black">
-      <Header {...headerProps} />
-      <AtAGlance {...glanceProps} />
-      <Challenge {...challengeProps} />
-      <Solution
-        items={items}
-        desc={
-          "Mindgraph implemented a comprehensive data modernization program focused on engineering excellence and enterprise-scale analytics enablement:"
-        }
-      />
-      <TechnologiesUsed />
-      <OutcomesAndBenefits items={outcomes} />
-      <OtherCaseStudies />
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <Header {...headerProps} />
+        <AtAGlance {...glanceProps} />
+        <Challenge {...challengeProps} />
+        <Solution
+          items={items}
+          desc={
+            "Mindgraph implemented a comprehensive data modernization program focused on engineering excellence and enterprise-scale analytics enablement:"
+          }
+        />
+        <TechnologiesUsed />
+        <OutcomesAndBenefits items={outcomes} />
+        <OtherCaseStudies />
+      </div>
+    </PageTransition>
   );
 }

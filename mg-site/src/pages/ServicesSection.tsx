@@ -73,7 +73,7 @@ export default function ServiceSection({
           <img
             src={image}
             alt={title}
-            className="w-full h-auto md:h-[450px] object-cover aspect-square md:aspect-auto"
+            className="w-full h-auto md:h-[510px] object-cover aspect-square md:aspect-auto"
           />
         </div>
 

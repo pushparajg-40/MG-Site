@@ -1,5 +1,6 @@
 import IndustriesHero from "../components/IndustriesHero";
 import IndustrySection from "../components/IndustrySection";
+import PageTransition from "../components/PageTransition";
 
 const INDUSTRIES_DATA = [
   {
@@ -154,11 +155,13 @@ const INDUSTRIES_DATA = [
 
 export default function Industries() {
   return (
-    <div className="dark:bg-black">
-      <IndustriesHero />
-      {INDUSTRIES_DATA.map((industry) => (
-        <IndustrySection key={industry.id} {...industry} />
-      ))}
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <IndustriesHero />
+        {INDUSTRIES_DATA.map((industry) => (
+          <IndustrySection key={industry.id} {...industry} />
+        ))}
+      </div>
+    </PageTransition>
   );
 }

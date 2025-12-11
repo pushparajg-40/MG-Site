@@ -1,4 +1,5 @@
 import OfferCard from "../../components/OfferCard";
+import PageTransition from "../../components/PageTransition";
 import StrengthCard from "../../components/StrengthCard";
 
 const offerCardsData = [
@@ -68,99 +69,101 @@ const strengthCardsData = [
 
 function CyberSecurity() {
   return (
-    <div className="overflow-x-hidden dark:bg-black transition-all duration-500 ease-in">
-      <section className="relative bg-white pt-16 pb-12 md:pb-32 dark:bg-[#000000] transition-all duration-500 ease-in">
-        <div className="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
-          <div className="z-10">
-            <h1 className="text-5xl md:text-5xl  font-bold text-[#1783F7] dark:text-white mb-4 px-4">
-              Cybersecurity
-            </h1>
-            <div className="md:hidden">
+    <PageTransition>
+      <div className="overflow-x-hidden dark:bg-black transition-all duration-500 ease-in">
+        <section className="relative bg-white pt-16 pb-12 md:pb-32 dark:bg-[#000000] transition-all duration-500 ease-in">
+          <div className="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
+            <div className="z-10">
+              <h1 className="text-5xl md:text-5xl  font-bold text-[#1783F7] dark:text-white mb-4 px-4">
+                Cybersecurity
+              </h1>
+              <div className="md:hidden">
+                <img
+                  src="assets/aiOverview.png"
+                  alt="AI chip"
+                  className="w-full h-auto object-cover max-h-[400px] lg:max-h-none"
+                />
+              </div>
+              <h2 className="md:text-2xl text-3xl font-semibold text-[#1783F7] dark:text-white mb-2 px-4 mt-6 md:mt-0">
+                Overview
+              </h2>
+
+              <p className="text-[#667085] dark:text-white leading-relaxed text-sm sm:text-base px-4">
+                In today’s hyper-connected world, cybersecurity is more than
+                just a technical requirement — it’s a strategic imperative. At
+                Mindgraph, we deliver comprehensive cybersecurity services that
+                help organizations stay ahead of evolving threats across both
+                Information Technology (IT) and Operational Technology (OT)
+                landscapes. Our approach combines real-time threat intelligence,
+                automated defense mechanisms, and compliance readiness to ensure
+                resilient and secure digital environments. Whether you're
+                protecting cloud-native applications, securing industrial
+                control systems, or navigating complex regulatory landscapes, we
+                provide end-to-end solutions tailored to your risk profile.
+              </p>
+            </div>
+
+            <div className="relative lg:absolute top-10 right-0 w-full lg:w-[48%] z-0 hidden md:block">
               <img
-                src="assets/aiOverview.png"
+                src="assets/cyberOverview.png"
                 alt="AI chip"
-                className="w-full h-auto object-cover max-h-[400px] lg:max-h-none"
+                className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[400px] lg:max-h-none xl:h-[31rem]"
               />
             </div>
-            <h2 className="md:text-2xl text-3xl font-semibold text-[#1783F7] dark:text-white mb-2 px-4 mt-6 md:mt-0">
-              Overview
-            </h2>
-
-            <p className="text-[#667085] dark:text-white leading-relaxed text-sm sm:text-base px-4">
-              In today’s hyper-connected world, cybersecurity is more than just
-              a technical requirement — it’s a strategic imperative. At
-              Mindgraph, we deliver comprehensive cybersecurity services that
-              help organizations stay ahead of evolving threats across both
-              Information Technology (IT) and Operational Technology (OT)
-              landscapes. Our approach combines real-time threat intelligence,
-              automated defense mechanisms, and compliance readiness to ensure
-              resilient and secure digital environments. Whether you're
-              protecting cloud-native applications, securing industrial control
-              systems, or navigating complex regulatory landscapes, we provide
-              end-to-end solutions tailored to your risk profile.
-            </p>
           </div>
+        </section>
 
-          <div className="relative lg:absolute top-10 right-0 w-full lg:w-[48%] z-0 hidden md:block">
-            <img
-              src="assets/cyberOverview.png"
-              alt="AI chip"
-              className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[400px] lg:max-h-none xl:h-[31rem]"
-            />
+        <section className="bg-[#EFFBFF] dark:bg-[#181818] py-6 md:py-20 md:px-6 transition-all duration-500 ease-in">
+          <div className="max-w-7xl mx-auto">
+            <div className="px-6">
+              <h3 className="text-2xl font-semibold text-[#1783F7] dark:text-white mb-2">
+                What We Offer
+              </h3>
+              <p className="text-[#667085] dark:text-white mb-10">
+                We provide a wide range of AI-driven services and solutions
+                tailored to meet the unique challenges of modern enterprises
+              </p>
+            </div>
+            <div className="px-4 md:px-4 lg:px-16">
+              <div className="space-y-0 divide-y divide-[#C8C7CC] border-t border-[#C8C7CC]">
+                {offerCardsData.map((card, idx) => (
+                  <OfferCard
+                    key={idx}
+                    number={card.number}
+                    title={card.title}
+                    description={card.description}
+                    image={card.image}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-[#EFFBFF] dark:bg-[#181818] py-6 md:py-20 md:px-6 transition-all duration-500 ease-in">
-        <div className="max-w-7xl mx-auto">
-          <div className="px-6">
-            <h3 className="text-2xl font-semibold text-[#1783F7] dark:text-white mb-2">
-              What We Offer
-            </h3>
-            <p className="text-[#667085] dark:text-white mb-10">
-              We provide a wide range of AI-driven services and solutions
-              tailored to meet the unique challenges of modern enterprises
-            </p>
-          </div>
-          <div className="px-4 md:px-4 lg:px-16">
-            <div className="space-y-0 divide-y divide-[#C8C7CC] border-t border-[#C8C7CC]">
-              {offerCardsData.map((card, idx) => (
-                <OfferCard
+        <section className="lg:px-[200px] px-4 md:px-6 py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex justify-center md:justify-start">
+              <h2 className="text-2xl font-semibold text-[#1783F7] dark:text-white mb-10">
+                Key Strengths
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {strengthCardsData.map((card, idx) => (
+                <StrengthCard
                   key={idx}
-                  number={card.number}
                   title={card.title}
                   description={card.description}
                   image={card.image}
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="lg:px-[200px] px-4 md:px-6 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center md:justify-start">
-            <h2 className="text-2xl font-semibold text-[#1783F7] dark:text-white mb-10">
-              Key Strengths
-            </h2>
+            <div className="border-t border-[#C8C7CC] mt-16 dark:border-[#FFFFFF] dark:opacity-[40%]"></div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {strengthCardsData.map((card, idx) => (
-              <StrengthCard
-                key={idx}
-                title={card.title}
-                description={card.description}
-                image={card.image}
-              />
-            ))}
-          </div>
-
-          <div className="border-t border-[#C8C7CC] mt-16 dark:border-[#FFFFFF] dark:opacity-[40%]"></div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </PageTransition>
   );
 }
 

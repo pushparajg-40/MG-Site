@@ -10,6 +10,7 @@ import {
 import { FeaturesSection } from "../../components/product/FeaturesSection";
 import { DashboardSection } from "../../components/product/DashboardSection";
 import { Helmet } from "react-helmet";
+import PageTransition from "../../components/PageTransition";
 
 const aboutSectionData: AboutProps = {
   title: "What is CustomerDLens?",
@@ -111,29 +112,32 @@ const heroSectionProps: HeroSectionProps = {
 function CustomerDlens() {
   return (
     <>
-      <Helmet>
-        <title>CustomerDLens – AI Customer Data Platform (CDP)</title>
-        <meta
-          name="description"
-          content="CustomerDLens is an AI-powered Customer Data Platform that unifies data and delivers real-time insights for segmentation, personalization, and customer growth."
-        />
-      </Helmet>
-      <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
-        <HeroSection {...heroSectionProps} />
-        <AboutSection
-          title={aboutSectionData.title}
-          subtitle={aboutSectionData.subtitle}
-          desc={aboutSectionData.desc}
-          childs={aboutSectionData.childs}
-        />
-        <FeaturesSection
-          title={featureSectionData.title}
-          subtitle={featureSectionData.subtitle}
-          features={featureSectionData.features}
-          type={"normal"}
-        />
-        <DashboardSection imageSrc={"assets/customerDash.png"} />
-      </div>
+      <PageTransition>
+        <Helmet>
+          <title>CustomerDLens – AI Customer Data Platform (CDP)</title>
+          <meta
+            name="description"
+            content="CustomerDLens is an AI-powered Customer Data Platform that unifies data and delivers real-time insights for segmentation, personalization, and customer growth."
+          />
+        </Helmet>
+
+        <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
+          <HeroSection {...heroSectionProps} />
+          <AboutSection
+            title={aboutSectionData.title}
+            subtitle={aboutSectionData.subtitle}
+            desc={aboutSectionData.desc}
+            childs={aboutSectionData.childs}
+          />
+          <FeaturesSection
+            title={featureSectionData.title}
+            subtitle={featureSectionData.subtitle}
+            features={featureSectionData.features}
+            type={"normal"}
+          />
+          <DashboardSection imageSrc={"assets/customerDash.png"} />
+        </div>
+      </PageTransition>
     </>
   );
 }

@@ -5,6 +5,7 @@ import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
 import TechUsed from "../../components/casestudies/TechUsed";
 import SolutionList from "../../components/casestudies/SolutionList";
+import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
   title: "Energy & Utilities",
@@ -52,7 +53,6 @@ const challengeProps = {
   ],
 };
 
-
 const outcomes = [
   "360° visibility into ESG initiatives across energy and infrastructure",
   "Improved investor confidence through transparent sustainability reporting",
@@ -82,15 +82,17 @@ const solutionListProps = {
 
 function Energy_Utilities() {
   return (
-    <div className="dark:bg-black">
-      <Header {...headerProps} />
-      <AtAGlance {...glanceProps} />
-      <Challenge {...challengeProps} />
-      <SolutionList {...solutionListProps} />
-      <TechUsed items={technologies} />
-      <OutcomesAndBenefits items={outcomes} />
-      <OtherCaseStudies />
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <Header {...headerProps} />
+        <AtAGlance {...glanceProps} />
+        <Challenge {...challengeProps} />
+        <SolutionList {...solutionListProps} />
+        <TechUsed items={technologies} />
+        <OutcomesAndBenefits items={outcomes} />
+        <OtherCaseStudies />
+      </div>
+    </PageTransition>
   );
 }
 

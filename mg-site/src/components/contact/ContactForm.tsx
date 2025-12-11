@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 
 interface StatusMessage {
   type: "success" | "error" | null;
@@ -124,18 +125,23 @@ export default function ContactForm() {
         </div>
 
         <div className="mb-4 relative">
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
+          {/* <div className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
             <select className="bg-transparent text-[#101828] text-sm outline-none pr-1">
               <option value="IN">IN</option>
             </select>
-          </div>
+          </div> */}
+          <img
+            src="assets/updated/phone.svg"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+            alt=""
+          />
           <input
             type="tel"
-            placeholder="+91 9876543210"
+            placeholder="Your mobile number"
             name="mobile"
             value={formData.mobile}
             onChange={handleChange}
-            className="w-full pl-20 p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -160,21 +166,19 @@ export default function ContactForm() {
 
         <p className="text-[#8F94A1] md:text-lg mt-4 text-center">
           By contacting us, you agree to our
-          <a
-            href="terms.html"
+          <Link
+            to="/terms"
             className="text-[#202124] hover:underline font-bold"
           >
-            {" "}
             Terms and condition
-          </a>{" "}
+          </Link>
           and
-          <a
-            href="privacy.html"
+          <Link
+            to="/privacy"
             className="text-[#202124] hover:underline font-bold"
           >
-            {" "}
             Privacy Policy
-          </a>
+          </Link>
         </p>
       </form>
     </div>

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import PageTransition from "../../components/PageTransition";
 
 interface Feature {
   title: string;
@@ -90,149 +92,161 @@ export function SmartSustain() {
     }
   });
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <Helmet>
-        <title>SmartSustain.AI – AI-Powered ESG Management Platform</title>
-        <meta
-          name="description"
-          content="SmartSustain.AI is an AI-powered ESG management platform that tracks emissions, benchmarks performance, and aligns reporting with GRI and ISSB standards in real time."
-        />
-      </Helmet>
-      <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
-        {/* Hero Section */}
-        <div className="flex flex-col md:flex-row transition-all duration-500 ease-in">
-          <div className="flex flex-col justify-center pl-[20px] md:pl-[50px] pr-[3px] md:pr-[180px] md:w-[50%] mt-[70px] md:mt-0">
-            <div>
+      <PageTransition>
+        <Helmet>
+          <title>SmartSustain.AI – AI-Powered ESG Management Platform</title>
+          <meta
+            name="description"
+            content="SmartSustain.AI is an AI-powered ESG management platform that tracks emissions, benchmarks performance, and aligns reporting with GRI and ISSB standards in real time."
+          />
+        </Helmet>
+        <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
+          {/* Hero Section */}
+          <div className="flex flex-col md:flex-row transition-all duration-500 ease-in">
+            <div className="flex flex-col justify-center pl-[20px] md:pl-[50px] pr-[3px] md:pr-[180px] md:w-[50%] mt-[70px] md:mt-0">
+              <div>
+                <img
+                  src={
+                    isDark
+                      ? "assets/updated/smartSustainLogoDark.svg"
+                      : "assets/smartSustainLogo.svg"
+                  }
+                  alt="SmartSustain Logo"
+                  className="h-[35px] max-w-lg md:max-w-full md:items-start"
+                />
+              </div>
+
+              <div>
+                <p className="text-[#1783F7] dark:text-white text-[35px] md:text-5xl mt-4 font-semibold">
+                  AI-Powered ESG Platform for a Greener Tomorrow
+                </p>
+                <p className="text-[#667085] dark:text-white md:text-lg mt-4">
+                  Track, assess, and improve your sustainability performance
+                  with real-time ESG dashboards, intelligent assessments, and
+                  global reporting standards—all in one powerful platform.
+                </p>
+              </div>
+
+              <button
+                className="w-60 text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center justify-center transition-all hover:opacity-90 
+            bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] 
+            dark:from-white dark:to-white dark:bg-white 
+            hover:from-[#787878] hover:to-[#0653A7] 
+            dark:hover:from-gray-200 dark:hover:to-gray-400 mt-4"
+                onClick={() => {
+                  navigate("/contactUs");
+                }}
+              >
+                Talk to Our Experts
+                <img
+                  src={
+                    isDark
+                      ? "assets/updated/crossArrow.svg"
+                      : "assets/getInArrow.svg"
+                  }
+                  alt="Arrow"
+                  className="ml-2 h-3"
+                />
+              </button>
+            </div>
+            <div className="mt-[50px] md:mt-0">
               <img
-                src={
-                  isDark
-                    ? "assets/updated/smartSustainLogoDark.svg"
-                    : "assets/smartSustainLogo.svg"
-                }
-                alt="SmartSustain Logo"
-                className="h-[35px] max-w-lg md:max-w-full md:items-start"
+                src="assets/smartAIDashboard.png"
+                alt="Smart AI Dashboard"
+                className="md:h-[900px] object-cover object-left"
               />
             </div>
-
-            <div>
-              <p className="text-[#1783F7] dark:text-white text-[35px] md:text-5xl mt-4 font-semibold">
-                AI-Powered ESG Platform for a Greener Tomorrow
-              </p>
-              <p className="text-[#667085] dark:text-white md:text-lg mt-4">
-                Track, assess, and improve your sustainability performance with
-                real-time ESG dashboards, intelligent assessments, and global
-                reporting standards—all in one powerful platform.
-              </p>
-            </div>
-
-            <button className="mt-6 w-[240px] text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center bg-[linear-gradient(141deg,rgba(139,139,139,1)_0%,rgba(23,131,247,1)_100%)] hover:bg-[linear-gradient(141deg,#787878_0%,#0653A7_100%)] dark:bg-white dark:hover:bg-gray-100 transition-all">
-              Talk to Our Experts
-              <img
-                src={
-                  isDark
-                    ? "assets/updated/crossArrow.svg"
-                    : "assets/getInArrow.svg"
-                }
-                alt="Arrow"
-                className="ml-2 h-3"
-              />
-            </button>
-          </div>
-          <div className="mt-[50px] md:mt-0">
-            <img
-              src="assets/smartAIDashboard.png"
-              alt="Smart AI Dashboard"
-              className="md:h-[900px] object-cover object-left"
-            />
-          </div>
-        </div>
-
-        {/* What is SmartSustain Section */}
-        <div className="pt-[100px] md:px-[40px] flex flex-col justify-center items-center xl:px-[370px] lg:px-[150px] px-[20px] dark:bg-[#181818] md:pb-[50px] transition-all duration-500 ease-in">
-          <h2 className="text-[#1783F7] dark:text-white font-bold text-2xl">
-            What is SmartSustain.AI?
-          </h2>
-          <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4">
-            Designed for Responsible Growth
-          </p>
-          <p className="text-[#667085] dark:text-white text-center mt-4">
-            SmartSustain.AI is an advanced ESG management platform designed to
-            help organizations measure, report, and improve their environmental
-            and social impact. With category-specific dashboards and intelligent
-            tools, businesses can align with global standards, assess readiness,
-            and set actionable sustainability goals.
-          </p>
-        </div>
-
-        {/* Why Choose & Ideal For Section */}
-        <div className="grid md:grid-cols-2 px-[20px] md:px-[40px] pt-[80px]">
-          <div className="lg:pr-[80px]">
-            <h2 className="text-[#687DA9] dark:text-white text-3xl font-bold">
-              Why Choose SmartSustain.AI?
-            </h2>
-            <ul className="text-[#666666] dark:text-white mt-4 pl-[20px] space-y-2">
-              {whyChooseData.map((item, idx) => (
-                <li key={idx} style={{ listStyle: "disc" }}>
-                  {item.text}
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div className="lg:pr-[80px] mt-[50px] md:mt-0">
-            <h2 className="text-[#687DA9] dark:text-white text-3xl font-bold">
-              Ideal For
-            </h2>
-            <ul className="text-[#666666] dark:text-white mt-4 pl-[20px] space-y-2">
-              {idealForData.map((item, idx) => (
-                <li key={idx} style={{ listStyle: "disc" }}>
-                  {item.text}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Dashboard Image */}
-        <div className="flex justify-center">
-          <img src="assets/smart.png" alt="Dashboard" />
-        </div>
-
-        {/* Key Features Section */}
-        <div className="mt-[100px] mx-[10px] md:mx-[0px] bg-[#F6FAFF] dark:bg-[#181818] pt-[30px] pb-[50px] transition-all duration-500 ease-in">
-          <div className="flex flex-col justify-center items-center lg:px-[400px]">
-            <h2 className="text-[#1783F7] dark:text-white text-2xl">
-              Key Features
+          {/* What is SmartSustain Section */}
+          <div className="pt-[100px] md:px-[40px] flex flex-col justify-center items-center xl:px-[370px] lg:px-[150px] px-[20px] dark:bg-[#181818] md:pb-[50px] transition-all duration-500 ease-in">
+            <h2 className="text-[#1783F7] dark:text-white font-bold text-2xl">
+              What is SmartSustain.AI?
             </h2>
             <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4">
-              Smarter ESG Decisions, Backed by Real-Time Data and AI
+              Designed for Responsible Growth
+            </p>
+            <p className="text-[#667085] dark:text-white text-center mt-4">
+              SmartSustain.AI is an advanced ESG management platform designed to
+              help organizations measure, report, and improve their
+              environmental and social impact. With category-specific dashboards
+              and intelligent tools, businesses can align with global standards,
+              assess readiness, and set actionable sustainability goals.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 px-[20px] md:px-[50px] mt-[80px] gap-y-[40px]">
-            {keyFeaturesData.map((feature, idx) => (
-              <div
-                key={idx}
-                className={`lg:pr-[80px] ${feature.gridColumn || ""}`}
-              >
-                <h3 className="text-[#687DA9] dark:text-white text-3xl font-bold">
-                  {feature.title}
-                </h3>
-                <p className="text-[#667085] dark:text-white mt-6 md:mt-4">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+          {/* Why Choose & Ideal For Section */}
+          <div className="grid md:grid-cols-2 px-[20px] md:px-[40px] pt-[80px]">
+            <div className="lg:pr-[80px]">
+              <h2 className="text-[#687DA9] dark:text-white text-3xl font-bold">
+                Why Choose SmartSustain.AI?
+              </h2>
+              <ul className="text-[#666666] dark:text-white mt-4 pl-[20px] space-y-2">
+                {whyChooseData.map((item, idx) => (
+                  <li key={idx} style={{ listStyle: "disc" }}>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:pr-[80px] mt-[50px] md:mt-0">
+              <h2 className="text-[#687DA9] dark:text-white text-3xl font-bold">
+                Ideal For
+              </h2>
+              <ul className="text-[#666666] dark:text-white mt-4 pl-[20px] space-y-2">
+                {idealForData.map((item, idx) => (
+                  <li key={idx} style={{ listStyle: "disc" }}>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
 
-        {/* ISSB Gap Image */}
-        <div className="flex justify-center dark:bg-[#181818] md:pb-[20px] transition-all duration-500 ease-in">
-          <img src="assets/issbGap.png" alt="ISSB Gap Assessment" />
-        </div>
+          {/* Dashboard Image */}
+          <div className="flex justify-center">
+            <img src="assets/smart.png" alt="Dashboard" />
+          </div>
 
-        <style>{`
+          {/* Key Features Section */}
+          <div className="mt-[100px] mx-[10px] md:mx-[0px] bg-[#F6FAFF] dark:bg-[#181818] pt-[30px] pb-[50px] transition-all duration-500 ease-in">
+            <div className="flex flex-col justify-center items-center lg:px-[400px]">
+              <h2 className="text-[#1783F7] dark:text-white text-2xl">
+                Key Features
+              </h2>
+              <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4">
+                Smarter ESG Decisions, Backed by Real-Time Data and AI
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 px-[20px] md:px-[50px] mt-[80px] gap-y-[40px]">
+              {keyFeaturesData.map((feature, idx) => (
+                <div
+                  key={idx}
+                  className={`lg:pr-[80px] ${feature.gridColumn || ""}`}
+                >
+                  <h3 className="text-[#687DA9] dark:text-white text-3xl font-bold">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#667085] dark:text-white mt-6 md:mt-4">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ISSB Gap Image */}
+          <div className="flex justify-center dark:bg-[#181818] md:pb-[20px] transition-all duration-500 ease-in">
+            <img src="assets/issbGap.png" alt="ISSB Gap Assessment" />
+          </div>
+
+          <style>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
@@ -242,7 +256,8 @@ export function SmartSustain() {
           scrollbar-width: none;
         }
       `}</style>
-      </div>
+        </div>
+      </PageTransition>
     </>
   );
 }

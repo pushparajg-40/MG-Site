@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export interface HeroSectionProps {
   title: string;
@@ -15,11 +16,11 @@ export function HeroSection({
   subtitle,
   logoDark,
   logoLight,
-  bannerImage,
-  arrowIconDark,
-  arrowIconLight,
+  bannerImage
 }: HeroSectionProps) {
   const [darkMode, setDarkMode] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
@@ -37,6 +38,18 @@ export function HeroSection({
 
     return () => observer.disconnect();
   }, []);
+
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+    }
+  });
 
   return (
     <div className="flex md:flex-row flex-col w-full">
@@ -58,10 +71,21 @@ export function HeroSection({
           </p>
         </div>
 
-        <button className="mt-6 w-[240px] text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center bg-[linear-gradient(141deg,rgba(139,139,139,1)_0%,rgba(23,131,247,1)_100%)] hover:bg-[linear-gradient(141deg,#787878_0%,#0653A7_100%)] dark:bg-white dark:hover:bg-gray-100 transition-all duration-300">
+        <button
+          className="w-60 text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center justify-center transition-all hover:opacity-90 
+            bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] 
+            dark:from-white dark:to-white dark:bg-white 
+            hover:from-[#787878] hover:to-[#0653A7] 
+            dark:hover:from-gray-200 dark:hover:to-gray-400 mt-4"
+          onClick={() => {
+            navigate("/contactUs");
+          }}
+        >
           Talk to Our Experts
           <img
-            src={darkMode ? arrowIconDark : arrowIconLight}
+            src={
+              isDark ? "assets/updated/crossArrow.svg" : "assets/getInArrow.svg"
+            }
             alt="Arrow"
             className="ml-2 h-3"
           />

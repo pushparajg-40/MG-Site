@@ -1,4 +1,5 @@
 import ContactFormSection from "../components/ContactForm";
+import PageTransition from "../components/PageTransition";
 export const termsData = {
   headerTitle: "Terms & Conditions – MindGraph",
   pageTitle: "Terms & Conditions - MindGraph",
@@ -82,21 +83,22 @@ function Terms() {
     const header = document.querySelector<HTMLElement>(headerSelector);
     const headerHeight = header ? header.offsetHeight : 0;
 
-    const extraOffset = 12; // px 
+    const extraOffset = 12; // px
     const offset = headerHeight + extraOffset;
 
     const y = element.getBoundingClientRect().top + window.scrollY - offset;
 
     window.scrollTo({
-      top: Math.max(0, Math.floor(y)), 
+      top: Math.max(0, Math.floor(y)),
       behavior: "smooth",
     });
   };
 
   return (
     <>
-      <style>
-        {`  h1::after {
+      <PageTransition>
+        <style>
+          {`  h1::after {
             content: "";
             display: block;
             height: 2px;
@@ -104,82 +106,83 @@ function Terms() {
             background-color: #ff6647;
             margin-top: 0 !important;
         }`}
-      </style>
-      {/* <!-- Hero Section --> */}
-      <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
-        {/* <!-- style="background-image: url('assets/blog_banner.png');" --> */}
+        </style>
+        {/* <!-- Hero Section --> */}
+        <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
+          {/* <!-- style="background-image: url('assets/blog_banner.png');" --> */}
 
-        <div className="absolute inset-0  flex items-center justify-center">
-          <p className="text-white  text-3xl md:text-5xl font-semibold uppercase text-center ">
-            {termsData.headerTitle}
+          <div className="absolute inset-0  flex items-center justify-center">
+            <p className="text-white  text-3xl md:text-5xl font-semibold uppercase text-center ">
+              {termsData.headerTitle}
+            </p>
+          </div>
+        </section>
+
+        {/* <!-- heading--> */}
+        <section className="pt-[20px] md:pt-[50px] px-4 md:px-[60px]">
+          <h1 className="uppercase text-[#055CC0] dark:text-white text-2xl font-bold">
+            {termsData.pageTitle}
+          </h1>
+          <p className="text-[#667085] dark:text-white text-[16px] leading-[32px] mt-[20px]  pr-0 md:pr-[50px]">
+            {termsData.intro}
           </p>
+        </section>
+
+        {/* <!-- Content Section--> */}
+        <div className="max-w-7xl ms-[20px] md:mx-[60px]  py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <!-- Sidebar --> */}
+          <aside
+            id="sidebar"
+            className="md:col-span-1 border-r border-gray-200 pr-4"
+          >
+            <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6">
+              TERMS & CONDITION
+            </h1>
+            <p className="text-lg font-bold text-[#055CC0] dark:text-white mb-6">
+              1. Ownership and Use of Site Contents
+            </p>
+            <nav id="sidebarNav" className="space-y-3 px-4">
+              {termsData.sections.map((terms) => {
+                return (
+                  <>
+                    {" "}
+                    <button
+                      key={terms.id}
+                      onClick={() => scrollToSection(terms.id)}
+                      className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
+                    >
+                      {terms.title}
+                    </button>
+                  </>
+                );
+              })}
+            </nav>
+          </aside>
+
+          {/* <!-- Main Content --> */}
+          <main className="md:col-span-2 space-y-6">
+            <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
+              Ownership and Use of Site Contents
+            </h1>
+
+            {/* <!-- Section 1 --> */}
+
+            {termsData.sections.map((sec) => (
+              <section id={sec.id} key={sec.id}>
+                <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
+                  {sec.title}
+                </h1>
+                <p className="text-[#667085] dark:text-white  whitespace-pre-line">
+                  {sec.content}
+                </p>
+              </section>
+            ))}
+          </main>
         </div>
-      </section>
 
-      {/* <!-- heading--> */}
-      <section className="pt-[20px] md:pt-[50px] px-4 md:px-[60px]">
-        <h1 className="uppercase text-[#055CC0] dark:text-white text-2xl font-bold">
-          {termsData.pageTitle}
-        </h1>
-        <p className="text-[#667085] dark:text-white text-[16px] leading-[32px] mt-[20px]  pr-0 md:pr-[50px]">
-          {termsData.intro}
-        </p>
-      </section>
-
-      {/* <!-- Content Section--> */}
-      <div className="max-w-7xl ms-[20px] md:mx-[60px]  py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* <!-- Sidebar --> */}
-        <aside
-          id="sidebar"
-          className="md:col-span-1 border-r border-gray-200 pr-4"
-        >
-          <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6">
-            TERMS & CONDITION
-          </h1>
-          <p className="text-lg font-bold text-[#055CC0] dark:text-white mb-6">
-            1. Ownership and Use of Site Contents
-          </p>
-          <nav id="sidebarNav" className="space-y-3 px-4">
-            {termsData.sections.map((terms) => {
-              return (
-                <>
-                  {" "}
-                  <button
-                    key={terms.id}
-                    onClick={() => scrollToSection(terms.id)}
-                    className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
-                  >
-                    {terms.title}
-                  </button>
-                </>
-              );
-            })}
-          </nav>
-        </aside>
-
-        {/* <!-- Main Content --> */}
-        <main className="md:col-span-2 space-y-6">
-          <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
-            Ownership and Use of Site Contents
-          </h1>
-
-          {/* <!-- Section 1 --> */}
-
-          {termsData.sections.map((sec) => (
-            <section id={sec.id} key={sec.id}>
-              <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
-                {sec.title}
-              </h1>
-              <p className="text-[#667085] dark:text-white  whitespace-pre-line">
-                {sec.content}
-              </p>
-            </section>
-          ))}
-        </main>
-      </div>
-
-      {/* Contact Form */}
-      <ContactFormSection></ContactFormSection>
+        {/* Contact Form */}
+        <ContactFormSection></ContactFormSection>
+      </PageTransition>
     </>
   );
 }

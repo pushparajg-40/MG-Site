@@ -3,6 +3,7 @@ import HeroBanner from "../components/HeroBanner";
 import LocationsMap from "../components/contact/LocationsMap";
 import LocationsList from "../components/contact/LocationList";
 import ContactFormSection from "../components/ContactForm";
+import PageTransition from "../components/PageTransition";
 
 interface Location {
   name: string;
@@ -52,33 +53,35 @@ function ContactUs() {
   const [hoveredLocation, setHoveredLocation] = useState<Location | null>(null);
 
   return (
-    <div className="dark:bg-black">
-      <HeroBanner
-        type=""
-        title="Contact Us"
-        image="assets/contactUs/contactus-banner.png"
-      />
+    <PageTransition>
+      <div className="dark:bg-black">
+        <HeroBanner
+          type=""
+          title="Contact Us"
+          image="assets/contactUs/contactus-banner.png"
+        />
 
-      <ContactFormSection></ContactFormSection>
+        <ContactFormSection></ContactFormSection>
 
-      <div className="w-full flex justify-center px-4 sm:px-6 md:px-8 lg:px-16 py-12 dark:bg-black">
-        <div className="w-full max-w-6xl">
-          <div className="flex flex-col lg:flex-row">
-            <div className="lg:w-3/5 md:p-8 order-2 md:order-1 mt-[50px] md:mt-0">
-              <LocationsMap
+        <div className="w-full flex justify-center px-4 sm:px-6 md:px-8 lg:px-16 py-12 dark:bg-black">
+          <div className="w-full max-w-6xl">
+            <div className="flex flex-col lg:flex-row">
+              <div className="lg:w-3/5 md:p-8 order-2 md:order-1 mt-[50px] md:mt-0">
+                <LocationsMap
+                  locations={locations}
+                  hoveredLocation={hoveredLocation}
+                />
+              </div>
+
+              <LocationsList
                 locations={locations}
-                hoveredLocation={hoveredLocation}
+                onLocationHover={setHoveredLocation}
               />
             </div>
-
-            <LocationsList
-              locations={locations}
-              onLocationHover={setHoveredLocation}
-            />
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
 

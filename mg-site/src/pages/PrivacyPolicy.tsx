@@ -1,4 +1,5 @@
 import ContactFormSection from "../components/ContactForm";
+import PageTransition from "../components/PageTransition";
 
 export interface PrivacySection {
   id: string;
@@ -161,8 +162,9 @@ function PrivacyPolicy() {
   };
   return (
     <>
-      {/* Smooth Scroll */}
-      <style>{`
+      <PageTransition>
+        {/* Smooth Scroll */}
+        <style>{`
         html {
           scroll-behavior: smooth;
         }
@@ -176,62 +178,63 @@ function PrivacyPolicy() {
         }
       `}</style>
 
-      {/* Hero Section */}
-      <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-white text-3xl md:text-6xl font-semibold uppercase">
-            Privacy Policy
-          </p>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-white text-3xl md:text-6xl font-semibold uppercase">
+              Privacy Policy
+            </p>
+          </div>
+        </section>
 
-      {/* Content Layout */}
-      <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Sidebar */}
-        <aside className="md:col-span-1 border-r border-gray-200 pr-4">
-          <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
-            Privacy Policy
-          </h1>
+        {/* Content Layout */}
+        <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Sidebar */}
+          <aside className="md:col-span-1 border-r border-gray-200 pr-4">
+            <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
+              Privacy Policy
+            </h1>
 
-          <nav className="space-y-3 px-1">
-            {privacyPolicySections.map((sec) => (
-              <button
-                key={sec.id}
-                onClick={() => scrollToSection(sec.id)}
-                className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
-              >
-                {sec.title}
-              </button>
+            <nav className="space-y-3 px-1">
+              {privacyPolicySections.map((sec) => (
+                <button
+                  key={sec.id}
+                  onClick={() => scrollToSection(sec.id)}
+                  className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
+                >
+                  {sec.title}
+                </button>
+              ))}
+            </nav>
+          </aside>
+
+          {/* Main Content */}
+          <main className="md:col-span-2 space-y-10">
+            {privacyPolicySections.map((section) => (
+              <section key={section.id} id={section.id}>
+                <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
+                  {section.title}
+                </h1>
+
+                {/* If content is array → render bullet list / paragraphs */}
+                {Array.isArray(section.content) ? (
+                  <div className="space-y-4 text-[#667085] dark:text-white leading-[30px]">
+                    {section.content.map((text, index) => (
+                      <p key={index}>{text}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[#667085] dark:text-white leading-[30px] whitespace-pre-line">
+                    {section.content}
+                  </p>
+                )}
+              </section>
             ))}
-          </nav>
-        </aside>
+          </main>
+        </div>
 
-        {/* Main Content */}
-        <main className="md:col-span-2 space-y-10">
-          {privacyPolicySections.map((section) => (
-            <section key={section.id} id={section.id}>
-              <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
-                {section.title}
-              </h1>
-
-              {/* If content is array → render bullet list / paragraphs */}
-              {Array.isArray(section.content) ? (
-                <div className="space-y-4 text-[#667085] dark:text-white leading-[30px]">
-                  {section.content.map((text, index) => (
-                    <p key={index}>{text}</p>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-[#667085] dark:text-white leading-[30px] whitespace-pre-line">
-                  {section.content}
-                </p>
-              )}
-            </section>
-          ))}
-        </main>
-      </div>
-
-      <ContactFormSection />
+        <ContactFormSection />
+      </PageTransition>
     </>
   );
 }

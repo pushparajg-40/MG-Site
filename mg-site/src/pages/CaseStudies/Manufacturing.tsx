@@ -4,6 +4,7 @@ import Challenge from "../../components/casestudies/Challenge";
 import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
 import SolutionList from "../../components/casestudies/SolutionList";
+import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
   title: "Manufacturing",
@@ -72,14 +73,16 @@ const solutionListProps = {
 
 function Manufacturing() {
   return (
-    <div className="dark:bg-black">
-      <Header {...headerProps} />
-      <AtAGlance {...glanceProps} />
-      <Challenge {...challengeProps} />
-      <SolutionList {...solutionListProps} />
-      <OutcomesAndBenefits items={outcomes} />
-      <OtherCaseStudies />
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <Header {...headerProps} />
+        <AtAGlance {...glanceProps} />
+        <Challenge {...challengeProps} />
+        <SolutionList {...solutionListProps} />
+        <OutcomesAndBenefits items={outcomes} />
+        <OtherCaseStudies />
+      </div>
+    </PageTransition>
   );
 }
 

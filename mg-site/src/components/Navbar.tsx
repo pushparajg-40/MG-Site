@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-
-
-
-
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const industriesData = [
   {
@@ -101,8 +97,12 @@ const Navbar = () => {
   const [industriesHover, setIndustriesHover] = useState(false);
   // const [serviceHover, setServiceHover] = useState(false);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     updateThemeImages();
+    console.log(location.pathname)
+    if(location && location.pathname!="/industries")
     setIndustriesHover(false);
     // setServiceHover(false);
   }, [location, darkMode]);
@@ -135,6 +135,10 @@ const Navbar = () => {
 
   useEffect(() => {
     updateThemeImages();
+    console.log("Inside navbar use Effect ", { darkMode });
+    if (localStorage.getItem("theme") == "dark") {
+      setDarkMode(true);
+    }
   });
 
   const toggleMobileDropdown = (key: string) => {
@@ -148,7 +152,8 @@ const Navbar = () => {
     >
       <div
         className="flex items-center space-x-2 cursor-pointer"
-        onClick={() => (window.location.href = "/")}
+        onClick={() => navigate("/")}
+        // onMouseEnter={()=>{navigate("/")}}
       >
         <img
           src="/assets/updated/MgLogo.svg"
@@ -161,12 +166,20 @@ const Navbar = () => {
         <NavLink
           to="/aboutUs"
           className="dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
+          onMouseEnter={() => {
+            navigate("/aboutUs");
+          }}
         >
           About Us
         </NavLink>
 
         <div className="group relative">
-          <button className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition">
+          <button
+            className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
+            onMouseEnter={() => {
+              navigate("/services");
+            }}
+          >
             <NavLink to={"/services"}> Services</NavLink>
             <ChevronDown size={16} />
           </button>
@@ -212,7 +225,12 @@ const Navbar = () => {
         </div>
 
         <div className="group relative">
-          <button className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition">
+          <button
+            className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
+            onMouseEnter={() => {
+              navigate("/products");
+            }}
+          >
             <NavLink to={"/products"}> Products </NavLink>
             <ChevronDown size={16} />
           </button>
@@ -221,7 +239,7 @@ const Navbar = () => {
               ["CustomerDLens.AI", "/customerDlens"],
               ["MATHOPS", "/mathops"],
               ["OpsBeat", "/opsbeat"],
-              ["OptiSaaSAI", "/optiSaas"],
+              // ["OptiSaaSAI", "/optiSaas"],
               ["SmartSustain.AI", "/smartSustain"],
             ].map(([label, link]) => (
               <NavLink
@@ -242,7 +260,10 @@ const Navbar = () => {
         >
           <button
             className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
-            onMouseEnter={() => setIndustriesHover(true)}
+            onMouseEnter={() => {
+              navigate("/industries");
+              setIndustriesHover(true);
+            }}
             onMouseLeave={() => setIndustriesHover(false)}
           >
             <NavLink to={"/industries"}> Industries</NavLink>
@@ -298,6 +319,7 @@ const Navbar = () => {
         <NavLink
           to="contactUs"
           className="dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
+           onMouseEnter={() => {navigate("/contactUs")}}
         >
           Contact Us
         </NavLink>

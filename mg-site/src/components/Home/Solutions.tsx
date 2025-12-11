@@ -28,11 +28,11 @@ const cards: SolutionsCard[] = [
     id: "CustomerDlens",
     productName: "CustomerDlens",
   },
-  {
-    pageLink: "optiSaas",
-    id: "SaaSBeamAI",
-    productName: "OptiSaas.AI",
-  },
+  // {
+  //   pageLink: "optiSaas",
+  //   id: "SaaSBeamAI",
+  //   productName: "OptiSaas.AI",
+  // },
   {
     pageLink: "customerDlens",
     id: "Patient360",

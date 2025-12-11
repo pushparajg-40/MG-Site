@@ -5,6 +5,7 @@ import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
 import TechUsed from "../../components/casestudies/TechUsed";
 import SolutionList from "../../components/casestudies/SolutionList";
+import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
   title: "Healthcare",
@@ -81,15 +82,17 @@ const solutionListProps = {
 
 function HealthCare() {
   return (
-    <div className="dark:bg-black">
-      <Header {...headerProps} />
-      <AtAGlance {...glanceProps} />
-      <Challenge {...challengeProps} />
-      <SolutionList {...solutionListProps} />
-      <TechUsed items={technologies} />
-      <OutcomesAndBenefits items={outcomes} />
-      <OtherCaseStudies />
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <Header {...headerProps} />
+        <AtAGlance {...glanceProps} />
+        <Challenge {...challengeProps} />
+        <SolutionList {...solutionListProps} />
+        <TechUsed items={technologies} />
+        <OutcomesAndBenefits items={outcomes} />
+        <OtherCaseStudies />
+      </div>
+    </PageTransition>
   );
 }
 

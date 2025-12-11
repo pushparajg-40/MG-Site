@@ -1,4 +1,5 @@
 import ContactFormSection from "../components/ContactForm";
+import PageTransition from "../components/PageTransition";
 
 interface CookieSection {
   id: string;
@@ -159,53 +160,54 @@ function CookiesPolicy() {
           margin-top: 0 !important;
         }
       `}</style>
+      <PageTransition>
+        {/* HERO SECTION */}
+        <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-white text-3xl md:text-6xl font-semibold uppercase">
+              COOKIES POLICY
+            </p>
+          </div>
+        </section>
 
-      {/* HERO SECTION */}
-      <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-white text-3xl md:text-6xl font-semibold uppercase">
-            COOKIES POLICY
-          </p>
-        </div>
-      </section>
+        {/* CONTENT SECTION */}
+        <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* SIDEBAR */}
+          <aside className="md:col-span-1 border-r border-gray-200 pr-4">
+            <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
+              Cookies Policy
+            </h1>
 
-      {/* CONTENT SECTION */}
-      <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* SIDEBAR */}
-        <aside className="md:col-span-1 border-r border-gray-200 pr-4">
-          <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">
-            Cookies Policy
-          </h1>
+            <nav className="space-y-3 px-1">
+              {cookiePolicySections.map((sec) => (
+                <button
+                  key={sec.id}
+                  onClick={() => scrollToSection(sec.id)}
+                  className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
+                >
+                  {sec.title}
+                </button>
+              ))}
+            </nav>
+          </aside>
 
-          <nav className="space-y-3 px-1">
+          {/* MAIN CONTENT */}
+          <main className="md:col-span-2 space-y-10">
             {cookiePolicySections.map((sec) => (
-              <button
-                key={sec.id}
-                onClick={() => scrollToSection(sec.id)}
-                className="block text-left w-full text-[#055CC0] dark:text-white font-semibold hover:opacity-70"
-              >
-                {sec.title}
-              </button>
+              <section id={sec.id} key={sec.id}>
+                <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
+                  {sec.title}
+                </h1>
+                <p className="text-[#667085] dark:text-white leading-[30px] whitespace-pre-line">
+                  {sec.content}
+                </p>
+              </section>
             ))}
-          </nav>
-        </aside>
+          </main>
+        </div>
 
-        {/* MAIN CONTENT */}
-        <main className="md:col-span-2 space-y-10">
-          {cookiePolicySections.map((sec) => (
-            <section id={sec.id} key={sec.id}>
-              <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-4 uppercase">
-                {sec.title}
-              </h1>
-              <p className="text-[#667085] dark:text-white leading-[30px] whitespace-pre-line">
-                {sec.content}
-              </p>
-            </section>
-          ))}
-        </main>
-      </div>
-
-      <ContactFormSection />
+        <ContactFormSection />
+      </PageTransition>
     </>
   );
 }

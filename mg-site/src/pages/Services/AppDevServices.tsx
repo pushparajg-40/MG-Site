@@ -1,4 +1,5 @@
 import ChildHeroBanner from "../../components/ChildsHeroBanner";
+import PageTransition from "../../components/PageTransition";
 import ServiceSection from "../../components/ServiceSection";
 import WhyChooseUsCard from "../../components/WhyChooseUsCard";
 
@@ -99,6 +100,7 @@ const whyChooseUsCards = [
 
 function AppDevServices() {
   return (
+        <PageTransition>
     <div className="overflow-x-hidden dark:bg-black transition-all duration-500 ease-in">
       <ChildHeroBanner
         title="Application & Development"
@@ -152,7 +154,7 @@ function AppDevServices() {
           <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:-mt-20 z-10 md:hidden">
             <div className="max-w-sm lg:max-w-md overflow-hidden bg-white px-[20px] mt-[10px]">
               <img
-                src="/assets/capabilityAPIService.png"
+                src="/assets/capabilityAPIServiceUpdated.png"
                 alt="AI Hand"
                 className="md:w-full md:h-auto object-cover aspect-square"
               />
@@ -185,7 +187,7 @@ function AppDevServices() {
             <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:-mt-20 z-10 hidden md:flex">
               <div className="max-w-sm lg:max-w-md overflow-hidden bg-white">
                 <img
-                  src="/assets/capabilityAPIService.png"
+                  src="/assets/capabilityAPIServiceUpdated.png"
                   alt="AI Hand"
                   className="md:w-full md:h-auto object-cover"
                 />
@@ -236,6 +238,8 @@ function AppDevServices() {
         <div className="border-t mt-12 mb-6 max-w-7xl mx-auto"></div>
       </section>
     </div>
+        </PageTransition>
+
   );
 }
 

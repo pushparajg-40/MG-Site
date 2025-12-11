@@ -5,6 +5,7 @@ import TechnologiesUsed from "../../components/casestudies/TechnologyUsed";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
 import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import Header from "../../components/casestudies/Header";
+import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
   title: "BFSI (Banking & Financial Services)",
@@ -82,14 +83,16 @@ const outcomes = [
 
 export default function BankingServices() {
   return (
-    <div className="dark:bg-black">
-      <Header {...headerProps} />
-      <AtAGlance {...glanceProps} />
-      <Challenge {...challengeProps} />
-      <Solution items={items} desc="" />
-      <TechnologiesUsed />
-      <OutcomesAndBenefits items={outcomes} />
-      <OtherCaseStudies />
-    </div>
+    <PageTransition>
+      <div className="dark:bg-black">
+        <Header {...headerProps} />
+        <AtAGlance {...glanceProps} />
+        <Challenge {...challengeProps} />
+        <Solution items={items} desc="" />
+        <TechnologiesUsed />
+        <OutcomesAndBenefits items={outcomes} />
+        <OtherCaseStudies />
+      </div>
+    </PageTransition>
   );
 }
