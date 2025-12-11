@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 interface ServiceItem {
   text: string;
 }
@@ -23,9 +26,40 @@ export default function ServiceSection({
   buttonLink = "#",
   bgColor = "bg-white dark:bg-black",
 }: ServiceSectionProps) {
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  // const textVariants = {
+  //   hidden: { opacity: 0, y: 30 },
+  //   show: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.7, ease: easeOut },
+  //   },
+  // };
+
+  // const listItemVariants: Variants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   show: (custom: number) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.6, ease: easeOut, delay: custom },
+  //   }),
+  // };
+
+  const navigate = useNavigate();
+
   return (
-    <section
-      className={`py-16 px-4 md:pl-20 ${bgColor} transition-all duration-500 ease-in`}
+    <motion.section
+      className={`py-16 px-4 md:pl-20 ${bgColor}`}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
     >
       <div className="mb-10 text-left">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#687DA9] dark:text-white mb-2">
@@ -88,22 +122,25 @@ export default function ServiceSection({
             </ul>
 
             <div className="flex md:block justify-center">
-              <a href={buttonLink}>
-                <button className="font-semibold py-2 px-6 rounded-full flex items-center mt-5 bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] hover:from-[#787878] hover:to-[#0653A7] text-white dark:from-white dark:to-white dark:hover:from-gray-200 dark:hover:to-gray-400 dark:text-black">
-                  {buttonText}
-                  <img
-                    src="assets/getInArrow.svg"
-                    className="pl-2 theme-image"
-                    data-light="assets/getInArrow.svg"
-                    data-dark="assets/updated/crossArrow.svg"
-                    alt=""
-                  />
-                </button>
-              </a>
+              <button
+                onClick={() => {
+                  navigate(buttonLink);
+                }}
+                className="font-semibold py-2 px-6 rounded-full flex items-center mt-5 bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] hover:from-[#787878] hover:to-[#0653A7] text-white dark:from-white dark:to-white dark:hover:from-gray-200 dark:hover:to-gray-400 dark:text-black"
+              >
+                {buttonText}
+                <img
+                  src="assets/getInArrow.svg"
+                  className="pl-2 theme-image"
+                  data-light="assets/getInArrow.svg"
+                  data-dark="assets/updated/crossArrow.svg"
+                  alt=""
+                />
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

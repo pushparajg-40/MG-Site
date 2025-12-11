@@ -126,7 +126,7 @@ export default function OtherCaseStudies() {
             ref={sliderRef}
             className="flex overflow-x-hidden snap-x md:ml-[20px] lg:ml-[100px] py-[60px] px-[20px] md:px-0"
           >
-            {CASE_STUDIES.map((study, idx) => (
+            {CASE_STUDIES.map((study) => (
               <div
                 key={study.id}
                 className="group snap-center flex-shrink-0 w-full md:w-[300px] lg:w-[404.93px] h-[250px] md:h-[343.1px] relative mx-2 p-4 md:p-0 border border-[#BFBFBF] border-opacity-100 dark:border-white dark:border-opacity-40 rounded-2xl transform transition-all duration-700 ease-out"

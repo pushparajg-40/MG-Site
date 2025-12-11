@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface SolutionsCard {
@@ -45,6 +45,44 @@ const cards: SolutionsCard[] = [
   },
 ];
 
+const items = [
+  {
+    selector: "#MathOps",
+    image: "/assets/mathOps.png",
+    text: "MathOps is a next-gen analytics and monitoring platform built to optimize IT.",
+  },
+  {
+    selector: "#SmartSustain",
+    image: "/assets/prd-smartSustain.png",
+    text: "Simplify and scale ESG reporting. SmartSustain.AI enables accurate tracking of carbon emissions, water usage, governance, and social impact.",
+  },
+  {
+    selector: "#OpsBeat",
+    image: "/assets/opsBeatprd.png",
+    text: "Revolutionize your IT operations with smart automation, real-time visibility, and seamless integrations.",
+  },
+  {
+    selector: "#CustomerDlens",
+    image: "/assets/customerDlens.png",
+    text: "AI-powered customer data fabric for 360° operational insights.",
+  },
+  {
+    selector: "#SaaSBeamAI",
+    image: "/assets/optiSaas.png",
+    text: "Enterprise SaaS and Cloud Management Platform.",
+  },
+  {
+    selector: "#Patient360",
+    image: "/assets/prd-patient.png",
+    text: "AI-powered patient data fabric for 360° operational insights.",
+  },
+  {
+    selector: "#ResponsibleAI",
+    image: "/assets/prd-patient.png",
+    text: "Responsible AI fabric for 360° operational insights.",
+  },
+];
+
 function Solutions() {
   useEffect(() => {
     // ---- SCROLL ANIMATION OBSERVER ----
@@ -78,44 +116,6 @@ function Solutions() {
 
     if (!solutionImage || !solutionText) return;
 
-    const items = [
-      {
-        selector: "#MathOps",
-        image: "/assets/mathOps.png",
-        text: "MathOps is a next-gen analytics and monitoring platform built to optimize IT.",
-      },
-      {
-        selector: "#SmartSustain",
-        image: "/assets/prd-smartSustain.png",
-        text: "Simplify and scale ESG reporting. SmartSustain.AI enables accurate tracking of carbon emissions, water usage, governance, and social impact.",
-      },
-      {
-        selector: "#OpsBeat",
-        image: "/assets/opsBeatprd.png",
-        text: "Revolutionize your IT operations with smart automation, real-time visibility, and seamless integrations.",
-      },
-      {
-        selector: "#CustomerDlens",
-        image: "/assets/customerDlens.png",
-        text: "AI-powered customer data fabric for 360° operational insights.",
-      },
-      {
-        selector: "#SaaSBeamAI",
-        image: "/assets/optiSaas.png",
-        text: "Enterprise SaaS and Cloud Management Platform.",
-      },
-      {
-        selector: "#Patient360",
-        image: "/assets/prd-patient.png",
-        text: "AI-powered patient data fabric for 360° operational insights.",
-      },
-      {
-        selector: "#ResponsibleAI",
-        image: "/assets/prd-patient.png",
-        text: "Responsible AI fabric for 360° operational insights.",
-      },
-    ];
-
     const defaultImage = "/assets/mathOps.png";
     const defaultText =
       "MathOps is a next-gen analytics and monitoring platform built to optimize IT.";
@@ -148,7 +148,6 @@ function Solutions() {
     // Cleanup
     return () => {
       animatedElements.forEach((el) => observer1.unobserve(el));
-
       listeners.forEach(({ element, enter, leave }) => {
         element.removeEventListener("mouseenter", enter);
         element.removeEventListener("mouseleave", leave);
@@ -178,7 +177,7 @@ function Solutions() {
           </div>
 
           <h1
-            className="text-4xl text-[#055CC0] mb-4 leading-tight  md:px-0 font-extrabold text-radiant opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            className="text-4xl text-[#055CC0] mb-4 leading-tight  md:px-0 font-extrabold text-gradient opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="300"
           >
             AI Frameworks That Power Transformation

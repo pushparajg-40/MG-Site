@@ -3,7 +3,6 @@ import AtAGlance from "../../components/casestudies/AtGlance";
 import Challenge from "../../components/casestudies/Challenge";
 import OtherCaseStudies from "../../components/casestudies/OtherCaseStudies";
 import OutcomesAndBenefits from "../../components/casestudies/OutcomesAndBenefits";
-import TechUsed from "../../components/casestudies/TechUsed";
 import SolutionList from "../../components/casestudies/SolutionList";
 
 const headerProps = {

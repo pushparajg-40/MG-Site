@@ -46,9 +46,9 @@ export default function ContactForm() {
     setIsLoading(true);
 
     try {
-      emailjs.init("Cr4AdzrgWBrjzXPjH");
+      emailjs.init("YNl6-hgl7eAO4_9f4");
 
-      await emailjs.send("service_kvvw26k", "template_vtyyphm", {
+      await emailjs.send("service_hy9quj8", "template_t68k20j", {
         from_name: formData.name,
         reply_to: formData.email,
         from_email: formData.email,

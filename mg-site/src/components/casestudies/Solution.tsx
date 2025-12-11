@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronUp } from "lucide-react";
 
 export default function Solution({
   items,

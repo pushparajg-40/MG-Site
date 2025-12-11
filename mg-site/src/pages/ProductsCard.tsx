@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Capability {
   text: string;
 }
@@ -24,7 +26,7 @@ export default function ProductCard({
   imagePosition = "left",
 }: ProductCardProps) {
   const isImageLeft = imagePosition === "left";
-
+  const navigate = useNavigate();
   return (
     <section
       className={`${bgColor} py-20 overflow-x-hidden transition-all duration-500 ease-in`}
@@ -80,18 +82,21 @@ export default function ProductCard({
           </ul>
 
           <div className="flex md:block justify-center">
-            <a href={buttonLink}>
-              <button className="font-semibold py-2 px-6 rounded-full flex items-center mt-5 bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] hover:from-[#787878] hover:to-[#0653A7] text-white dark:from-white dark:to-white dark:hover:from-gray-200 dark:hover:to-gray-400 dark:text-black">
-                Read More
-                <img
-                  src="assets/getInArrow.svg"
-                  className="pl-2 theme-image"
-                  data-light="assets/getInArrow.svg"
-                  data-dark="assets/updated/crossArrow.svg"
-                  alt=""
-                />
-              </button>
-            </a>
+            <button
+              onClick={() => {
+                navigate(buttonLink);
+              }}
+              className="font-semibold py-2 px-6 rounded-full flex items-center mt-5 bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] hover:from-[#787878] hover:to-[#0653A7] text-white dark:from-white dark:to-white dark:hover:from-gray-200 dark:hover:to-gray-400 dark:text-black"
+            >
+              Read More
+              <img
+                src="assets/getInArrow.svg"
+                className="pl-2 theme-image"
+                data-light="assets/getInArrow.svg"
+                data-dark="assets/updated/crossArrow.svg"
+                alt=""
+              />
+            </button>
           </div>
         </div>
 

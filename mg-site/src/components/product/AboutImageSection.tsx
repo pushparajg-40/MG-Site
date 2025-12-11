@@ -3,7 +3,6 @@ import type { AboutProps } from "./AboutSection";
 function AboutImageSection({
   title,
   subtitle,
-  desc,
   childs,
   image,
 }: AboutProps) {

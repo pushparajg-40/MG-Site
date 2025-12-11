@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { easeOut, motion } from "framer-motion";
 
 interface ServiceCard {
   id: number;
@@ -61,81 +61,74 @@ const services: ServiceCard[] = [
 ];
 
 export function ServicesSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20, rotate: -5 },
+    show: {
+      opacity: 1,
+      y: 0,
+      rotate: 0,
+      transition: { duration: 0.7, ease: easeOut },
+    },
+  };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove(
-              "opacity-0",
-              "translate-y-10",
-              "rotate-[-5deg]"
-            );
-            entry.target.classList.add(
-              "opacity-100",
-              "translate-y-0",
-              "rotate-0"
-            );
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const headings = containerRef.current.querySelectorAll("[data-delay]");
-    const cards = containerRef.current.querySelectorAll(".service-card");
-
-    headings.forEach((el) => observer.observe(el));
-    cards.forEach((el) => observer.observe(el));
-
-    return () => {
-      headings.forEach((el) => observer.unobserve(el));
-      cards.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  const headingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } },
+  };
 
   return (
     <section className="bg-[#000000]">
-      <div
-        className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16"
-        ref={containerRef}
-      >
+      <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16">
         {/* Heading */}
-        <div className="flex flex-col justify-center mb-12 mt-8">
-          <div
-            className="flex gap-2 items-center opacity-0 translate-y-10 transition-all duration-700 ease-out"
-            data-delay="100"
+        <motion.div
+          className="flex flex-col justify-center mb-12 mt-8"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
+          <motion.div
+            className="flex gap-2 items-center mb-4"
+            variants={headingVariants}
           >
             <h2 className="text-[#828282] text-3xl md:text-2xl mb-2">
               Services
             </h2>
             <img src="/assets/updated/line.svg" alt="line" />
-          </div>
+          </motion.div>
 
-          <h1
-            className="text-4xl md:text-4xl font-extrabold text-white opacity-0 translate-y-10 transition-all duration-700 ease-out"
-            data-delay="200"
+          <motion.h1
+            className="text-4xl text-radiant md:text-4xl font-extrabold text-white"
+            variants={headingVariants}
           >
             Transforming Ideas into Intelligent Realities
-          </h1>
-        </div>
+          </motion.h1>
+        </motion.div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {services.map((service) => (
             <Link
               key={service.id}
               to={service.link}
               className="h-full block group"
             >
-              <div
-                className="service-card flex flex-col items-start p-2 gap-0 md:gap-8 
-              h-full opacity-0 translate-y-10 transition-all duration-700 hover:scale-105 
-              hover:shadow-lg  p-6"
+              <motion.div
+                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:scale-105 hover:shadow-lg"
+                variants={cardVariants}
               >
                 <img
                   src={service.image}
@@ -150,25 +143,11 @@ export function ServicesSection() {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
-
-      <style>{`
-        .opacity-100 {
-          opacity: 1;
-        }
-
-        .translate-y-0 {
-          transform: translateY(0);
-        }
-
-        .rotate-0 {
-          transform: rotate(0deg);
-        }
-      `}</style>
     </section>
   );
 }

@@ -8,7 +8,7 @@ const servicesData = [
       "Unlock the power of data and AI to automate decisions, predict outcomes, and drive business growth. We handle everything from strategy and pipelines to real-time analytics and model deployment.",
     image: "assets/aiService.png",
     bgColor: "bg-white dark:bg-black",
-    buttonLink: "AI_DI_Services.html",
+    buttonLink: "/AI&DI_Services",
     whatWeOffer: [
       { text: "AI strategy development and roadmap planning" },
       { text: "Data engineering and pipeline automation" },
@@ -32,7 +32,7 @@ const servicesData = [
       "Design, build, and support powerful business applications with a focus on performance, scalability, and user experience. From custom development to lifecycle management, we ensure your apps evolve with your business.",
     image: "assets/appService.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
-    buttonLink: "Application&DevelopementServices.html",
+    buttonLink: "/AppDevServices",
     whatWeOffer: [
       { text: "Custom application development (web, mobile, enterprise)" },
       { text: "Application modernization and migration" },
@@ -54,7 +54,7 @@ const servicesData = [
       "Keep your SAP systems running smoothly with expert support across application performance, cloud hosting, upgrades, and business continuity planning.",
     image: "assets/sapService.png",
     bgColor: "bg-white dark:bg-[#000000]",
-    buttonLink: "SapEnterpriseServices.html",
+    buttonLink: "/SapEnterpriseServices",
     whatWeOffer: [
       { text: "SAP BASIS and application management" },
       { text: "SAP on Cloud hosting and optimization" },
@@ -76,7 +76,7 @@ const servicesData = [
       "Connect customer engagement and business operations with smart, scalable CRM and ERP platforms tailored to your needs.",
     image: "assets/crmService.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
-    buttonLink: "CRM&ERP_Services.html",
+    buttonLink: "/CRM&ERPServices",
     whatWeOffer: [
       { text: "Salesforce, Zoho, and Microsoft Dynamics CRM implementation" },
       { text: "SAP, Oracle, and Microsoft Dynamics ERP support" },
@@ -98,7 +98,7 @@ const servicesData = [
       "Deploy, scale, and manage your cloud environment (AWS, Azure, GCP) with ease—ensuring performance, security, and cost-efficiency every step of the way.",
     image: "assets/cloudService.png",
     bgColor: "bg-white dark:bg-black",
-    buttonLink: "CloudInfrastructureServices.html",
+    buttonLink: "/CloudInfrastructureServices",
     whatWeOffer: [
       { text: "Cloud strategy and architecture design" },
       { text: "Cloud migration and modernization" },
@@ -120,7 +120,7 @@ const servicesData = [
       "Drive innovation and digital maturity with strategic guidance across business and technology domains—focused on sectors like energy, defence, BFSI, healthcare, and logistics.",
     image: "assets/consultingService.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
-    buttonLink: "Consulting&AdvisoryServices.html",
+    buttonLink: "/Consulting&AdvisoryServices",
     whatWeOffer: [
       { text: "Industry-specific digital transformation consulting" },
       { text: "AI and data strategy development" },

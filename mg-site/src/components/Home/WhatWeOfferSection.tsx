@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { easeOut, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 interface OfferCards {
@@ -16,71 +16,86 @@ interface whatWeOfferParams {
   cards: OfferCards[];
 }
 
-function WhatWeOfferSection({ title, subtitle, desc, cards }: whatWeOfferParams) {
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries, observerInstance) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const delay = Number(entry.target.getAttribute("data-delay")) || 0;
-
-            setTimeout(() => {
-              entry.target.classList.remove("opacity-0", "translate-y-10");
-              entry.target.classList.add("opacity-100", "translate-y-0");
-            }, delay);
-
-            observerInstance.unobserve(entry.target); 
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const animatedElements = document.querySelectorAll("#offer-section [data-delay]");
-    animatedElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect(); 
-  }, []);
+function WhatWeOfferSection({
+  title,
+  subtitle,
+  desc,
+  cards,
+}: whatWeOfferParams) {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: easeOut, delay: custom },
+    }),
+  };
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+  const headingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } },
+  };
 
   return (
     <>
-      <section id="offer-section" className="bg-[#000000] pt-[100px]">
-        <div className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6">
-          <div
-            data-delay="100"
-            className="flex gap-2 md:items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
-          >
-            <h2 className="text-4xl text-[#828282] mb-4 leading-tight">
+      <motion.section
+        className="bg-[#000000] pt-[100px]"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <motion.div
+          className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6"
+          variants={containerVariants}
+        >
+          <div className="flex gap-2 md:items-start  ">
+            <motion.h2
+              className="text-4xl text-[#828282] mb-4 leading-tight"
+              variants={headingVariants}
+            >
               {title}
-            </h2>
+            </motion.h2>
             <img src="/assets/updated/line.svg" className="pt-0 md:pt-3" />
           </div>
 
-          <h1
-            data-delay="200"
-            className="text-4xl text-[#055CC0] mb-4 leading-tight md:px-0 font-extrabold text-radiant opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          <motion.h1
+            className="text-4xl text-gradient mb-4 leading-tight md:px-0 font-extrabold"
+            variants={headingVariants}
           >
             {subtitle}
-          </h1>
+          </motion.h1>
 
-          <p
-            data-delay="300"
-            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px] opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          <motion.p
+            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px]  "
+            variants={headingVariants}
           >
             {desc}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[50px] lg:px-[130px] gap-6 mt-12">
           {cards.map((card, idx) => (
             <Link to={card.pageLink} key={idx}>
-              <div
-                data-delay={400 + idx * 150}   
-                className="text-white w-[264px] md:w-[300px] opacity-0 translate-y-10 transition-all duration-700 ease-out"
+              <motion.div
+                className="text-white w-[264px] md:w-[300px]"
+                variants={cardVariants}
+                custom={idx * 0.2}
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <div className="relative h-[300px] border p-6 overflow-hidden flex flex-col justify-between">
-                  <div className={`${idx==3?'right-[-32px] bottom-[-61px]':'right-[-17px] bottom-[-17px]'} absolute  h-full flex items-end justify-end pointer-events-none`}>
+                  <div
+                    className={`${
+                      idx == 3
+                        ? "right-[-32px] bottom-[-61px]"
+                        : "right-[-17px] bottom-[-17px]"
+                    } absolute  h-full flex items-end justify-end pointer-events-none`}
+                  >
                     <img
                       src={card.bgImage}
                       className="w-[180px] object-contain"
@@ -98,16 +113,13 @@ function WhatWeOfferSection({ title, subtitle, desc, cards }: whatWeOfferParams)
                 <p className="text-lg mt-6 leading-relaxed relative z-10 px-4">
                   {card.desc}
                 </p>
-              </div>
+              </motion.div>
             </Link>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <style>{`
-        .opacity-100 { opacity: 1; }
-        .translate-y-0 { transform: translateY(0); }
-      `}</style>
+     
     </>
   );
 }

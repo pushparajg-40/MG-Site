@@ -9,6 +9,7 @@ import {
 } from "../../components/product/AboutSection";
 import { FeaturesSection } from "../../components/product/FeaturesSection";
 import AboutImageSection from "../../components/product/AboutImageSection";
+import { Helmet } from "react-helmet";
 
 const aboutSectionData: AboutProps = {
   title: "What is Mathops?",
@@ -21,7 +22,7 @@ const aboutImageData: AboutProps = {
   title: "Who Uses Mathops?",
   subtitle: "A Tool Built for Every Role in the IT Chain",
   desc: "",
-  image:"assets/mathops/mathops-image.png",
+  image: "assets/mathops/mathops-image.png",
   childs: [
     {
       title: "IT Managers",
@@ -98,7 +99,7 @@ const whyChooseData: AboutProps = {
   title: "Why Choose Mathops?",
   subtitle: "Smarter Operations. Stronger Systems.",
   desc: "",
-  image:"assets/mathops/mathops-image-2.png",
+  image: "assets/mathops/mathops-image-2.png",
   childs: [
     {
       title: "IT Management",
@@ -136,6 +137,13 @@ const whyChooseData: AboutProps = {
 function Mathops() {
   return (
     <>
+      <Helmet>
+        <title>MathOps – AI-Powered AIOps Platform for IT Operations</title>
+        <meta
+          name="description"
+          content="MathOps is an AI-powered AIOps platform offering real-time monitoring, predictive analytics, and intelligent automation to reduce downtime and optimize IT operations"
+        />
+      </Helmet>
       <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
         <HeroSection {...heroSectionProps} />
         <AboutSection {...aboutSectionData} />

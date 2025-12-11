@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function IndustrySection({
   title,
@@ -11,7 +11,7 @@ export default function IndustrySection({
   caseStudyImage,
   bgColor,
 }: any) {
-  const [animatedElements, setAnimatedElements] = useState({});
+  // const [animatedElements, setAnimatedElements] = useState({});
   const sectionRef = useRef<any | null>(null);
 
   useEffect(() => {

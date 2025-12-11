@@ -10,7 +10,7 @@ const productsData = [
     image: "assets/customerDlenAI.png",
     bgColor: "bg-white dark:bg-black",
     imagePosition: "left" as const,
-    buttonLink: "customerDlens.html",
+    buttonLink: "/customerDlens",
     capabilities: [
       {
         text: "No-code data ingestion from diverse sources (APIs, Databricks, files, etc.)",
@@ -32,7 +32,7 @@ const productsData = [
     image: "assets/optiSaas.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
     imagePosition: "right" as const,
-    buttonLink: "optiSaas.html",
+    buttonLink: "/optiSaas",
     capabilities: [
       { text: "Unified dashboard for SaaS and cloud spend visibility" },
       { text: "AI-driven SaaS Advisor for usage optimization" },
@@ -50,7 +50,7 @@ const productsData = [
     image: "assets/smartsustainImage.png",
     bgColor: "bg-white dark:bg-black",
     imagePosition: "left" as const,
-    buttonLink: "smartSustain.html",
+    buttonLink: "/smartSustain",
     capabilities: [
       {
         text: "ESG modules: Environmental, Social, Governance, and Compliance",
@@ -72,7 +72,7 @@ const productsData = [
     image: "assets/patient360Image.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
     imagePosition: "right" as const,
-    buttonLink: "patient360.html",
+    buttonLink: "/customerDlens",
     capabilities: [
       { text: "Appointment scheduling with automated SMS/Email reminders" },
       {
@@ -94,7 +94,7 @@ const productsData = [
     image: "assets/opsBeatImage.png",
     bgColor: "bg-white dark:bg-black",
     imagePosition: "left" as const,
-    buttonLink: "opsbeat.html",
+    buttonLink: "/opsbeat",
     capabilities: [
       { text: "Low-code/no-code workflow builder" },
       { text: "Centralized dashboard for IT service insights" },
@@ -112,7 +112,7 @@ const productsData = [
     image: "assets/mathopsImage.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
     imagePosition: "right" as const,
-    buttonLink: "mathops.html",
+    buttonLink: "/mathops",
     capabilities: [
       { text: "Real-time infrastructure and app performance monitoring" },
       { text: "Predictive analytics for anomaly detection and root cause" },

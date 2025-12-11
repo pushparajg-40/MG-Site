@@ -1,7 +1,6 @@
 import { useState } from "react";
 import HeroBanner from "../components/HeroBanner";
 import LocationsMap from "../components/contact/LocationsMap";
-import ContactForm from "../components/contact/ContactForm";
 import LocationsList from "../components/contact/LocationList";
 import ContactFormSection from "../components/ContactForm";
 
