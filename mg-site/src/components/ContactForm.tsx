@@ -5,7 +5,7 @@ function ContactFormSection() {
     <>
       {" "}
       <div
-        className="min-h-screen flex items-center justify-center
+        className=" flex items-center justify-center
         bg-[linear-gradient(135deg,rgba(232,245,255,1)_0%,rgba(251,255,250,1)_30%,rgba(232,241,239,1)_55%,rgba(211,236,255,1)_100%)]
         dark:bg-none dark:bg-[#181818]
         py-16"
@@ -30,7 +30,7 @@ function ContactFormSection() {
               </a>
             </p>
 
-            <div className="flex flex-col md:flex-row gap-6 mt-[60px] hidden md:flex">
+            <div className=" flex-col md:flex-row gap-6 mt-[60px] hidden md:flex">
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-[#687DA9] dark:text-white mb-2">
                   Contact Support

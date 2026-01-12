@@ -85,7 +85,7 @@ export function ServicesSection() {
 
   return (
     <section className="bg-[#000000]">
-      <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16">
+      <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         {/* Heading */}
         <motion.div
           className="flex flex-col justify-center mb-12 mt-8"
@@ -124,7 +124,7 @@ export function ServicesSection() {
             <Link
               key={service.id}
               to={service.link}
-              className="h-full block group"
+              className="h-full block group hover:scale-105 transition-all duration-300 ease-out  "
             >
               <motion.div
                 className="service-card flex flex-col items-start gap-8 p-6 h-full hover:scale-105 hover:shadow-lg"

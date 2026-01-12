@@ -119,8 +119,8 @@ function Terms() {
         </section>
 
         {/* <!-- heading--> */}
-        <section className="pt-[20px] md:pt-[50px] px-4 md:px-[60px]">
-          <h1 className="uppercase text-[#055CC0] dark:text-white text-2xl font-bold">
+        <section className="pt-[20px] md:pt-[50px] px-4 md:px-[60px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+          <h1 className="uppercase text-[#055CC0] dark:text-white text-2xl font-bold ">
             {termsData.pageTitle}
           </h1>
           <p className="text-[#667085] dark:text-white text-[16px] leading-[32px] mt-[20px]  pr-0 md:pr-[50px]">
@@ -129,7 +129,7 @@ function Terms() {
         </section>
 
         {/* <!-- Content Section--> */}
-        <div className="max-w-7xl ms-[20px] md:mx-[60px]  py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-7xl ms-[20px] md:mx-[60px]  py-12 grid grid-cols-1 md:grid-cols-3 gap-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {/* <!-- Sidebar --> */}
           <aside
             id="sidebar"

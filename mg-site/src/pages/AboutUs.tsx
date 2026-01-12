@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import Blogs from "../components/Home/Blogs";
+// import Blogs from "../components/Home/Blogs";
 import { Helmet } from "react-helmet";
 import PageTransition from "../components/PageTransition";
 
@@ -37,7 +37,7 @@ const solutionItemsData: SolutionItem[] = [
     selector: "#CustomerDlens",
     title: "CustomerDlens",
     href: "customerDlens.html",
-    image: "assets/customerDlens.png",
+    image: "/assets/customerDlensDashboardPageImage.png",
     text: "AI-powered customer data fabric for 360° operational insights.",
   },
   {
@@ -203,9 +203,9 @@ const AboutUs: React.FC = () => {
             content="Learn about Mind-Graph, a top AI solution company driving innovation with AI, machine learning, and data intelligence to empower smarter business decisions."
           />
         </Helmet>
-        <div className="dark:bg-black">
+        <div className="dark:bg-black ">
           {/* 1. Hero Banner */}
-          <div className="w-full">
+          <div className="w-full ">
             <div className="relative h-[180px] lg:h-[280px] w-full">
               <img
                 src="assets/aboutUsBanner.png"
@@ -222,7 +222,7 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* 2. Overview, Vision, Mission Section */}
-          <div className="flex flex-col lg:flex-row pt-[20px] lg:pt-[90px] lg:px-[180px] dark:pb-[30px] dark:bg-black transition-all duration-500 ease-in">
+          <div className="2xl-plus:max-w-8xl 2xl-plus:mx-auto  flex flex-col  lg:flex-row pt-[20px] lg:pt-[90px] lg:px-[180px] dark:pb-[30px] dark:bg-black transition-all duration-500 ease-in">
             <div className="order-2 lg:order-1 md:pl-[200px] lg:pl-0">
               <img
                 src="assets/updated/aboutBannerUpdated.png"
@@ -427,7 +427,7 @@ const AboutUs: React.FC = () => {
                   className="w-[40px] h-[40px]"
                 />
                 <span className="text-lg text-[#7E7E7E] dark:text-white text-center pt-1">
-                  AI & Data Intelligence Services
+                  AI & Data Intelligence<br></br> Services
                 </span>
               </div>
 
@@ -498,7 +498,7 @@ const AboutUs: React.FC = () => {
                   className="w-[40px] h-[40px]"
                 />
                 <span className="text-lg text-[#7E7E7E] dark:text-white pt-1 text-center pl-[60px] md:pl-0 pr-[50px] md:pr-0">
-                  Consulting & Advisory Services
+                  Consulting & Advisory<br></br> Services
                 </span>
               </div>
             </div>
@@ -507,7 +507,7 @@ const AboutUs: React.FC = () => {
           {/* 4. Solutions section (Products) */}
           <section
             id="solutions-section"
-            className="bg-white dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
+            className="bg-white dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in 2xl-plus:max-w-8xl 2xl-plus:mx-auto hidden"
           >
             <div
               ref={setRef}
@@ -616,7 +616,7 @@ const AboutUs: React.FC = () => {
 
           {/* 5. Why Choose Us section */}
           <section
-            className="dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
+            className="dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in 2xl-plus:max-w-8xl 2xl-plus:mx-auto"
             id="choose-us-section"
           >
             <div className="px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
@@ -768,7 +768,7 @@ const AboutUs: React.FC = () => {
           </section>
 
           {/* Offerings Section */}
-          <Blogs></Blogs>
+          {/* <Blogs></Blogs> */}
         </div>
       </PageTransition>
     </>

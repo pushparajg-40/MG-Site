@@ -8,7 +8,7 @@ const productsData = [
     subtitle: "Transforming Data into Decisions",
     description:
       "Unlock a 360° customer view with our AI-powered data platform. From ingestion to advanced analytics, CustomerDLens.ai turns complex data into business intelligence.",
-    image: "assets/customerDlenAI.png",
+    image: "assets/customerDlensDashboardPageImage.png",
     bgColor: "bg-white dark:bg-black",
     imagePosition: "left" as const,
     buttonLink: "/customerDlens",

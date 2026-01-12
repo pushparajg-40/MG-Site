@@ -42,12 +42,12 @@ const Layout = () => {
   }, [darkMode]);
 
   return (
-    <div className="bg-white dark:bg-[#191919] min-h-screen transition-colors duration-500 flex flex-col">
+    <div className="bg-white dark:bg-[#191919] min-h-screen transition-colors duration-500 flex flex-col ">
       {/* Navbar */}
       <Navbar />
 
       {/* Main Content */}
-      <main className="flex-1 pt-[90px]">
+      <main className="pt-[95px]">
         <Outlet></Outlet>
       </main>
 

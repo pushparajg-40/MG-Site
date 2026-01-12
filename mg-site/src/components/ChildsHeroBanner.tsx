@@ -13,7 +13,7 @@ export default function ChildHeroBanner({
 
   return (
     <div className="w-full">
-      <div className={`relative  w-full ${h}`}>
+      <div className={`relative  w-full 2xl-plus:h-[25vh] ${h} `}>
         <img
           src={image}
           alt="Hero Background"
@@ -23,7 +23,7 @@ export default function ChildHeroBanner({
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
         <div className="relative z-10 flex   items-end h-full px-4 pb-[20px] md:px-[80px]">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl 2xl-plus:text-7xl font-bold leading-tight">
             {title}
             {type === "service" && (
               <>

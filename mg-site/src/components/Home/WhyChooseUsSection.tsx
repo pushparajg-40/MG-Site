@@ -49,11 +49,11 @@ function WhyChooseUsSection() {
         className="bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true}}
         variants={wrapperVariants}
       >
         <motion.div
-          className="px-10 lg:px-20 py-8 sm:py-12 lg:py-16"
+          className="px-10 lg:px-20 py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={wrapperVariants}
         >
           {/* Heading */}
@@ -92,7 +92,7 @@ function WhyChooseUsSection() {
         {/* Content Grid */}
         <motion.div
           variants={wrapperVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 flex flex-wrap justify-start mt-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 flex flex-wrap justify-start mt-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         >
           {/* Box 1 
           bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 

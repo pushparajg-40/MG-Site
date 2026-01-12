@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CASE_STUDIES = [
   {
@@ -6,27 +7,32 @@ const CASE_STUDIES = [
     title: "Health Care",
     description:
       "AI-Driven ESG Platform for Sustainable Infrastructure Projects",
+    link: "/Healthcare",
   },
   {
     id: 2,
     title: "Airports",
     description: "End-to-End Airport Data Platform & AI Forecasting Engine",
+    link: "/airports",
   },
   {
     id: 3,
     title: "BFSI (Banking & Financial Services)",
     description: "AI-Driven Loan Origination & Collection Optimization",
+    link: "/BFSI",
   },
   {
     id: 4,
     title: "Telecom",
     description: "Enhance telecom networks with smart monitoring & automation.",
+    link: "/telecom",
   },
   {
     id: 5,
     title: "Manufacturing",
     description:
       "AI-Driven Jewelry Design Innovation – GenAI DesignSmith Platform",
+    link: "/Manufacturing",
   },
 ];
 
@@ -88,9 +94,7 @@ export default function OtherCaseStudies() {
               onClick={handlePrev}
               disabled={!canGoPrev}
               className={`rounded-full w-8 h-8 flex items-center justify-center transition-all ${
-                !canGoPrev
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-gray-100"
+                !canGoPrev ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
               <img
@@ -105,9 +109,7 @@ export default function OtherCaseStudies() {
               onClick={handleNext}
               disabled={!canGoNext}
               className={`rounded-full w-8 h-8 flex items-center justify-center transition-all ${
-                !canGoNext
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-gray-100"
+                !canGoNext ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
               <img
@@ -127,21 +129,27 @@ export default function OtherCaseStudies() {
             className="flex overflow-x-hidden snap-x md:ml-[20px] lg:ml-[100px] py-[60px] px-[20px] md:px-0"
           >
             {CASE_STUDIES.map((study) => (
-              <div
-                key={study.id}
-                className="group snap-center flex-shrink-0 w-full md:w-[300px] lg:w-[404.93px] h-[250px] md:h-[343.1px] relative mx-2 p-4 md:p-0 border border-[#BFBFBF] border-opacity-100 dark:border-white dark:border-opacity-40 rounded-2xl transform transition-all duration-700 ease-out"
-              >
-                <div className="h-full w-full relative rounded-2xl overflow-hidden ">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-12 text-white z-10">
-                    <h2 className="text-xl md:text-2xl font-bold mb-2 text-[#687DA9] dark:text-white">
-                      {study.title}
-                    </h2>
-                    <p className="text-sm md:text-lg font-normal leading-snug text-[#667085] dark:text-white">
-                      {study.description}
-                    </p>
+              <Link to={study.link}>
+                <div
+                  key={study.id}
+                  className="group snap-center flex-shrink-0 w-full 
+                  md:w-[300px] lg:w-[404.93px] h-[250px] md:h-[343.1px] 
+                  relative mx-2 p-4 md:p-0 border border-[#BFBFBF] 
+                  border-opacity-100 dark:border-white dark:border-opacity-40 
+                  rounded-2xl hover:scale-105  transform transition-all duration-700 ease-out"
+                >
+                  <div className="h-full w-full relative rounded-2xl overflow-hidden ">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-12 text-white z-10">
+                      <h2 className="text-xl md:text-2xl font-bold mb-2 text-[#687DA9] dark:text-white">
+                        {study.title}
+                      </h2>
+                      <p className="text-sm md:text-lg font-normal leading-snug text-[#667085] dark:text-white">
+                        {study.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

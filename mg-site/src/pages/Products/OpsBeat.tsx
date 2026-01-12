@@ -101,8 +101,8 @@ export default function OpsBeat() {
           />
         </Helmet>
         <div className="dark:bg-black">
-          <section className="overflow-section dark:bg-black transition-all duration-500 ease-in flex flex-col lg:flex-row justify-between items-center px-6 lg:pl-20 py-10 lg:py-0 lg:h-screen lg:pb-[110px]">
-            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <section className="overflow-section dark:bg-black transition-all duration-500 ease-in flex flex-col lg:flex-row justify-between items-center px-6 lg:pl-20 py-10 lg:py-0 lg:h-screen lg:pb-[110px] 2xl-plus:h-[50vh] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center ">
               <div className="mb-8 ">
                 <p
                   className="
@@ -159,36 +159,38 @@ export default function OpsBeat() {
             </div>
           </section>
 
-          <section className="section-between lg:flex flex-row dark:bg-[#181818] transition-all duration-500 ease-in px-6 lg:px-20 py-16 lg:py-20">
-            <div className="mb-10 lg:mb-0 lg:w-1/2">
-              <p className="font-semibold text-2xl lg:text-[32px] pb-8 text-[#1783F7] dark:text-white">
-                What is OpsBeat?
-              </p>
-              <p className="font-bold text-3xl lg:text-[43px] pb-5 text-[#687DA9] dark:text-white leading-tight">
-                Designed for Responsible Growth
-              </p>
-              <p className="text-base lg:text-[16px] text-[#666666] dark:text-white leading-[150%]">
-                OpsBeat is more than an ITSM tool—it's a powerful platform built
-                to streamline IT workflows, drive operational efficiency, and
-                provide deep insight into service performance. With low-code
-                customization, robust automation, and built-in AI, OpsBeat
-                transforms how your teams manage IT services.
-              </p>
-            </div>
+          <div className="dark:bg-[#181818]">
+            <section className="section-between lg:flex flex-row  transition-all duration-500 ease-in px-6 lg:px-20 py-16 lg:py-20 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+              <div className="mb-10 lg:mb-0 lg:w-1/2 ">
+                <p className="font-semibold text-2xl lg:text-[32px] pb-8 text-[#1783F7] dark:text-white">
+                  What is OpsBeat?
+                </p>
+                <p className="font-bold text-3xl lg:text-[43px] pb-5 text-[#687DA9] dark:text-white leading-tight">
+                  Designed for Responsible Growth
+                </p>
+                <p className="text-base lg:text-[16px] text-[#666666] dark:text-white leading-[150%]">
+                  OpsBeat is more than an ITSM tool—it's a powerful platform
+                  built to streamline IT workflows, drive operational
+                  efficiency, and provide deep insight into service performance.
+                  With low-code customization, robust automation, and built-in
+                  AI, OpsBeat transforms how your teams manage IT services.
+                </p>
+              </div>
 
-            <div className="lg:w-1/2 lg:pl-10">
-              <p className="font-bold text-3xl lg:text-[43px] pb-5 text-[#687DA9] dark:text-white leading-tight">
-                Why Choose OpsBeat?
-              </p>
-              <ul className="text-base text-[#666666] dark:text-white space-y-3 list-disc list-inside">
-                {WHY_CHOOSE.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </section>
+              <div className="lg:w-1/2 lg:pl-10">
+                <p className="font-bold text-3xl lg:text-[43px] pb-5 text-[#687DA9] dark:text-white leading-tight">
+                  Why Choose OpsBeat?
+                </p>
+                <ul className="text-base text-[#666666] dark:text-white space-y-3 list-disc list-inside">
+                  {WHY_CHOOSE.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          </div>
 
-          <section className="section-2 bg-[#F6FAFF] dark:bg-[#000000] transition-all duration-500 ease-in py-20">
+          <section className="section-2 bg-[#F6FAFF] dark:bg-[#000000] transition-all duration-500 ease-in py-20 ">
             <p className="font-semibold text-xl lg:text-[26px] pb-8 text-[#1783F7] dark:text-white text-center px-6">
               Key Features
             </p>
@@ -197,7 +199,7 @@ export default function OpsBeat() {
             </p>
           </section>
 
-          <section className="section-3 bg-[#F6FAFF] dark:bg-[#000000] transition-all duration-500 ease-in grid grid-cols-1 md:grid-cols-4 gap-10 px-6 lg:px-16 py-16">
+          <section className="section-3 bg-[#F6FAFF] dark:bg-[#000000] transition-all duration-500 ease-in grid grid-cols-1 md:grid-cols-4 gap-10 px-6 lg:px-16 py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
             {FEATURES.map((feature, idx) => (
               <div key={idx} className="flex flex-col justify-start">
                 <p className="font-semibold text-2xl lg:text-[32px] pb-5 text-[#687DA9] dark:text-white xl:pr-[30px]">
@@ -216,18 +218,20 @@ export default function OpsBeat() {
             </p>
           </section>
 
-          <section className="section-3 dark:bg-[#181818] transition-all duration-500 ease-in grid grid-cols-1 md:grid-cols-3 gap-10 px-6 lg:px-16 py-16">
-            {CAPABILITIES.map((capability, idx) => (
-              <div key={idx} className="flex flex-col justify-start">
-                <p className="font-semibold text-2xl lg:text-[32px] pb-5 text-[#687DA9] dark:text-white">
-                  {capability.title}
-                </p>
-                <p className="text-base text-[#667085] dark:text-white leading-[25.89px]">
-                  {capability.description}
-                </p>
-              </div>
-            ))}
-          </section>
+          <div className="dark:bg-[#181818]">
+            <section className="section-3  transition-all duration-500 ease-in grid grid-cols-1 md:grid-cols-3 gap-10 px-6 lg:px-16 py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+              {CAPABILITIES.map((capability, idx) => (
+                <div key={idx} className="flex flex-col  justify-start ">
+                  <p className="font-semibold text-2xl lg:text-[32px] pb-5 text-[#687DA9] dark:text-white">
+                    {capability.title}
+                  </p>
+                  <p className="text-base text-[#667085] dark:text-white leading-[25.89px]">
+                    {capability.description}
+                  </p>
+                </div>
+              ))}
+            </section>
+          </div>
         </div>
       </PageTransition>
     </>

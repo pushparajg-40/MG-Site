@@ -104,9 +104,9 @@ export function SmartSustain() {
             content="SmartSustain.AI is an AI-powered ESG management platform that tracks emissions, benchmarks performance, and aligns reporting with GRI and ISSB standards in real time."
           />
         </Helmet>
-        <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
+        <div className="bg-white dark:bg-black transition-all duration-500 ease-in ">
           {/* Hero Section */}
-          <div className="flex flex-col md:flex-row transition-all duration-500 ease-in">
+          <div className="flex flex-col md:flex-row transition-all duration-500 ease-in 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
             <div className="flex flex-col justify-center pl-[20px] md:pl-[50px] pr-[3px] md:pr-[180px] md:w-[50%] mt-[70px] md:mt-0">
               <div>
                 <img
@@ -120,7 +120,7 @@ export function SmartSustain() {
                 />
               </div>
 
-              <div>
+              <div >
                 <p className="text-[#1783F7] dark:text-white text-[35px] md:text-5xl mt-4 font-semibold">
                   AI-Powered ESG Platform for a Greener Tomorrow
                 </p>
@@ -163,14 +163,14 @@ export function SmartSustain() {
           </div>
 
           {/* What is SmartSustain Section */}
-          <div className="pt-[100px] md:px-[40px] flex flex-col justify-center items-center xl:px-[370px] lg:px-[150px] px-[20px] dark:bg-[#181818] md:pb-[50px] transition-all duration-500 ease-in">
-            <h2 className="text-[#1783F7] dark:text-white font-bold text-2xl">
+          <div className="pt-[100px] md:px-[40px] flex flex-col justify-center items-center xl:px-[370px] lg:px-[150px] px-[20px] dark:bg-[#181818] md:pb-[50px] transition-all duration-500 ease-in ">
+            <h2 className="text-[#1783F7] dark:text-white font-bold text-2xl 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               What is SmartSustain.AI?
             </h2>
-            <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4">
+            <p className="text-[#687DA9] dark:text-white text-center text-5xl mt-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               Designed for Responsible Growth
             </p>
-            <p className="text-[#667085] dark:text-white text-center mt-4">
+            <p className="text-[#667085] dark:text-white text-center mt-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               SmartSustain.AI is an advanced ESG management platform designed to
               help organizations measure, report, and improve their
               environmental and social impact. With category-specific dashboards
@@ -180,8 +180,8 @@ export function SmartSustain() {
           </div>
 
           {/* Why Choose & Ideal For Section */}
-          <div className="grid md:grid-cols-2 px-[20px] md:px-[40px] pt-[80px]">
-            <div className="lg:pr-[80px]">
+          <div className="grid md:grid-cols-2 px-[20px] md:px-[40px] pt-[80px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+            <div className="lg:pr-[80px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               <h2 className="text-[#687DA9] dark:text-white text-3xl font-bold">
                 Why Choose SmartSustain.AI?
               </h2>
@@ -224,7 +224,7 @@ export function SmartSustain() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 px-[20px] md:px-[50px] mt-[80px] gap-y-[40px]">
+            <div className="grid md:grid-cols-3 px-[20px] md:px-[50px] mt-[80px] gap-y-[40px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               {keyFeaturesData.map((feature, idx) => (
                 <div
                   key={idx}

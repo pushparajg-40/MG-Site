@@ -101,18 +101,20 @@ export default function Telecom() {
   return (
     <PageTransition>
       <div className="dark:bg-black">
-        <Header {...headerProps} />
-        <AtAGlance {...glanceProps} />
-        <Challenge {...challengeProps} />
-        <Solution
-          items={items}
-          desc={
-            "Mindgraph implemented a comprehensive data modernization program focused on engineering excellence and enterprise-scale analytics enablement:"
-          }
-        />
-        <TechnologiesUsed />
-        <OutcomesAndBenefits items={outcomes} />
-        <OtherCaseStudies />
+        <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+          <Header {...headerProps} />
+          <AtAGlance {...glanceProps} />
+          <Challenge {...challengeProps} />
+          <Solution
+            items={items}
+            desc={
+              "Mindgraph implemented a comprehensive data modernization program focused on engineering excellence and enterprise-scale analytics enablement:"
+            }
+          />
+          <TechnologiesUsed />
+          <OutcomesAndBenefits items={outcomes} />
+          <OtherCaseStudies />
+        </div>
       </div>
     </PageTransition>
   );

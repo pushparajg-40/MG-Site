@@ -1,10 +1,10 @@
 function Blogs() {
   return (
     <>
-      <section id="Blogs" className="bg-[#000000] pb-[100px]">
-        <div className="px-10 md:p-4 lg:px-20 pt-8 sm:pt-12 lg:pt-16">
+      <section id="Blogs" className="bg-[#000000] pb-[100px]   ">
+        <div className="px-10 md:p-4 lg:px-20 pt-8 sm:pt-12 lg:pt-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {/* <!-- Heading --> */}
-          <div className="flex gap-2 items-start">
+          <div className="flex gap-2 items-start ">
             <h2 className="text-2xl md:text-4xl text-[#828282] mb-4 leading-tight">
               Blog &amp; News
             </h2>
@@ -20,7 +20,7 @@ function Blogs() {
         </div>
 
         {/* <!-- Content Grid --> */}
-        <div className="grid grid-cols-1  ">
+        <div className="grid grid-cols-1 2xl-plus:max-w-9xl 2xl-plus:mx-auto ">
           <div className="flex flex-col gap-4 px-10 px-[30px] lg:px-[80px] lg:pr-[120px]">
             <div
               id="blog-container"
@@ -93,7 +93,7 @@ function Blogs() {
 
           {/* <!-- View All Button --> */}
           <div className="flex justify-center mt-6">
-            <a href="Blogs.html">
+            <a >
               <button className="px-4 py-2  text-black bg-white border flex items-center gap-2  transition">
                 View All
                 <img

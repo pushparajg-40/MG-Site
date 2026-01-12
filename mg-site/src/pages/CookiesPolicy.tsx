@@ -162,8 +162,8 @@ function CookiesPolicy() {
       `}</style>
       <PageTransition>
         {/* HERO SECTION */}
-        <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in">
-          <div className="absolute inset-0 flex items-center justify-center">
+        <section className="relative h-[300px] bg-cover bg-center bg-[#204596] dark:bg-black transition-all duration-500 ease-in ">
+          <div className="absolute inset-0 flex items-center justify-center 2xl-plus:max-w-9xl 2xl-plus:mx-auto" >
             <p className="text-white text-3xl md:text-6xl font-semibold uppercase">
               COOKIES POLICY
             </p>
@@ -171,7 +171,7 @@ function CookiesPolicy() {
         </section>
 
         {/* CONTENT SECTION */}
-        <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-7xl ms-[20px] md:mx-[60px] py-12 grid grid-cols-1 md:grid-cols-3 gap-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {/* SIDEBAR */}
           <aside className="md:col-span-1 border-r border-gray-200 pr-4">
             <h1 className="text-xl font-bold text-[#055CC0] dark:text-white mb-6 uppercase">

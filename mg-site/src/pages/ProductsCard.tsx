@@ -33,13 +33,22 @@ export default function ProductCard({
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-start gap-16">
         {isImageLeft && (
-          <div className="w-full lg:w-1/2 flex justify-center relative hidden lg:block">
+          <div className="w-full lg:w-1/2  justify-center relative hidden lg:flex">
             <div className="absolute w-full max-w-[600px] h-[400px] bg-[#f3f7ff] dark:bg-[#3F3F3F] rounded-lg z-0 top-[30px] hidden md:block"></div>
-            <img
-              src={image}
-              alt={title}
-              className="w-full max-w-[600px] relative z-10 top-[-20px]"
-            />
+
+            {title == "CustomerDLens.ai" ? (
+              <img
+                src={image}
+                alt={title}
+                className="w-full max-w-[500px] relative z-10 top-[-20px]"
+              />
+            ) : (
+              <img
+                src={image}
+                alt={title}
+                className="w-full max-w-[600px] relative z-10 top-[-20px]"
+              />
+            )}
           </div>
         )}
 
@@ -54,7 +63,7 @@ export default function ProductCard({
             {description}
           </p>
 
-          <div className="w-full lg:w-1/2 flex justify-center relative block lg:hidden">
+          <div className="w-full lg:w-1/2  justify-center relative flex lg:hidden">
             <div className="absolute w-full max-w-[600px] h-[400px] bg-[#f3f7ff] rounded-lg z-0 top-[30px] hidden lg:block"></div>
             <img
               src={image}
@@ -73,7 +82,7 @@ export default function ProductCard({
                   src="assets/arrow.svg"
                   data-light="assets/arrow.svg"
                   data-dark="assets/updated/crossArrowWhite.svg"
-                  className="theme-image flex-shrink-0 mt-0.5"
+                  className="theme-image flex-shrink-0 mt-2 w-2.5 "
                   alt=""
                 />
                 <span>{cap.text}</span>
@@ -101,7 +110,7 @@ export default function ProductCard({
         </div>
 
         {!isImageLeft && (
-          <div className="w-full lg:w-1/2 flex justify-center relative hidden lg:block">
+          <div className="w-full lg:w-1/2  justify-center relative hidden lg:flex">
             <div className="absolute w-full max-w-[600px] h-[400px] bg-white dark:bg-[#3F3F3F] rounded-lg z-0 top-[40px] hidden md:block"></div>
             <img
               src={image}

@@ -114,6 +114,7 @@ function CloudInfrastructureServices() {
           image="/assets/cloudBanner.jpg"
           type="service"
         />
+        <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto">
 
         <section className="relative bg-white dark:bg-black pb-12 px-4 sm:px-8 lg:px-16 transition-all duration-500 ease-in">
           <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
@@ -174,7 +175,7 @@ function CloudInfrastructureServices() {
                   <div key={idx} className="flex items-start">
                     <img
                       src="assets/arrow.svg"
-                      className="mt-1 theme-image"
+                      className="mt-2 w-3 theme-image"
                       data-light="assets/arrow.svg"
                       data-dark="assets/updated/crossArrowWhite.svg"
                       alt=""
@@ -191,7 +192,7 @@ function CloudInfrastructureServices() {
                 ))}
               </div>
 
-              <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:-mt-20 z-10 hidden md:flex">
+              <div className="w-full lg:w-1/3  justify-center lg:justify-end lg:-mt-20 z-10 hidden md:flex">
                 <div className="max-w-sm lg:max-w-md overflow-hidden bg-white">
                   <img
                     src="/assets/capabilitiesCloud.png"
@@ -244,6 +245,7 @@ function CloudInfrastructureServices() {
           </div>
           <div className="border-t mt-12 mb-6 max-w-7xl mx-auto"></div>
         </section>
+      </div>
       </div>
     </PageTransition>
   );

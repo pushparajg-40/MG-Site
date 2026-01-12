@@ -59,13 +59,13 @@ const Footer: React.FC = () => {
     <footer
       id="footer-section"
       ref={footerRef}
-      className="dark:bg-black bg-white md:px-[120px] pt-[80px] md:px-[60px] sm:px-6 transition-all duration-500 ease-in"
+      className="dark:bg-black bg-white md:px-[120px] pt-[80px]  sm:px-6 transition-all duration-500 ease-in "
     >
       {/* GRID */}
       <div
         className="
         grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
-        gap-12 sm:gap-10 px-[20px]
+        gap-12 sm:gap-10 px-[20px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto
       "
       >
         {/* Column 1 */}
@@ -180,14 +180,14 @@ const Footer: React.FC = () => {
                 CustomerDlens
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
                 to="/optiSaas"
               >
                 OptiSaaS
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -199,15 +199,15 @@ const Footer: React.FC = () => {
           <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
             Resources
           </h6>
-          <ul className="space-y-3 sm:space-y-2">
-            <li>
+           <ul className="space-y-3 sm:space-y-2">
+            {/* <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
                 to="/"
               >
                 Documentation
               </Link>
-            </li>
+            </li>  */}
             <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
@@ -238,7 +238,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Section */}
       <div
-        className="mt-12 mx-10 md:mx-0 pt-8 pb-4 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+        className="mt-12 mx-10 md:mx-0 pt-8 pb-4 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         data-delay="500"
       >
         <div className="flex flex-col md:flex-row justify-between items-center px-[30px] sm:gap-5 sm:text-center">

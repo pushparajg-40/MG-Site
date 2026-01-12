@@ -121,7 +121,8 @@ function CustomerDlens() {
           />
         </Helmet>
 
-        <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
+        <div className="bg-white dark:bg-black transition-all duration-500 ease-in ">
+          
           <HeroSection {...heroSectionProps} />
           <AboutSection
             title={aboutSectionData.title}

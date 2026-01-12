@@ -14,9 +14,9 @@ export interface AboutProps {
 
 export function AboutSection({ title, subtitle, desc, childs }: AboutProps) {
   return (
-    <div className="pt-[100px] dark:bg-[#181818] transition-all duration-500 ease-in">
+    <div className="pt-[100px] dark:bg-[#181818] transition-all duration-500 ease-in ">
       {/* Top Section */}
-      <div className="flex flex-col justify-center items-center xl:px-[400px] px-[30px] md:px-[40px] pb-[40px] dark:bg-[#181818] transition-all duration-500">
+      <div className="flex flex-col justify-center items-center xl:px-[400px] px-[30px] md:px-[40px] pb-[40px] dark:bg-[#181818] transition-all duration-500 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         <h2 className="text-[#1783F7] dark:text-white font-bold text-4xl">
           {title}
         </h2>
@@ -32,9 +32,10 @@ export function AboutSection({ title, subtitle, desc, childs }: AboutProps) {
 
       {/* Child Sections */}
       {childs && childs.length > 0 && (
-        <div className="grid md:grid-cols-2 px-[60px] pt-[80px] dark:bg-black transition-all duration-500 ease-in gap-8">
+        <div className="dark:bg-black">
+        <div className="grid md:grid-cols-2 px-[60px] pt-[80px]  transition-all duration-500 ease-in gap-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {childs.map((child, index) => (
-            <div key={index} className="lg:pr-[80px]">
+            <div key={index} className="lg:pr-[80px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
               <h2
                 className={`text-[#687DA9] dark:text-white text-3xl font-bold ${
                   index === 1 ? "mt-[50px] md:mt-0" : ""
@@ -50,6 +51,7 @@ export function AboutSection({ title, subtitle, desc, childs }: AboutProps) {
               </ul>
             </div>
           ))}
+        </div>
         </div>
       )}
     </div>

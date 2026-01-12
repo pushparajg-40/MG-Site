@@ -33,6 +33,7 @@ function WhatWeOfferSection({
   const containerVariants = {
     hidden: {},
     show: {
+      opacity: 1,
       transition: { staggerChildren: 0.2 },
     },
   };
@@ -44,14 +45,14 @@ function WhatWeOfferSection({
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[100px]"
+        className="bg-[#000000] pt-[100px] "
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true }}
         variants={containerVariants}
       >
         <motion.div
-          className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6"
+          className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={containerVariants}
         >
           <div className="flex gap-2 md:items-start  ">
@@ -79,16 +80,16 @@ function WhatWeOfferSection({
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[50px] lg:px-[130px] gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[50px] lg:px-[130px] gap-6 mt-12 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {cards.map((card, idx) => (
             <Link to={card.pageLink} key={idx}>
               <motion.div
-                className="text-white w-[264px] md:w-[300px]"
+                className="text-white w-[264px] md:w-[300px]  "
                 variants={cardVariants}
                 custom={idx * 0.2}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="relative h-[300px] border p-6 overflow-hidden flex flex-col justify-between">
+                <div className="relative h-[300px] border p-6 overflow-hidden flex flex-col justify-between hover:scale-105 transition-all duration-200 ease-out">
                   <div
                     className={`${
                       idx == 3

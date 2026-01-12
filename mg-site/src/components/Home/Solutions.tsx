@@ -63,7 +63,7 @@ const items = [
   },
   {
     selector: "#CustomerDlens",
-    image: "/assets/customerDlens.png",
+    image: "/assets/customerDlensDashboardPageImage.png",
     text: "AI-powered customer data fabric for 360° operational insights.",
   },
   {
@@ -85,7 +85,7 @@ const items = [
 
 function Solutions() {
   useEffect(() => {
-    // ---- SCROLL ANIMATION OBSERVER ----
+
     const observer1 = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -159,10 +159,10 @@ function Solutions() {
     <>
       <section
         id="solutions-section"
-        className="bg-[#000000] pt-[100px] pb-[100px]"
+        className="bg-[#000000] pt-[100px] pb-[100px] "
       >
         <div
-          className="px-10 md:px-[50px] lg:px-20 py-8 sm:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="2xl-plus:max-w-9xl 2xl-plus:mx-auto px-10 md:px-[50px] lg:px-20 py-8 sm:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="100"
         >
           {/* <!-- heading --> */}
@@ -184,8 +184,8 @@ function Solutions() {
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px]">
-          <div className="flex flex-col justify-start text-white space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+          <div className="flex flex-col justify-start text-white space-y-2 ">
             {cards &&
               cards.map((card) => {
                 return (

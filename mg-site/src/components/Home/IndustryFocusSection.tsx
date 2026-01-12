@@ -21,7 +21,7 @@ const industries: IndustrySlide[] = [
     name: "Telecom",
     title:
       "Enhance telecom networks with smart monitoring, automation, and secure communication.",
-    image: "/assets/updated/telecomIndustryUpdated.png",
+    image: "/assets/telecomUpdatedFinal.jpg",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const industries: IndustrySlide[] = [
     name: "HealthCare",
     title:
       "Elevate healthcare delivery through improved patient care, seamless workflows, and robust compliance.",
-    image: "/assets/updated/healthIndustry.png",
+    image: "/assets/healthCareUpdatedFinal.jpg",
     hiddenOnMobile: true,
   },
   {
@@ -190,7 +190,7 @@ export default function IndustryFocusSection() {
 
   return (
     <>
-      <section className="bg-[#191919] pt-12 pb-4">
+      <section className="bg-[#191919] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         <style>
           {`  .active-card {
       box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);

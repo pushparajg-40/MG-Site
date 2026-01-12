@@ -86,14 +86,12 @@ export default function IndustrySection({
             <ul className="space-y-2 text-[#666666] dark:text-white">
               {solutions.map((solution: any, idx: any) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span>
                     <img
                       src="assets/arrow.svg"
                       data-light="assets/arrow.svg"
                       data-dark="assets/updated/crossArrowWhite.svg"
-                      className="theme-image"
+                      className="theme-image w-2.5"
                     />
-                  </span>
                   <span>{solution}</span>
                 </li>
               ))}
@@ -111,14 +109,12 @@ export default function IndustrySection({
             <ul className="space-y-2 text-[#666666] dark:text-white">
               {impacts.map((impact: any, idx: any) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span>
                     <img
                       src="assets/arrow.svg"
                       data-light="assets/arrow.svg"
                       data-dark="assets/updated/crossArrowWhite.svg"
-                      className="theme-image"
+                      className="theme-image w-2.5"
                     />
-                  </span>
                   <span>{impact}</span>
                 </li>
               ))}

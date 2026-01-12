@@ -43,9 +43,9 @@ export function FeaturesSection({
   }, []);
 
   return (
-    <div className="mt-[50px] md:mt-[100px] 2xl:px-[100px] bg-[#F6FAFF] dark:bg-[#181818] pt-[20px]">
+    <div className="mt-[50px] md:mt-[100px] 2xl:px-[100px] bg-[#F6FAFF] dark:bg-[#181818] pt-[20px]  ">
       <div
-        className={`flex flex-col justify-center ${
+        className={`2xl-plus:max-w-9xl 2xl-plus:mx-auto flex flex-col justify-center ${
           type == "normal" ? "items-center" : "items-start"
         }`}
       >
@@ -66,12 +66,12 @@ export function FeaturesSection({
 
       <div
         ref={containerRef}
-        className="grid md:grid-cols-3 px-[20px] lg:px-[0px] mt-[80px]"
+        className="grid md:grid-cols-3 px-[20px] lg:px-[0px] mt-[80px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
       >
         {features.map((feature: any, index: any) => (
           <div
             key={index}
-            className="feature-card lg:pr-[80px] opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            className="feature-card lg:pr-[80px] opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
             style={{
               transitionDelay: `${index * 50}ms`,
             }}

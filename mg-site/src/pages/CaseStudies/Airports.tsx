@@ -84,13 +84,15 @@ export default function Airports() {
   return (
     <PageTransition>
       <div className="dark:bg-black">
-        <Header {...headerProps} />
-        <AtAGlance {...glanceProps} />
-        <Challenge {...challengeProps} />
-        <Solution items={items} desc="" />
-        <TechnologiesUsed />
-        <OutcomesAndBenefits items={outcomes} />
-        <OtherCaseStudies />
+        <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+          <Header {...headerProps} />
+          <AtAGlance {...glanceProps} />
+          <Challenge {...challengeProps} />
+          <Solution items={items} desc="" />
+          <TechnologiesUsed />
+          <OutcomesAndBenefits items={outcomes} />
+          <OtherCaseStudies />
+        </div>
       </div>
     </PageTransition>
   );

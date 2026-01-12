@@ -3,7 +3,7 @@ import { ServicesSection } from "../components/Home/ServiceSection";
 import IndustryFocusSection from "../components/Home/IndustryFocusSection";
 import WhatWeOfferSection from "../components/Home/WhatWeOfferSection";
 import Solutions from "../components/Home/Solutions";
-import Blogs from "../components/Home/Blogs";
+// import Blogs from "../components/Home/Blogs";
 import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import { Helmet } from "react-helmet";
@@ -101,6 +101,13 @@ const Home: React.FC = () => {
 
   return (
     <>
+    <style>
+      {
+        `.off-border{
+           
+        border:0.5px solid white; }`
+      }
+    </style>
       <PageTransition>
         <Helmet>
           <title>Mind Graph</title>
@@ -109,25 +116,25 @@ const Home: React.FC = () => {
             content="Empower your business with a top AI enterprises company. Mind Graph delivers cutting-edge IT solutions to accelerate your growth. Get started today!"
           />
         </Helmet>
-        <div className="overflow-x-hidden max-w-full">
+        <div className="overflow-x-hidden max-w-full ">
           {/* Hero Section */}
-          <section className="bg-[#191919] text-white overflow-hidden">
-            <div className="flex flex-col md:flex-row mx-0 md:mx-[50px] lg:mx-[120px] pt-[50px] pb-[100px] md:items-center">
+          <section className="bg-[#191919] text-white overflow-hidden 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
+            <div className="flex flex-col md:flex-col mx-0 md:mx-[50px] lg:mx-[120px] pt-[50px] pb-[100px] md:items-center">
               {/* Heading + Subtext */}
-              <div className="md:w-[50%] pl-4 md:pl-0 space-y-4 hero-text">
-                <h2 className="text-5xl md:text-5xl lg:text-6xl text-radiant font-bold text-gradient">
-                  AI-Powered. <br />
+              <div className=" pl-4 md:pl-0 space-y-4 hero-text">
+                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient text-center">
+                  AI-Powered. 
                   Cyber-Secure.
-                  <br /> Enterprise-Ready.
+                   Enterprise-Ready.
                 </h2>
-                <p className="text-4xl">
-                  Driving Intelligent Innovation <br />
+                <p className="text-4xl text-center">
+                  Driving Intelligent Innovation 
                   Across Critical Industries
                 </p>
               </div>
 
               {/* Form */}
-              <div className="md:w-[50%] mt-6 px-4 md:px-0 hidden">
+              {/* <div className="md:w-[50%] mt-6 px-4 md:px-0 hidden">
                 <form>
                   <div className="relative w-full">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -160,19 +167,19 @@ const Home: React.FC = () => {
                     </p>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </section>
 
           {/* Accordion Section */}
-          <section className="px-0 md:px-[40px] lg:px-[120px] z-10 bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000] hidden md:block">
-            <div className="w-full h-[500px] flex gap-0">
+          <section className="px-0 md:px-[40px] lg:px-[120px] z-10 bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000] hidden md:block ">
+            <div className="w-full h-[500px] flex gap-0 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
               {accordionItems.map((item, idx) => {
                 const isActive = idx === activeIndex;
                 return (
                   <div
                     key={item.id}
-                    className={`accordion-item relative transition-all duration-500 overflow-hidden group bg-[#000] ${
+                    className={`accordion-item relative transition-all duration-500 overflow-hidden off-border  group bg-[#000000] ${
                       isActive ? "flex-[2]" : "flex-1"
                     }`}
                     onMouseEnter={() => setActiveIndex(idx)}
@@ -194,7 +201,7 @@ const Home: React.FC = () => {
                           {item.title}
                         </h3>
                         <p
-                          className="text-white text-sm desc opacity-90 transition-all duration-500"
+                          className="text-white text-lg desc opacity-90 transition-all duration-500"
                           style={{ marginRight: isActive ? descMargin : "0px" }}
                         >
                           {item.desc}
@@ -279,7 +286,7 @@ const Home: React.FC = () => {
           {/* 5. Why Choose Us section */}
           <WhyChooseUsSection></WhyChooseUsSection>
 
-          <Blogs></Blogs>
+          {/* <Blogs></Blogs> */}
         </div>
       </PageTransition>
     </>
