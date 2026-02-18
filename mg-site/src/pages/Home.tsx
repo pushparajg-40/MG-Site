@@ -8,6 +8,7 @@ import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import { Helmet } from "react-helmet";
 import PageTransition from "../components/PageTransition";
+import SearchSection from "../components/chat-bot/SearchSection.tsx";
 
 interface AccordionItem {
   id: number;
@@ -118,21 +119,22 @@ const Home: React.FC = () => {
         </Helmet>
         <div className="overflow-x-hidden max-w-full ">
           {/* Hero Section */}
-          <section className="bg-[#191919] text-white overflow-hidden 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
-            <div className="flex flex-col md:flex-col mx-0 md:mx-[50px] lg:mx-[120px] pt-[50px] pb-[100px] md:items-center">
+          <section className="bg-[#191919] text-white overflow-hidden  md:px-[40px] lg:px-[120px] ">
+            <div className="flex flex-col md:flex-row mx-0 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto ">
               {/* Heading + Subtext */}
               <div className=" pl-4 md:pl-0 space-y-4 hero-text">
-                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient text-center">
-                  AI-Powered. 
-                  Cyber-Secure.
-                   Enterprise-Ready.
+                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient ">
+                  AI-Powered. <br/>
+                  Cyber-Secure. <br/>
+                  Enterprise-Ready.
                 </h2>
-                <p className="text-4xl text-center">
+                <p className="text-4xl ">
                   Driving Intelligent Innovation 
                   Across Critical Industries
                 </p>
               </div>
 
+              <SearchSection />
               {/* Form */}
               {/* <div className="md:w-[50%] mt-6 px-4 md:px-0 hidden">
                 <form>
