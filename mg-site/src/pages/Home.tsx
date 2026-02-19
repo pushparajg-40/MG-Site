@@ -110,13 +110,14 @@ const Home: React.FC = () => {
       }
     </style>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>Mind Graph</title>
           <meta
             name="description"
             content="Empower your business with a top AI enterprises company. Mind Graph delivers cutting-edge IT solutions to accelerate your growth. Get started today!"
           />
-        </Helmet>
+          <meta name="keywords" content="AI Enterprises company" />
+        </Helmet> */}
         <div className="overflow-x-hidden max-w-full ">
           {/* Hero Section */}
           <section className="bg-[#191919] text-white overflow-hidden  md:px-[40px] lg:px-[120px] ">
