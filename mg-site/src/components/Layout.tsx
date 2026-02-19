@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import SeoMeta from "./SeoMeta";
 
 const Layout = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -43,6 +44,8 @@ const Layout = () => {
 
   return (
     <div className="bg-white dark:bg-[#191919] min-h-screen transition-colors duration-500 flex flex-col ">
+      {/* SEO METADATA */}
+      <SeoMeta />
       {/* Navbar */}
       <Navbar />
 

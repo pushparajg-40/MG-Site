@@ -196,13 +196,13 @@ const AboutUs: React.FC = () => {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>Mind-Graph | Leading AI Solution Company</title>
           <meta
             name="description"
             content="Learn about Mind-Graph, a top AI solution company driving innovation with AI, machine learning, and data intelligence to empower smarter business decisions."
           />
-        </Helmet>
+        </Helmet> */}
         <div className="dark:bg-black ">
           {/* 1. Hero Banner */}
           <div className="w-full ">

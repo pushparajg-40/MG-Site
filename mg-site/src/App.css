@@ -131,3 +131,23 @@ body {
     object-fit: cover;
   }
 }
+
+
+.phone-input {
+  border: 1px solid #f7f8f9;
+  border-radius: 8px;          /* optional */
+  padding: 12px;               /* optional */
+}
+
+.phone-input .PhoneInputInput {
+  border: none;               /* avoid double border */
+  outline: none;
+}
+
+.phone-input:focus-within {
+  border-color: #f7f8f9;      /* keep same on focus */
+}
+
+.phone-input .PhoneInputCountryIcon {
+  margin: 0px 3px;
+}

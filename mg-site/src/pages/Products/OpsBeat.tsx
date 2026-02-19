@@ -91,7 +91,7 @@ export default function OpsBeat() {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>
             OpsBeat – AI-Powered IT Service Management (ITSM) Platform
           </title>
@@ -99,7 +99,7 @@ export default function OpsBeat() {
             name="description"
             content="OpsBeat is an AI-powered ITSM platform offering low-code workflows, smart automation, multichannel support, and real-time dashboards to streamline IT service operations."
           />
-        </Helmet>
+        </Helmet> */}
         <div className="dark:bg-black">
           <section className="overflow-section dark:bg-black transition-all duration-500 ease-in flex flex-col lg:flex-row justify-between items-center px-6 lg:pl-20 py-10 lg:py-0 lg:h-screen lg:pb-[110px] 2xl-plus:h-[50vh] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
             <div className="w-full lg:w-1/2 flex flex-col justify-center ">
