@@ -9,7 +9,6 @@ import {
 } from "../../components/product/AboutSection";
 import { FeaturesSection } from "../../components/product/FeaturesSection";
 import { DashboardSection } from "../../components/product/DashboardSection";
-import { Helmet } from "react-helmet";
 import PageTransition from "../../components/PageTransition";
 
 const aboutSectionData: AboutProps = {
@@ -113,13 +112,13 @@ function CustomerDlens() {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>CustomerDLens – AI Customer Data Platform (CDP)</title>
           <meta
             name="description"
             content="CustomerDLens is an AI-powered Customer Data Platform that unifies data and delivers real-time insights for segmentation, personalization, and customer growth."
           />
-        </Helmet>
+        </Helmet> */}
 
         <div className="bg-white dark:bg-black transition-all duration-500 ease-in ">
           

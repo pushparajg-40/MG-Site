@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { easeOut, motion } from "framer-motion";
 
 interface ServiceCard {
@@ -14,7 +13,7 @@ const services: ServiceCard[] = [
     id: 1,
     title: "AI & Data Intelligence Services",
     description:
-      "Unlock the power of data and AI to automate decisions, predict outcomes, and drive business growth. We handle everything from strategy and pipelines to real-time analytics and model deployment",
+      "Our AI & Data Intelligence Services are designed to help organizations unlock the true potential of their data.",
     image: "assets/updated/Ai&data.svg",
     link: "AI&DI_Services",
   },
@@ -22,7 +21,7 @@ const services: ServiceCard[] = [
     id: 2,
     title: "Application & Development Services",
     description:
-      "Design, build, and support powerful business applications with a focus on performance, scalability, and user experience. From custom development to lifecycle management, we ensure your apps evolve with your business",
+      "We specialize in building next-generation digital applications that fuel business transformation and customer engagement.",
     image: "assets/updated/Appl&dev.svg",
     link: "AppDevServices",
   },
@@ -30,7 +29,7 @@ const services: ServiceCard[] = [
     id: 3,
     title: "SAP Enterprise Services",
     description:
-      "Keep your SAP systems running smoothly with expert support across application performance, cloud hosting, upgrades, and business continuity planning.",
+      "We specialize in delivering robust SAP enterprise solutions that drive operational efficiency, business agility, and digital innovation.",
     image: "assets/updated/SAP-enterprise.svg",
     link: "SapEnterpriseServices",
   },
@@ -38,7 +37,7 @@ const services: ServiceCard[] = [
     id: 4,
     title: "CRM & ERP Solutions",
     description:
-      "Connect customer engagement and business operations with smart, scalable CRM and ERP platforms tailored to your needs.",
+      "We empower organizations to bridge the gap between customer experience and operational efficiency with seamlessly integrated CRM and ERP solutions.",
     image: "assets/updated/CRM.svg",
     link: "CRM&ERPServices",
   },
@@ -46,7 +45,7 @@ const services: ServiceCard[] = [
     id: 5,
     title: "Cloud Infrastructure Services",
     description:
-      "Deploy, scale, and manage your cloud environment (AWS, Azure, GCP) with ease—ensuring performance, security, and cost-efficiency every step of the way.",
+      "We help organizations build, scale, and secure cloud environments that drive agility, resilience, and cost efficiency.",
     image: "assets/updated/Cloud-infra.svg",
     link: "CloudInfrastructureServices",
   },
@@ -54,7 +53,7 @@ const services: ServiceCard[] = [
     id: 6,
     title: "Consulting & Advisory Services",
     description:
-      "Drive innovation and digital maturity with strategic guidance across business and technology domains—focused on sectors like energy, defence, BFSI, healthcare, and logistics.",
+      "We deliver high-impact Consulting & Advisory Services that bridge the gap between strategy and execution.",
     image: "assets/updated/Consulting.svg",
     link: "Consulting&AdvisoryServices",
   },
@@ -121,13 +120,12 @@ export function ServicesSection() {
           variants={containerVariants}
         >
           {services.map((service) => (
-            <Link
+            <div
               key={service.id}
-              to={service.link}
               className="h-full block group hover:scale-105 transition-all duration-300 ease-out  "
             >
               <motion.div
-                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:scale-105 hover:shadow-lg"
+                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:shadow-lg"
                 variants={cardVariants}
               >
                 <img
@@ -143,8 +141,17 @@ export function ServicesSection() {
                     {service.description}
                   </p>
                 </div>
+
+                <div>
+                  <a
+                    href={`/${service.link}`}
+                    className="dark:text-white font-semibold text-sm !text-decoration-underline text-gray-600 flex items-center gap-2"
+                  >
+                    Read More
+                  </a>
+                </div>
               </motion.div>
-            </Link>
+            </div>
           ))}
         </motion.div>
       </div>

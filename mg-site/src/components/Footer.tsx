@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const delay = parseInt(
-              entry.target.getAttribute("data-delay") || "0"
+              entry.target.getAttribute("data-delay") || "0",
             );
             setTimeout(() => {
               entry.target.classList.remove("opacity-0", "translate-y-10");
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     containers.forEach((el) => footerObserver.observe(el));
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         "scale-0",
         "transition-transform",
         "duration-700",
-        "ease-out"
+        "ease-out",
       );
     });
 
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     socialIcons.forEach((icon) => iconObserver.observe(icon));
@@ -64,8 +64,8 @@ const Footer: React.FC = () => {
       {/* GRID */}
       <div
         className="
-        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
-        gap-12 sm:gap-10 px-[20px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto
+        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 
+        gap-10 sm:gap-10 px-[10px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto
       "
       >
         {/* Column 1 */}
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
                 to="/services"
@@ -129,9 +129,17 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black transition"
-                to="/products"
+                to="/Enterprise_Solutions"
               >
-                Products
+                Enterprise Solutions
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                to="/industries"
+              >
+                Industries
               </Link>
             </li>
           </ul>
@@ -142,11 +150,77 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="300"
         >
-          <Link to={"/products"}>
-            <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
-              Products
-            </h6>
-          </Link>
+          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+            Services
+          </h6>
+          <ul className="space-y-3 sm:space-y-2">
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/AI&DI_Services"
+              >
+                AI & Data Intelligence
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/AppDevServices"
+              >
+                Application & Development
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/CloudInfrastructureServices"
+              >
+                Cloud Infrastructure
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/Consulting&AdvisoryServices"
+              >
+                Consulting & Advisory
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/CRM&ERPServices"
+              >
+                CRM & ERP
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/SapEnterpriseServices"
+              >
+                SAP Enterprise
+              </Link>
+            </li>
+            {/* <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/optiSaas"
+              >
+                OptiSaaS
+              </Link>
+            </li> */}
+          </ul>
+        </div>
+
+        {/* Column 4 */}
+        <div
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          data-delay="300"
+        >
+          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+            Enterprise Solutions
+          </h6>
           <ul className="space-y-3 sm:space-y-2">
             <li>
               <Link
@@ -180,6 +254,38 @@ const Footer: React.FC = () => {
                 CustomerDlens
               </Link>
             </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/autodocx"
+              >
+                AutoDocX.AI
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/patient360"
+              >
+                Patient360
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/salesforce"
+              >
+                Salesforce
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/regology"
+              >
+                Regology
+              </Link>
+            </li>
             {/* <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
@@ -191,7 +297,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Column 4 */}
+        {/* Column 5 */}
         <div
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="400"
@@ -199,7 +305,7 @@ const Footer: React.FC = () => {
           <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
             Resources
           </h6>
-           <ul className="space-y-3 sm:space-y-2">
+          <ul className="space-y-3 sm:space-y-2">
             {/* <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
@@ -241,9 +347,9 @@ const Footer: React.FC = () => {
         className="mt-12 mx-10 md:mx-0 pt-8 pb-4 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         data-delay="500"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center px-[30px] sm:gap-5 sm:text-center">
+        <div className="flex flex-col md:flex-row justify-between items-center px-[20px] sm:gap-5 sm:text-center">
           <h1 className="text-[#8A8A8F] text-xs md:text-sm order-2 md:order-1 mt-2">
-            © Copyright 2025,
+            © Copyright 2026,
             <span className="text-[#0C426E] dark:text-white font-semibold">
               {" "}
               MindGraph
@@ -252,12 +358,51 @@ const Footer: React.FC = () => {
           </h1>
 
           {/* Social Icons */}
-          <div className="flex justify-center gap-4 order-1 md:order-2">
-            <img src="/assets/fb.svg" alt="Facebook" className="w-8" />
-            <img src="/assets/x.svg" alt="Twitter" className="w-8" />
-            <img src="/assets/youtube.svg" alt="YouTube" className="w-8" />
-            <img src="/assets/insta.svg" alt="Instagram" className="w-8" />
-            <img src="/assets/lnkedin.svg" alt="LinkedIn" className="w-8" />
+          <div className="flex justify-center gap-5 order-1 md:order-2">
+            <Link
+              to="https://www.facebook.com/profile.php?id=61584063021872"
+              target="_blank"
+            >
+              <img
+                src="/assets/fb.svg"
+                alt="Facebook"
+                className="w-15 h-10 hover:scale-110 fill-blue-600"
+              />
+            </Link>
+            <Link to="https://x.com/MindGraph_01" target="_blank">
+              <img
+                src="/assets/x.svg"
+                alt="X"
+                className="w-15 h-10 hover:scale-110 fill-blue-600"
+              />
+            </Link>
+            <Link to="https://www.youtube.com/@mindgraph-h3u" target="_blank">
+              <img
+                src="/assets/youtube.svg"
+                alt="YouTube"
+                className="w-15 h-10 hover:scale-110 fill-blue-600"
+              />
+            </Link>
+            <Link
+              to="https://www.instagram.com/mindgraph_official"
+              target="_blank"
+            >
+              <img
+                src="/assets/insta.svg"
+                alt="Instagram"
+                className="w-15 h-10 hover:scale-110 fill-blue-600"
+              />
+            </Link>
+            <Link
+              to="https://in.linkedin.com/company/mindgraph"
+              target="_blank"
+            >
+              <img
+                src="/assets/lnkedin.svg"
+                alt="LinkedIn"
+                className="w-15 h-10 hover:scale-110 fill-blue-600"
+              />
+            </Link>
           </div>
         </div>
       </div>

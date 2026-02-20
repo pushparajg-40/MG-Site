@@ -29,12 +29,12 @@ function Offerings() {
           {/* Card 1 */}
           <div className="relative bg-white  transition-all duration-700 ease-in hover:scale-105 ">
             <div className="absolute inset-0 flex items-start justify-start">
-              <div className="text-black z-10 p-2 md:p-8 md:pr-[50px] md:pr-0">
-                <h2 className="text-2xl lg:text-3xl font-extrabold mb-2">
+              <div className="text-black z-10 p-2 md:p-4">
+                <h2 className="text-lg lg:text-xl font-bold mb-2">
                   Data
                   <br /> Innovation
                 </h2>
-                <p className="text-base lg:text-base font-normal md:pr-8">
+                <p className="text-xs lg:text-sm font-normal md:pr-8">
                   Unlock competitive advantage through advanced AI analytics and
                   data modeling.
                 </p>
@@ -51,11 +51,11 @@ function Offerings() {
           {/* Card 2 */}
           <div className="relative bg-white  transition-all duration-700 ease-in hover:scale-105 ">
             <div className="absolute inset-0 flex items-start justify-start">
-              <div className="text-black z-10 p-2 md:p-8 md:pr-[50px] md:pr-0">
-                <h2 className="text-2xl lg:text-3xl font-extrabold mb-2">
+              <div className="text-black z-10 p-2 md:p-4">
+                <h2 className="text-lg lg:text-xl font-bold mb-2">
                   AI & Cybersecurity <br></br>Products Gateway to APAC
                 </h2>
-                <p className="text-base lg:text-base font-normal md:pr-8">
+                <p className="text-xs lg:text-sm font-normal md:pr-8">
                   Localized AI products marketing, and regulatory support for
                   ASEAN expansion.
                 </p>
@@ -71,11 +71,11 @@ function Offerings() {
           {/* Card 3 */}
           <div className="relative bg-white  transition-all duration-700 ease-in hover:scale-105">
             <div className="absolute inset-0 flex items-start justify-start">
-              <div className="text-black z-10 p-2 md:p-8 md:pr-[50px] md:pr-0">
-                <h2 className="text-2xl lg:text-3xl font-extrabold mb-2">
+              <div className="text-black z-10 p-2 md:p-4">
+                <h2 className="text-lg lg:text-xl font-bold mb-2">
                   AI Global Capability<br></br> Centers (GCCs)
                 </h2>
-                <p className="text-base lg:text-base font-normal md:pr-8">
+                <p className="text-xs lg:text-sm font-normal md:pr-8">
                   Talent, governance, and operational AI for enterprise
                   scalability.
                 </p>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 
@@ -97,13 +96,13 @@ export function SmartSustain() {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>SmartSustain.AI – AI-Powered ESG Management Platform</title>
           <meta
             name="description"
             content="SmartSustain.AI is an AI-powered ESG management platform that tracks emissions, benchmarks performance, and aligns reporting with GRI and ISSB standards in real time."
           />
-        </Helmet>
+        </Helmet> */}
         <div className="bg-white dark:bg-black transition-all duration-500 ease-in ">
           {/* Hero Section */}
           <div className="flex flex-col md:flex-row transition-all duration-500 ease-in 2xl-plus:max-w-9xl 2xl-plus:mx-auto">

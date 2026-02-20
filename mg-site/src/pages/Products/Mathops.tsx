@@ -9,7 +9,6 @@ import {
 } from "../../components/product/AboutSection";
 import { FeaturesSection } from "../../components/product/FeaturesSection";
 import AboutImageSection from "../../components/product/AboutImageSection";
-import { Helmet } from "react-helmet";
 import PageTransition from "../../components/PageTransition";
 
 const aboutSectionData: AboutProps = {
@@ -139,13 +138,13 @@ function Mathops() {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>MathOps – AI-Powered AIOps Platform for IT Operations</title>
           <meta
             name="description"
             content="MathOps is an AI-powered AIOps platform offering real-time monitoring, predictive analytics, and intelligent automation to reduce downtime and optimize IT operations"
           />
-        </Helmet>
+        </Helmet> */}
         <div className="bg-white dark:bg-black transition-all duration-500 ease-in">
           <HeroSection {...heroSectionProps} />
           <AboutSection {...aboutSectionData} />

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 
@@ -87,13 +86,13 @@ export default function OptiSaasPage() {
   return (
     <>
       <PageTransition>
-        <Helmet>
+        {/* <Helmet>
           <title>OptiSaaSAI – AI-Powered SaaS Management Platform</title>
           <meta
             name="description"
             content="OptiSaaSAI is an AI-powered SaaS management platform offering analytics, automation, integrations, and insights to streamline workflows and reduce business costs."
           />
-        </Helmet>
+        </Helmet> */}
         <main className="transition-all duration-500 ease-in">
           {/* Hero Section */}
           <section

@@ -15,13 +15,18 @@ import Cloud_Infrastructure from "./pages/OurCapbilities/Cloud&Infrastructure";
 import CyberSecurity from "./pages/OurCapbilities/CyberSecurity";
 import ERP_CRM_AI_Ecosystem from "./pages/OurCapbilities/ERP_CRM_AI_Ecosystem";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Products from "./pages/Products";
+// import Products from "./pages/Products";
+import AutoDocX from "./pages/Products/AutoDox";
 import CustomerDlens from "./pages/Products/CustomerDlens";
 import Mathops from "./pages/Products/Mathops";
 import OpsBeat from "./pages/Products/OpsBeat";
 import OptiSaasPage from "./pages/Products/OptiSaas";
+import Patient360 from "./pages/Products/Patient360";
+import Regology from "./pages/Products/Regology";
+import Salesforce from "./pages/Products/Salesforce";
 import { SmartSustain } from "./pages/Products/SmartSustain";
-import Service from "./pages/Service";
+import TalentSeek from "./pages/Products/TalentSeek";
+// import Service from "./pages/Service";
 import AIDI_Services from "./pages/Services/AI&DI_Services";
 import AppDevServices from "./pages/Services/AppDevServices";
 import CloudInfrastructureServices from "./pages/Services/CloudInfrastructureServices";
@@ -39,21 +44,21 @@ export const routes = [
     path: "/aboutUs",
     element: <AboutUs></AboutUs>,
   },
-  {
-    path: "/services",
-    element: <Service></Service>,
-  },
-  {
-    path: "/products",
-    element: <Products></Products>,
-  },
+  // {
+  //   path: "/services",
+  //   element: <Service></Service>,
+  // },
+  // {
+  //   path: "/Enterprise_Solutions",
+  //   element: <Products></Products>,
+  // },
   {
     path: "/customerDlens",
     element: <CustomerDlens></CustomerDlens>,
   },
 
   {
-    path: "/airports",
+    path: "/Aviation_Transports",
     element: <Airports></Airports>,
   },
   {
@@ -148,5 +153,29 @@ export const routes = [
   {
     path: "privacy",
     element: <PrivacyPolicy></PrivacyPolicy>,
+  },
+  {
+    path: "/talentSeek",
+    element: <TalentSeek></TalentSeek>,
+  },
+  {
+    path: "/autoDocX",
+    element: <AutoDocX></AutoDocX>,
+  },
+  {
+    path: "/talentSeek",
+    element: <TalentSeek></TalentSeek>,
+  },
+  {
+    path: "/patient360",
+    element: <Patient360></Patient360>,
+  },
+    {
+    path: "/regology",
+    element: <Regology></Regology>,
+  },
+     {
+    path: "/salesforce",
+    element: <Salesforce></Salesforce>,
   },
 ];
