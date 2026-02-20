@@ -54,8 +54,8 @@ const INDUSTRIES_DATA = [
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
   },
   {
-    id: "airports",
-    title: "Airports",
+    id: "Aviation_Transports",
+    title: "Aviation & Transports",
     image: "assets/airportIndustry.jpg",
     overview:
       "From landside to airside, we help airports digitize their infrastructure, optimize resource allocation, and enhance the passenger experience. Our intelligent solutions support operational visibility and real-time responsiveness.",
@@ -73,7 +73,7 @@ const INDUSTRIES_DATA = [
       "Enhanced passenger safety, comfort, and satisfaction",
     ],
     caseStudyTitle: "End-to-End Airport Data Platform & AI Forecasting Engine",
-    caseStudyLink: "airports",
+    caseStudyLink: "Aviation_Transports",
     caseStudyImage: "assets/updated/airportsCaseStudy.png",
     bgColor: "bg-white dark:bg-black",
   },

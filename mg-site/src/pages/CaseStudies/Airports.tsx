@@ -8,7 +8,7 @@ import Header from "../../components/casestudies/Header";
 import PageTransition from "../../components/PageTransition";
 
 const headerProps = {
-  title: "Airports",
+  title: "Aviation & Transports",
   subtitle: "End-to-End Airport Data Platform & AI Forecasting Engine",
   desc: "A major international airport operator sought to modernize its analytics ecosystem and optimize airport operations through data unification and predictive intelligence.",
   bannerImage: "/assets/updated/Airports.png",

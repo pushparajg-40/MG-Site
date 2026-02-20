@@ -122,6 +122,24 @@ const productsData = [
       { text: "Extensible workflow engine for custom automation" },
     ],
   },
+
+  {
+    title: "AutoDocX.AI",
+    subtitle: "Unlock Your Documents’ Full Potential with AI",
+    description:
+      "AutoDocX.AI transforms document management using artificial intelligence—making it easy to organize, search, collaborate, and secure enterprise documents across formats and teams.",
+    image: "assets/autoDocxImage.png",
+    bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",
+    imagePosition: "right" as const,
+    buttonLink: "/autodocx",
+    capabilities: [
+      { text: "AI-based smart tagging and document categorization" },
+      { text: "Context-aware, lightning-fast document search" },
+      { text: "Support for PDFs, Word, Excel, and other formats" },
+      { text: "Secure, session-based collaboration with shared access" },
+      { text: "Encrypted storage ensuring compliance and data privacy" },
+    ],
+  },
 ];
 
 function Products() {
@@ -129,7 +147,7 @@ function Products() {
     <PageTransition>
       <div className="dark:bg-black">
         <HeroBanner
-          title="Products"
+          title="Enterprise Solutions"
           image="assets/background.png"
           type="parent"
         />

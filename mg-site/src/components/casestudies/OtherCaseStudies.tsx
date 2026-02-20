@@ -11,9 +11,9 @@ const CASE_STUDIES = [
   },
   {
     id: 2,
-    title: "Airports",
+    title: "Aviation & Transports",
     description: "End-to-End Airport Data Platform & AI Forecasting Engine",
-    link: "/airports",
+    link: "/Aviation_Transports",
   },
   {
     id: 3,

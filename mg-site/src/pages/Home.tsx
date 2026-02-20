@@ -6,7 +6,6 @@ import Solutions from "../components/Home/Solutions";
 // import Blogs from "../components/Home/Blogs";
 import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
-import { Helmet } from "react-helmet";
 import PageTransition from "../components/PageTransition";
 import SearchSection from "../components/chat-bot/SearchSection.tsx";
 
@@ -22,21 +21,21 @@ const accordionItems: AccordionItem[] = [
   {
     id: 1,
     title: "Agentic AI",
-    desc: "MindGraph harnesses the power of Agentic AI to drive intelligent automation, adaptive decision-making, and continuous business innovation.",
+    desc: "We empower you to run your business smarter by enabling systems that can act, adapt, and make decisions faster so you can stay agile and move ahead with confidence using Agentic AI.",
     features: ["Data Innovation", "Data Engineering", "Data Governance"],
     image: "assets/updated/AgenticAI.svg",
   },
   {
     id: 2,
     title: "Cyber AI",
-    desc: "MindGraph harnesses the power of Cyber AI to drive intelligent automation, adaptive decision-making, and continuous business innovation.",
+    desc: "Mindgraph equips you to proactively identify threats, strengthen security response, and ensure enterprise resilience at scale.",
     features: ["Cybersecurity for AI", "AI for Cybersecurity"],
     image: "assets/updated/cyberAI.svg",
   },
   {
     id: 3,
     title: "Enterprise AI",
-    desc: "MindGraph harnesses the power of Enterprise AI to drive intelligent automation, adaptive decision-making, and continuous business innovation.",
+    desc: "Enterprise AI solutions that unlocks your potential to complex data into meaningful insights, modernize workflows, and support measurable, long-term business performance.",
     features: [
       "Workflow Automations",
       "Implementations and Integrations of Customer Experience, CRM, ERP and other Products",
@@ -48,7 +47,7 @@ const accordionItems: AccordionItem[] = [
 const offerParams = {
   title: "What we offer",
   subtitle: "Our Capabilities",
-  desc: "Mindgraph empowers sector-specific transformation with AI-driven, data-centric, and cloud-enabled solutions. Our deep domain expertise and tailored platforms help enterprises across industries accelerate innovation, streamline operations, and improve decision-making—securely and at scale.",
+  desc: "",
   cards: [
     {
       title: "AI & Machine Learning",
@@ -110,26 +109,18 @@ const Home: React.FC = () => {
       }
     </style>
       <PageTransition>
-        {/* <Helmet>
-          <title>Mind Graph</title>
-          <meta
-            name="description"
-            content="Empower your business with a top AI enterprises company. Mind Graph delivers cutting-edge IT solutions to accelerate your growth. Get started today!"
-          />
-          <meta name="keywords" content="AI Enterprises company" />
-        </Helmet> */}
         <div className="overflow-x-hidden max-w-full ">
           {/* Hero Section */}
           <section className="bg-[#191919] text-white overflow-hidden  md:px-[40px] lg:px-[120px] ">
-            <div className="flex flex-col md:flex-row mx-0 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto ">
+            <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto ">
               {/* Heading + Subtext */}
               <div className=" pl-4 md:pl-0 space-y-4 hero-text">
                 <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient ">
                   AI-Powered. <br/>
-                  Cyber-Secure. <br/>
+                  Cyber-Secure. 
                   Enterprise-Ready.
                 </h2>
-                <p className="text-4xl ">
+                <p className="text-3xl ">
                   Driving Intelligent Innovation 
                   Across Critical Industries
                 </p>

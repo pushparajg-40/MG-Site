@@ -34,14 +34,24 @@ const cards: SolutionsCard[] = [
   //   productName: "OptiSaas.AI",
   // },
   {
-    pageLink: "customerDlens",
+    pageLink: "patient360",
     id: "Patient360",
     productName: "Patient360.AI",
   },
   {
-    pageLink: "#",
-    id: "ResponsibleAI",
-    productName: "Responsible AI",
+    pageLink: "autodocx",
+    id: "AutoDocX",
+    productName: "AutoDocX.AI",
+  },
+  {
+    pageLink: "salesforce",
+    id: "Salesforce",
+    productName: "Salesforce",
+  },
+   {
+    pageLink: "regology",
+    id: "Regology",
+    productName: "Regology",
   },
 ];
 
@@ -77,10 +87,21 @@ const items = [
     text: "AI-powered patient data fabric for 360° operational insights.",
   },
   {
-    selector: "#ResponsibleAI",
-    image: "/assets/prd-patient.png",
-    text: "Responsible AI fabric for 360° operational insights.",
+    selector: "#AutoDocX",
+    image: "/assets/autoDocxImage.png",
+    text: "Revolutionize the Way You Handle Documents with AI.",
   },
+  {
+    selector: "#Salesforce",
+    image: "/assets/connected-customer-exp.png",
+    text: "Connected Customer Experiences.",
+  },
+  {
+    selector: "#Regology",
+    image: "/assets/regulatory-intelligence.png",
+    text: "Regulatory Intelligence at Scale.",
+  },
+  
 ];
 
 function Solutions() {
@@ -171,7 +192,7 @@ function Solutions() {
             data-delay="200"
           >
             <h2 className="text-4xl text-[#828282] mb-4 leading-tight">
-              Solutions
+              Enterprise Solution
             </h2>
             <img src="/assets/updated/line.svg" className="pt-3" />
           </div>
@@ -180,7 +201,7 @@ function Solutions() {
             className="text-4xl text-[#055CC0] mb-4 leading-tight  md:px-0 font-extrabold text-gradient opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="300"
           >
-            AI Frameworks That Power Transformation
+            AI Framework & Partners Products
           </h1>
         </div>
 
@@ -246,21 +267,21 @@ function Solutions() {
             className="relative hidden md:flex items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="400"
           >
-            <div className="relative flex items-start pt-12">
+            <div className="relative flex items-start my-auto">
               <img
                 id="solution-image"
                 src="/assets/mathOps.png"
-                className="w-[550px] h-auto transition-opacity duration-700 z-10"
+                className="w-[500px] h-auto transition-opacity duration-700 z-10"
               />
               <div
-                className="absolute right-[-30px] top-[70px] w-[450px] md:h-[300px] lg:h-[380px] xl:h-[450px] 
+                className="absolute right-[-30px] top-[70px] w-[450px] md:h-[250px] lg:h-[320px] xl:h-[350px] 
                 bg-[url('/assets/dottedBg.png')] bg-contain bg-no-repeat bg-right"
               ></div>
             </div>
 
             {/* <!-- TEXT CARD BELOW IMAGE --> */}
             <div
-              className="absolute md:top-[380px] lg:top-[480px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl text-white z-20"
+              className="absolute md:top-[550px] lg:top-[600px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl text-white z-20"
               id="solution-text"
             >
               MathOps is a next-gen analytics and monitoring platform built to

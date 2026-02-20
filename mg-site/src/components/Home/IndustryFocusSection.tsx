@@ -25,35 +25,35 @@ const industries: IndustrySlide[] = [
   },
   {
     id: 3,
-    name: "Aviation",
+    name: "Aviation & Transports",
     title:
       "Transform aviation operations with predictive maintenance, safety intelligence, and streamlined airport workflows.",
     image: "/assets/updated/aviataionIndustry.png",
   },
+  // {
+  //   id: 4,
+  //   name: "Transportation",
+  //   title:
+  //     "Enable smarter logistics with optimized routing, proactive maintenance, and real-time tracking.",
+  //   image: "/assets/home/smarter-logistics.png",
+  // },
   {
     id: 4,
-    name: "Transportation",
-    title:
-      "Enable smarter logistics with optimized routing, proactive maintenance, and real-time tracking.",
-    image: "/assets/updated/transportationIndustryUpdated.png",
-  },
-  {
-    id: 5,
     name: "Banking, Financial Services & Insurance (BFSI)",
     title:
       "Empower financial institutions with advanced fraud prevention, deeper credit insights, and personalized customer engagement.",
-    image: "/assets/updated/naturaIndustry.png",
+    image: "/assets/home/empower-financial.png",
   },
   {
-    id: 6,
+    id: 5,
     name: "HealthCare",
     title:
       "Elevate healthcare delivery through improved patient care, seamless workflows, and robust compliance.",
-    image: "/assets/healthCareUpdatedFinal.jpg",
+    image: "/assets/home/elevate-healthcare.png",
     hiddenOnMobile: true,
   },
   {
-    id: 7,
+    id: 6,
     name: "Manufacturing",
     title:
       "Strengthen manufacturing with intelligent production systems, advanced analytics, and supply chain optimization.",

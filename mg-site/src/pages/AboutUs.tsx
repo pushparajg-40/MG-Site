@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 // import Blogs from "../components/Home/Blogs";
-import { Helmet } from "react-helmet";
 import PageTransition from "../components/PageTransition";
 
 export interface SolutionItem {
@@ -504,7 +503,7 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
 
-          {/* 4. Solutions section (Products) */}
+          {/* 4. Solutions section (Enterprise Solutions) */}
           <section
             id="solutions-section"
             className="bg-white dark:bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in 2xl-plus:max-w-8xl 2xl-plus:mx-auto hidden"
@@ -521,7 +520,7 @@ const AboutUs: React.FC = () => {
                 data-delay="200"
               >
                 <h2 className="text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
-                  Products
+                  Enterprise Solutions
                 </h2>
                 {/* Self-closing img tag */}
                 <img

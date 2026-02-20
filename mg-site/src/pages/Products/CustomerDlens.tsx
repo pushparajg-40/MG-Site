@@ -9,7 +9,6 @@ import {
 } from "../../components/product/AboutSection";
 import { FeaturesSection } from "../../components/product/FeaturesSection";
 import { DashboardSection } from "../../components/product/DashboardSection";
-import { Helmet } from "react-helmet";
 import PageTransition from "../../components/PageTransition";
 
 const aboutSectionData: AboutProps = {

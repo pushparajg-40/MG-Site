@@ -1,51 +1,51 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
-const industriesData = [
-  {
-    title: "Energy & Utilities",
-    icon: "/assets/updated/EneryIndNav.svg",
-    pageLink: "/Energy_Utilities",
-    description:
-      "We help energy providers and utility companies transition into intelligent, sustainable enterprises.",
-  },
-  {
-    title: "Airports",
-    icon: "/assets/updated/AirportsIndNav.svg",
-    pageLink: "/airports",
-    description:
-      "From landside to airside, we help airports digitize their infrastructure, optimize resource allocation, and enhance the passenger experience.",
-  },
-  {
-    title: "Telecom",
-    icon: "/assets/updated/TelecomIndNav.svg",
-    pageLink: "/Telecom",
-    description:
-      "We support telecom operators in improving service quality, customer retention, and network intelligence with scalable AI and real-time data analytics.",
-  },
-  {
-    title: "Healthcare",
-    icon: "/assets/updated/HealthIndNav.svg",
-    pageLink: "/Healthcare",
-    description:
-      "Mindgraph enables healthcare providers to modernize operations and improve patient outcomes through AI, secure data platforms, and predictive diagnostics.",
-  },
-  {
-    title: "BFSI",
-    icon: "/assets/updated/BfsiIndNav.svg",
-    pageLink: "/BFSI",
-    description:
-      "Mindgraph empowers financial institutions with AI-first digital solutions to reduce risk, detect fraud, enhance customer journeys, and meet regulatory demands.",
-  },
-  {
-    title: "Manufacturing",
-    icon: "/assets/updated/ManufacturingIndNav.svg",
-    pageLink: "/Manufacturing",
-    description:
-      "We help manufacturers digitize plant operations, optimize supply chains, and improve product quality using AI and IoT-enabled solutions.",
-  },
-];
+// const industriesData = [
+//   {
+//     title: "Energy & Utilities",
+//     icon: "/assets/updated/EneryIndNav.svg",
+//     pageLink: "/Energy_Utilities",
+//     description:
+//       "We help energy providers and utility companies transition into intelligent, sustainable enterprises.",
+//   },
+//   {
+//     title: "Aviation & Transports",
+//     icon: "/assets/updated/AirportsIndNav.svg",
+//     pageLink: "/Aviation_Transports",
+//     description:
+//       "From landside to airside, we help airports digitize their infrastructure, optimize resource allocation, and enhance the passenger experience.",
+//   },
+//   {
+//     title: "Telecom",
+//     icon: "/assets/updated/TelecomIndNav.svg",
+//     pageLink: "/Telecom",
+//     description:
+//       "We support telecom operators in improving service quality, customer retention, and network intelligence with scalable AI and real-time data analytics.",
+//   },
+//   {
+//     title: "Healthcare",
+//     icon: "/assets/updated/HealthIndNav.svg",
+//     pageLink: "/Healthcare",
+//     description:
+//       "Mindgraph enables healthcare providers to modernize operations and improve patient outcomes through AI, secure data platforms, and predictive diagnostics.",
+//   },
+//   {
+//     title: "BFSI",
+//     icon: "/assets/updated/BfsiIndNav.svg",
+//     pageLink: "/BFSI",
+//     description:
+//       "Mindgraph empowers financial institutions with AI-first digital solutions to reduce risk, detect fraud, enhance customer journeys, and meet regulatory demands.",
+//   },
+//   {
+//     title: "Manufacturing",
+//     icon: "/assets/updated/ManufacturingIndNav.svg",
+//     pageLink: "/Manufacturing",
+//     description:
+//       "We help manufacturers digitize plant operations, optimize supply chains, and improve product quality using AI and IoT-enabled solutions.",
+//   },
+// ];
 
 // const serviceDataNew = [
 //   {
@@ -101,7 +101,7 @@ const Navbar = () => {
 
   useEffect(() => {
     updateThemeImages();
-    console.log(location.pathname)
+    console.log(location.pathname, industriesHover)
     if(location && location.pathname!="/industries")
     setIndustriesHover(false);
     // setServiceHover(false);
@@ -176,11 +176,13 @@ const Navbar = () => {
         <div className="group relative">
           <button
             className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
-            onMouseEnter={() => {
-              navigate("/services");
-            }}
+            // onMouseEnter={() => {
+            //   navigate("/services");
+            // }}
           >
-            <NavLink to={"/services"}> Services</NavLink>
+            Services
+            {/* <NavLink to={"/services"}> 
+            </NavLink> */}
             <ChevronDown size={16} />
           </button>
 
@@ -227,11 +229,11 @@ const Navbar = () => {
         <div className="group relative">
           <button
             className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
-            onMouseEnter={() => {
-              navigate("/products");
-            }}
+            // onMouseEnter={() => {
+            //   navigate("/Enterprise_Solutions");
+            // }}
           >
-            <NavLink to={"/products"}> Products </NavLink>
+            Enterprise Solutions
             <ChevronDown size={16} />
           </button>
           <div className="absolute hidden group-hover:block bg-white dark:bg-[#191919] border dark:border-gray-700 rounded shadow-lg w-52">
@@ -241,6 +243,10 @@ const Navbar = () => {
               ["OpsBeat", "/opsbeat"],
               // ["OptiSaaSAI", "/optiSaas"],
               ["SmartSustain.AI", "/smartSustain"],
+              ["AutoDocX.AI", "/autodocx"],
+              ["Patient360", "/patient360"],
+              ["Salesforce", "/salesforce"],
+              ["Regology", "/regology"],
             ].map(([label, link]) => (
               <NavLink
                 key={label}
@@ -267,21 +273,19 @@ const Navbar = () => {
             onMouseLeave={() => setIndustriesHover(false)}
           >
             <NavLink to={"/industries"}> Industries</NavLink>
-            <ChevronDown size={16} />
+            {/* <ChevronDown size={16} /> */}
           </button>
 
           {/* Industries Mega Menu - Four Column Layout */}
 
-          <div
+          {/* <div
             className={`fixed ${industriesHover ? "block" : "hidden"}
             left-0 right-0 bg-white dark:bg-[#1a1a1a]  shadow-lg w-full px-20 py-8 z-40 `}
             onMouseEnter={() => setIndustriesHover(true)}
             onMouseLeave={() => setIndustriesHover(false)}
           >
-            {/* Industries Grid Below Sections */}
 
             <div className="  border-gray-200 dark:border-gray-700">
-              {/*mt-8 pt-8*/}
               <p className="text-xs font-semibold text-[#667085] dark:text-gray-400 mb-4 uppercase tracking-wide">
                 Industries We Serve
               </p>
@@ -313,7 +317,7 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <NavLink
@@ -386,15 +390,39 @@ const Navbar = () => {
                 Services <ChevronDown size={16} />
               </button>
               {mobileDropdown === "services" && (
-                <div className="pl-4 mt-2 space-y-2">
-                  <NavLink to="AI_DI_Services" className="block">
+                <div className="pl-4 mt-2 space-y-2" onClick={(e)=> {e.preventDefault(); setMobileOpen(false)}}>
+                  <NavLink to="AI&DI_Services" className="block">
                     AI & Data Intelligence
                   </NavLink>
                   <NavLink
-                    to="Application&DevelopementServices"
+                    to="AppDevServices"
                     className="block"
                   >
                     Application & Development
+                  </NavLink>
+                  <NavLink
+                    to="CloudInfrastructureServices"
+                    className="block"
+                  >
+                    Cloud Infrastructure
+                  </NavLink>
+                  <NavLink
+                    to="Consulting&AdvisoryServices"
+                    className="block"
+                  >
+                    Consulting & Advisory
+                  </NavLink>
+                  <NavLink
+                    to="CRM&ERPServices"
+                    className="block"
+                  >
+                    CRM & ERP
+                  </NavLink>
+                  <NavLink
+                    to="SapEnterpriseServices"
+                    className="block"
+                  >
+                    SAP Enterprise
                   </NavLink>
                 </div>
               )}
@@ -403,12 +431,12 @@ const Navbar = () => {
             <div>
               <button
                 className="w-full flex justify-between items-center"
-                onClick={() => toggleMobileDropdown("products")}
+                onClick={() => toggleMobileDropdown("Enterprise_Solutions")}
               >
-                Products <ChevronDown size={16} />
+                Enterprise Solutions <ChevronDown size={16} />
               </button>
-              {mobileDropdown === "products" && (
-                <div className="pl-4 mt-2 space-y-2">
+              {mobileDropdown === "Enterprise_Solutions" && (
+                <div className="pl-4 mt-2 space-y-2" onClick={(e)=> {e.preventDefault(); setMobileOpen(false)}}>
                   <NavLink to="/customerDlens" className="block">
                     CustomerDLens.AI
                   </NavLink>
@@ -418,11 +446,23 @@ const Navbar = () => {
                   <NavLink to="/opsbeat" className="block">
                     OpsBeat
                   </NavLink>
-                  <NavLink to="/optiSaas" className="block">
+                  {/* <NavLink to="/optiSaas" className="block">
                     OptiSaaSAI
-                  </NavLink>
+                  </NavLink> */}
                   <NavLink to="/smartSustain" className="block">
                     SmartSustain.AI
+                  </NavLink>
+                  <NavLink to="/autodocx" className="block">
+                    AutoDocX.AI
+                  </NavLink>
+                  <NavLink to="/patient360" className="block">
+                    Patient360
+                  </NavLink>
+                  <NavLink to="/salesforce" className="block">
+                    Salesforce
+                  </NavLink>
+                  <NavLink to="/regology" className="block">
+                    Regology
                   </NavLink>
                 </div>
               )}

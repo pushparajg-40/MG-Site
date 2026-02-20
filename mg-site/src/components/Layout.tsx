@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import SeoMeta from "./SeoMeta";
 
 const Layout = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   function updateThemeImages() {
     const isDark = document.documentElement.classList.contains("dark");
 

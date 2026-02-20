@@ -1,5 +1,4 @@
 import { easeOut, motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 interface OfferCards {
   title: string;
@@ -66,7 +65,7 @@ function WhatWeOfferSection({
           </div>
 
           <motion.h1
-            className="text-4xl text-gradient mb-4 leading-tight md:px-0 font-extrabold"
+            className="text-4xl text-gradient mb-2 leading-tight md:px-0 font-extrabold"
             variants={headingVariants}
           >
             {subtitle}
@@ -80,9 +79,9 @@ function WhatWeOfferSection({
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[50px] lg:px-[130px] gap-6 mt-12 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[40px] lg:px-[30px] gap-6 mt-12 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {cards.map((card, idx) => (
-            <Link to={card.pageLink} key={idx}>
+            <div key={idx}>
               <motion.div
                 className="text-white w-[264px] md:w-[300px]  "
                 variants={cardVariants}
@@ -111,16 +110,23 @@ function WhatWeOfferSection({
                   </p>
                 </div>
 
-                <p className="text-lg mt-6 leading-relaxed relative z-10 px-4">
+                <p className="text-lg mt-6 leading-relaxed relative z-10 px-4 line-clamp-3">
                   {card.desc}
                 </p>
+
+                <div>
+                  <a
+                    href={`/${card.pageLink}`}
+                    className="dark:text-white font-semibold text-sm px-4 py-4 !text-decoration-underline text-gray-600 flex items-center gap-2"
+                  >
+                    Read More
+                  </a>
+                </div>
               </motion.div>
-            </Link>
+            </div>
           ))}
         </div>
       </motion.section>
-
-     
     </>
   );
 }
