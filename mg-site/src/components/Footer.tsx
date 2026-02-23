@@ -59,13 +59,13 @@ const Footer: React.FC = () => {
     <footer
       id="footer-section"
       ref={footerRef}
-      className="dark:bg-black bg-white md:px-[120px] pt-[80px]  sm:px-6 transition-all duration-500 ease-in "
+      className="dark:bg-black bg-white md:px-[100px] pt-[40px]  sm:px-6 transition-all duration-500 ease-in "
     >
       {/* GRID */}
       <div
         className="
         grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 
-        gap-10 sm:gap-10 px-[10px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto
+        gap-10 sm:gap-10 2xl-plus:max-w-9xl 2xl-plus:mx-auto border-t border-gray-500 py-10
       "
       >
         {/* Column 1 */}
@@ -344,11 +344,11 @@ const Footer: React.FC = () => {
 
       {/* Bottom Section */}
       <div
-        className="mt-12 mx-10 md:mx-0 pt-8 pb-4 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+        className="mx-10 md:mx-0 pt-6 pb-6 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         data-delay="500"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center px-[20px] sm:gap-5 sm:text-center">
-          <h1 className="text-[#8A8A8F] text-xs md:text-sm order-2 md:order-1 mt-2">
+        <div className="flex flex-col md:flex-row justify-between items-center sm:gap-5 sm:text-center">
+          <h1 className="text-[#8A8A8F] text-xs md:text-sm order-2 md:order-1">
             © Copyright 2026,
             <span className="text-[#0C426E] dark:text-white font-semibold">
               {" "}

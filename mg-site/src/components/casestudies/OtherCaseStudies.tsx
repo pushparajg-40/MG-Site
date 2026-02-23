@@ -1,38 +1,60 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ArrowRightIcon from "../../../public/assets/arrow-right-icon.svg?react"
+import HealthCareIcon from "../../../public/assets/health-care-icon.svg?react"
+import AviationTransportIcon from "../../../public/assets/aviation-transport-icon.svg?react"
+import FinancialBankingIcon from "../../../public/assets/financial-banking-icon.svg?react"
+import TelecomIcon from "../../../public/assets/telecom-icon.svg?react"
+import ManufacturingIcon from "../../../public/assets/manufacturing-icon.svg?react"
+import EnergyUtilitiesIcon from "../../../public/assets/energy-utilities-icon.svg?react"
+
+
 
 const CASE_STUDIES = [
   {
     id: 1,
     title: "Health Care",
     description:
-      "AI-Driven ESG Platform for Sustainable Infrastructure Projects",
+      "Integrated Mobile Platform for National Employment & Upskilling—Enhancing Healthcare Workforce Access.",
     link: "/Healthcare",
+    icon: HealthCareIcon
   },
   {
     id: 2,
     title: "Aviation & Transports",
-    description: "End-to-End Airport Data Platform & AI Forecasting Engine",
+    description: "End-to-End Airport Data Platform & AI Forecasting Engine.",
     link: "/Aviation_Transports",
+    icon: AviationTransportIcon
   },
   {
     id: 3,
     title: "BFSI (Banking & Financial Services)",
     description: "AI-Driven Loan Origination & Collection Optimization",
     link: "/BFSI",
+    icon: FinancialBankingIcon
   },
   {
     id: 4,
     title: "Telecom",
     description: "Enhance telecom networks with smart monitoring & automation.",
     link: "/telecom",
+    icon: TelecomIcon
   },
   {
     id: 5,
     title: "Manufacturing",
     description:
-      "AI-Driven Jewelry Design Innovation – GenAI DesignSmith Platform",
+      "AI-Driven Jewelry Design Innovation – GenAI DesignSmith Platform.",
     link: "/Manufacturing",
+    icon: ManufacturingIcon
+  },
+  {
+    id: 6,
+    title: "Energy & Utilities",
+    description:
+      "AI-Driven ESG Platform for Sustainable Infrastructure Projects.",
+    link: "/Manufacturing",
+    icon: EnergyUtilitiesIcon
   },
 ];
 
@@ -126,20 +148,27 @@ export default function OtherCaseStudies() {
         <div className="relative overflow-hidden">
           <div
             ref={sliderRef}
-            className="flex overflow-x-hidden snap-x md:ml-[20px] lg:ml-[100px] py-[60px] px-[20px] md:px-0"
+            className="flex overflow-x-hidden snap-x md:ml-[20px] lg:ml-[60px] py-[60px] px-[20px] md:px-5 gap-2"
           >
-            {CASE_STUDIES.map((study) => (
+            {CASE_STUDIES.map((study) => {
+              const Icon = study?.icon;
+
+              return(
               <Link to={study.link}>
                 <div
                   key={study.id}
                   className="group snap-center flex-shrink-0 w-full 
-                  md:w-[300px] lg:w-[404.93px] h-[250px] md:h-[343.1px] 
-                  relative mx-2 p-4 md:p-0 border border-[#BFBFBF] 
+                  md:w-[300px] lg:w-[350.93px] h-[250px] md:h-[300.1px] 
+                  relative p-4 md:p-0 border border-[#BFBFBF] 
                   border-opacity-100 dark:border-white dark:border-opacity-40 
                   rounded-2xl hover:scale-105  transform transition-all duration-700 ease-out"
                 >
-                  <div className="h-full w-full relative rounded-2xl overflow-hidden ">
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-12 text-white z-10">
+                  <div className="h-full w-full rounded-2xl overflow-hidden p-2 md:p-4 flex flex-col justify-between">
+                    <div className="flex justify-between">
+                      <Icon className="w-6 h-6 md:w-9 md:h-9" />
+                      <ArrowRightIcon className="w-4 h-4 md:w-7 md:h-7" />
+                    </div>
+                    <div className="text-white z-10">
                       <h2 className="text-xl md:text-2xl font-bold mb-2 text-[#687DA9] dark:text-white">
                         {study.title}
                       </h2>
@@ -150,7 +179,7 @@ export default function OtherCaseStudies() {
                   </div>
                 </div>
               </Link>
-            ))}
+            )})}
           </div>
         </div>
       </div>

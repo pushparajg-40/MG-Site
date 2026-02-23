@@ -28,7 +28,7 @@ const industries: IndustrySlide[] = [
     name: "Aviation & Transports",
     title:
       "Transform aviation operations with predictive maintenance, safety intelligence, and streamlined airport workflows.",
-    image: "/assets/updated/aviataionIndustry.png",
+    image: "/assets/aviation-transport.png",
   },
   // {
   //   id: 4,

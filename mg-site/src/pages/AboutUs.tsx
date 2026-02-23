@@ -221,12 +221,12 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* 2. Overview, Vision, Mission Section */}
-          <div className="2xl-plus:max-w-8xl 2xl-plus:mx-auto  flex flex-col  lg:flex-row pt-[20px] lg:pt-[90px] lg:px-[180px] dark:pb-[30px] dark:bg-black transition-all duration-500 ease-in">
+          <div className="2xl-plus:max-w-8xl 2xl-plus:mx-auto  flex flex-col  lg:flex-row pt-[20px] lg:pt-[90px] lg:px-[150px] dark:pb-[30px] dark:bg-black transition-all duration-500 ease-in">
             <div className="order-2 lg:order-1 md:pl-[200px] lg:pl-0">
               <img
-                src="assets/updated/aboutBannerUpdated.png"
+                src="assets/about-us-with-dots.png"
                 alt="Our Company"
-                className="lg:max-w-7xl md:w-[400px] h-full p-[50px] lg:p-0"
+                className="lg:max-w-7xl md:w-[400px] h-auto p-[50px] lg:p-0"
               />
             </div>
             <div className="order-1 lg:order-2">

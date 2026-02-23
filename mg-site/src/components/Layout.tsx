@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import SeoMeta from "./SeoMeta";
+// import FormContactForm from "./FooterContactForm";
 
 const Layout = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -54,6 +55,7 @@ const Layout = () => {
         <Outlet></Outlet>
       </main>
 
+      {/* <FormContactForm />       */}
       {/* Footer */}
       <Footer />
     </div>

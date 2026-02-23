@@ -9,10 +9,10 @@ import HeaderHeroSection from "../../components/product/HeaderHeroSection";
 
 const headerProps = {
   title: "Salesforce",
-  subtitle: "Connected Customer Experiences",
+  subtitle: "Smart Customer Engagement.",
   subcaption: "Overview",
   desc: "Salesforce is the world’s #1 CRM platform, empowering organizations to accelerate growth through intelligent automation and personalized engagement. As a Salesforce solution and marketing partner, Mindgraph enables organizations to unlock the full business value of Salesforce Cloud platforms.",
-  bannerImage: "/assets/connected-customer-exp.png",
+  bannerImage: "/assets/salesforce.png",
 };
 
 const headerHeroSection = {

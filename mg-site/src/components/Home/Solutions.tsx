@@ -15,7 +15,7 @@ const cards: SolutionsCard[] = [
   },
   {
     pageLink: "smartSustain",
-    id: "smartSustain",
+    id: "SmartSustain",
     productName: "SmartSustain.AI",
   },
   {
@@ -93,8 +93,8 @@ const items = [
   },
   {
     selector: "#Salesforce",
-    image: "/assets/connected-customer-exp.png",
-    text: "Connected Customer Experiences.",
+    image: "/assets/salesforce.png",
+    text: "Smart Customer Engagement.",
   },
   {
     selector: "#Regology",
