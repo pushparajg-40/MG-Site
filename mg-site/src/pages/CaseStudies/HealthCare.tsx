@@ -10,8 +10,8 @@ import PageTransition from "../../components/PageTransition";
 const headerProps = {
   title: "Healthcare",
   subtitle:
-    "Integrated Mobile Platform for National Employment & Upskilling—Enhancing Healthcare Workforce Access",
-  desc: "Malaysia's national employment agency partnered with Mindgraph to build the MyFutureJobs Mobile App, aimed at improving job accessibility for all Malaysians—including healthcare professionals seeking placements, training, and upskilling.",
+    "Unified Patient Profile Platform for Smarter Clinical Decisions.",
+  desc: "A leading healthcare ecosystem in Malaysia partnered with Mindgraph to build a Unified Patient 360 Platform that consolidates patient data across hospitals, clinics, wearable devices, and third-party systems. The goal was to enable real-time clinical insights, improve care coordination, and support data-driven treatment decisions.",
   bannerImage: "/assets/updated/HealthCare.png",
 };
 
@@ -21,62 +21,69 @@ const glanceProps = {
   items: [
     {
       title: "Industry",
-      value: "Healthcare Workforce & Public Services",
+      value: "Healthcare & Life Sciences.",
     },
     {
       title: "What We Delivered",
-      value: "Real-time job matching, scalable mobile app, secure integrations",
+      value: "Unified Patient 360 platform, AI risk scoring, real-time vitals integration, doctor dashboards.",
     },
     {
       title: "Solution",
-      value: "Mobile-first employment & upskilling platform",
+      value: "AI-powered Unified Patient Profile & Clinical Intelligence Platform.",
     },
     {
       title: "Impact",
       value:
-        "50,000+ downloads, 0.7M+ daily notifications, improved access for healthcare workers",
+        "360° patient visibility, faster clinical decisions, improved preventive care.",
     },
     {
       title: "Key Challenges",
-      value: "Fragmented job ecosystem, difficulty matching healthcare talent",
+      value: "Fragmented patient data, inconsistent identity mapping, delayed insights.",
     },
   ],
 };
 
 const challengeProps = {
   title: "The Challenge",
-  desc: "",
+  desc: "The healthcare ecosystem managed patient data across multiple facilities and digital sources, resulting in siloed information and inefficient care delivery. They faced challenges such as:",
   challenges: [
-    "Fragmented job search ecosystem",
-    "Difficulty in matching healthcare workers to relevant roles",
-    "Large-scale government systems not optimized for mobile-first users",
-    "Needed secure and scalable architecture to support national rollout",
+    "Patient data scattered across EMR, lab, pharmacy, and billing systems.",
+    "No real-time integration of wearable device vitals.",
+    "Inconsistent patient identity mapping across hospitals and clinics.",
+    "Limited personalization in patient engagement.",
+    "Manual reporting leading to delayed clinical insights."
   ],
 };
 
 const outcomes = [
-  "Empowered thousands of healthcare workers to access opportunities",
-  "Real-time career guidance and upskilling pathways",
-  "Nationwide adoption with stability under heavy loads",
-  "Foundation for AI-driven healthcare talent matching in next phase",
+  "360° unified patient view across hospitals and clinics.",
+  "30–40% reduction in duplicate diagnostics and tests.",
+  "Faster clinical decision-making with real-time patient vitals.",
+  "Improved preventive care and chronic disease management.",
+  "Enhanced patient engagement through digital communication channels.",
+  "A scalable platform enabling connected and intelligent care delivery."
 ];
 
 const technologies = [
-  "Native & hybrid mobile frameworks",
-  "Secure authentication protocols",
-  "API integration with national systems",
-  "Cloud-based scalable backend",
+  "Cloud-based interoperable architecture.",
+  "API-driven data ingestion & integration layer.",
+  "Real-time data processing engine.",
+  "AI analytics for predictive health insights.",
+  "Role-based access control (Super Admin, Admin, Member).",
+  "Secure healthcare data governance framework."
 ];
 
 const solutionListProps = {
   subtitle:
-    "Mindgraph delivered a mobile-first digital employment platform with:",
+    "Mindgraph designed and implemented a Unified Patient 360 Platform that delivers a single, real-time, intelligent view of each patient by integrating multiple healthcare systems and data streams.",
   items: [
-    "Real-time job matching & personalized recommendations",
-    "Seamless integration with PERKESO backend systems",
-    "High-throughput notification engine delivering 0.7M+ daily alerts",
-    "Secure access and identity management",
-    "Architecture designed for scale (over 50,000 downloads within six weeks)",
+    "Unified patient identity resolution across facilities.",
+    "Integration with EMR, PMS, labs, pharmacy, and billing systems.",
+    "Wearable device data integration for real-time vitals monitoring.",
+    "AI-driven risk scoring and automated health alerts.",
+    "Doctor dashboards with longitudinal patient health view.",
+    "WhatsApp-based notifications and appointment reminders.",
+    "Consent management and privacy governance framework."
   ],
 };
 

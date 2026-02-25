@@ -15,7 +15,7 @@ const CASE_STUDIES = [
     id: 1,
     title: "Health Care",
     description:
-      "Integrated Mobile Platform for National Employment & Upskilling—Enhancing Healthcare Workforce Access.",
+      "Unified Patient Profile Platform for Smarter Clinical Decisions.",
     link: "/Healthcare",
     icon: HealthCareIcon
   },
@@ -53,7 +53,7 @@ const CASE_STUDIES = [
     title: "Energy & Utilities",
     description:
       "AI-Driven ESG Platform for Sustainable Infrastructure Projects.",
-    link: "/Manufacturing",
+    link: "/Energy_Utilities",
     icon: EnergyUtilitiesIcon
   },
 ];

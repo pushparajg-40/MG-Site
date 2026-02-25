@@ -48,7 +48,7 @@ const INDUSTRIES_DATA = [
       "Stronger data security and regulatory alignment",
     ],
     caseStudyTitle:
-      "Integrated Mobile Platform for National Employment & Upskilling",
+      "Unified Patient Profile Platform for Smarter Clinical Decisions.",
     caseStudyLink: "Healthcare",
     caseStudyImage: "assets/updated/healthCareCaseStudy.png",
     bgColor: "bg-[#F7FBFF] dark:bg-[#181818]",

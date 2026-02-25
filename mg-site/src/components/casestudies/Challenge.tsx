@@ -6,7 +6,7 @@ interface ChallengeProps {
 
 export default function Challenge({ title, desc, challenges }: ChallengeProps) {
   return (
-    <section className="scroll-animate lg:pl-[150px] lg:pr-[60px] px-6 flex flex-col md:flex-row items-center md:mt-[100px] lg:mt-[-100px]">
+    <section className="scroll-animate lg:pl-[150px] lg:pr-[60px] px-6 flex flex-col md:flex-row items-center md:mt-[100px] lg:mt-[-40px]">
       <div>
         <h2 className="text-4xl font-extrabold text-[#1783F7] dark:text-white mb-4">
           {title}

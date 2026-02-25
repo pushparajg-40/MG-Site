@@ -170,11 +170,17 @@ export default function FormContactForm() {
   };
 
   return (
-    <section className={`px-6 py-8 w-full bg-[#181818] bg-[url('/assets/contact-form-footer-bg.jpg')] object-contain`}>
-      <div className="lg:w-2/6 bg-[#191919] rounded-lg">
+    <div
+      className={`p-8 w-full flex justify-end bg-[#181818] bg-[url('/assets/contact-form-footer-bg.jpg')] object-cover bg-left`}
+    >
+      <div className="lg:w-5/12 bg-[#191919] rounded-lg md:px-4 md:py-4 space-y-4">
+        <h2 className="text-gray-300 font-medium text-base">
+          Ready to take your business to the next level? Contact us today and
+          see how we can help.
+        </h2>
         {status.type && (
           <div
-            className={`mb-4 p-4 rounded-md ${
+            className={`p-4 rounded-md ${
               status.type === "success"
                 ? "bg-green-100 text-green-800"
                 : "bg-red-100 text-red-800"
@@ -186,12 +192,12 @@ export default function FormContactForm() {
 
         <form
           onSubmit={handleFormAction}
-          className="md:p-6 rounded-lg md:shadow-lg"
+          className="rounded-lg md:shadow-lg max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4"
         >
-          <div className="mb-4 ">
+          <div className="">
             <input
               type="text"
-              placeholder="Name"
+              placeholder="First Name"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -199,23 +205,29 @@ export default function FormContactForm() {
             />
           </div>
 
-          <div className="mb-4 relative">
-            <img
-              src="assets/mail.svg"
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-              alt=""
-            />
+          <div className="">
             <input
-              type="email"
-              placeholder="Your email"
-              name="email"
-              value={formData.email}
+              type="text"
+              placeholder="Last Name"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              className="w-full pl-10 p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
-          <div className="mb-4">
+          <div className="">
+            <input
+              type="text"
+              placeholder="Company Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="">
             <PhoneInput
               international
               defaultCountry="IN"
@@ -238,7 +250,23 @@ export default function FormContactForm() {
             )}
           </div>
 
-          <div className="mb-4">
+          <div className="lg:col-span-2">
+            {/* <img
+              src="assets/mail.svg"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+              alt=""
+            /> */}
+            <input
+              type="email"
+              placeholder="Company email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="lg:col-span-2">
             <textarea
               placeholder="How can we help you?"
               rows={4}
@@ -249,15 +277,17 @@ export default function FormContactForm() {
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full text-center text-gray-800 font-semibold py-3 px-8 rounded-full flex justify-center items-center bg-white hover:from-[#787878] hover:to-[#0653A7] disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? "Sending..." : "Send Message"}
-          </button>
+          <div className="w-full flex justify-end items-center">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="text-center text-gray-800 font-semibold py-3 px-8 rounded-full flex justify-center items-center bg-white hover:from-[#787878] hover:to-[#0653A7] disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? "Sending..." : "Send Message"}
+            </button>
+          </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 }

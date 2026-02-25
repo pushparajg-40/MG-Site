@@ -10,7 +10,7 @@ export default function AtAGlance({
   items,
 }: GlanceProps) {
   return (
-    <section className="scroll-animate bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in py-10 max-w-6xl relative lg:left-[150px] lg:top-[-90px]">
+    <section className="scroll-animate bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in py-10 max-w-6xl relative lg:left-[100px] lg:top-[-70px]">
       <div className="px-6">
         <p className="text-[#1783F7] dark:text-white text-2xl mb-6">
           At a Glance
