@@ -17,7 +17,7 @@ interface SidebarData {
     sources?: string;
 }
 
-const API_BASE = "http://20.198.169.185:5005";
+const API_BASE = "https://api.mind-graph360.com";
 
 const PRESET_QUESTIONS: string[] = [
     "What are the AI Services help to build my product?",
