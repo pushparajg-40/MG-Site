@@ -116,12 +116,10 @@ const Home: React.FC = () => {
               {/* Heading + Subtext */}
               <div className=" pl-4 md:pl-0 space-y-4 hero-text">
                 <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient ">
-                  AI-Powered. <br/>
-                  Cyber-Secure. 
-                  Enterprise-Ready.
+                  AI Assurance for Mission-Critical Enterprises
                 </h2>
                 <p className="text-3xl ">
-                  Driving AI Assurance 
+                  Driving AI Assurance <br/>
                   Across Critical Infrastructure
                 </p>
               </div>
