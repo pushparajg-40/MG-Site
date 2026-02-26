@@ -121,8 +121,8 @@ const Home: React.FC = () => {
                   Enterprise-Ready.
                 </h2>
                 <p className="text-3xl ">
-                  Driving Intelligent Innovation 
-                  Across Critical Industries
+                  Driving AI Assurance 
+                  Across Critical Infrastructure
                 </p>
               </div>
 

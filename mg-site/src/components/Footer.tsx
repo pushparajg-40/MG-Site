@@ -87,8 +87,7 @@ const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-black dark:text-white leading-[120%] text-[20px] mt-5 sm:w-[80%]">
-              Driving Industry Transformation with Secure and Scalable
-              Enterprise AI-Powered Solutions
+              An AI Assurance Company
             </p>
           </div>
         </div>
