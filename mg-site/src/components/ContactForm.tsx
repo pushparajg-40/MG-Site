@@ -1,4 +1,5 @@
 import ContactForm from "./contact/ContactForm";
+import ContactFormV2 from "./ContactFormV2";
 
 function ContactFormSection() {
   return (
@@ -10,7 +11,7 @@ function ContactFormSection() {
         dark:bg-none dark:bg-[#181818]
         py-16"
       >
-        <div className="container mx-auto flex flex-col lg:flex-row gap-10 px-6 lg:px-[200px]">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-10 px-6 lg:px-[150px]">
           <div className="lg:w-1/2">
             <h2 className="text-4xl font-bold text-[#687DA9] dark:text-white mb-4">
               Get in Touch
@@ -56,7 +57,7 @@ function ContactFormSection() {
             </div>
           </div>
 
-          <ContactForm />
+          <ContactFormV2 bordered showContactAgreeText ctaFull formSize={6} />
 
           <div className="flex flex-col md:flex-row gap-6 md:mt-[60px] md:hidden">
             <div className="flex-1">

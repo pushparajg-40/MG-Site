@@ -158,7 +158,7 @@ function Solutions() {
       if (!el) return;
 
       const onEnter = () => fadeSolutionImageChange(image, text);
-      const onLeave = () => fadeSolutionImageChange(defaultImage, defaultText);
+      const onLeave = () => fadeSolutionImageChange(image, text);
 
       el.addEventListener("mouseenter", onEnter);
       el.addEventListener("mouseleave", onLeave);

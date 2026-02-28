@@ -9,22 +9,28 @@ import PhoneInput, {
   type Value,
 } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import ContactFormV2 from "./ContactFormV2";
 
 interface StatusMessage {
   type: "success" | "error" | null;
   text: string;
 }
 
-export default function FormContactForm() {
+const defaultFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  companyName: "",
+  jobTitle: "",
+  mobile: "",
+  message: "",
+};
+
+export default function FooterContactForm() {
   const { pageName } = useLocationPath();
   const { getNumberDetails } = usePhoneNumberDetails();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(defaultFormState);
   const [phoneError, setPhoneError] = useState<string | null>(null);
 
   const [status, setStatus] = useState<StatusMessage>({ type: null, text: "" });
@@ -48,8 +54,11 @@ export default function FormContactForm() {
       const timstamp = new Date()?.toLocaleString();
       const googleFormData = new FormData();
 
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.name);
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.firstName);
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.lastName);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.email);
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.companyName);
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.jobTitle);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.mobile, formData.mobile);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.message, formData.message);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.timestamp, timstamp);
@@ -74,12 +83,14 @@ export default function FormContactForm() {
       emailjs.init("YNl6-hgl7eAO4_9f4");
 
       await emailjs.send("service_hy9quj8", "template_t68k20j", {
-        from_name: formData.name,
+        from_name: `${formData.firstName} ${formData.lastName}`,
         reply_to: formData.email,
         from_email: formData.email,
         mobile_number: formData.mobile,
         message: formData.message,
         from_page: pageName,
+        // company_name: formData.email,
+        // job_title: formData.email,
       });
 
       setStatus({
@@ -113,12 +124,7 @@ export default function FormContactForm() {
       console.error("submission failed");
       setStatus({ type: "error", text: "Please fill valid details" });
     } finally {
-      setFormData({
-        name: "",
-        email: "",
-        mobile: "",
-        message: "",
-      });
+      setFormData(defaultFormState);
       setIsLoading(false);
     }
   };
@@ -159,7 +165,14 @@ export default function FormContactForm() {
   };
 
   const validateForm = () => {
-    if (!formData.name || !formData.email || !formData.message) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.companyName ||
+      !formData.jobTitle ||
+      !formData.email ||
+      !formData.message
+    ) {
       setStatus({ type: "error", text: "Please fill in all required fields." });
       return false;
     }
@@ -170,123 +183,19 @@ export default function FormContactForm() {
   };
 
   return (
-    <div
-      className={`p-8 w-full flex justify-end bg-[#181818] bg-[url('/assets/contact-form-footer-bg.jpg')] object-cover bg-left`}
-    >
-      <div className="lg:w-5/12 bg-[#191919] rounded-lg md:px-4 md:py-4 space-y-4">
-        <h2 className="text-gray-300 font-medium text-base">
-          Ready to take your business to the next level? Contact us today and
-          see how we can help.
-        </h2>
-        {status.type && (
-          <div
-            className={`p-4 rounded-md ${
-              status.type === "success"
-                ? "bg-green-100 text-green-800"
-                : "bg-red-100 text-red-800"
-            }`}
-          >
-            {status.text}
-          </div>
-        )}
+    <div className="px-14 py-6 bg-[#000]">
+      <div className="lg:relative w-full">
+        {/* Background Image */}
+        <img
+          src="/assets/contact-form-footer-bg.jpg"
+          alt="Contact background"
+          className="sm:hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
+        />
 
-        <form
-          onSubmit={handleFormAction}
-          className="rounded-lg md:shadow-lg max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4"
-        >
-          <div className="">
-            <input
-              type="text"
-              placeholder="First Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div className="">
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div className="">
-            <input
-              type="text"
-              placeholder="Company Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div className="">
-            <PhoneInput
-              international
-              defaultCountry="IN"
-              value={formData.mobile}
-              onChange={handlePhoneChange}
-              onBlur={validatePhone}
-              limitMaxLength
-              countryCallingCodeEditable={false}
-              required
-              className="phone-input text-gray-400"
-              placeholder="Enter mobile number"
-              style={{
-                border: "1px solid #dee2e6",
-                borderRadius: "6px",
-                paddingLeft: "8px",
-              }}
-            />
-            {phoneError && (
-              <p className="mt-1 text-red-400 text-sm">{phoneError}</p>
-            )}
-          </div>
-
-          <div className="lg:col-span-2">
-            {/* <img
-              src="assets/mail.svg"
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-              alt=""
-            /> */}
-            <input
-              type="email"
-              placeholder="Company email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div className="lg:col-span-2">
-            <textarea
-              placeholder="How can we help you?"
-              rows={4}
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full p-3 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
-          </div>
-
-          <div className="w-full flex justify-end items-center">
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="text-center text-gray-800 font-semibold py-3 px-8 rounded-full flex justify-center items-center bg-white hover:from-[#787878] hover:to-[#0653A7] disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? "Sending..." : "Send Message"}
-            </button>
-          </div>
-        </form>
+        {/* Form Container */}
+        <div className="lg:relative lg:bottom-16 z-10 flex justify-end items-center lg:pr-12">
+          <ContactFormV2 formSize={5} />
+        </div>
       </div>
     </div>
   );

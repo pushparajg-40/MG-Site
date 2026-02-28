@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import RoundedArrowRight from "./ui/RoundedArrowRight";
 
 // const industriesData = [
 //   {
@@ -353,14 +354,10 @@ const Navbar = () => {
         <NavLink to="contactUs" className="hidden lg:block">
           <button
             className="text-black font-semibold py-3 px-8 rounded-full bg-gradient-to-r
-            from-[#8B8B8B] to-[#1783F7] dark:from-white dark:to-gray-200 dark:text-black flex items-center hover:opacity-90 transition"
+            from-[#8B8B8B] to-[#1783F7] dark:from-white dark:to-gray-200 dark:text-black flex items-center hover:opacity-90 transition gap-2"
           >
             Get in Touch
-            <img
-              src="/assets/updated/crossArrow.svg"
-              alt="Arrow"
-              className="ml-2 w-3 h-3"
-            />
+            <RoundedArrowRight className="w-5 h-5" />
           </button>
         </NavLink>
 

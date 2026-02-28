@@ -136,7 +136,8 @@ body {
 .phone-input {
   border: 1px solid #f7f8f9;
   border-radius: 8px;          /* optional */
-  padding: 12px;               /* optional */
+  padding: 8px;               /* optional */
+  background: #fff;
 }
 
 .phone-input .PhoneInputInput {
