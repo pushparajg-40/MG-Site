@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import ArrowNarrowRightIcon from "../ui/ArrowNarrowRightIcon";
+import SquareChevronRight from "../ui/SquareChevronRight";
 
 interface SolutionsCard {
   pageLink: string;
@@ -215,42 +217,17 @@ function Solutions() {
                       <Link to={card.pageLink}>
                         <div
                           id={card.id}
-                          className="solution-item hover:font-semibold group p-4 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                          className="solution-item hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
                           data-delay="400"
                         >
-                          <div className="flex items-center justify-between gap-4">
+                          <div className="flex items-center justify-between gap-4 px-2">
                             <div className="flex items-center gap-4">
-                              <div className="rotate-[-45deg]">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="15"
-                                  height="15"
-                                  viewBox="0 0 15 15"
-                                >
-                                  <path
-                                    fill="#FFFFFF"
-                                    d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414"
-                                  />
-                                </svg>
-                              </div>
+                              <SquareChevronRight />
                               <h3 className="text-xl">{card.productName}</h3>
                             </div>
-                            <div className="self-end rotate-[90deg] hidden group-hover:block">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="none"
-                                  stroke="#FFFFFF"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988"
-                                  stroke-width="1"
-                                />
-                              </svg>
+                            <div className="hidden group-hover:flex group-hover:items-center group-hover:gap-1">
+                              <span className="text-xs font-light">Read More</span>
+                              <ArrowNarrowRightIcon className="w-6 h-6" />
                             </div>
                           </div>
                           <hr className="mt-6" />

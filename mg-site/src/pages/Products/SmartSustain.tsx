@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
+import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
 
 interface Feature {
   title: string;
@@ -141,15 +142,7 @@ export function SmartSustain() {
                 }}
               >
                 Talk to Our Experts
-                <img
-                  src={
-                    isDark
-                      ? "assets/updated/crossArrow.svg"
-                      : "assets/getInArrow.svg"
-                  }
-                  alt="Arrow"
-                  className="ml-2 h-3"
-                />
+                <RoundedArrowRightIcon className="w-5 h-5 mx-1" />
               </button>
             </div>
             <div className="mt-[50px] md:mt-0">

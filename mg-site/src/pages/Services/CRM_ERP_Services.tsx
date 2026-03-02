@@ -1,6 +1,7 @@
 import ChildHeroBanner from "../../components/ChildsHeroBanner";
 import PageTransition from "../../components/PageTransition";
 import ServiceSection from "../../components/ServiceSection";
+import SquareChevronRight  from "../../components/ui/SquareChevronRight";
 import WhyChooseUsCard from "../../components/WhyChooseUsCard";
 
 const serviceSectionDescription =
@@ -176,13 +177,9 @@ function CRM_ERP_Services() {
               <div className="w-full lg:w-2/3 space-y-8 lg:pr-[50px]">
                 {capabilityItems.map((item, idx) => (
                   <div key={idx} className="flex items-start">
-                    <img
-                      src="assets/arrow.svg"
-                      className="mt-2 w-3 theme-image"
-                      data-light="assets/arrow.svg"
-                      data-dark="assets/updated/crossArrowWhite.svg"
-                      alt=""
-                    />
+                    <div>
+                      <SquareChevronRight className="mt-1" />
+                    </div>
                     <div className="ml-2">
                       <h3 className="text-lg font-semibold text-[#687DA9] dark:text-white flex items-center gap-2">
                         {item.title}

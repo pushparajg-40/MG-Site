@@ -1,4 +1,5 @@
 import { easeOut, motion } from "framer-motion";
+import RoundedArrowRightIcon from "../ui/RoundedArrowRightIcon";
 
 interface OfferCards {
   title: string;
@@ -120,6 +121,7 @@ function WhatWeOfferSection({
                     className="dark:text-white font-semibold text-sm px-4 py-4 !text-decoration-underline text-gray-600 flex items-center gap-2"
                   >
                     Read More
+                    <RoundedArrowRightIcon className="w-5 h-5" bgColor="#f9fafb" arrowColor="#4b5563" />
                   </a>
                 </div>
               </motion.div>

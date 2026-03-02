@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import RoundedArrowRight from "./ui/RoundedArrowRight";
+import RoundedArrowRightIcon from "./ui/RoundedArrowRightIcon";
 
 // const industriesData = [
 //   {
@@ -357,7 +357,7 @@ const Navbar = () => {
             from-[#8B8B8B] to-[#1783F7] dark:from-white dark:to-gray-200 dark:text-black flex items-center hover:opacity-90 transition gap-2"
           >
             Get in Touch
-            <RoundedArrowRight className="w-5 h-5" />
+            <RoundedArrowRightIcon className="w-5 h-5" />
           </button>
         </NavLink>
 

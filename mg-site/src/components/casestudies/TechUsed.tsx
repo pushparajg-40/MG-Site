@@ -1,4 +1,4 @@
-import BoxedChevronRightIcon from "../ui/BoxedChevronRight";
+import SquareChevronRight from "../ui/SquareChevronRight";
 
 export default function TechUsed({
   items,
@@ -16,7 +16,9 @@ export default function TechUsed({
         <div className="grid-cols-2 grid md:pl-8 gap-6">
           {items.map((tech, idx) => (
             <div key={idx} className="flex gap-3">
-              <BoxedChevronRightIcon />
+              <div>
+                <SquareChevronRight className="mt-1" />
+              </div>
               <p className="text-[#687DA9] dark:text-white mb-1 text-lg font-medium">
                 {tech}
               </p>

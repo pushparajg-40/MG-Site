@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import SquareChevronRight from "./ui/SquareChevronRight";
+import RoundedArrowRightIcon from "./ui/RoundedArrowRightIcon";
 
 export default function IndustrySection({
   title,
@@ -86,12 +88,9 @@ export default function IndustrySection({
             <ul className="space-y-2 text-[#666666] dark:text-white">
               {solutions.map((solution: any, idx: any) => (
                 <li key={idx} className="flex items-start gap-2">
-                    <img
-                      src="assets/arrow.svg"
-                      data-light="assets/arrow.svg"
-                      data-dark="assets/updated/crossArrowWhite.svg"
-                      className="theme-image w-2.5"
-                    />
+                    <div>
+                  <SquareChevronRight className="mt-1" />
+                </div>
                   <span>{solution}</span>
                 </li>
               ))}
@@ -109,12 +108,9 @@ export default function IndustrySection({
             <ul className="space-y-2 text-[#666666] dark:text-white">
               {impacts.map((impact: any, idx: any) => (
                 <li key={idx} className="flex items-start gap-2">
-                    <img
-                      src="assets/arrow.svg"
-                      data-light="assets/arrow.svg"
-                      data-dark="assets/updated/crossArrowWhite.svg"
-                      className="theme-image w-2.5"
-                    />
+                    <div>
+                  <SquareChevronRight className="mt-1" />
+                </div>
                   <span>{impact}</span>
                 </li>
               ))}
@@ -132,15 +128,9 @@ export default function IndustrySection({
               {caseStudyTitle}
             </h2>
             <a href={caseStudyLink}>
-              <button className="mt-6 w-[240px] text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center bg-[linear-gradient(141deg,rgba(139,139,139,1)_0%,rgba(23,131,247,1)_100%)] hover:bg-[linear-gradient(141deg,#787878_0%,#0653A7_100%)] dark:bg-white dark:bg-gradient-to-r dark:from-white dark:to-gray-100 dark:hover:from-gray-200 dark:hover:to-gray-400">
+              <button className="mt-6 w-[240px] text-white dark:text-black font-semibold py-3 px-6 rounded-full flex items-center bg-[linear-gradient(141deg,rgba(139,139,139,1)_0%,rgba(23,131,247,1)_100%)] hover:bg-[linear-gradient(141deg,#787878_0%,#0653A7_100%)] dark:bg-white dark:bg-gradient-to-r dark:from-white dark:to-gray-100 dark:hover:from-gray-200 dark:hover:to-gray-400">
                 View our Casestudy
-                <img
-                  src="assets/getInArrow.svg"
-                  data-light="assets/getInArrow.svg"
-                  data-dark="assets/updated/crossArrow.svg"
-                  alt="Arrow"
-                  className="ml-2 h-3 theme-image"
-                />
+                <RoundedArrowRightIcon className="w-5 h-5 mx-2" />
               </button>
             </a>
           </div>

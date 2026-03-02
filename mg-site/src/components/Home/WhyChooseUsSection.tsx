@@ -46,14 +46,14 @@ function WhyChooseUsSection() {
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[100px] pb-[100px] transition-all duration-500 ease-in"
+        className="bg-[#000000] pt-[40px] pb-[120px] transition-all duration-500 ease-in"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true}}
         variants={wrapperVariants}
       >
         <motion.div
-          className="px-10 lg:px-20 py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+          className="px-10 lg:px-20 py-2 sm:py-4 lg:py-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={wrapperVariants}
         >
           {/* Heading */}

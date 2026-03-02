@@ -43,7 +43,7 @@ export function FeaturesSection({
   }, []);
 
   return (
-    <div className="mt-[50px] md:mt-[100px] 2xl:px-[100px] bg-[#F6FAFF] dark:bg-[#181818] pt-[20px]  ">
+    <div className="mt-[50px] md:mt-[100px] 2xl:px-[100px] bg-[#F6FAFF] dark:bg-[#181818] p-[40px]  ">
       <div
         className={`2xl-plus:max-w-9xl 2xl-plus:mx-auto flex flex-col justify-center ${
           type == "normal" ? "items-center" : "items-start"

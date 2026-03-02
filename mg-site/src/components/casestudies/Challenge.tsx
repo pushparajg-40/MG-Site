@@ -1,3 +1,5 @@
+import SquareChevronRight from "../ui/SquareChevronRight";
+
 interface ChallengeProps {
   title: string;
   desc: string;
@@ -20,13 +22,9 @@ export default function Challenge({ title, desc, challenges }: ChallengeProps) {
         <ul className="list-disc mt-8 ml-3 space-y-4 text-[#667085] dark:text-white">
           {challenges.map((challenge, idx) => (
             <li key={idx} className="flex gap-3">
-              <img
-                src="/assets/arrow.svg"
-                data-light="/assets/arrow.svg"
-                data-dark="/assets/updated/crossArrowWhite.svg"
-                className="theme-image mt-[-2px]"
-                alt=""
-              />
+              <div>
+                  <SquareChevronRight className="mt-1" />
+                </div>
               <p className="text-[#687DA9] dark:text-white mb-1 text-md font-medium">
                 {challenge}
               </p>

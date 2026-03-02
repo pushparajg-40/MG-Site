@@ -7,6 +7,7 @@ import FinancialBankingIcon from "../../../public/assets/financial-banking-icon.
 import TelecomIcon from "../../../public/assets/telecom-icon.svg?react"
 import ManufacturingIcon from "../../../public/assets/manufacturing-icon.svg?react"
 import EnergyUtilitiesIcon from "../../../public/assets/energy-utilities-icon.svg?react"
+import ArrowNarrowRightIcon from "../ui/ArrowNarrowRightIcon";
 
 
 
@@ -103,7 +104,7 @@ export default function OtherCaseStudies() {
   };
 
   return (
-    <section className="scroll-animate relative bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in py-8">
+    <section className="scroll-animate relative bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in py-12">
       <div className=" md:pr-16 lg:pr-32 mt-1 md:mt-8 lg:pt-[40px]">
         <div className="flex justify-between space-x-4 pt-[30px] lg:pt-0 mb-8">
           <div className="md:pl-16 lg:pl-32">
@@ -166,7 +167,8 @@ export default function OtherCaseStudies() {
                   <div className="h-full w-full rounded-2xl overflow-hidden p-2 md:p-4 flex flex-col justify-between">
                     <div className="flex justify-between">
                       <Icon className="w-6 h-6 md:w-9 md:h-9" />
-                      <ArrowRightIcon className="w-4 h-4 md:w-7 md:h-7" />
+                      {/* <ArrowRightIcon className="w-4 h-4 md:w-7 md:h-7" /> */}
+                      <ArrowNarrowRightIcon className="w-4 h-4 md:w-8 md:h-8 text-gray-200"  />
                     </div>
                     <div className="text-white z-10">
                       <h2 className="text-xl md:text-2xl font-bold mb-2 text-[#687DA9] dark:text-white">

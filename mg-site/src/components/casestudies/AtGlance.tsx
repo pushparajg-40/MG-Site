@@ -1,3 +1,5 @@
+import SquareChevronRight from "../ui/SquareChevronRight";
+
 interface GlanceProps {
   arrowLight: string;
   arrowDark: string;
@@ -17,22 +19,18 @@ export default function AtAGlance({
         </p>
         <div className="grid md:grid-cols-2 gap-5 lg:mt-[30px]">
           {items.map((item, idx) => (
-            <div key={idx}>
-              <div className="flex gap-3">
-                <img
-                  src={arrowLight}
-                  data-light={arrowLight}
-                  data-dark={arrowDark}
-                  className="theme-image"
-                  alt=""
-                />
+            <div key={idx} className="flex gap-3">
+                <div>
+                  <SquareChevronRight className="mt-1" />
+                </div>
+              <div className="flex flex-col gap-1">
                 <p className="font-semibold text-[#687DA9] dark:text-white mb-1 text-xl">
                   {item.title}
                 </p>
-              </div>
-              <p className="text-[#667085] dark:text-white pl-6">
+              <p className="text-[#667085] dark:text-white">
                 {item.value}
               </p>
+              </div>
             </div>
           ))}
         </div>

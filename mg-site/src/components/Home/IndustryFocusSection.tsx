@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import ArrowNarrowRightIcon from "../ui/ArrowNarrowRightIcon";
 
 interface IndustrySlide {
   id: number;
@@ -161,14 +162,14 @@ export default function IndustryFocusSection() {
 
     slider.addEventListener("scroll", handleScroll, { passive: true });
     slider.addEventListener("mouseenter", () =>
-      clearInterval(autoSlideRef.current!)
+      clearInterval(autoSlideRef.current!),
     );
     slider.addEventListener("mouseleave", startAutoSlide);
 
     return () => {
       slider.removeEventListener("scroll", handleScroll);
       slider.removeEventListener("mouseenter", () =>
-        clearInterval(autoSlideRef.current!)
+        clearInterval(autoSlideRef.current!),
       );
       slider.removeEventListener("mouseleave", startAutoSlide);
       clearTimeout(scrollTimeout);
@@ -255,10 +256,7 @@ export default function IndustryFocusSection() {
             </h2>
             <img src="/assets/updated/line.svg" className="pt-3" alt="line" />
           </div>
-          <h1
-            className="text-3xl md:text-4xl  mb-4 leading-tight font-extrabold text-gradient"
-            
-          >
+          <h1 className="text-3xl md:text-4xl  mb-4 leading-tight font-extrabold text-gradient">
             Transforming Industries with Intelligent & Scalable Solutions
           </h1>
           <p className="text-sm md:text-base text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">
@@ -293,13 +291,9 @@ export default function IndustryFocusSection() {
             ))}
 
             <a href="#industries">
-              <button className="flex-shrink-0 flex text-black py-2 px-3 md:px-6 items-center bg-white hover:bg-gray-100 transition-colors text-xs md:text-sm whitespace-nowrap">
+              <button className="flex-shrink-0 flex text-black py-2 px-3 md:px-6 items-center bg-white font-semibold hover:bg-gray-100 transition-colors text-xs md:text-sm whitespace-nowrap">
                 See All
-                <img
-                  src="assets/updated/crossArrow.svg"
-                  alt="Arrow"
-                  className="ml-2 w-3 h-3"
-                />
+                <ArrowNarrowRightIcon className="mx-2" />
               </button>
             </a>
           </div>

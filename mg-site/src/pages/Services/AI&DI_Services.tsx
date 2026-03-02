@@ -2,6 +2,7 @@ import ServiceSection from "../../components/ServiceSection";
 import WhyChooseUsCard from "../../components/WhyChooseUsCard";
 import ChildHeroBanner from "../../components/ChildsHeroBanner";
 import PageTransition from "../../components/PageTransition";
+import SquareChevronRight from "../../components/ui/SquareChevronRight";
 
 const serviceSectionDescription =
   "We deliver a comprehensive suite of offerings tailored to meet the evolving data and AI needs of modern enterprises";
@@ -116,14 +117,12 @@ function AI_DI_Services() {
   return (
     <PageTransition>
       <div className="overflow-x-hidden dark:bg-black transition-all duration-500 ease-in ">
-         <ChildHeroBanner
-            title="AI & Data Intelligence"
-            image="/assets/aiService.png"
-            type="service"
-          />
+        <ChildHeroBanner
+          title="AI & Data Intelligence"
+          image="/assets/aiService.png"
+          type="service"
+        />
         <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto">
-         
-
           <section className="relative bg-white dark:bg-black pb-12 px-4 sm:px-8 lg:px-16 transition-all duration-500 ease-in">
             <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
               <div className="md:w-1/2 mt-8 md:mt-0 order-2 md:order-1">
@@ -182,13 +181,9 @@ function AI_DI_Services() {
                 <div className="w-full lg:w-2/3 space-y-8 lg:pr-[50px]">
                   {capabilityItems.map((item, idx) => (
                     <div key={idx} className="flex items-start">
-                      <img
-                        src="assets/arrow.svg"
-                        className="mt-2 theme-image w-3"
-                        data-light="assets/arrow.svg"
-                        data-dark="assets/updated/crossArrowWhite.svg"
-                        alt=""
-                      />
+                      <div>
+                        <SquareChevronRight className="mt-1" />
+                      </div>
                       <div className="ml-2">
                         <h3 className="text-lg font-semibold text-[#687DA9] dark:text-white flex items-center gap-2">
                           {item.title}

@@ -57,7 +57,7 @@ function ContactFormSection() {
             </div>
           </div>
 
-          <ContactFormV2 bordered showContactAgreeText ctaFull formSize={6} />
+          <ContactFormV2 bordered showContactAgreeText ctaFull />
 
           <div className="flex flex-col md:flex-row gap-6 md:mt-[60px] md:hidden">
             <div className="flex-1">

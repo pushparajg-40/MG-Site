@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
+import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
+import SquareChevronRight from "../../components/ui/SquareChevronRight";
 
 interface FeatureColumn {
   title: string;
@@ -163,15 +165,7 @@ export default function Patient360() {
                 }}
               >
                 Talk to Our Experts
-                <img
-                  src={
-                    isDark
-                      ? "assets/updated/crossArrow.svg"
-                      : "assets/getInArrow.svg"
-                  }
-                  alt="Arrow"
-                  className="ml-2 h-3"
-                />
+                <RoundedArrowRightIcon className="w-5 h-5 mx-1" />
               </button>
             </div>
             <div className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end ">
@@ -308,13 +302,7 @@ export default function Patient360() {
                 <div className="w-full lg:w-2/3 space-y-8 lg:pr-[50px]">
                   {capabilityItems.map((item, idx) => (
                     <div key={idx} className="flex items-start">
-                      <img
-                        src="assets/arrow.svg"
-                        className="mt-2 w-3 theme-image"
-                        data-light="assets/arrow.svg"
-                        data-dark="assets/updated/crossArrowWhite.svg"
-                        alt=""
-                      />
+                      <SquareChevronRight className="mt-1" />
                       <div className="ml-2">
                         <h3 className="text-lg font-semibold text-[#687DA9] dark:text-white flex items-center gap-2">
                           {item.title}
@@ -375,13 +363,7 @@ export default function Patient360() {
                 <a href={"/contactus"}>
                   <button className="mt-6 w-[240px] text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center bg-[linear-gradient(141deg,rgba(139,139,139,1)_0%,rgba(23,131,247,1)_100%)] hover:bg-[linear-gradient(141deg,#787878_0%,#0653A7_100%)] dark:bg-white dark:bg-gradient-to-r dark:from-white dark:to-gray-100 dark:hover:from-gray-200 dark:hover:to-gray-400">
                     Schedule a Demo
-                    <img
-                      src="assets/getInArrow.svg"
-                      data-light="assets/getInArrow.svg"
-                      data-dark="assets/updated/crossArrow.svg"
-                      alt="Arrow"
-                      className="ml-2 h-3 theme-image"
-                    />
+                    <RoundedArrowRightIcon className="w-5 h-5 mx-1" />
                   </button>
                 </a>
               </div>

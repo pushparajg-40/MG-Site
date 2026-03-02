@@ -1,4 +1,4 @@
-import BoxedChevronRightIcon from "../ui/BoxedChevronRight";
+import SquareChevronRight from "../ui/SquareChevronRight";
 
 export interface OurRoleProps {
   title: string;
@@ -20,7 +20,9 @@ export default function OurRole({ title, value, items }: OurRoleProps) {
               key={idx}
               className="flex items-start space-x-3 text-[#687DA9] dark:text-white my-3 text-sm"
             >
-              <BoxedChevronRightIcon />
+              <div>
+                <SquareChevronRight />
+              </div>
               <span>{item}</span>
             </li>
           ))}

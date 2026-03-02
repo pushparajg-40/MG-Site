@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                 className="h-12 dark:hidden"
               />
             </Link>
-            <p className="text-black dark:text-white leading-[120%] text-[20px] mt-5 sm:w-[80%]">
+            <p className="text-black dark:text-white text-center leading-[120%] text-[18px] font-medium mt-5 sm:w-[80%]">
               An AI Assurance Company
             </p>
           </div>
@@ -97,13 +97,13 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="200"
         >
-          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+          <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
             Company
           </h6>
           <ul className="space-y-3 sm:space-y-2">
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/"
               >
                 Home
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/aboutus"
               >
                 About Us
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
             </li>
             {/* <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                className="text-[#7E7E7E] dark:text-gray-300 transition"
                 to="/services"
               >
                 Services
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                className="text-[#7E7E7E] dark:text-gray-300 transition"
                 to="/Enterprise_Solutions"
               >
                 Enterprise Solutions
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
             </li> */}
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black transition"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/industries"
               >
                 Industries
@@ -149,13 +149,13 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="300"
         >
-          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+          <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
             Services
           </h6>
           <ul className="space-y-3 sm:space-y-2">
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/AI&DI_Services"
               >
                 AI & Data Intelligence
@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/AppDevServices"
               >
                 Application & Development
@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/CloudInfrastructureServices"
               >
                 Cloud Infrastructure
@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/Consulting&AdvisoryServices"
               >
                 Consulting & Advisory
@@ -187,7 +187,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/CRM&ERPServices"
               >
                 CRM & ERP
@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/SapEnterpriseServices"
               >
                 SAP Enterprise
@@ -203,7 +203,7 @@ const Footer: React.FC = () => {
             </li>
             {/* <li>
               <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                className="text-[#7E7E7E] dark:text-gray-100 transition"
                 to="/optiSaas"
               >
                 OptiSaaS
@@ -217,7 +217,7 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="300"
         >
-          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+          <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
             Enterprise Solutions
           </h6>
           <ul className="space-y-3 sm:space-y-2">
@@ -301,7 +301,7 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="400"
         >
-          <h6 className="text-[#0C426E] dark:text-white font-semibold text-[16px] mb-4">
+          <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
             Resources
           </h6>
           <ul className="space-y-3 sm:space-y-2">

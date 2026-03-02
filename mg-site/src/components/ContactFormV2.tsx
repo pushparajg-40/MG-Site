@@ -10,7 +10,7 @@ import PhoneInput, {
 } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { cn } from "../lib/utils";
-import RoundedArrowRight from "./ui/RoundedArrowRight";
+import RoundedArrowRightIcon from "./ui/RoundedArrowRightIcon";
 
 interface StatusMessage {
   type: "success" | "error" | null;
@@ -21,7 +21,7 @@ export interface ContactFormV2Props {
   bordered?: boolean;
   showContactAgreeText?: boolean;
   ctaFull?: boolean;
-  formSize?: number;
+  isFooterFormSize?: boolean;
 }
 
 const defaultFormState = {
@@ -38,7 +38,7 @@ export default function ContactFormV2({
   bordered = false,
   showContactAgreeText = false,
   ctaFull = false,
-  formSize
+  isFooterFormSize,
 }: ContactFormV2Props) {
   const { pageName } = useLocationPath();
   const { getNumberDetails } = usePhoneNumberDetails();
@@ -67,11 +67,17 @@ export default function ContactFormV2({
       const timstamp = new Date()?.toLocaleString();
       const googleFormData = new FormData();
 
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.firstName);
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.lastName);
+      googleFormData.append(
+        GOOGLE_FORM_FIELD_IDS.firstName,
+        formData.firstName,
+      );
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.lastName, formData.lastName);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.email);
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.companyName);
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.jobTitle);
+      googleFormData.append(
+        GOOGLE_FORM_FIELD_IDS.companyName,
+        formData.companyName,
+      );
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.jobTitle, formData.jobTitle);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.mobile, formData.mobile);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.message, formData.message);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.timestamp, timstamp);
@@ -95,16 +101,18 @@ export default function ContactFormV2({
     try {
       emailjs.init("YNl6-hgl7eAO4_9f4");
 
-      await emailjs.send("service_hy9quj8", "template_t68k20j", {
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        reply_to: formData.email,
-        from_email: formData.email,
-        mobile_number: formData.mobile,
+      const emailPayload = {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email_address: formData.email,
+        company_name: formData.companyName,
+        job_title: formData.jobTitle,
+        phone_number: formData.mobile,
         message: formData.message,
         from_page: pageName,
-        // company_name: formData.email,
-        // job_title: formData.email,
-      });
+      };
+
+      await emailjs.send("service_hy9quj8", "template_t68k20j", emailPayload);
 
       setStatus({
         type: "success",
@@ -198,12 +206,12 @@ export default function ContactFormV2({
   return (
     <div
       className={cn(
-        "bg-[#191919] rounded-lg p-2 md:p-5 space-y-4",
-        bordered ? "border border-gray-300" : "",
-        formSize ? `lg:w-${formSize}/12 sm:full` : 'lg:w-5/12 sm:w-full' 
+        "bg-[#191919] rounded-xl p-4 sm:p-6 space-y-6 w-full",
+        bordered ? "border border-gray-300" : "border border-gray-600",
+        isFooterFormSize ? `lg:w-5/12 ml-auto` : "lg:w-6/12 mx-auto",
       )}
     >
-      <h2 className="text-gray-300 font-medium text-base mb-6">
+      <h2 className="text-gray-300 font-medium text-sm md:text-base lg:text-lg leading-relaxed">
         Ready to take your business to the next level? Contact us today and see
         how we can help.
       </h2>
@@ -221,7 +229,7 @@ export default function ContactFormV2({
 
       <form
         onSubmit={handleFormAction}
-        className="rounded-lg md:shadow-lg max-w-3xl grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-4"
+        className="rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
       >
         <div className="flex flex-col gap-2">
           <label
@@ -236,7 +244,7 @@ export default function ContactFormV2({
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2.5 text-sm md:text-base border border-[#D0D5DD] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </div>
 
@@ -318,13 +326,8 @@ export default function ContactFormV2({
             limitMaxLength
             countryCallingCodeEditable={false}
             required
-            className="phone-input text-gray-400"
+            className="phone-input text-gray-400 w-full rounded-lg border border-[#D0D5DD] px-3 py-2.5 text-sm md:text-base bg-white"
             placeholder="Enter mobile number"
-            style={{
-              border: "1px solid #dee2e6",
-              borderRadius: "6px",
-              paddingLeft: "8px",
-            }}
           />
           {phoneError && (
             <p className="mt-1 text-red-400 text-sm">{phoneError}</p>
@@ -344,7 +347,7 @@ export default function ContactFormV2({
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2.5 text-sm md:text-base border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           ></textarea>
         </div>
 
@@ -361,20 +364,19 @@ export default function ContactFormV2({
             </a>
           </div>
         ) : null}
-        {!ctaFull ? <div></div> : null}
-        <div className={cn(ctaFull ? "col-span-2" : "")}>
+        <div className={cn(ctaFull ? "col-span-2" : "md:col-start-2")}>
           <button
             type="submit"
             disabled={isLoading}
             className={cn(
-              "text-center text-gray-800 font-semibold py-3 px-6 rounded-full w-full bg-white hover:from-[#787878] hover:to-[#0653A7] disabled:opacity-50 disabled:cursor-not-allowed",
+              "text-center text-gray-800 font-semibold py-3 md:py-3.5 px-6 rounded-full w-full bg-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed",
               ctaFull
                 ? "flex justify-center items-center gap-2"
                 : "flex justify-between items-center gap-1",
             )}
           >
             {isLoading ? "Sending..." : "Send Message"}
-            <RoundedArrowRight className="w-5 h-5" />
+            <RoundedArrowRightIcon className="w-5 h-5" />
           </button>
         </div>
       </form>
