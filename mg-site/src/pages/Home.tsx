@@ -101,27 +101,23 @@ const Home: React.FC = () => {
 
   return (
     <>
-    <style>
-      {
-        `.off-border{
+      <style>
+        {`.off-border{
            
-        border:0.5px solid white; }`
-      }
-    </style>
+        border:0.5px solid white; }`}
+      </style>
       <PageTransition>
         <div className="overflow-x-hidden max-w-full ">
           {/* Hero Section */}
-          <section className="bg-[#191919] text-white overflow-hidden  md:px-[40px] lg:px-[120px] ">
+          <section className="bg-[#191919] text-white overflow-hidden  md:px-[40px] lg:px-[100px] ">
             <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto ">
               {/* Heading + Subtext */}
-              <div className=" pl-4 md:pl-0 space-y-4 hero-text">
-                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient ">
-                  AI Assurance for Mission-Critical Enterprises
+              <div className="pl-4 md:pl-0 space-y-4 hero-text w-4/6 my-auto">
+                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient">
+                  AI-Powered <br />
+                  Cyber-Secured <br />
+                  Enterprise-Governed
                 </h2>
-                <p className="text-3xl ">
-                  Driving AI Assurance <br/>
-                  Across Critical Infrastructure
-                </p>
               </div>
 
               <SearchSection />

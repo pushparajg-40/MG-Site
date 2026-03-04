@@ -57,7 +57,7 @@ function Offerings() {
                 </h2>
                 <p className="text-xs lg:text-sm font-normal md:pr-8">
                   Localized AI products marketing, and regulatory support for
-                  ASEAN expansion.
+                  APAC expansion.
                 </p>
               </div>
             </div>

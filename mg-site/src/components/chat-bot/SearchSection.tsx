@@ -433,7 +433,7 @@ const SearchSection: React.FC = () => {
       `}</style>
 
             {/* ── Right column: search bar + chip grid ── */}
-            <div className="w-full flex flex-col gap-0">
+            <div className="w-4/6 flex flex-col gap-0">
 
                 {/* Search bar — white, full width, with star icon */}
                 <form onSubmit={handleFollowUp} className="w-full">
