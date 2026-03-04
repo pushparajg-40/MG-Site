@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                 className="h-12 dark:hidden"
               />
             </Link>
-            <p className="text-black dark:text-white text-center leading-[120%] text-[18px] font-medium mt-5 sm:w-[80%]">
+            <p className="text-black dark:text-white text-center leading-[120%] text-base mt-5 sm:w-[80%]">
               An AI Assurance Company
             </p>
           </div>

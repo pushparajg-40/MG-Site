@@ -9,11 +9,28 @@ export default function FooterContactForm() {
         <img
           src="/assets/contact-form-footer-bg.jpg"
           alt="Contact background"
-          className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-80"
+          className="hidden md:block absolute inset-0 w-full object-cover opacity-80"
         />
 
+        {/* Title and description */}
+        <div className="hidden lg:flex absolute inset-0 z-10 items-center pl-20 max-w-[55%]">
+          <div>
+            <h3 className="text-gray-50 text-4xl leading-tight">
+              Let’s work together,
+              <br />
+              Get started.
+            </h3>
+
+            <p className="text-gray-50 text-base mt-6 max-w-md">
+              We’re here to provide fast, accurate,
+              <br />
+              and helpful responses—just ask!
+            </p>
+          </div>
+        </div>
+
         {/* Form Container */}
-        <div className="lg:relative lg:bottom-16 z-10 flex justify-end items-center lg:pr-12">
+        <div className="lg:relative lg:bottom-24 z-10 flex justify-end items-center lg:pr-12">
           <ContactFormV2 isFooterFormSize={true} />
         </div>
       </div>
