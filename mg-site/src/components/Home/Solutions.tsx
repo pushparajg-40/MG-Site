@@ -139,9 +139,9 @@ function Solutions() {
 
     if (!solutionImage || !solutionText) return;
 
-    const defaultImage = "/assets/mathOps.png";
-    const defaultText =
-      "MathOps is a next-gen analytics and monitoring platform built to optimize IT.";
+    // const defaultImage = "/assets/mathOps.png";
+    // const defaultText =
+    //   "MathOps is a next-gen analytics and monitoring platform built to optimize IT.";
 
     const listeners: Array<{ element: Element; enter: any; leave: any }> = [];
 

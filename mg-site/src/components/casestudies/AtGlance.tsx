@@ -1,14 +1,10 @@
 import SquareChevronRight from "../ui/SquareChevronRight";
 
 interface GlanceProps {
-  arrowLight: string;
-  arrowDark: string;
   items: any[];
 }
 
 export default function AtAGlance({
-  arrowLight,
-  arrowDark,
   items,
 }: GlanceProps) {
   return (

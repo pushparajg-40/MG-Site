@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import ArrowRightIcon from "../../../public/assets/arrow-right-icon.svg?react"
 import HealthCareIcon from "../../../public/assets/health-care-icon.svg?react"
 import AviationTransportIcon from "../../../public/assets/aviation-transport-icon.svg?react"
 import FinancialBankingIcon from "../../../public/assets/financial-banking-icon.svg?react"

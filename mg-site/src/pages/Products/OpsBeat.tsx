@@ -75,7 +75,7 @@ export default function OpsBeat() {
   }, []);
 
   const [isDark, setIsDark] = useState(false);
-
+console.log(isDark)
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {

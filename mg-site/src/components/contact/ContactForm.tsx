@@ -49,7 +49,7 @@ export default function ContactForm() {
       const timstamp = new Date()?.toLocaleString();
       const googleFormData = new FormData();
       
-      googleFormData.append(GOOGLE_FORM_FIELD_IDS.name, formData.name);
+      googleFormData.append(GOOGLE_FORM_FIELD_IDS.firstName, formData.name);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.email, formData.email);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.mobile, formData.mobile);
       googleFormData.append(GOOGLE_FORM_FIELD_IDS.message, formData.message);

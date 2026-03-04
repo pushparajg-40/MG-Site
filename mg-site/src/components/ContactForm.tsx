@@ -1,4 +1,3 @@
-import ContactForm from "./contact/ContactForm";
 import ContactFormV2 from "./ContactFormV2";
 
 function ContactFormSection() {
