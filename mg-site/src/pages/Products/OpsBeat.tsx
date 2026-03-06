@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
@@ -66,25 +66,13 @@ export default function OpsBeat() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     scrollElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
-
-  const [isDark, setIsDark] = useState(false);
-console.log(isDark)
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-    }
-  });
 
   const navigate = useNavigate();
 

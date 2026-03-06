@@ -4,12 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  transition: background-color 0.4s, color 0.4s;
+}
+
 /* Global styles */
 body {
   @apply font-sans bg-white text-black;
 }
-
-
 
 .text-gradient {
   

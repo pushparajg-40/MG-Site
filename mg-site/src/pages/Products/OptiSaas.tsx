@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 
@@ -16,17 +15,7 @@ interface IntegrationItem {
 }
 
 export default function OptiSaasPage() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-    }
-  });
+  const isDark = document.documentElement.classList.contains("dark");
 
   const qualityFeatures: FeatureColumn = {
     title: "Quality Features",

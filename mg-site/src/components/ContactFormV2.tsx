@@ -206,12 +206,12 @@ export default function ContactFormV2({
   return (
     <div
       className={cn(
-        "bg-[#191919] rounded-xl p-4 sm:p-6 space-y-6 w-full",
-        bordered ? "border border-gray-300" : "border border-gray-600",
+        "bg-white dark:bg-[#1C1C1C] rounded-xl p-4 sm:p-6 space-y-6 w-full",
+        bordered ? "border border-[#d5d8dc] dark:border-[#2A2A2A]" : "border border-[#E4E7EC] dark:border-[#2A2A2A]",
         isFooterFormSize ? `lg:w-5/12 ml-auto` : "lg:w-6/12 mx-auto",
       )}
     >
-      <h2 className="text-gray-300 font-medium text-sm md:text-base lg:text-lg leading-relaxed">
+      <h2 className="text-[#667085] dark:text-white font-medium text-sm md:text-base lg:text-lg leading-relaxed">
         Ready to take your business to the next level? Contact us today and see
         how we can help.
       </h2>
@@ -234,7 +234,7 @@ export default function ContactFormV2({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="firstName"
-            className="text-sm font-medium text-gray-300"
+            className="text-sm font-medium text-[#667085] dark:text-white"
           >
             First Name
           </label>
@@ -251,7 +251,7 @@ export default function ContactFormV2({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="lastName"
-            className="text-sm font-medium text-gray-300"
+            className="text-sm font-medium text-[#667085] dark:text-white"
           >
             Last Name
           </label>
@@ -266,7 +266,7 @@ export default function ContactFormV2({
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-sm font-medium text-gray-300">
+          <label htmlFor="email" className="text-sm font-medium text-[#667085] dark:text-white">
             Email Address
           </label>
           <input
@@ -282,7 +282,7 @@ export default function ContactFormV2({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="companyName"
-            className="text-sm font-medium text-gray-300"
+            className="text-sm font-medium text-[#667085] dark:text-white"
           >
             Company Name
           </label>
@@ -299,7 +299,7 @@ export default function ContactFormV2({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="jobTitle"
-            className="text-sm font-medium text-gray-300"
+            className="text-sm font-medium text-[#667085] dark:text-white"
           >
             Job Title
           </label>
@@ -314,7 +314,7 @@ export default function ContactFormV2({
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="mobile" className="text-sm font-medium text-gray-300">
+          <label htmlFor="mobile" className="text-sm font-medium text-[#667085] dark:text-white">
             Phone Number
           </label>
           <PhoneInput
@@ -326,7 +326,7 @@ export default function ContactFormV2({
             limitMaxLength
             countryCallingCodeEditable={false}
             required
-            className="phone-input text-gray-400 w-full rounded-lg border border-[#D0D5DD] px-3 py-2.5 text-sm md:text-base bg-white"
+            className="phone-input text-[#667085] dark:text-white w-full rounded-lg border border-[#D0D5DD] px-3 py-2.5 text-sm md:text-base bg-white"
             placeholder="Enter mobile number"
           />
           {phoneError && (
@@ -337,7 +337,7 @@ export default function ContactFormV2({
         <div className="col-span-2 flex flex-col gap-2">
           <label
             htmlFor="message"
-            className="text-sm font-medium text-gray-300"
+            className="text-sm font-medium text-[#667085] dark:text-white"
           >
             Message
           </label>
@@ -352,7 +352,7 @@ export default function ContactFormV2({
         </div>
 
         {showContactAgreeText ? (
-          <div className="col-span-2 text-gray-400 text-[10px] text-center">
+          <div className="col-span-2 text-[#667085] dark:text-white text-[10px] text-center">
             By contacting us, you agree to our{" "}
             <a href="/terms" className="text-gray-100">
               {" "}
@@ -369,7 +369,7 @@ export default function ContactFormV2({
             type="submit"
             disabled={isLoading}
             className={cn(
-              "text-center text-gray-800 font-semibold py-3 md:py-3.5 px-6 rounded-full w-full bg-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed",
+              "text-center text-gray-800 font-semibold py-3 md:py-3.5 px-6 rounded-full w-full bg-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed border border-[#d5d8dc]",
               ctaFull
                 ? "flex justify-center items-center gap-2"
                 : "flex justify-between items-center gap-1",

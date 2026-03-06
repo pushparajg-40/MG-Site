@@ -115,7 +115,7 @@ const AboutUs: React.FC = () => {
     const setupObservers = (
       sectionId: string,
       boxClass: string,
-      threshold: number = 0.2
+      threshold: number = 0.2,
     ) => {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -123,7 +123,7 @@ const AboutUs: React.FC = () => {
             if (entry.isIntersecting) {
               const delay = parseInt(
                 entry.target.getAttribute("data-delay") || "0",
-                10
+                10,
               );
               setTimeout(() => {
                 const target = entry.target as HTMLElement;
@@ -141,11 +141,11 @@ const AboutUs: React.FC = () => {
             }
           });
         },
-        { threshold }
+        { threshold },
       );
 
       const animatedElements = document.querySelectorAll(
-        `#${sectionId} [data-delay]`
+        `#${sectionId} [data-delay]`,
       );
       animatedElements.forEach((el) => observer.observe(el));
 
@@ -159,7 +159,7 @@ const AboutUs: React.FC = () => {
     const cleanupChooseUs = setupObservers(
       "choose-us-section",
       "choose-box",
-      0.2
+      0.2,
     );
     setIsFading(false);
     // Setup for "Offerings" section
@@ -179,18 +179,7 @@ const AboutUs: React.FC = () => {
     }
   };
 
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-    }
-    console.log("Inisde About Effect  ", isDark);
-  });
+  const isDark = document.documentElement.classList.contains("dark");
 
   return (
     <>
@@ -652,7 +641,7 @@ const AboutUs: React.FC = () => {
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 flex flex-wrap justify-start mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 mt-8">
               {/* Box 1 */}
               <div
                 className="choose-box 

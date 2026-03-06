@@ -40,18 +40,6 @@ export function HeroSection({
     return () => observer.disconnect();
   }, []);
 
-  const [isDark, setIsDark] = useState(false);
-  console.log(isDark)
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-    }
-  });
-
   return (
     <div className="flex md:flex-row flex-col w-full  2xl-plus:max-w-9xl 2xl-plus:mx-auto">
       <div className="flex flex-col justify-center pl-[20px] lg:pl-[50px] pr-[3px] md:pr-[180px] md:w-[50%] mt-[70px] md:mt-0">

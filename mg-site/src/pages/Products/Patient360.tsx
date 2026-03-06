@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
@@ -87,17 +86,7 @@ const capabilityItems = [
 ];
 
 export default function Patient360() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(false);
-    }
-  });
+  const isDark = document.documentElement.classList.contains("dark");
 
   const navigate = useNavigate();
 
