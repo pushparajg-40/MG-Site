@@ -143,6 +143,7 @@ body {
 .phone-input .PhoneInputInput {
   border: none;               /* avoid double border */
   outline: none;
+  color: #393d44;
 }
 
 .phone-input:focus-within {

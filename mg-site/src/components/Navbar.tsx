@@ -105,7 +105,7 @@ const Navbar = () => {
   return (
     <header
       className="p-4 md:p-6 lg:px-20 fixed top-0 left-0 right-0 z-50
-      bg-white dark:bg-[#191919] transition-all duration-500"
+      bg-white dark:bg-[#191919] shadow-xl transition-all duration-500"
     >
       {" "}
       <div className="flex items-center justify-between 2xl-plus:max-w-9xl 2xl-plus:mx-auto ">

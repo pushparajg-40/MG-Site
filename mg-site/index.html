@@ -2,6 +2,29 @@
 <html lang="en">
 
 <head>
+  <!-- HTTPS Redirection: Ensure all HTTP requests are automatically redirected to the secure HTTPS version of the site. -->
+  <script>
+    if(location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      location.replace(`https://${location.host}${location.pathname}${location.search}`);
+    }
+  </script>
+  <!-- Content Security Policy: Authorizes GTM, Google Fonts, EmailJS -->
+  <!-- Content Security Policy: XFO Included -->
+  <meta 
+    http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; 
+            script-src 'self' https://www.googletagmanager.com 'unsafe-inline';
+            frame-ancestors 'self';
+            connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://docs.google.com https://api.emailjs.com;
+            img-src 'self' https://purecatamphetamine.github.io http://localhost:5173;
+            style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+            base-uri 'self' http://localhost:5173;
+            form-action 'self';
+            font-src 'self' https://fonts.gstatic.com;" 
+  />
+  <!-- Referrer Policy: Protects URL data from leaking to third parties -->
+  <meta name="referrer" content="strict-origin-when-cross-origin"  />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

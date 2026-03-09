@@ -9,7 +9,7 @@ export default function FooterContactForm() {
         <img
           src="/assets/contact-form-footer-bg.jpg"
           alt="Contact background"
-          className="hidden md:block absolute inset-0 w-full object-cover opacity-80"
+          className="hidden lg:block absolute inset-0 w-full object-cover"
         />
 
         {/* Title and description */}
