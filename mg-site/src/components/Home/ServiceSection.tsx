@@ -84,7 +84,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="bg-[#000000]">
+    <section className="bg-white dark:bg-[#000000]">
       <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         {/* Heading */}
         <motion.div
@@ -98,14 +98,17 @@ export function ServicesSection() {
             className="flex gap-2 items-center mb-4"
             variants={headingVariants}
           >
-            <h2 className="text-[#828282] text-3xl md:text-2xl mb-2">
+            <h2 className="text-[#1783F7] dark:text-[#828282] text-3xl md:text-2xl mb-2">
               Services
             </h2>
             <img src="/assets/updated/line.svg" alt="line" />
           </motion.div>
-
           <motion.h1
-            className="text-4xl text-radiant md:text-4xl font-extrabold text-white"
+            className="text-4xl md:text-4xl font-extrabold
+          bg-clip-text text-transparent
+          bg-gradient-to-r from-[#687DA9] to-[#1783F7]
+          dark:bg-gradient-to-r dark:from-white dark:to-white
+          dark:text-radiant"
             variants={headingVariants}
           >
             Transforming Ideas into Intelligent Realities
@@ -123,10 +126,14 @@ export function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="h-full block group hover:scale-105 transition-all duration-300 ease-out  "
+              className="h-full block group hover:scale-105 transition-all duration-300 ease-out"
             >
               <motion.div
-                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:shadow-lg"
+                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:shadow-lg
+              bg-gradient-to-br from-[#EAF9FD] to-[#DEF8FF]
+              dark:bg-transparent dark:from-transparent dark:to-transparent
+              border border-[#1783F7]/15 dark:border-transparent
+              rounded-xl dark:rounded-none"
                 variants={cardVariants}
               >
                 <img
@@ -135,21 +142,24 @@ export function ServicesSection() {
                   alt={service.title}
                 />
                 <div className="flex flex-col justify-center gap-4 md:gap-8">
-                  <h2 className="text-white text-xl font-semibold">
+                  <h2 className="text-[#1F3F68] dark:text-white text-xl font-semibold">
                     {service.title}
                   </h2>
-                  <p className="text-[#FFFFFF] leading-[25px] text-sm pr-[50px]">
+                  <p className="text-[#667085] dark:text-[#FFFFFF] leading-[25px] text-sm pr-[50px]">
                     {service.description}
                   </p>
                 </div>
-
                 <div>
                   <a
                     href={`/${service.link}`}
-                    className="dark:text-white font-semibold text-sm !text-decoration-underline text-gray-600 flex items-center gap-2"
+                    className="text-[#1783F7] dark:text-white font-semibold text-sm !text-decoration-underline flex items-center gap-2"
                   >
                     Read More
-                    <RoundedArrowRightIcon className="w-5 h-5" bgColor="#f9fafb" arrowColor="#4b5563" />
+                    <RoundedArrowRightIcon
+                      className="w-5 h-5"
+                      bgColor="#f9fafb"
+                      arrowColor="#4b5563"
+                    />
                   </a>
                 </div>
               </motion.div>

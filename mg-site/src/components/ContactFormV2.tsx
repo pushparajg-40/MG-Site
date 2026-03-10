@@ -203,18 +203,30 @@ export default function ContactFormV2({
     return true;
   };
 
+  // Shared input classes — light + dark
+  const inputClass =
+    "w-full px-4 py-2.5 text-sm md:text-base rounded-lg transition " +
+    "border border-[#D0D5DD] dark:border-[#2A2A2A] " +
+    "bg-white dark:bg-[#111111] " +
+    "text-[#1F3F68] dark:text-white " +
+    "placeholder:text-[#A0AEC0] dark:placeholder:text-[#555555] " +
+    "focus:outline-none focus:ring-2 focus:ring-[#1783F7] dark:focus:ring-blue-500";
+
   return (
     <div
       className={cn(
         "bg-white dark:bg-[#1C1C1C] rounded-xl p-4 sm:p-6 space-y-6 w-full",
-        bordered ? "border border-[#d5d8dc] dark:border-[#2A2A2A]" : "border border-[#E4E7EC] dark:border-[#2A2A2A]",
-        isFooterFormSize ? `lg:w-5/12 ml-auto` : "lg:w-6/12 mx-auto",
+        bordered
+          ? "border border-[#D0D5DD] dark:border-[#2A2A2A]"
+          : "border border-[#E4E7EC] dark:border-[#2A2A2A]",
+        isFooterFormSize ? "lg:w-5/12 ml-auto" : "lg:w-6/12 mx-auto",
       )}
     >
       <h2 className="text-[#667085] dark:text-white font-medium text-sm md:text-base lg:text-lg leading-relaxed">
-        Ready to take your business to the next level? Contact us today and see
+        Ready to take your business to the next level? Contact us today and see
         how we can help.
       </h2>
+
       {status.type && (
         <div
           className={`p-4 rounded-md ${
@@ -231,10 +243,11 @@ export default function ContactFormV2({
         onSubmit={handleFormAction}
         className="rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
       >
+        {/* First Name */}
         <div className="flex flex-col gap-2">
           <label
             htmlFor="firstName"
-            className="text-sm font-medium text-[#667085] dark:text-white"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
           >
             First Name
           </label>
@@ -244,14 +257,15 @@ export default function ContactFormV2({
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            className="w-full px-4 py-2.5 text-sm md:text-base border border-[#D0D5DD] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className={inputClass}
           />
         </div>
 
+        {/* Last Name */}
         <div className="flex flex-col gap-2">
           <label
             htmlFor="lastName"
-            className="text-sm font-medium text-[#667085] dark:text-white"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
           >
             Last Name
           </label>
@@ -261,12 +275,16 @@ export default function ContactFormV2({
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={inputClass}
           />
         </div>
 
+        {/* Email */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-sm font-medium text-[#667085] dark:text-white">
+          <label
+            htmlFor="email"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
+          >
             Email Address
           </label>
           <input
@@ -275,14 +293,15 @@ export default function ContactFormV2({
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={inputClass}
           />
         </div>
 
+        {/* Company Name */}
         <div className="flex flex-col gap-2">
           <label
             htmlFor="companyName"
-            className="text-sm font-medium text-[#667085] dark:text-white"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
           >
             Company Name
           </label>
@@ -292,14 +311,15 @@ export default function ContactFormV2({
             name="companyName"
             value={formData.companyName}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={inputClass}
           />
         </div>
 
+        {/* Job Title */}
         <div className="flex flex-col gap-2">
           <label
             htmlFor="jobTitle"
-            className="text-sm font-medium text-[#667085] dark:text-white"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
           >
             Job Title
           </label>
@@ -309,12 +329,16 @@ export default function ContactFormV2({
             name="jobTitle"
             value={formData.jobTitle}
             onChange={handleChange}
-            className="w-full p-2 border border-[#D0D5DD] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={inputClass}
           />
         </div>
 
+        {/* Phone */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="mobile" className="text-sm font-medium text-[#667085] dark:text-white">
+          <label
+            htmlFor="mobile"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
+          >
             Phone Number
           </label>
           <PhoneInput
@@ -326,18 +350,21 @@ export default function ContactFormV2({
             limitMaxLength
             countryCallingCodeEditable={false}
             required
-            className="phone-input text-[#667085] dark:text-white w-full rounded-lg border border-[#D0D5DD] px-3 py-2.5 text-sm md:text-base bg-white"
+            className="phone-input w-full rounded-lg border border-[#D0D5DD] dark:border-[#2A2A2A] px-3 py-2.5 text-sm md:text-base bg-white dark:bg-[#111111] text-[#1F3F68] dark:text-white focus-within:ring-2 focus-within:ring-[#1783F7] dark:focus-within:ring-blue-500 transition"
             placeholder="Enter mobile number"
           />
           {phoneError && (
-            <p className="mt-1 text-red-400 text-sm">{phoneError}</p>
+            <p className="mt-1 text-red-500 dark:text-red-400 text-sm">
+              {phoneError}
+            </p>
           )}
         </div>
 
+        {/* Message */}
         <div className="col-span-2 flex flex-col gap-2">
           <label
             htmlFor="message"
-            className="text-sm font-medium text-[#667085] dark:text-white"
+            className="text-sm font-medium text-[#1F3F68] dark:text-white"
           >
             Message
           </label>
@@ -347,29 +374,39 @@ export default function ContactFormV2({
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-2.5 text-sm md:text-base border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className={cn(inputClass, "resize-none")}
           ></textarea>
         </div>
 
+        {/* Terms text */}
         {showContactAgreeText ? (
           <div className="col-span-2 text-[#667085] dark:text-white text-[10px] text-center">
             By contacting us, you agree to our{" "}
-            <a href="/terms" className="text-gray-100">
-              {" "}
+            <a
+              href="/terms"
+              className="text-[#1783F7] dark:text-gray-100 underline"
+            >
               Terms and condition
             </a>{" "}
             and{" "}
-            <a href="/privacy" className="text-gray-100">
+            <a
+              href="/privacy"
+              className="text-[#1783F7] dark:text-gray-100 underline"
+            >
               Privacy Policy
             </a>
           </div>
         ) : null}
+
+        {/* Submit Button */}
         <div className={cn(ctaFull ? "col-span-2" : "md:col-start-2")}>
           <button
             type="submit"
             disabled={isLoading}
             className={cn(
-              "text-center text-gray-800 font-semibold py-3 md:py-3.5 px-6 rounded-full w-full bg-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed border border-[#d5d8dc]",
+              "text-center font-semibold py-3 md:py-3.5 px-6 rounded-full w-full transition disabled:opacity-50 disabled:cursor-not-allowed",
+              "bg-[#1783F7] text-white hover:bg-[#1265c7]",
+              "dark:bg-white dark:text-gray-800 dark:hover:opacity-90 dark:border dark:border-[#d5d8dc]",
               ctaFull
                 ? "flex justify-center items-center gap-2"
                 : "flex justify-between items-center gap-1",

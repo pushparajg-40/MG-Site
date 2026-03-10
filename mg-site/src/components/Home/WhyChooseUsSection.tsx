@@ -46,10 +46,10 @@ function WhyChooseUsSection() {
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[40px] pb-[120px] transition-all duration-500 ease-in"
+        className="bg-white dark:bg-[#000000] pt-[40px] pb-[120px] transition-all duration-500 ease-in"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true}}
+        viewport={{ once: true }}
         variants={wrapperVariants}
       >
         <motion.div
@@ -58,10 +58,10 @@ function WhyChooseUsSection() {
         >
           {/* Heading */}
           <motion.div
-            className="flex gap-2 md:items-start "
+            className="flex gap-2 md:items-start"
             variants={headingVariants}
           >
-            <h2 className="text-3xl md:text-4xl text-[#828282] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
               Why Choose Us?
             </h2>
             <img
@@ -70,15 +70,19 @@ function WhyChooseUsSection() {
               alt="Decorative Line"
             />
           </motion.div>
+
           <motion.h1
-            className="text-4xl mb-4 leading-tight md:px-0 font-extrabold text-radiant"
+            className="text-4xl mb-4 leading-tight md:px-0 font-extrabold
+          bg-clip-text text-transparent
+          bg-gradient-to-r from-[#687DA9] to-[#1783F7]
+          dark:text-radiant dark:bg-none dark:text-white dark:[background-clip:unset]"
             variants={headingVariants}
           >
             Shaping Purpose fit AI Innovation
           </motion.h1>
 
           <motion.p
-            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px] "
+            className="text-md text-[#667085] dark:text-[#FFFFFF] font-normal mb-4 leading-[26px]"
             variants={headingVariants}
           >
             We deliver more than services — we deliver outcomes. At Mindgraph,
@@ -94,36 +98,36 @@ function WhyChooseUsSection() {
           variants={wrapperVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[80px] gap-6 flex flex-wrap justify-start mt-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         >
-          {/* Box 1 
-          bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
-            dark:bg-none dark:*/}
-
-          {cardContent.map((card, index) => {
-            return (
-              <>
-                <motion.div
-                  variants={cardVariants}
-                  custom={index * 0.2}
-                  viewport={{ once: true, amount: 0.2 }}
-                  className="
-            bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000]
-            grid p-6 pb-4 border w-[250px] h-[240px] 
-            items-center-safe "
-                >
-                  <img
-                    src={card.icon}
-                    alt="AI Platform"
-                    className="mb-4 "
-                    data-light="/assets/AINative.svg"
-                    data-dark="/assets/updated/choose1.svg"
-                  />
-                  <h3 className="text-white text-lg md:text-xl font-extrabold">
-                    {card.title}
-                  </h3>
-                </motion.div>
-              </>
-            );
-          })}
+          {cardContent.map((card, index) => (
+            <motion.div
+              key={card.title}
+              variants={cardVariants}
+              custom={index * 0.2}
+              viewport={{ once: true, amount: 0.2 }}
+              className="
+            bg-gradient-to-br from-[#EAF9FD] to-[#DEF8FF]
+            dark:bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000]
+            grid p-6 pb-4
+            border border-[#1783F7]/20 dark:border-white/10
+            w-[250px] h-[240px]
+            items-center-safe
+            rounded-xl dark:rounded-none
+            shadow-sm dark:shadow-none
+            hover:shadow-md dark:hover:shadow-none
+            transition-shadow duration-300"
+            >
+              <img
+                src={card.icon}
+                alt="AI Platform"
+                className="mb-4"
+                data-light="/assets/AINative.svg"
+                data-dark="/assets/updated/choose1.svg"
+              />
+              <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold">
+                {card.title}
+              </h3>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.section>
     </>

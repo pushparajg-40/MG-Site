@@ -45,7 +45,7 @@ function WhatWeOfferSection({
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[100px] "
+        className="bg-white dark:bg-[#000000] pt-[100px]"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -55,9 +55,9 @@ function WhatWeOfferSection({
           className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={containerVariants}
         >
-          <div className="flex gap-2 md:items-start  ">
+          <div className="flex gap-2 md:items-start">
             <motion.h2
-              className="text-4xl text-[#828282] mb-4 leading-tight"
+              className="text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight"
               variants={headingVariants}
             >
               {title}
@@ -66,14 +66,17 @@ function WhatWeOfferSection({
           </div>
 
           <motion.h1
-            className="text-4xl text-gradient mb-2 leading-tight md:px-0 font-extrabold"
+            className="text-4xl mb-2 leading-tight md:px-0 font-extrabold
+          bg-clip-text text-transparent
+          bg-gradient-to-r from-[#687DA9] to-[#1783F7]
+          dark:text-gradient dark:bg-none dark:text-white dark:[background-clip:unset]"
             variants={headingVariants}
           >
             {subtitle}
           </motion.h1>
 
           <motion.p
-            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px]  "
+            className="text-md text-[#667085] dark:text-[#FFFFFF] font-normal mb-4 leading-[26px]"
             variants={headingVariants}
           >
             {desc}
@@ -84,44 +87,56 @@ function WhatWeOfferSection({
           {cards.map((card, idx) => (
             <div key={idx}>
               <motion.div
-                className="text-white w-[264px] md:w-[300px]  "
+                className="text-[#1F3F68] dark:text-white w-[264px] md:w-[300px]"
                 variants={cardVariants}
                 custom={idx * 0.2}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="relative h-[300px] border p-6 overflow-hidden flex flex-col justify-between hover:scale-105 transition-all duration-200 ease-out">
+                <div
+                  className="relative h-[300px] p-6 overflow-hidden flex flex-col justify-between
+                hover:scale-105 transition-all duration-200 ease-out
+                border border-[#1783F7]/20 dark:border-white
+                bg-gradient-to-br from-[#EAF9FD] to-[#DEF8FF]
+                dark:bg-transparent dark:from-transparent dark:to-transparent"
+                >
                   <div
                     className={`${
-                      idx == 3
+                      idx === 3
                         ? "right-[-32px] bottom-[-61px]"
                         : "right-[-17px] bottom-[-17px]"
-                    } absolute  h-full flex items-end justify-end pointer-events-none`}
+                    } absolute h-full flex items-end justify-end pointer-events-none`}
                   >
                     <img
                       src={card.bgImage}
-                      className="w-[180px] object-contain"
+                      className="w-[180px] object-contain
+                    opacity-20 dark:opacity-100"
                     />
                   </div>
 
-                  <p className="text-2xl mt-4 pr-16 font-semibold relative z-10">
+                  <p className="text-2xl mt-4 pr-16 font-semibold relative z-10 text-[#1F3F68] dark:text-white">
                     {card.title}
                   </p>
-                  <p className="text-4xl font-bold mt-20 relative z-10">
+                  <p className="text-4xl font-bold mt-20 relative z-10 text-[#1783F7] dark:text-white">
                     {card.number}
                   </p>
                 </div>
 
-                <p className="text-lg mt-6 leading-relaxed relative z-10 px-4 line-clamp-3">
+                <p className="text-lg mt-6 leading-relaxed relative z-10 px-4 line-clamp-3 text-[#667085] dark:text-white">
                   {card.desc}
                 </p>
 
                 <div>
                   <a
                     href={`/${card.pageLink}`}
-                    className="dark:text-white font-semibold text-sm px-4 py-4 !text-decoration-underline text-gray-600 flex items-center gap-2"
+                    className="text-[#1783F7] dark:text-white font-semibold text-sm px-4 py-4
+                  !text-decoration-underline flex items-center gap-2"
                   >
                     Read More
-                    <RoundedArrowRightIcon className="w-5 h-5" bgColor="#f9fafb" arrowColor="#4b5563" />
+                    <RoundedArrowRightIcon
+                      className="w-5 h-5"
+                      bgColor="#f9fafb"
+                      arrowColor="#4b5563"
+                    />
                   </a>
                 </div>
               </motion.div>

@@ -191,75 +191,126 @@ export default function IndustryFocusSection() {
 
   return (
     <>
-      <section className="bg-[#191919] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+      <section className="bg-white dark:bg-[#191919] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         <style>
-          {`  .active-card {
-      box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
-      transition: box-shadow 0.5s ease;
-    }
+          {`
+        .active-card {
+          box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
+          transition: box-shadow 0.5s ease;
+        }
 
-    .card-fill {
-      position: relative;
-      height: 45px;
-      background-color: #1a1a1a;
-      overflow: hidden;
-      z-index: 0;
-      color: black;
-      font-weight: bold;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 8px;
-      line-height: normal;
-    }
+        .active-card-light {
+          box-shadow: 0px 0px 40px rgba(23, 131, 247, 0.25);
+          transition: box-shadow 0.5s ease;
+        }
 
-    .card-fill::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 0%;
-      background-color: #ffffff;
-      z-index: 0;
-      animation: card-progress 6s ease-out infinite;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    }
+        .card-fill {
+          position: relative;
+          height: 45px;
+          background-color: #1a1a1a;
+          overflow: hidden;
+          z-index: 0;
+          color: black;
+          font-weight: bold;
+          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 8px;
+          line-height: normal;
+        }
 
-    .card-fill span {
-      position: relative;
-      z-index: 1;
-      transition: color 0.3s ease;
-      display: inline-block;
-      width: 100%;
-    }
+        .card-fill::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: #ffffff;
+          z-index: 0;
+          animation: card-progress 6s ease-out infinite;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+        }
 
-    .card-fill.active span {
-      color: #000;
-    }
+        .card-fill span {
+          position: relative;
+          z-index: 1;
+          transition: color 0.3s ease;
+          display: inline-block;
+          width: 100%;
+        }
 
-    @keyframes card-progress {
-      0% {
-        width: 0%;
-      }
+        .card-fill.active span {
+          color: #000;
+        }
 
-      100% {
-        width: 100%;
-      }
-    }`}
+        /* Light mode tab fill override */
+        .card-fill-light {
+          position: relative;
+          height: 45px;
+          background-color: #EAF9FD;
+          overflow: hidden;
+          z-index: 0;
+          color: #1F3F68;
+          font-weight: bold;
+          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 8px;
+          line-height: normal;
+        }
+
+        .card-fill-light::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: #1783F7;
+          z-index: 0;
+          animation: card-progress 6s ease-out infinite;
+          box-shadow: 0 1px 0 rgba(23, 131, 247, 0.4) inset;
+        }
+
+        .card-fill-light span {
+          position: relative;
+          z-index: 1;
+          transition: color 0.3s ease;
+          display: inline-block;
+          width: 100%;
+        }
+
+        .card-fill-light.active span {
+          color: #ffffff;
+        }
+
+        @keyframes card-progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+      `}
         </style>
+
+        {/* Heading Block */}
         <div className="flex flex-col items-start justify-center px-4 sm:px-6 md:px-12 lg:px-[120px]">
           <div className="flex gap-2 items-start">
-            <h2 className="text-2xl md:text-4xl text-[#828282] mb-4 leading-tight">
+            <h2 className="text-2xl md:text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
               Industry Focus
             </h2>
             <img src="/assets/updated/line.svg" className="pt-3" alt="line" />
           </div>
-          <h1 className="text-3xl md:text-4xl  mb-4 leading-tight font-extrabold text-gradient">
+          <h1
+            className="text-3xl md:text-4xl mb-4 leading-tight font-extrabold
+        bg-clip-text text-transparent
+        bg-gradient-to-r from-[#687DA9] to-[#1783F7]
+        dark:text-gradient dark:bg-none dark:text-white dark:[background-clip:unset]"
+          >
             Transforming Industries with Intelligent & Scalable Solutions
           </h1>
-          <p className="text-sm md:text-base text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">
+          <p className="text-sm md:text-base text-[#667085] dark:text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">
             Mindgraph empowers sector-specific transformation with AI-driven,
             data-centric, and cloud-enabled solutions. Our deep domain expertise
             and tailored platforms help enterprises across industries accelerate
@@ -270,17 +321,20 @@ export default function IndustryFocusSection() {
 
         <section id="slider" className="relative">
           {/* Tabs */}
-          <div className="flex flex-wrap text-white gap-1 md:gap-2 mb-8 px-4 sm:px-6 md:px-12 lg:px-[120px] overflow-x-auto pb-2">
+          <div
+            className="flex flex-wrap gap-1 md:gap-2 mb-8 px-4 sm:px-6 md:px-12 lg:px-[120px] overflow-x-auto pb-2
+        text-[#1F3F68] dark:text-white"
+          >
             {industries.map((industry, idx) => (
               <button
                 key={industry.id}
-                className={`flex-shrink-0 border px-3 md:px-4 py-2 text-xs md:text-sm cursor-pointer transition-opacity duration-300 whitespace-nowrap ${
-                  industry.hiddenOnMobile ? "hidden md:block" : "block"
-                } ${
-                  idx === currentIndex
-                    ? "opacity-100 border-white card-fill active "
-                    : "opacity-50 border-gray-600"
-                }`}
+                className={`flex-shrink-0 border px-3 md:px-4 py-2 text-xs md:text-sm cursor-pointer transition-opacity duration-300 whitespace-nowrap
+              ${industry.hiddenOnMobile ? "hidden md:block" : "block"}
+              ${
+                idx === currentIndex
+                  ? "opacity-100 border-[#1783F7] dark:border-white card-fill-light dark:card-fill active"
+                  : "opacity-50 border-[#1783F7]/30 dark:border-gray-600"
+              }`}
                 onClick={() => {
                   goToSlide(idx);
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
@@ -291,7 +345,11 @@ export default function IndustryFocusSection() {
             ))}
 
             <a href="#industries">
-              <button className="flex-shrink-0 flex text-black py-2 px-3 md:px-6 items-center bg-white font-semibold hover:bg-gray-100 transition-colors text-xs md:text-sm whitespace-nowrap">
+              <button
+                className="flex-shrink-0 flex py-2 px-3 md:px-6 items-center font-semibold transition-colors text-xs md:text-sm whitespace-nowrap
+            bg-[#1783F7] text-white hover:bg-[#1265c7]
+            dark:bg-white dark:text-black dark:hover:bg-gray-100"
+              >
                 See All
                 <ArrowNarrowRightIcon className="mx-2" />
               </button>
@@ -314,7 +372,7 @@ export default function IndustryFocusSection() {
                       isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"
                     } w-full md:w-96 lg:w-screen lg:max-w-5xl h-80 md:h-96 lg:h-[550px]`}
                   >
-                    <div className="relative w-full h-full overflow-hidden ">
+                    <div className="relative w-full h-full overflow-hidden">
                       <img
                         src={industry.image}
                         alt={industry.name}
@@ -339,12 +397,15 @@ export default function IndustryFocusSection() {
                   prevSlide();
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full
+              hover:bg-[#1783F7]/10 dark:hover:bg-gray-700 transition-colors
+              border border-[#1783F7]/20 dark:border-transparent"
                 aria-label="Previous slide"
               >
                 <img
                   src="assets/updated/rightWhiteArrow.svg"
-                  className="w-4 md:w-5"
+                  className="w-4 md:w-5 dark:block
+                [filter:invert(1)] dark:[filter:none]"
                   alt="Previous"
                 />
               </button>
@@ -353,29 +414,30 @@ export default function IndustryFocusSection() {
                   nextSlide();
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full  hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full
+              hover:bg-[#1783F7]/10 dark:hover:bg-gray-700 transition-colors
+              border border-[#1783F7]/20 dark:border-transparent"
                 aria-label="Next slide"
               >
                 <img
                   src="assets/updated/leftWhiteArrow.svg"
-                  className="w-4 md:w-5"
+                  className="w-4 md:w-5
+                [filter:invert(1)] dark:[filter:none]"
                   alt="Next"
                 />
               </button>
             </div>
-
-            {/* Dots */}
           </div>
         </section>
 
         <style>{`
-        .snap-center {
-          scroll-snap-align: center;
-        }
-        div::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      .snap-center {
+        scroll-snap-align: center;
+      }
+      div::-webkit-scrollbar {
+        display: none;
+      }
+    `}</style>
       </section>
     </>
   );
