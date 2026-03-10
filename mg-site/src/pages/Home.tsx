@@ -118,6 +118,10 @@ const Home: React.FC = () => {
                   Cyber-Secured <br />
                   Enterprise-Governed
                 </h2>
+                <p className="text-3xl">
+                  Driving Innovation in <br />
+                  Mission-Critical INDUSTRIES
+                </p>
               </div>
 
               <SearchSection />

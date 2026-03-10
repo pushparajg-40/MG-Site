@@ -229,7 +229,7 @@ export default function ContactFormV2({
 
       <form
         onSubmit={handleFormAction}
-        className="rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+        className="rounded-lg grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4"
       >
         <div className="flex flex-col gap-2">
           <label

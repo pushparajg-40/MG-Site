@@ -15,7 +15,7 @@ export default function FooterContactForm() {
         {/* Title and description */}
         <div className="hidden lg:flex absolute inset-0 z-10 items-center pl-20 max-w-[55%]">
           <div>
-            <h3 className="text-white dark:text-[#055CC0] text-4xl leading-tight font-semibold">
+            <h3 className="text-white text-4xl leading-tight font-semibold">
               Let’s work together,
               <br />
               Get started.
