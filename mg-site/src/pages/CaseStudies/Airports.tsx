@@ -51,6 +51,7 @@ const challengeProps = {
     "Inaccurate forecasting and resource wastage",
     "No predictive operations capability for future passenger volume",
   ],
+  imageSrc: "/assets/aviation-transport-challenge.png"
 };
 
 const items = [
@@ -58,16 +59,16 @@ const items = [
     id: 1,
     title: "Enterprise Data Warehouse",
     content: [
-      "Unified 10+ airport domains into a single high-quality BigQuery repository",
-      "Standardized schemas and golden-record management",
+      "Unified 10+ airport domains into a single high-quality BigQuery repository.",
+      "Standardized schemas and golden-record management.",
     ],
   },
   {
     id: 2,
-    title: "Technology & Data",
+    title: "AI Passenger Forecasting Engine",
     content: [
-      "Unified 10+ airport domains into a single high-quality BigQuery repository",
-      "Standardized schemas and golden-record management",
+      "Vertex AI models predicting passenger movement.",
+      "Real-time intelligence for Engineering, Ops, Counters, BHS, Elevators, Buses, Washrooms.",
     ],
   },
 ];

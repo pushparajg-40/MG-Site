@@ -51,6 +51,7 @@ const challengeProps = {
     "Manual processes for ESG documentation and evaluation",
     " Limited ability to scale ESG frameworks across projects",
   ],
+  imageSrc: "/assets/energy-utilities-challenge.png"
 };
 
 const outcomes = [

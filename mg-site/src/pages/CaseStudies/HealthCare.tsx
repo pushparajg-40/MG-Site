@@ -53,6 +53,7 @@ const challengeProps = {
     "Limited personalization in patient engagement.",
     "Manual reporting leading to delayed clinical insights."
   ],
+  imageSrc: "/assets/health-care-challenge.png"
 };
 
 const outcomes = [

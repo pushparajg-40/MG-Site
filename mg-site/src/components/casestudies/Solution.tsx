@@ -14,7 +14,7 @@ export default function Solution({
       <h2 className="text-2xl text-[#1783F7] dark:text-white mb-6">
         Our Solution
       </h2>
-      {desc.length > 0 && <p>{desc}</p>}
+      {desc.length > 0 && <p className="text-xl text-[#687DA9] dark:text-white mb-4">{desc}</p>}
 
       <div className="space-y-3">
         {items.map((item: any) => (

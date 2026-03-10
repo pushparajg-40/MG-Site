@@ -51,6 +51,7 @@ const challengeProps = {
     "Collections teams lacked early warnings before loans went into high DPD brackets",
     "Needed ML-driven strategy to reduce NPA risk",
   ],
+  imageSrc: "/assets/bfsi-challenge.png"
 };
 
 const items = [
@@ -58,18 +59,18 @@ const items = [
     id: 1,
     title: "Loan Origination – Relevancy Score Model",
     content: [
-      "ML model that ranks all loan applications by portfolio fit",
-      "Underwriters prioritize high-value customers",
-      "Integrates with AWS Redshift & PowerBI dashboards",
+      "ML model that ranks all loan applications by portfolio fit.",
+      "Underwriters prioritize high-value customers.",
+      "Integrates with AWS Redshift & PowerBI dashboards.",
     ],
   },
   {
     id: 2,
     title: "Loan Collection – DPD Movement Prediction Model",
     content: [
-      "ML model that ranks all loan applications by portfolio fit",
-      "Underwriters prioritize high-value customers",
-      "Integrates with AWS Redshift & PowerBI dashboards",
+      "ML model predicting probability of customer rolling from DPD30 → DPD60 → DPD90.",
+      "Early warning system for restructuring or outreach.",
+      "Built on AWS Sagemaker & RedShift.",
     ],
   },
 ];

@@ -4,11 +4,12 @@ interface ChallengeProps {
   title: string;
   desc: string;
   challenges: string[];
+  imageSrc: string;
 }
 
-export default function Challenge({ title, desc, challenges }: ChallengeProps) {
+export default function Challenge({ title, desc, challenges, imageSrc }: ChallengeProps) {
   return (
-    <section className="scroll-animate lg:pl-[150px] lg:pr-[60px] px-6 flex flex-col md:flex-row items-center md:mt-[100px] lg:mt-[-40px]">
+    <section className="scroll-animate lg:pl-[130px] lg:pr-[60px] flex flex-col md:flex-row items-center md:mt-[100px] lg:mt-[-20px]">
       <div>
         <h2 className="text-4xl font-extrabold text-[#1783F7] dark:text-white mb-4">
           {title}
@@ -32,11 +33,11 @@ export default function Challenge({ title, desc, challenges }: ChallengeProps) {
           ))}
         </ul>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 w-full">
         <img
-          src="/assets/kpmg_challenge.png"
-          alt="ESG Dashboard"
-          className="mx-auto max-w-full md:max-w-2xl"
+          src={imageSrc}
+          alt="aviation-transport-challenge"
+          className="mx-auto md:max-w-lg"
         />
       </div>
     </section>

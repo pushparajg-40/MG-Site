@@ -53,6 +53,7 @@ const challengeProps = {
     "Need for scalable DataOps frameworks to handle high-volume telecom datasets",
     "Pressure to support new digital services and next-gen analytics use cases",
   ],
+  imageSrc: "/assets/telecom-challenge.png"
 };
 
 const items = [
@@ -67,28 +68,28 @@ const items = [
     id: 2,
     title: "Customer 360 & Analytics Enablement",
     content: [
-      "Developed and optimized large-volume ingestion pipelines for customer, network, and usage data, ensuring timely and accurate insights.",
+      "data, ensuring timely and accurate insightsCreated unified customer datasets to support segmentation, churn modeling, and targeted campaigns.",
     ],
   },
   {
     id: 3,
     title: "System Integration Across O/BSS",
     content: [
-      "Developed and optimized large-volume ingestion pipelines for customer, network, and usage data, ensuring timely and accurate insights.",
+      "Integrated billing events, call records, service orders, and digital interactions into a consolidated analytical environment.",
     ],
   },
   {
     id: 4,
     title: "Data Quality, Metadata & Governance",
     content: [
-      "Developed and optimized large-volume ingestion pipelines for customer, network, and usage data, ensuring timely and accurate insights.",
+      "Introduced automated quality scoring, validation rules, and metadata standards, improving trust in enterprise reporting.",
     ],
   },
   {
     id: 5,
     title: "DataOps & Reusable Engineering Frameworks",
     content: [
-      "Developed and optimized large-volume ingestion pipelines for customer, network, and usage data, ensuring timely and accurate insights.",
+      "Implemented automation, monitoring, and reusable ETL/ELT patterns to scale engineering with consistency.",
     ],
   },
 ];

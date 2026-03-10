@@ -50,6 +50,7 @@ const challengeProps = {
     "Needed a platform combining creativity with AI-driven inspiration",
     "Wanted to shorten time-to-market for new jewelry collections",
   ],
+  imageSrc: "/assets/manufacturing-challenge.png"
 };
 
 const outcomes = [
