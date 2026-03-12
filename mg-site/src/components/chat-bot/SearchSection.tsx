@@ -409,7 +409,7 @@ const SearchSection: React.FC = () => {
         @keyframes spin-sb { to { transform: rotate(360deg); } }
 
         .mg-chip {
-          background: #64748b;
+          background: #4e4d4d;
           border: none;
           color: #e0e0e0;
           padding: 10px 12px;
@@ -426,7 +426,7 @@ const SearchSection: React.FC = () => {
             background:#2b2b2b;
         }
         .mg-chip:hover {
-          background: #475569;
+          background: #2b2b2b;
         }
         .dark .mg-chip:hover {
           background: #363636;
@@ -439,7 +439,7 @@ const SearchSection: React.FC = () => {
       `}</style>
 
             {/* ── Right column: search bar + chip grid ── */}
-            <div className="w-4/6 flex flex-col gap-0 text-slate-">
+            <div className="w-4/6 text-[#5f5f5f] flex flex-col gap-0 text-slate-">
 
                 {/* Search bar — white, full width, with star icon */}
                 <form onSubmit={handleFollowUp} className="w-full">

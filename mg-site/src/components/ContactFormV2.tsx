@@ -34,9 +34,6 @@ const defaultFormState = {
   message: "",
 };
 
-const inputClass =
-  "w-full px-4 py-2.5 text-sm border border-[#D0D5DD] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder:text-[#98A2B3]";
-
 export default function ContactFormV2({
   bordered = false,
   showContactAgreeText = false,
@@ -351,7 +348,12 @@ export default function ContactFormV2({
           >
             Phone Number
           </label>
-          <div className="phone-input-wrapper w-full rounded-lg border border-[#D0D5DD] bg-white focus-within:ring-2 focus-within:ring-blue-500 transition overflow-hidden">
+          {/*
+            Override PhoneInput's internal styles via a wrapper so the
+            flag/dial-code selector and the number input share the same
+            height and font-size as every other field.
+          */}
+          <div className="phone-input-wrapper w-full rounded-lg focus-within:ring-2 focus-within:ring-blue-500 transition overflow-hidden">
             <PhoneInput
               international
               defaultCountry="IN"
@@ -361,7 +363,10 @@ export default function ContactFormV2({
               limitMaxLength
               countryCallingCodeEditable={false}
               required
-              className="phone-input w-full px-3 py-2.5 text-sm text-[#667085] dark:text-white bg-transparent"
+              className={cn(
+                "phone-input w-full px-3 py-2.5 text-sm bg-transparent bg-white dark:bg-[#111111]",
+                inputClass,
+              )}
               placeholder="Enter mobile number"
             />
           </div>

@@ -140,6 +140,10 @@ body {
   background: #fff;
 }
 
+.dark .phone-input .PhoneInputInput {
+  color: white;
+}
+
 .phone-input .PhoneInputInput {
   border: none;
   outline: none;
@@ -153,7 +157,7 @@ body {
 
 /* Hide the +country code text but keep flag visible */
 .phone-input .PhoneInputCountry + input {
-  text-indent: -21px; 
+  text-indent: -24px; 
   padding-left: 0px;
 }
 

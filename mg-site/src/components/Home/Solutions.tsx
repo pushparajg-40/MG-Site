@@ -180,27 +180,25 @@ function Solutions() {
     <>
       <section
         id="solutions-section"
-        className="bg-white dark:bg-[#000000] pt-[100px] pb-[100px]"
+        className="bg-[#000000] pt-[100px] pb-[100px] "
       >
         <div
           className="2xl-plus:max-w-9xl 2xl-plus:mx-auto px-10 md:px-[50px] lg:px-20 py-8 sm:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="100"
         >
-          {/* Heading */}
+          {/* <!-- heading --> */}
           <div
             className="flex gap-2 items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="200"
           >
-            <h2 className="text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
+            <h2 className="text-4xl text-[#828282] mb-4 leading-tight">
               Enterprise Solution
             </h2>
             <img src="/assets/updated/line.svg" className="pt-3" />
           </div>
 
           <h1
-            className="text-4xl mb-4 leading-tight md:px-0 font-extrabold
-          opacity-0 translate-y-10 transition-all duration-700 ease-out
-          bg-clip-text text-transparent text-radiant text-gradient"
+            className="text-4xl text-[#055CC0] mb-4 leading-tight  md:px-0 font-extrabold text-gradient opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="300"
           >
             AI Framework & Partners Products
@@ -208,44 +206,40 @@ function Solutions() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
-          {/* Left: Solution list */}
-          <div className="flex flex-col justify-start text-[#1F3F68] dark:text-white space-y-1">
+          <div className="flex flex-col justify-start text-white space-y-2 ">
             {cards &&
-              cards.map((card) => (
-                <div key={card.id}>
-                  <Link to={card.pageLink}>
-                    <div
-                      id={card.id}
-                      className="solution-item group p-2
-                    opacity-0 translate-y-10 transition-all duration-700 ease-out
-                    hover:font-semibold
-                    dark:hover:bg-none dark:hover:from-transparent dark:hover:to-transparent
-                    rounded-lg dark:rounded-none"
-                      data-delay="400"
-                    >
-                      <div className="flex items-center justify-between gap-4 px-2">
-                        <div className="flex items-center gap-4">
-                          <SquareChevronRight className="text-[#1783F7] dark:text-white" />
-                          <h3 className="text-xl text-[#1F3F68] dark:text-white">
-                            {card.productName}
-                          </h3>
-                        </div>
+              cards.map((card) => {
+                return (
+                  <>
+                    <div>
+                      <Link to={card.pageLink}>
                         <div
-                          className="hidden group-hover:flex group-hover:items-center group-hover:gap-1
-                      text-[#1783F7] dark:text-white"
+                          id={card.id}
+                          className="solution-item hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                          data-delay="400"
                         >
-                          <span className="text-xs font-light">Read More</span>
-                          <ArrowNarrowRightIcon className="w-6 h-6" />
+                          <div className="flex items-center justify-between gap-4 px-2">
+                            <div className="flex items-center gap-4">
+                              <SquareChevronRight />
+                              <h3 className="text-xl">{card.productName}</h3>
+                            </div>
+                            <div className="hidden group-hover:flex group-hover:items-center group-hover:gap-1">
+                              <span className="text-xs font-light">
+                                Read More
+                              </span>
+                              <ArrowNarrowRightIcon className="w-6 h-6" />
+                            </div>
+                          </div>
+                          <hr className="mt-6" />
                         </div>
-                      </div>
-                      <hr className="mt-6 border-[#1783F7]/15 dark:border-white/20" />
+                      </Link>
                     </div>
-                  </Link>
-                </div>
-              ))}
+                  </>
+                );
+              })}
           </div>
 
-          {/* Right: Image + text */}
+          {/* <!-- Right side: Image + text --> */}
           <div
             className="relative hidden md:flex items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="400"
@@ -257,20 +251,14 @@ function Solutions() {
                 className="w-[500px] h-auto transition-opacity duration-700 z-10"
               />
               <div
-                className="absolute right-[-30px] top-[70px] w-[450px] md:h-[250px] lg:h-[320px] xl:h-[350px]
-              bg-[url('/assets/dottedBg.png')] bg-contain bg-no-repeat bg-right
-              opacity-40 dark:opacity-100"
+                className="absolute right-[-30px] top-[70px] w-[450px] md:h-[250px] lg:h-[320px] xl:h-[350px] 
+                bg-[url('/assets/dottedBg.png')] bg-contain bg-no-repeat bg-right"
               ></div>
             </div>
 
-            {/* Text card below image */}
+            {/* <!-- TEXT CARD BELOW IMAGE --> */}
             <div
-              className="absolute md:top-[550px] lg:top-[550px] left-[10px] w-[90%] max-w-[440px] p-4 text-xl z-20
-            text-[#667085] dark:text-white
-            bg-white/80 dark:bg-transparent
-            backdrop-blur-sm dark:backdrop-blur-none
-            rounded-xl dark:rounded-none
-            border border-[#1783F7]/10 dark:border-transparent"
+              className="absolute md:top-[550px] lg:top-[600px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl text-white z-20"
               id="solution-text"
             >
               MathOps is a next-gen analytics and monitoring platform built to
@@ -279,16 +267,15 @@ function Solutions() {
           </div>
         </div>
       </section>
-
       <style>
-        {`
-      .opacity-100 {
-        opacity: 1;
-      }
-      .translate-y-0 {
-        transform: translateY(0);
-      }
-    `}
+        {`<style>
+    .opacity-100 {
+      opacity: 1;
+    }
+
+    .translate-y-0 { 
+      transform: translateY(0);
+    }`}{" "}
       </style>
     </>
   );
