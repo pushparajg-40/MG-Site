@@ -100,16 +100,18 @@ export default function ContactFormV2({
   const handleSubmit = async () => {
     try {
       emailjs.init("YNl6-hgl7eAO4_9f4");
+      const { countryName } = getNumberDetails(formData.mobile);
 
       const emailPayload = {
         first_name: formData.firstName,
         last_name: formData.lastName,
-        email_address: formData.email,
+        email: formData.email,
         company_name: formData.companyName,
         job_title: formData.jobTitle,
-        phone_number: formData.mobile,
+        mobile_number: formData.mobile,
         message: formData.message,
         from_page: pageName,
+        country_name: countryName
       };
 
       await emailjs.send("service_hy9quj8", "template_t68k20j", emailPayload);

@@ -153,7 +153,7 @@ body {
 
 /* Hide the +country code text but keep flag visible */
 .phone-input .PhoneInputCountry + input {
-  text-indent: -32px;   /* pushes +91 out of view */
+  text-indent: -24px;   /* pushes +91 out of view */
   padding-left: 32px;   /* keeps user number visible */
 }
 

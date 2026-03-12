@@ -124,7 +124,7 @@ const Home: React.FC = () => {
                 </h2>
                 <p className="text-3xl text-gray-600 dark:text-gray-200">
                   Driving Innovation in <br />
-                  Mission-Critical INDUSTRIES
+                  Mission-Critical Industries
                 </p>
               </div>
 
