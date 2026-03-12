@@ -67,9 +67,7 @@ function WhatWeOfferSection({
 
           <motion.h1
             className="text-4xl mb-2 leading-tight md:px-0 font-extrabold
-          bg-clip-text text-transparent
-          bg-gradient-to-r from-[#687DA9] to-[#1783F7]
-          dark:text-gradient dark:bg-none dark:text-white dark:[background-clip:unset]"
+          bg-clip-text text-transparent text-radiant text-gradient"
             variants={headingVariants}
           >
             {subtitle}

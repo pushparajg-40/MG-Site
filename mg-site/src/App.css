@@ -134,7 +134,7 @@ body {
 
 
 .phone-input {
-  border: 1px solid #f7f8f9;
+  border: 1px solid #d0d5dd;
   border-radius: 8px;          /* optional */
   padding: 8px;               /* optional */
   background: #fff;
@@ -144,10 +144,32 @@ body {
   border: none;               /* avoid double border */
   outline: none;
   color: #393d44;
+  background-color: #fff;
+}
+
+.dark .phone-input .PhoneInputInput {
+  background-color: #111111;
+}
+
+/* Hide the +country code text but keep flag visible */
+.phone-input .PhoneInputCountry + input {
+  text-indent: -32px;   /* pushes +91 out of view */
+  padding-left: 32px;   /* keeps user number visible */
+}
+
+/* Fix country dropdown visibility */
+.phone-input .PhoneInputCountrySelect {
+  color: #393d44;
+}
+
+/* Dropdown list container */
+.phone-input .PhoneInputCountrySelect option {
+  color: #393d44;
+  background: #f9fafb;
 }
 
 .phone-input:focus-within {
-  border-color: #f7f8f9;      /* keep same on focus */
+  border-color: #f7f8f9;   
 }
 
 .phone-input .PhoneInputCountryIcon {

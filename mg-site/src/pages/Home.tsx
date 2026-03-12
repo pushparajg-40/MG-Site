@@ -9,6 +9,10 @@ import Offerings from "../components/Home/Offerings";
 import PageTransition from "../components/PageTransition";
 import SearchSection from "../components/chat-bot/SearchSection.tsx";
 
+// SVG Icons
+import ListIcons from "../assets/listIcons.svg?react";
+import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
+
 interface AccordionItem {
   id: number;
   title: string;
@@ -110,26 +114,18 @@ const Home: React.FC = () => {
       <PageTransition>
         <div className="overflow-x-hidden max-w-full dark:bg-black">
           {/* ─── Hero Section ─── */}
-          <section
-            className="
-      bg-white dark:bg-[#000000]
-      text-[#1F3F68] dark:text-white
-      overflow-hidden md:px-[40px] lg:px-[100px]
-      border-b border-[#E0F0FF] dark:border-transparent
-    "
-          >
+          <section className="  bg-white dark:bg-[#000000] text-[#1F3F68] dark:text-white overflow-hidden md:px-[40px] lg:px-[100px] border-b border-[#E0F0FF] dark:border-transparent">
             <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
               <div className="pl-4 md:pl-0 space-y-4 hero-text w-4/6 my-auto">
-                <h2
-                  className="text-5xl md:text-5xl lg:text-5xl font-bold
-            text-[#1783F7] dark:text-radiant dark:text-gradient
-            leading-tight
-          "
-                >
+                <h2 className="text-5xl md:text-5xl lg:text-5xl  font-bold text-radiant text-gradient">
                   AI-Powered <br />
                   Cyber-Secured <br />
                   Enterprise-Governed
                 </h2>
+                <p className="text-3xl text-gray-600 dark:text-gray-200">
+                  Driving Innovation in <br />
+                  Mission-Critical INDUSTRIES
+                </p>
               </div>
 
               <SearchSection />
@@ -200,10 +196,9 @@ const Home: React.FC = () => {
                             key={i}
                             className="flex items-center text-[#1F3F68] dark:text-white"
                           >
-                            <img
-                              src="assets/updated/listIcons.svg"
+                            <SvgIconComponent
+                              icon={ListIcons}
                               className="w-4 h-4 mr-2"
-                              alt=""
                             />
                             {f}
                           </li>
@@ -272,6 +267,7 @@ const Home: React.FC = () => {
                             key={i}
                             className="flex items-center text-[#1F3F68] dark:text-white"
                           >
+                            {/* <ListIcons className="w-4 h-4 mr-2" /> */}
                             <img
                               src="assets/updated/listIcons.svg"
                               className="w-4 h-4 mr-2"

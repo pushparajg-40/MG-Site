@@ -200,9 +200,7 @@ function Solutions() {
           <h1
             className="text-4xl mb-4 leading-tight md:px-0 font-extrabold
           opacity-0 translate-y-10 transition-all duration-700 ease-out
-          bg-clip-text text-transparent
-          bg-gradient-to-r from-[#687DA9] to-[#1783F7]
-          dark:text-gradient dark:bg-none dark:text-[#055CC0] dark:[background-clip:unset]"
+          bg-clip-text text-transparent text-radiant text-gradient"
             data-delay="300"
           >
             AI Framework & Partners Products
@@ -211,7 +209,7 @@ function Solutions() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {/* Left: Solution list */}
-          <div className="flex flex-col justify-start text-[#1F3F68] dark:text-white space-y-2">
+          <div className="flex flex-col justify-start text-[#1F3F68] dark:text-white space-y-1">
             {cards &&
               cards.map((card) => (
                 <div key={card.id}>
@@ -221,7 +219,6 @@ function Solutions() {
                       className="solution-item group p-2
                     opacity-0 translate-y-10 transition-all duration-700 ease-out
                     hover:font-semibold
-                    hover:bg-gradient-to-r hover:from-[#EAF9FD] hover:to-[#DEF8FF]
                     dark:hover:bg-none dark:hover:from-transparent dark:hover:to-transparent
                     rounded-lg dark:rounded-none"
                       data-delay="400"
@@ -268,7 +265,7 @@ function Solutions() {
 
             {/* Text card below image */}
             <div
-              className="absolute md:top-[550px] lg:top-[600px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl z-20
+              className="absolute md:top-[550px] lg:top-[550px] left-[10px] w-[90%] max-w-[440px] p-4 text-xl z-20
             text-[#667085] dark:text-white
             bg-white/80 dark:bg-transparent
             backdrop-blur-sm dark:backdrop-blur-none

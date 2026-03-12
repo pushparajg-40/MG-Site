@@ -249,7 +249,7 @@ export default function IndustryFocusSection() {
         .card-fill-light {
           position: relative;
           height: 45px;
-          background-color: #EAF9FD;
+          background-color: #e5e7eb;
           overflow: hidden;
           z-index: 0;
           color: #1F3F68;
@@ -260,6 +260,10 @@ export default function IndustryFocusSection() {
           justify-content: center;
           padding: 0 8px;
           line-height: normal;
+        }
+        
+        .dark .card-fill-light {
+          background-color: #9ca3af;
         }
 
         .card-fill-light::before {
@@ -275,6 +279,12 @@ export default function IndustryFocusSection() {
           box-shadow: 0 1px 0 rgba(23, 131, 247, 0.4) inset;
         }
 
+        .dark .card-fill-light::before {
+          background-color: #ffffff;
+          box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+        }
+
+
         .card-fill-light span {
           position: relative;
           z-index: 1;
@@ -287,6 +297,10 @@ export default function IndustryFocusSection() {
           color: #ffffff;
         }
 
+        .dark .card-fill-light.active span {
+          color: #2b2b2b;
+        }
+
         @keyframes card-progress {
           0% { width: 0%; }
           100% { width: 100%; }
@@ -295,7 +309,7 @@ export default function IndustryFocusSection() {
         </style>
 
         {/* Heading Block */}
-        <div className="flex flex-col items-start justify-center px-4 sm:px-6 md:px-12 lg:px-[120px]">
+        <div className="flex flex-col items-start text-gray- justify-center px-4 sm:px-6 md:px-12 lg:px-[120px]">
           <div className="flex gap-2 items-start">
             <h2 className="text-2xl md:text-4xl text-[#1783F7] dark:text-[#828282] mb-4 leading-tight">
               Industry Focus
@@ -304,9 +318,7 @@ export default function IndustryFocusSection() {
           </div>
           <h1
             className="text-3xl md:text-4xl mb-4 leading-tight font-extrabold
-        bg-clip-text text-transparent
-        bg-gradient-to-r from-[#687DA9] to-[#1783F7]
-        dark:text-gradient dark:bg-none dark:text-white dark:[background-clip:unset]"
+        bg-clip-text text-transparent text-radiant text-gradient"
           >
             Transforming Industries with Intelligent & Scalable Solutions
           </h1>
