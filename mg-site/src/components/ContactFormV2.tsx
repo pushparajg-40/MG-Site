@@ -560,14 +560,14 @@ export default function ContactFormV2({
 
         {/* Agree text — full width */}
         {showContactAgreeText && (
-          <div className="col-span-1 md:col-span-2 text-[#667085] dark:text-white text-[10px] text-center">
+          <div className="col-span-1 md:col-span-2 text-gray-400 font-medium text-[10px] text-center leading-relaxed">
             By contacting us, you agree to our{" "}
-            <a href="/terms" className="text-gray-100">
+            <a href="/terms" className="text-gray-600 font-bold dark:text-white">
               Terms and condition
             </a>{" "}
             and{" "}
-            <a href="/privacy" className="text-gray-100">
-              Privacy Policy
+            <a href="/privacy" className="text-gray-600 font-bold dark:text-white">
+              Privacy Policy{" "}
             </a>
           </div>
         )}
