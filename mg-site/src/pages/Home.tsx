@@ -8,10 +8,10 @@ import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import PageTransition from "../components/PageTransition";
 import SearchSection from "../components/chat-bot/SearchSection.tsx";
+import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
 
 // SVG Icons
 import ListIcons from "../assets/listIcons.svg?react";
-import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
 
 interface AccordionItem {
   id: number;
@@ -147,10 +147,11 @@ const Home: React.FC = () => {
                   <div
                     key={item.id}
                     className={`accordion-item relative transition-all duration-500 overflow-hidden group
-                border border-[#1783F7]/20 dark:off-border
-                bg-white dark:bg-[#000000]
-                ${isActive ? "flex-[2]" : "flex-1"}
-              `}
+    border border-[#1783F7]/20 
+    bg-gradient-to-b from-[#72c7de] via-[#5bc4e0] to-[#44bdde]
+    dark:bg-[#000000] dark:bg-none
+    ${isActive ? "flex-[2]" : "flex-1"}
+  `}
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
                     {/* Background image */}
@@ -267,11 +268,9 @@ const Home: React.FC = () => {
                             key={i}
                             className="flex items-center text-[#1F3F68] dark:text-white"
                           >
-                            {/* <ListIcons className="w-4 h-4 mr-2" /> */}
-                            <img
-                              src="assets/updated/listIcons.svg"
+                            <SvgIconComponent
+                              icon={ListIcons}
                               className="w-4 h-4 mr-2"
-                              alt=""
                             />
                             {f}
                           </li>

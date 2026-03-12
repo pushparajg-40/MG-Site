@@ -1,25 +1,31 @@
 import { easeOut, motion } from "framer-motion";
+import Choose1Icon from "../../assets/choose1.svg?react";
+import Choose2Icon from "../../assets/choose2.svg?react";
+import Choose3Icon from "../../assets/choose3.svg?react";
+import Choose4Icon from "../../assets/choose4.svg?react";
+import Choose5Icon from "../../assets/choose5.svg?react";
+import SvgIconComponent from "../ui/SvgIconComponent";
 
 const cardContent = [
   {
     title: "AI-Driven Platforms Built for Performance",
-    icon: "/assets/updated/choose1.svg",
+    icon: Choose1Icon,
   },
   {
     title: "Complete Ownership — From Vision to Value",
-    icon: "/assets/updated/choose2.svg",
+    icon: Choose2Icon,
   },
   {
     title: "Accelerated Implementation, Measurable Results",
-    icon: "/assets/updated/choose3.svg",
+    icon: Choose3Icon,
   },
   {
     title: "Seamless Integration with Your Ecosystem",
-    icon: "/assets/updated/choose4.svg",
+    icon: Choose4Icon,
   },
   {
     title: "Enterprise-Grade Support. Always On. Always Aligned.",
-    icon: "/assets/updated/choose5.svg",
+    icon: Choose5Icon,
   },
 ];
 
@@ -114,13 +120,8 @@ function WhyChooseUsSection() {
             hover:shadow-md dark:hover:shadow-none
             transition-shadow duration-300"
             >
-              <img
-                src={card.icon}
-                alt="AI Platform"
-                className="mb-4"
-                data-light="/assets/AINative.svg"
-                data-dark="/assets/updated/choose1.svg"
-              />
+              <SvgIconComponent icon={card.icon as any} className="h-12 w-12" />
+
               <h3 className="text-[#1F3F68] dark:text-white text-lg md:text-xl font-extrabold">
                 {card.title}
               </h3>
