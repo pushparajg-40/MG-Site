@@ -132,7 +132,7 @@ export default function OpsBeat() {
 
             <div className="w-full lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end ">
               <img
-                src="/assets/opsBeatHeader.png"
+                src="/assets/opsBeatprd.jpg"
                 alt="OpsBeat platform"
                 className="w-full max-w-2xl "
               />

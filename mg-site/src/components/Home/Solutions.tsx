@@ -70,7 +70,7 @@ const items = [
   },
   {
     selector: "#OpsBeat",
-    image: "/assets/opsBeatprd.png",
+    image: "/assets/opsBeatprd.jpg",
     text: "Revolutionize your IT operations with smart automation, real-time visibility, and seamless integrations.",
   },
   {

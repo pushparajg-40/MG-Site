@@ -388,7 +388,7 @@ export default function ContactFormV2({
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-2.5 text-sm border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder:text-[#98A2B3]"
+            className={cn("w-full px-4 py-2.5 text-sm border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder:text-[#98A2B3]", inputClass)}
           />
         </div>
 
