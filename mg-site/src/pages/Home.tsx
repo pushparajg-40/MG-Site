@@ -8,10 +8,10 @@ import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import PageTransition from "../components/PageTransition";
 import SearchSection from "../components/chat-bot/SearchSection.tsx";
-import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
+// import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
 
 // SVG Icons
-import ListIcons from "../assets/listIcons.svg?react";
+// import ListIcons from "../assets/listIcons.svg?react";
 
 interface AccordionItem {
   id: number;
