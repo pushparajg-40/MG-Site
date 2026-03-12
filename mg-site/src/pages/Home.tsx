@@ -8,6 +8,10 @@ import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import PageTransition from "../components/PageTransition";
 import SearchSection from "../components/chat-bot/SearchSection.tsx";
+import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
+
+// SVG Icons
+import ListIcons from "../assets/listIcons.svg?react";
 
 interface AccordionItem {
   id: number;
@@ -109,16 +113,16 @@ const Home: React.FC = () => {
 
       <PageTransition>
         <div className="overflow-x-hidden max-w-full dark:bg-black">
-          {/* Hero Section */}
-          <section className="bg-[#191919] dark:bg-[#000000] text-white overflow-hidden md:px-[40px] lg:px-[100px]">
+          {/* ─── Hero Section ─── */}
+          <section className="  bg-white dark:bg-[#000000] text-[#1F3F68] dark:text-white overflow-hidden md:px-[40px] lg:px-[100px] border-b border-[#E0F0FF] dark:border-transparent">
             <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
               <div className="pl-4 md:pl-0 space-y-4 hero-text w-4/6 my-auto">
-                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient">
+                <h2 className="text-5xl md:text-5xl lg:text-5xl  font-bold text-radiant text-gradient">
                   AI-Powered <br />
                   Cyber-Secured <br />
                   Enterprise-Governed
                 </h2>
-                <p className="text-3xl">
+                <p className="text-3xl text-gray-600 dark:text-gray-200">
                   Driving Innovation in <br />
                   Mission-Critical Industries
                 </p>
@@ -128,10 +132,10 @@ const Home: React.FC = () => {
             </div>
           </section>
 
-          {/* Accordion Section */}
+          {/* ─── Desktop Accordion Section ─── */}
           <section
-            className="px-0 md:px-[40px] lg:px-[120px] z-10 
-        bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000]
+            className="px-0 md:px-[40px] lg:px-[120px] z-10
+        bg-gradient-to-b from-[#EAF9FD] via-[#DEF8FF] to-white
         dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]
         hidden md:block"
           >
@@ -142,14 +146,18 @@ const Home: React.FC = () => {
                 return (
                   <div
                     key={item.id}
-                    className={`accordion-item relative transition-all duration-500 overflow-hidden off-border group bg-[#000000] ${
-                      isActive ? "flex-[2]" : "flex-1"
-                    }`}
+                    className={`accordion-item relative transition-all duration-500 overflow-hidden group
+    border border-[#1783F7]/20 
+    bg-gradient-to-b from-[#72c7de] via-[#5bc4e0] to-[#44bdde]
+    dark:bg-[#000000] dark:bg-none
+    ${isActive ? "flex-[2]" : "flex-1"}
+  `}
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
+                    {/* Background image */}
                     <div
                       className={`image-bg absolute h-full w-[80%] bg-no-repeat bg-right bg-contain transition-all duration-500 ${
-                        idx == 0
+                        idx === 0
                           ? "right-0 top-[-140px]"
                           : "right-[-50px] bottom-[-120px]"
                       }`}
@@ -159,14 +167,21 @@ const Home: React.FC = () => {
                       }}
                     />
 
-                    <div className="absolute inset-0 bg-black/40 dark:bg-black/60 flex flex-col justify-between p-6">
+                    {/* Overlay */}
+                    <div
+                      className="
+                absolute inset-0
+                bg-white/70 dark:bg-black/40
+                flex flex-col justify-between p-6
+              "
+                    >
                       <div className="flex flex-col gap-10">
-                        <h3 className="text-3xl font-extrabold text-white">
+                        <h3 className="text-3xl font-extrabold text-[#1F3F68] dark:text-white">
                           {item.title}
                         </h3>
 
                         <p
-                          className="text-white text-lg desc opacity-90 transition-all duration-500"
+                          className="text-[#667085] dark:text-white text-lg desc opacity-90 transition-all duration-500"
                           style={{ marginRight: isActive ? descMargin : "0px" }}
                         >
                           {item.desc}
@@ -174,31 +189,38 @@ const Home: React.FC = () => {
                       </div>
 
                       <ul
-                        className="feature-list mt-4 space-y-2 text-white transition-opacity duration-300"
+                        className="feature-list mt-4 space-y-2 transition-opacity duration-300"
                         style={{ opacity: isActive ? 1 : 0 }}
                       >
                         {item.features.map((f, i) => (
-                          <li key={i} className="flex items-center">
-                            <img
-                              src="assets/updated/listIcons.svg"
+                          <li
+                            key={i}
+                            className="flex items-center text-[#1F3F68] dark:text-white"
+                          >
+                            <SvgIconComponent
+                              icon={ListIcons}
                               className="w-4 h-4 mr-2"
-                              alt=""
                             />
                             {f}
                           </li>
                         ))}
                       </ul>
                     </div>
+
+                    {/* Active indicator bar at bottom */}
+                    {isActive && (
+                      <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#1783F7] dark:bg-[#1783F7]" />
+                    )}
                   </div>
                 );
               })}
             </div>
           </section>
 
-          {/* Mobile Accordion */}
+          {/* ─── Mobile Accordion Section ─── */}
           <section
-            className="px-4 z-10 
-        bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000]
+            className="px-4 z-10
+        bg-gradient-to-b from-[#EAF9FD] via-[#DEF8FF] to-white
         dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]
         block md:hidden"
           >
@@ -207,32 +229,48 @@ const Home: React.FC = () => {
                 return (
                   <div
                     key={item.id}
-                    className="accordion-item relative transition-all duration-500 overflow-hidden group bg-[#000] rounded-md border border-[#333] h-[420px]"
+                    className="accordion-item relative transition-all duration-500 overflow-hidden group
+                bg-white dark:bg-[#000]
+                rounded-md
+                border border-[#1783F7]/20 dark:border-[#333]
+                h-[420px]
+                shadow-sm dark:shadow-none
+              "
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
+                    {/* Background image */}
                     <div
                       className="image-bg absolute right-0 top-0 h-[335px] w-full bg-no-repeat bg-right bg-contain transition-all duration-500"
                       style={{ backgroundImage: `url(${item.image})` }}
                     />
 
-                    <div className="absolute inset-0 bg-black/40 dark:bg-black/60 flex flex-col justify-between p-6 pr-[100px]">
+                    {/* Overlay */}
+                    <div
+                      className="
+                absolute inset-0
+                bg-white/70 dark:bg-black/40
+                flex flex-col justify-between p-6 pr-[100px]
+              "
+                    >
                       <div className="flex flex-col gap-10">
-                        <h3 className="text-3xl font-extrabold text-white">
+                        <h3 className="text-3xl font-extrabold text-[#1F3F68] dark:text-white">
                           {item.title}
                         </h3>
 
-                        <p className="desc text-white text-sm lg:leading-[26px]">
+                        <p className="desc text-[#667085] dark:text-white text-sm lg:leading-[26px]">
                           {item.desc}
                         </p>
                       </div>
 
-                      <ul className="feature-list mt-4 space-y-2 text-white opacity-100 transition-opacity duration-300">
+                      <ul className="feature-list mt-4 space-y-2 opacity-100 transition-opacity duration-300">
                         {item.features.map((f, i) => (
-                          <li key={i} className="flex items-center">
-                            <img
-                              src="assets/updated/listIcons.svg"
+                          <li
+                            key={i}
+                            className="flex items-center text-[#1F3F68] dark:text-white"
+                          >
+                            <SvgIconComponent
+                              icon={ListIcons}
                               className="w-4 h-4 mr-2"
-                              alt=""
                             />
                             {f}
                           </li>

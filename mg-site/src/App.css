@@ -144,12 +144,17 @@ body {
   border: none;
   outline: none;
   color: #393d44;
+  background-color: #fff;
+}
+
+.dark .phone-input .PhoneInputInput {
+  background-color: #111111;
 }
 
 /* Hide the +country code text but keep flag visible */
 .phone-input .PhoneInputCountry + input {
   text-indent: -21px; 
-  padding-left: 0px;  
+  padding-left: 0px;
 }
 
 /* Fix country dropdown visibility */
