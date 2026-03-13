@@ -100,28 +100,27 @@ function WhyChooseUsSection() {
 
           {cardContent.map((card, index) => {
             return (
-              <>
-                <motion.div
-                  variants={cardVariants}
-                  custom={index * 0.2}
-                  viewport={{ once: true, amount: 0.2 }}
-                  className="
+              <motion.div
+                key={card.title}
+                variants={cardVariants}
+                custom={index * 0.2}
+                viewport={{ once: true, amount: 0.2 }}
+                className="
             bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000]
             grid p-6 pb-4 border w-[250px] h-[240px] 
             items-center-safe "
-                >
-                  <img
-                    src={card.icon}
-                    alt="AI Platform"
-                    className="mb-4 "
-                    data-light="/assets/AINative.svg"
-                    data-dark="/assets/updated/choose1.svg"
-                  />
-                  <h3 className="text-white text-lg md:text-xl font-extrabold">
-                    {card.title}
-                  </h3>
-                </motion.div>
-              </>
+              >
+                <img
+                  src={card.icon}
+                  alt="AI Platform"
+                  className="mb-4 "
+                  data-light="/assets/AINative.svg"
+                  data-dark="/assets/updated/choose1.svg"
+                />
+                <h3 className="text-white text-lg md:text-xl font-extrabold">
+                  {card.title}
+                </h3>
+              </motion.div>
             );
           })}
         </motion.div>

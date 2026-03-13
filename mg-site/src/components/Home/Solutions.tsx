@@ -210,31 +210,29 @@ function Solutions() {
             {cards &&
               cards.map((card) => {
                 return (
-                  <>
-                    <div>
-                      <Link to={card.pageLink}>
-                        <div
-                          id={card.id}
-                          className="solution-item hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
-                          data-delay="400"
-                        >
-                          <div className="flex items-center justify-between gap-4 px-2">
-                            <div className="flex items-center gap-4">
-                              <SquareChevronRight />
-                              <h3 className="text-xl">{card.productName}</h3>
-                            </div>
-                            <div className="hidden group-hover:flex group-hover:items-center group-hover:gap-1">
-                              <span className="text-xs font-light">
-                                Read More
-                              </span>
-                              <ArrowNarrowRightIcon className="w-6 h-6" />
-                            </div>
+                  <div key={card.id}>
+                    <Link to={card.pageLink}>
+                      <div
+                        id={card.id}
+                        className="solution-item hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                        data-delay="400"
+                      >
+                        <div className="flex items-center justify-between gap-4 px-2">
+                          <div className="flex items-center gap-4">
+                            <SquareChevronRight />
+                            <h3 className="text-xl">{card.productName}</h3>
                           </div>
-                          <hr className="mt-6" />
+                          <div className="hidden group-hover:flex group-hover:items-center group-hover:gap-1">
+                            <span className="text-xs font-light">
+                              Read More
+                            </span>
+                            <ArrowNarrowRightIcon className="w-6 h-6" />
+                          </div>
                         </div>
-                      </Link>
-                    </div>
-                  </>
+                        <hr className="mt-6" />
+                      </div>
+                    </Link>
+                  </div>
                 );
               })}
           </div>

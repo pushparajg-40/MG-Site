@@ -1,48 +1,84 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <!-- HTTPS Redirection -->
+    <script>
+      if (location.protocol !== "https:" && location.hostname !== "localhost") {
+        location.replace(
+          `https://${location.host}${location.pathname}${location.search}`,
+        );
+      }
+    </script>
 
-<head>
-  <!-- HTTPS Redirection: Ensure all HTTP requests are automatically redirected to the secure HTTPS version of the site. -->
-  <script>
-    if(location.protocol !== 'https:' && location.hostname !== 'localhost') {
-      location.replace(`https://${location.host}${location.pathname}${location.search}`);
-    }
-  </script>
-  <!-- Content Security Policy: Authorizes GTM, Google Fonts, EmailJS -->
-  <!-- Content Security Policy: XFO Included -->
-  <meta 
-    http-equiv="Content-Security-Policy" 
-    content="default-src 'self'; 
-            script-src 'self' https://www.googletagmanager.com 'unsafe-inline';
-            frame-ancestors 'self';
-            connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://docs.google.com https://api.emailjs.com;
-            img-src 'self' https://purecatamphetamine.github.io http://localhost:5173;
+    <!-- Content-Security-Policy (CSP): -->
+    <!--
+    CSP notes:
+    - script-src uses hashes for the two inline scripts below instead of 'unsafe-inline'.
+      If you change whitespace inside either <script> block, recompute the hashes:
+        python3 -c "import hashlib,base64; print('sha256-'+base64.b64encode(hashlib.sha256(open('index.html').read().encode()).digest()).decode())"
+      Or use: https://csp-evaluator.withgoogle.com/
+    - The two hashes below correspond exactly to the inline scripts in this file.
+      Hash 1 (HTTPS redirect): sha256-L1FLYzOzkG54VzfnOuU1/OLC4dAfj8P8FRJ9l3zXo0U=
+      Hash 2 (GTM init):       sha256-Rs86ePUAEMrfxiNiqkn6au8fI9GVq5av2O54m9EJ5+U=
+  -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+            script-src 'self'
+              https://www.googletagmanager.com
+              'sha256-N6mjn6TMdNUYnKJWgvjlH6m9z/DDsVq8D2jJ8L27NXg='
+              'sha256-Rs86ePUAEMrfxiNiqkn6au8fI9GVq5av2O54m9EJ5+U=';
+            connect-src 'self'
+              https://www.google-analytics.com
+              https://www.googletagmanager.com
+              https://docs.google.com
+              https://api.emailjs.com;
+            img-src 'self' https://purecatamphetamine.github.io data:;
             style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-            base-uri 'self' http://localhost:5173;
-            form-action 'self';
-            font-src 'self' https://fonts.gstatic.com;" 
-  />
-  <!-- Referrer Policy: Protects URL data from leaking to third parties -->
-  <meta name="referrer" content="strict-origin-when-cross-origin"  />
+            font-src 'self' https://fonts.gstatic.com;
+            frame-src 'none';
+            object-src 'none';
+            base-uri 'self';
+            form-action 'self' https://docs.google.com;
+            manifest-src 'self';
+            worker-src 'none';
+            upgrade-insecure-requests;"
+    />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <title>Mind Graph</title>
+    <meta charset="UTF-8" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P20D15MBZW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-P20D15MBZW'); 
-  </script>
-</head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MindGraph" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<body class="dark:bg-black">
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Mind Graph</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-P20D15MBZW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-P20D15MBZW");
+    </script>
+  </head>
+
+  <body class="dark:bg-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

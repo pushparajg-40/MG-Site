@@ -98,8 +98,16 @@ export default function ContactFormV2({
   };
 
   const handleSubmit = async () => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+    if (!publicKey || !serviceId || !templateId) {
+      throw new Error("EmailJS configuration missing");
+    }
+
     try {
-      emailjs.init("YNl6-hgl7eAO4_9f4");
+      emailjs.init(publicKey);
       const { countryName } = getNumberDetails(formData.mobile);
 
       const emailPayload = {
@@ -114,14 +122,14 @@ export default function ContactFormV2({
         country_name: countryName,
       };
 
-      await emailjs.send("service_hy9quj8", "template_t68k20j", emailPayload);
+      await emailjs.send(serviceId, templateId, emailPayload);
 
       setStatus({
         type: "success",
         text: "Your message has been sent successfully! We will get back to you soon.",
       });
     } catch (error) {
-      console.log("Error in mail :", error);
+      console.log("Error in submitting email :", error);
 
       setStatus({
         type: "error",
@@ -388,7 +396,10 @@ export default function ContactFormV2({
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className={cn("w-full px-4 py-2.5 text-sm border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder:text-[#98A2B3]", inputClass)}
+            className={cn(
+              "w-full px-4 py-2.5 text-sm border border-[#D0D5DD] rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder:text-[#98A2B3]",
+              inputClass,
+            )}
           />
         </div>
 
