@@ -1,5 +1,7 @@
 import { easeOut, motion } from "framer-motion";
 import RoundedArrowRightIcon from "../ui/RoundedArrowRightIcon";
+import SvgIconComponent from "../ui/SvgIconComponent";
+import LineIcon from "../../assets/line.svg?react";
 
 interface OfferCards {
   title: string;
@@ -45,7 +47,7 @@ function WhatWeOfferSection({
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[100px] "
+        className="bg-white dark:bg-black pt-[100px] "
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -62,7 +64,11 @@ function WhatWeOfferSection({
             >
               {title}
             </motion.h2>
-            <img src="/assets/updated/line.svg" className="pt-0 md:pt-3" />
+            <SvgIconComponent
+              icon={LineIcon}
+              width="158"
+              className="pt-0 md:pt-3 text-gray-600 dark:text-white"
+            />
           </div>
 
           <motion.h1
@@ -73,7 +79,7 @@ function WhatWeOfferSection({
           </motion.h1>
 
           <motion.p
-            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px]  "
+            className="text-md text-gray-700 dark:text-[#FFFFFF] font-normal mb-4 leading-[26px]  "
             variants={headingVariants}
           >
             {desc}
@@ -84,34 +90,34 @@ function WhatWeOfferSection({
           {cards.map((card, idx) => (
             <div key={idx}>
               <motion.div
-                className="text-white w-[264px] md:w-[300px]  "
+                className="text-black dark:text-white w-[264px] md:w-[300px]  "
                 variants={cardVariants}
                 custom={idx * 0.2}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="relative h-[300px] border p-6 overflow-hidden flex flex-col justify-between hover:scale-105 transition-all duration-200 ease-out">
+                <div className="relative h-[300px] border border-gray-200 dark:border-gray-800 p-6 overflow-hidden flex flex-col justify-between hover:scale-105 transition-all duration-200 ease-out">
                   <div
-                    className={`${
-                      idx == 3
-                        ? "right-[-32px] bottom-[-61px]"
-                        : "right-[-17px] bottom-[-17px]"
-                    } absolute  h-full flex items-end justify-end pointer-events-none`}
+                    className={`${idx == 3
+                      ? "right-[-32px] bottom-[-61px]"
+                      : "right-[-17px] bottom-[-17px]"
+                      } absolute  h-full flex items-end justify-end pointer-events-none`}
                   >
                     <img
                       src={card.bgImage}
-                      className="w-[180px] object-contain"
+                      className="w-[180px] object-contain invert dark:invert-0 opacity-80 dark:opacity-100"
+                      alt=""
                     />
                   </div>
 
-                  <p className="text-2xl mt-4 pr-16 font-semibold relative z-10">
+                  <p className="text-2xl text-[#1783F7] mt-4 pr-16 font-semibold relative z-10">
                     {card.title}
                   </p>
-                  <p className="text-4xl font-bold mt-20 relative z-10">
+                  <p className="text-4xl text-[#1783F7] font-bold mt-20 relative z-10">
                     {card.number}
                   </p>
                 </div>
 
-                <p className="text-lg mt-6 leading-relaxed relative z-10 px-4 line-clamp-3">
+                <p className="text-gray-700 dark:text-gray-300 text-lg mt-6 leading-relaxed relative z-10 px-4 line-clamp-3">
                   {card.desc}
                 </p>
 

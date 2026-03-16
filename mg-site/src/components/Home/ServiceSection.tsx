@@ -1,5 +1,7 @@
 import { easeOut, motion } from "framer-motion";
 import RoundedArrowRightIcon from "../ui/RoundedArrowRightIcon";
+import SvgIconComponent from "../ui/SvgIconComponent";
+import LineIcon from "../../assets/line.svg?react";
 
 interface ServiceCard {
   id: number;
@@ -84,7 +86,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="bg-[#000000]">
+    <section className="bg-white dark:bg-black">
       <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         {/* Heading */}
         <motion.div
@@ -101,11 +103,15 @@ export function ServicesSection() {
             <h2 className="text-[#828282] text-3xl md:text-2xl mb-2">
               Services
             </h2>
-            <img src="/assets/updated/line.svg" alt="line" />
+            <SvgIconComponent
+              icon={LineIcon}
+              width="158"
+              className="text-gray-600 dark:text-white"
+            />
           </motion.div>
 
           <motion.h1
-            className="text-4xl text-radiant md:text-4xl font-extrabold text-white"
+            className="text-4xl text-radiant md:text-4xl font-extrabold text-black dark:text-white"
             variants={headingVariants}
           >
             Transforming Ideas into Intelligent Realities
@@ -126,7 +132,7 @@ export function ServicesSection() {
               className="h-full block group hover:scale-105 transition-all duration-300 ease-out  "
             >
               <motion.div
-                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:shadow-lg"
+                className="service-card flex flex-col items-start gap-8 p-6 h-full hover:shadow-lg border border-gray-100 dark:border-transparent shadow-sm dark:shadow-none"
                 variants={cardVariants}
               >
                 <img
@@ -135,10 +141,10 @@ export function ServicesSection() {
                   alt={service.title}
                 />
                 <div className="flex flex-col justify-center gap-4 md:gap-8">
-                  <h2 className="text-white text-xl font-semibold">
+                  <h2 className="text-[#1783F7] dark:text-white text-xl font-semibold">
                     {service.title}
                   </h2>
-                  <p className="text-[#FFFFFF] leading-[25px] text-sm pr-[50px]">
+                  <p className="text-gray-600 dark:text-[#FFFFFF] leading-[25px] text-sm pr-[50px]">
                     {service.description}
                   </p>
                 </div>

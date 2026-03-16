@@ -7,11 +7,11 @@ import Solutions from "../components/Home/Solutions";
 import WhyChooseUsSection from "../components/Home/WhyChooseUsSection";
 import Offerings from "../components/Home/Offerings";
 import PageTransition from "../components/PageTransition";
-import SearchSection from "../components/chat-bot/SearchSection.tsx";
-// import SvgIconComponent from "../components/ui/SvgIconComponent.tsx";
+import SearchSection from "../components/chat-bot/SearchSection";
+import SvgIconComponent from "../components/ui/SvgIconComponent";
 
 // SVG Icons
-// import ListIcons from "../assets/listIcons.svg?react";
+import ListIcons from "../assets/listIcons.svg?react";
 
 interface AccordionItem {
   id: number;
@@ -106,15 +106,18 @@ const Home: React.FC = () => {
   return (
     <>
       <style>
-        {`.off-border{
-        border:0.5px solid white;
+        {`.dark .off-border {
+        border: 0.5px solid rgba(255,255,255,0.2);
+      }
+      .off-border {
+        border: 1px solid #e5e7eb;
       }`}
       </style>
 
       <PageTransition>
-        <div className="overflow-x-hidden max-w-full dark:bg-black">
+        <div className="overflow-x-hidden max-w-full bg-white dark:bg-black">
           {/* Hero Section */}
-          <section className="bg-[#191919] dark:bg-[#000000] text-white overflow-hidden md:px-[40px] lg:px-[100px]">
+          <section className="bg-slate-50 dark:bg-[#0a0a0a] text-black dark:text-white overflow-hidden md:px-[40px] lg:px-[100px]">
             <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
               <div className="pl-4 md:pl-0 space-y-4 hero-text w-4/6 my-auto">
                 <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient">
@@ -122,7 +125,7 @@ const Home: React.FC = () => {
                   Cyber-Secured <br />
                   Enterprise-Governed
                 </h2>
-                <p className="text-3xl">
+                <p className="text-3xl text-gray-700 dark:text-gray-300">
                   Driving Innovation in <br />
                   Mission-Critical Industries
                 </p>
@@ -134,9 +137,8 @@ const Home: React.FC = () => {
 
           {/* Accordion Section */}
           <section
-            className="px-0 md:px-[40px] lg:px-[120px] z-10 
-        bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000]
-        dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]
+            className="px-0 md:px-[40px] lg:px-[120px] pb-12 z-10 
+        bg-slate-50 dark:bg-[#0a0a0a]
         hidden md:block"
           >
             <div className="w-full h-[500px] flex gap-0 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
@@ -146,31 +148,29 @@ const Home: React.FC = () => {
                 return (
                   <div
                     key={item.id}
-                    className={`accordion-item relative transition-all duration-500 overflow-hidden off-border group bg-[#000000] ${
-                      isActive ? "flex-[2]" : "flex-1"
-                    }`}
+                    className={`accordion-item relative transition-all duration-500 overflow-hidden off-border border-gray-200 dark:border-none group bg-white dark:bg-[#000000] ${isActive ? "flex-[2]" : "flex-1"
+                      }`}
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
                     <div
-                      className={`image-bg absolute h-full w-[80%] bg-no-repeat bg-right bg-contain transition-all duration-500 ${
-                        idx == 0
-                          ? "right-0 top-[-140px]"
-                          : "right-[-50px] bottom-[-120px]"
-                      }`}
+                      className={`image-bg absolute h-full w-[80%] bg-no-repeat bg-right bg-contain transition-all duration-500 invert dark:invert-0 ${idx == 0
+                        ? "right-0 top-[100px] md:top-[-100px]"
+                        : "right-[-50px] bottom-[-120px]"
+                        }`}
                       style={{
                         backgroundImage: `url(${item.image})`,
                         width: isActive ? "60%" : idx === 0 ? "70%" : "50%",
                       }}
                     />
 
-                    <div className="absolute inset-0 bg-black/40 dark:bg-black/60 flex flex-col justify-between p-6">
+                    <div className="absolute inset-0 bg-white/80 dark:bg-black/60 flex flex-col justify-between p-6">
                       <div className="flex flex-col gap-10">
-                        <h3 className="text-3xl font-extrabold text-white">
+                        <h3 className="text-3xl font-extrabold text-[#1783F7] dark:text-white">
                           {item.title}
                         </h3>
 
                         <p
-                          className="text-white text-lg desc opacity-90 transition-all duration-500"
+                          className="text-gray-700 dark:text-gray-300 text-lg desc opacity-90 transition-all duration-500"
                           style={{ marginRight: isActive ? descMargin : "0px" }}
                         >
                           {item.desc}
@@ -178,16 +178,12 @@ const Home: React.FC = () => {
                       </div>
 
                       <ul
-                        className="feature-list mt-4 space-y-2 text-white transition-opacity duration-300"
+                        className="feature-list mt-4 space-y-2 text-black dark:text-white transition-opacity duration-300"
                         style={{ opacity: isActive ? 1 : 0 }}
                       >
                         {item.features.map((f, i) => (
                           <li key={i} className="flex items-center">
-                            <img
-                              src="assets/updated/listIcons.svg"
-                              className="w-4 h-4 mr-2"
-                              alt=""
-                            />
+                            <SvgIconComponent icon={ListIcons} size={16} className="mr-2" />
                             {f}
                           </li>
                         ))}
@@ -202,7 +198,7 @@ const Home: React.FC = () => {
           {/* Mobile Accordion */}
           <section
             className="px-4 z-10 
-        bg-gradient-to-b from-[#191919] via-[#191919] to-[#000000]
+        bg-gradient-to-b from-gray-50 via-gray-50 to-white
         dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]
         block md:hidden"
           >
@@ -211,7 +207,7 @@ const Home: React.FC = () => {
                 return (
                   <div
                     key={item.id}
-                    className="accordion-item relative transition-all duration-500 overflow-hidden group bg-[#000] rounded-md border border-[#333] h-[420px]"
+                    className="accordion-item relative transition-all duration-500 overflow-hidden group bg-white dark:bg-[#000] rounded-md border border-gray-200 dark:border-[#333] h-[420px]"
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
                     <div
@@ -219,25 +215,21 @@ const Home: React.FC = () => {
                       style={{ backgroundImage: `url(${item.image})` }}
                     />
 
-                    <div className="absolute inset-0 bg-black/40 dark:bg-black/60 flex flex-col justify-between p-6 pr-[100px]">
+                    <div className="absolute inset-0 bg-white/80 dark:bg-black/60 flex flex-col justify-between p-6 pr-[100px]">
                       <div className="flex flex-col gap-10">
-                        <h3 className="text-3xl font-extrabold text-white">
+                        <h3 className="text-3xl font-extrabold text-black dark:text-white">
                           {item.title}
                         </h3>
 
-                        <p className="desc text-white text-sm lg:leading-[26px]">
+                        <p className="desc text-gray-700 dark:text-gray-300 text-sm lg:leading-[26px]">
                           {item.desc}
                         </p>
                       </div>
 
-                      <ul className="feature-list mt-4 space-y-2 text-white opacity-100 transition-opacity duration-300">
+                      <ul className="feature-list mt-4 space-y-2 text-black dark:text-white opacity-100 transition-opacity duration-300">
                         {item.features.map((f, i) => (
                           <li key={i} className="flex items-center">
-                            <img
-                              src="assets/updated/listIcons.svg"
-                              className="w-4 h-4 mr-2"
-                              alt=""
-                            />
+                            <SvgIconComponent icon={ListIcons} size={16} className="mr-2" />
                             {f}
                           </li>
                         ))}

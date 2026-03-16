@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import ArrowNarrowRightIcon from "../ui/ArrowNarrowRightIcon";
+import SvgIconComponent from "../ui/SvgIconComponent";
+import LineIcon from "../../assets/line.svg?react";
+import LeftWhiteArrow from "../../assets/leftWhiteArrow.svg?react";
+import RightWhiteArrow from "../../assets/rightWhiteArrow.svg?react";
 
 interface IndustrySlide {
   id: number;
@@ -84,15 +88,16 @@ export default function IndustryFocusSection() {
     const slide = slides[clamped];
 
     if (slide) {
-      const containerRect = sliderRef.current.getBoundingClientRect();
-      const slideRect = slide.getBoundingClientRect();
+      const container = sliderRef.current;
+      const slideLeft = slide.offsetLeft;
+      const slideWidth = slide.offsetWidth;
+      const containerWidth = container.clientWidth;
 
-      const slideCenter = slideRect.left + slideRect.width / 2;
-      const containerCenter = containerRect.left + containerRect.width / 2;
-      const offset = slideCenter - containerCenter;
+      // Absolute target scroll position
+      const targetScrollLeft = slideLeft - (containerWidth / 2) + (slideWidth / 2);
 
-      sliderRef.current.scrollBy({
-        left: offset,
+      container.scrollTo({
+        left: targetScrollLeft,
         behavior: "smooth",
       });
     }
@@ -127,7 +132,6 @@ export default function IndustryFocusSection() {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
-    setTimeout(() => centerSlide(index), 0);
   };
 
   const prevSlide = () =>
@@ -157,7 +161,7 @@ export default function IndustryFocusSection() {
           setCurrentIndex(idx);
         }
         startAutoSlide();
-      }, 150);
+      }, 400); // Increased debounce to account for ~400ms CSS smooth scrolling duration
     };
 
     slider.addEventListener("scroll", handleScroll, { passive: true });
@@ -191,7 +195,7 @@ export default function IndustryFocusSection() {
 
   return (
     <>
-      <section className="bg-[#191919] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+      <section className="bg-slate-50 dark:bg-[#0a0a0a] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         <style>
           {`  .active-card {
       box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
@@ -201,7 +205,7 @@ export default function IndustryFocusSection() {
     .card-fill {
       position: relative;
       height: 45px;
-      background-color: #1a1a1a;
+      background-color: #e5e7eb;
       overflow: hidden;
       z-index: 0;
       color: black;
@@ -213,6 +217,10 @@ export default function IndustryFocusSection() {
       padding: 0 8px;
       line-height: normal;
     }
+    .dark .card-fill {
+      background-color: #1a1a1a;
+      color: white;
+    }
 
     .card-fill::before {
       content: "";
@@ -221,10 +229,13 @@ export default function IndustryFocusSection() {
       left: 0;
       height: 100%;
       width: 0%;
-      background-color: #ffffff;
+      background-color: #000000;
       z-index: 0;
       animation: card-progress 6s ease-out infinite;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    }
+    .dark .card-fill::before {
+      background-color: #ffffff;
     }
 
     .card-fill span {
@@ -236,7 +247,10 @@ export default function IndustryFocusSection() {
     }
 
     .card-fill.active span {
-      color: #000;
+      color: #ffffff;
+    }
+    .dark .card-fill.active span {
+      color: #000000;
     }
 
     @keyframes card-progress {
@@ -254,12 +268,16 @@ export default function IndustryFocusSection() {
             <h2 className="text-2xl md:text-4xl text-[#828282] mb-4 leading-tight">
               Industry Focus
             </h2>
-            <img src="/assets/updated/line.svg" className="pt-3" alt="line" />
+            <SvgIconComponent
+              icon={LineIcon}
+              width="158"
+              className="pt-3 text-gray-600 dark:text-white"
+            />
           </div>
           <h1 className="text-3xl md:text-4xl  mb-4 leading-tight font-extrabold text-gradient">
             Transforming Industries with Intelligent & Scalable Solutions
           </h1>
-          <p className="text-sm md:text-base text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">
+          <p className="text-sm md:text-base text-gray-700 dark:text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">
             Mindgraph empowers sector-specific transformation with AI-driven,
             data-centric, and cloud-enabled solutions. Our deep domain expertise
             and tailored platforms help enterprises across industries accelerate
@@ -270,17 +288,15 @@ export default function IndustryFocusSection() {
 
         <section id="slider" className="relative">
           {/* Tabs */}
-          <div className="flex flex-wrap text-white gap-1 md:gap-2 mb-8 px-4 sm:px-6 md:px-12 lg:px-[120px] overflow-x-auto pb-2">
+          <div className="flex flex-wrap text-black dark:text-white gap-1 md:gap-2 mb-8 px-4 sm:px-6 md:px-12 lg:px-[120px] overflow-x-auto pb-2">
             {industries.map((industry, idx) => (
               <button
                 key={industry.id}
-                className={`flex-shrink-0 border px-3 md:px-4 py-2 text-xs md:text-sm cursor-pointer transition-opacity duration-300 whitespace-nowrap ${
-                  industry.hiddenOnMobile ? "hidden md:block" : "block"
-                } ${
-                  idx === currentIndex
-                    ? "opacity-100 border-white card-fill active "
-                    : "opacity-50 border-gray-600"
-                }`}
+                className={`flex-shrink-0 border px-3 md:px-4 py-2 text-xs md:text-sm cursor-pointer transition-opacity duration-300 whitespace-nowrap ${industry.hiddenOnMobile ? "hidden md:block" : "block"
+                  } ${idx === currentIndex
+                    ? "opacity-100 border-black dark:border-white card-fill active "
+                    : "opacity-50 border-gray-400 dark:border-gray-600"
+                  }`}
                 onClick={() => {
                   goToSlide(idx);
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
@@ -291,7 +307,7 @@ export default function IndustryFocusSection() {
             ))}
 
             <a href="#industries">
-              <button className="flex-shrink-0 flex text-black py-2 px-3 md:px-6 items-center bg-white font-semibold hover:bg-gray-100 transition-colors text-xs md:text-sm whitespace-nowrap">
+              <button className="flex-shrink-0 flex text-white dark:text-black py-2 px-3 md:px-6 items-center bg-black dark:bg-white font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-xs md:text-sm whitespace-nowrap">
                 See All
                 <ArrowNarrowRightIcon className="mx-2" />
               </button>
@@ -310,9 +326,8 @@ export default function IndustryFocusSection() {
                 return (
                   <div
                     key={industry.id}
-                    className={`snap-center flex-shrink-0 transition-all duration-500 ${
-                      isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"
-                    } w-full md:w-96 lg:w-screen lg:max-w-5xl h-80 md:h-96 lg:h-[550px]`}
+                    className={`snap-center flex-shrink-0 transition-all duration-500 ${isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"
+                      } w-full md:w-96 lg:w-screen lg:max-w-5xl h-80 md:h-96 lg:h-[550px]`}
                   >
                     <div className="relative w-full h-full overflow-hidden ">
                       <img
@@ -339,13 +354,13 @@ export default function IndustryFocusSection() {
                   prevSlide();
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Previous slide"
               >
-                <img
-                  src="assets/updated/rightWhiteArrow.svg"
-                  className="w-4 md:w-5"
-                  alt="Previous"
+                <SvgIconComponent
+                  icon={RightWhiteArrow}
+                  size={20}
+                  className="stroke-black [&_path]:fill-black dark:stroke-white dark:[&_path]:fill-white"
                 />
               </button>
               <button
@@ -353,13 +368,13 @@ export default function IndustryFocusSection() {
                   nextSlide();
                   if (autoSlideRef.current) clearInterval(autoSlideRef.current);
                 }}
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full  hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Next slide"
               >
-                <img
-                  src="assets/updated/leftWhiteArrow.svg"
-                  className="w-4 md:w-5"
-                  alt="Next"
+                <SvgIconComponent
+                  icon={LeftWhiteArrow}
+                  size={20}
+                  className="stroke-black [&_path]:fill-black dark:stroke-white dark:[&_path]:fill-white"
                 />
               </button>
             </div>

@@ -1,25 +1,32 @@
 import { easeOut, motion } from "framer-motion";
+import SvgIconComponent from "../ui/SvgIconComponent";
+import Choose1Icon from "../../assets/choose1.svg?react";
+import Choose2Icon from "../../assets/choose2.svg?react";
+import Choose3Icon from "../../assets/choose3.svg?react";
+import Choose4Icon from "../../assets/choose4.svg?react";
+import Choose5Icon from "../../assets/choose5.svg?react";
+import LineIcon from "../../assets/line.svg?react";
 
 const cardContent = [
   {
     title: "AI-Driven Platforms Built for Performance",
-    icon: "/assets/updated/choose1.svg",
+    icon: Choose1Icon,
   },
   {
     title: "Complete Ownership — From Vision to Value",
-    icon: "/assets/updated/choose2.svg",
+    icon: Choose2Icon,
   },
   {
     title: "Accelerated Implementation, Measurable Results",
-    icon: "/assets/updated/choose3.svg",
+    icon: Choose3Icon,
   },
   {
     title: "Seamless Integration with Your Ecosystem",
-    icon: "/assets/updated/choose4.svg",
+    icon: Choose4Icon,
   },
   {
     title: "Enterprise-Grade Support. Always On. Always Aligned.",
-    icon: "/assets/updated/choose5.svg",
+    icon: Choose5Icon,
   },
 ];
 
@@ -46,7 +53,7 @@ function WhyChooseUsSection() {
   return (
     <>
       <motion.section
-        className="bg-[#000000] pt-[40px] pb-[120px] transition-all duration-500 ease-in"
+        className="bg-white dark:bg-black pt-[40px] pb-[120px] transition-all duration-500 ease-in"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -64,10 +71,10 @@ function WhyChooseUsSection() {
             <h2 className="text-3xl md:text-4xl text-[#828282] mb-4 leading-tight">
               Why Choose Us?
             </h2>
-            <img
-              src="/assets/updated/line.svg"
-              className="pt-3 mr-4"
-              alt="Decorative Line"
+            <SvgIconComponent
+              icon={LineIcon}
+              width="158"
+              className="pt-3 mr-4 text-gray-600 dark:text-white"
             />
           </motion.div>
           <motion.h1
@@ -78,7 +85,7 @@ function WhyChooseUsSection() {
           </motion.h1>
 
           <motion.p
-            className="text-md text-[#FFFFFF] font-normal mb-4 leading-[26px] "
+            className="text-md text-gray-700 dark:text-[#FFFFFF] font-normal mb-4 leading-[26px] "
             variants={headingVariants}
           >
             We deliver more than services — we deliver outcomes. At Mindgraph,
@@ -106,18 +113,16 @@ function WhyChooseUsSection() {
                 custom={index * 0.2}
                 viewport={{ once: true, amount: 0.2 }}
                 className="
-            bg-gradient-to-b dark:from-[#1C1C1C] dark:to-[#000000]
-            grid p-6 pb-4 border w-[250px] h-[240px] 
+            bg-gradient-to-b from-white to-gray-100 dark:from-[#1C1C1C] dark:to-[#000000]
+            grid p-6 pb-4 border border-gray-200 dark:border-gray-800 w-[250px] h-[240px] 
             items-center-safe "
               >
-                <img
-                  src={card.icon}
-                  alt="AI Platform"
-                  className="mb-4 "
-                  data-light="/assets/AINative.svg"
-                  data-dark="/assets/updated/choose1.svg"
+                <SvgIconComponent
+                  icon={card.icon}
+                  size={48}
+                  className="mb-4 stroke-[#1783F7] [&_path]:fill-[#1783F7] dark:stroke-white dark:[&_path]:fill-white"
                 />
-                <h3 className="text-white text-lg md:text-xl font-extrabold">
+                <h3 className="text-black dark:text-white text-lg md:text-xl font-extrabold">
                   {card.title}
                 </h3>
               </motion.div>

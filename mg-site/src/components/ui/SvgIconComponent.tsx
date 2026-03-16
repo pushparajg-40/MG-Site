@@ -1,20 +1,28 @@
 type SvgIconProps = {
   icon: React.ElementType;
-  size?: number;
+  size?: number; // Kept for backwards compatibility 
+  width?: number | string;
+  height?: number | string;
   className?: string;
 };
 
 export default function SvgIconComponent({
   icon: IconSvg,
-  size = 16,
+  size,
+  width,
+  height,
   className = "",
 }: SvgIconProps) {
+  // Use explicit width/height if provided, else fall back to size, else default to undefined (native SVG size)
+  const finalWidth = width ?? size;
+  const finalHeight = height ?? size;
+
   return (
-    <div>
+    <div className={`text-gray-600 dark:text-white ${className}`}>
       <IconSvg
-        width={size}
-        height={size}
-        className={`stroke-gray-600 [&_path]:fill-gray-600 dark:stroke-white dark:[&_path]:fill-white ${className}`}
+        width={finalWidth}
+        height={finalHeight}
+        className="stroke-current fill-current [&_path]:fill-current [&_line]:stroke-current"
       />
     </div>
   );

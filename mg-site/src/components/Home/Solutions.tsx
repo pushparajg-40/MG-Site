@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ArrowNarrowRightIcon from "../ui/ArrowNarrowRightIcon";
 import SquareChevronRight from "../ui/SquareChevronRight";
+import SvgIconComponent from "../ui/SvgIconComponent";
+import LineIcon from "../../assets/line.svg?react";
 
 interface SolutionsCard {
   pageLink: string;
@@ -180,7 +182,7 @@ function Solutions() {
     <>
       <section
         id="solutions-section"
-        className="bg-[#000000] pt-[100px] pb-[100px] "
+        className="bg-slate-50 dark:bg-[#0a0a0a] pt-[100px] pb-[100px] "
       >
         <div
           className="2xl-plus:max-w-9xl 2xl-plus:mx-auto px-10 md:px-[50px] lg:px-20 py-8 sm:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
@@ -194,7 +196,11 @@ function Solutions() {
             <h2 className="text-4xl text-[#828282] mb-4 leading-tight">
               Enterprise Solution
             </h2>
-            <img src="/assets/updated/line.svg" className="pt-3" />
+            <SvgIconComponent
+              icon={LineIcon}
+              width="158"
+              className="pt-3 text-gray-600 dark:text-white"
+            />
           </div>
 
           <h1
@@ -206,7 +212,7 @@ function Solutions() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
-          <div className="flex flex-col justify-start text-white space-y-2 ">
+          <div className="flex flex-col justify-start text-black dark:text-white space-y-2 ">
             {cards &&
               cards.map((card) => {
                 return (
@@ -214,7 +220,7 @@ function Solutions() {
                     <Link to={card.pageLink}>
                       <div
                         id={card.id}
-                        className="solution-item hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                        className="solution-item hover:text-[#1783F7] hover:font-semibold group p-2 opacity-0 translate-y-10 transition-all duration-700 ease-out"
                         data-delay="400"
                       >
                         <div className="flex items-center justify-between gap-4 px-2">
@@ -256,7 +262,7 @@ function Solutions() {
 
             {/* <!-- TEXT CARD BELOW IMAGE --> */}
             <div
-              className="absolute md:top-[550px] lg:top-[600px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl text-white z-20"
+              className="absolute md:top-[550px] lg:top-[600px] left-[10px] w-[90%] max-w-[440px] p-6 text-xl text-black dark:text-white z-20"
               id="solution-text"
             >
               MathOps is a next-gen analytics and monitoring platform built to
