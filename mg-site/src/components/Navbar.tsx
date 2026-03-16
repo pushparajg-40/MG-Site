@@ -182,33 +182,50 @@ const Navbar = () => {
             <button
               type="button"
               className="flex items-center gap-1 dark:text-white text-[#7E7E7E] hover:text-[#1783F7] dark:hover:text-[#1783F7] transition"
-              // onMouseEnter={() => {
-              //   navigate("/Enterprise_Solutions");
-              // }}
             >
               Enterprise Solutions
               <ChevronDown size={16} />
             </button>
-            <div className="absolute hidden group-hover:block bg-white dark:bg-[#191919] border dark:border-gray-700 rounded shadow-lg w-52">
-              {[
-                ["CustomerDLens.AI", "/customerDlens"],
-                ["MATHOPS", "/mathops"],
-                ["OpsBeat", "/opsbeat"],
-                // ["OptiSaaSAI", "/optiSaas"],
-                ["SmartSustain.AI", "/smartSustain"],
-                ["AutoDocX.AI", "/autodocx"],
-                ["Patient360", "/patient360"],
-                ["Salesforce", "/salesforce"],
-                ["Regology", "/regology"],
-              ].map(([label, link]) => (
+            <div className="absolute hidden group-hover:flex bg-white dark:bg-[#191919] border dark:border-gray-700 rounded shadow-lg w-[400px] p-4 gap-6 left-1/2 -translate-x-1/2 top-full">
+              {/* Our Solutions */}
+              <div className="flex-1">
+                <p className="text-xs font-semibold tracking-widest text-[#828282] mb-2 pb-1 border-b border-gray-200 dark:border-gray-700">
+                  Our Solutions
+                </p>
+                {[
+                  ["CustomerDLens.AI", "/customerDlens"],
+                  ["MATHOPS", "/mathops"],
+                  ["OpsBeat", "/opsbeat"],
+                  ["SmartSustain.AI", "/smartSustain"],
+                  // ["AutoDocX.AI", "/autodocx"],
+                  ["Patient360", "/patient360"],
+                  ["Salesforce", "/salesforce"],
+                ].map(([label, link]) => (
+                  <NavLink
+                    key={label}
+                    to={link}
+                    className="block px-4 py-2 dark:text-white text-[#7E7E7E] hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                  >
+                    {label}
+                  </NavLink>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="w-px bg-gray-200 dark:bg-gray-700 self-stretch" />
+
+              {/* Partners */}
+              <div className="w-[120px]">
+                <p className="text-xs font-semibold tracking-widest text-[#828282] mb-2 pb-1 border-b border-gray-200 dark:border-gray-700">
+                  Partners
+                </p>
                 <NavLink
-                  key={label}
-                  to={link}
+                  to="/regology"
                   className="block px-4 py-2 dark:text-white text-[#7E7E7E] hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                 >
-                  {label}
+                  Regology
                 </NavLink>
-              ))}
+              </div>
             </div>
           </div>
 
@@ -314,7 +331,7 @@ const Navbar = () => {
         </div>
 
         {mobileOpen && (
-          <div className="fixed inset-0 bg-[#191919] z-[999] p-6 pt-20">
+          <div className="fixed inset-0 bg-[#191919] z-[999] p-6 pt-5 overflow-auto h-screen">
             <button
               type="button"
               className="absolute top-4 right-4"
@@ -378,36 +395,30 @@ const Navbar = () => {
                 </button>
                 {mobileDropdown === "Enterprise_Solutions" && (
                   <div
-                    className="pl-4 mt-2 space-y-2"
+                    className="pl-4 mt-2 space-y-3"
                     onClick={() => setMobileOpen(false)}
                   >
-                    <NavLink to="/customerDlens" className="block">
-                      CustomerDLens.AI
-                    </NavLink>
-                    <NavLink to="/mathops" className="block">
-                      MATHOPS
-                    </NavLink>
-                    <NavLink to="/opsbeat" className="block">
-                      OpsBeat
-                    </NavLink>
-                    {/* <NavLink to="/optiSaas" className="block">
-                    OptiSaaSAI
-                  </NavLink> */}
-                    <NavLink to="/smartSustain" className="block">
-                      SmartSustain.AI
-                    </NavLink>
-                    <NavLink to="/autodocx" className="block">
-                      AutoDocX.AI
-                    </NavLink>
-                    <NavLink to="/patient360" className="block">
-                      Patient360
-                    </NavLink>
-                    <NavLink to="/salesforce" className="block">
-                      Salesforce
-                    </NavLink>
-                    <NavLink to="/regology" className="block">
-                      Regology
-                    </NavLink>
+                    {/* Our Solutions group */}
+                    <p className="text-xs font-semibold tracking-widest text-[#828282] pt-1">
+                      Our Solutions
+                    </p>
+                    <div className="space-y-2 pl-2">
+                      <NavLink to="/customerDlens" className="block">CustomerDLens.AI</NavLink>
+                      <NavLink to="/mathops" className="block">MATHOPS</NavLink>
+                      <NavLink to="/opsbeat" className="block">OpsBeat</NavLink>
+                      <NavLink to="/smartSustain" className="block">SmartSustain.AI</NavLink>
+                      <NavLink to="/autodocx" className="block">AutoDocX.AI</NavLink>
+                      <NavLink to="/patient360" className="block">Patient360</NavLink>
+                      <NavLink to="/salesforce" className="block">Salesforce</NavLink>
+                    </div>
+
+                    {/* Partners group */}
+                    <p className="text-xs font-semibold tracking-widest text-[#828282] pt-2">
+                      Partners
+                    </p>
+                    <div className="space-y-2 pl-2">
+                      <NavLink to="/regology" className="block">Regology</NavLink>
+                    </div>
                   </div>
                 )}
               </div>
