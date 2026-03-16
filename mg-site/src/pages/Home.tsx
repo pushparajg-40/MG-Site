@@ -117,21 +117,23 @@ const Home: React.FC = () => {
       <PageTransition>
         <div className="overflow-x-hidden max-w-full bg-white dark:bg-black">
           {/* Hero Section */}
-          <section className="bg-slate-50 dark:bg-[#0a0a0a] text-black dark:text-white overflow-hidden md:px-[40px] lg:px-[100px]">
-            <div className="flex flex-col md:flex-row gap-2 pt-[50px] pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
-              <div className="pl-4 md:pl-0 space-y-4 hero-text w-4/6 my-auto">
-                <h2 className="text-5xl md:text-5xl lg:text-5xl text-radiant font-bold text-gradient">
+          <section className="bg-slate-50 dark:bg-[#0a0a0a] text-black dark:text-white overflow-hidden px-4 md:px-[40px] lg:px-[100px]">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-2 pt-[50px] pb-[80px] md:pb-[100px] md:items-start 2xl-plus:max-w-8xl 2xl-plus:mx-auto">
+              <div className="space-y-4 hero-text w-full md:w-1/2 my-auto">
+                <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gradient leading-tight">
                   AI-Powered <br />
                   Cyber-Secured <br />
                   Enterprise-Governed
                 </h2>
-                <p className="text-3xl text-gray-700 dark:text-gray-300">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300">
                   Driving Innovation in <br />
                   Mission-Critical Industries
                 </p>
               </div>
 
-              <SearchSection />
+              <div className="w-full md:w-1/2">
+                <SearchSection />
+              </div>
             </div>
           </section>
 
@@ -198,8 +200,7 @@ const Home: React.FC = () => {
           {/* Mobile Accordion */}
           <section
             className="px-4 z-10 
-        bg-gradient-to-b from-gray-50 via-gray-50 to-white
-        dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]
+        bg-slate-50 dark:bg-[#0a0a0a]
         block md:hidden"
           >
             <div className="w-full h-auto flex flex-col gap-4">
@@ -215,7 +216,7 @@ const Home: React.FC = () => {
                       style={{ backgroundImage: `url(${item.image})` }}
                     />
 
-                    <div className="absolute inset-0 bg-white/80 dark:bg-black/60 flex flex-col justify-between p-6 pr-[100px]">
+                    <div className="absolute inset-0 bg-white/80 dark:bg-black/60 flex flex-col justify-between p-5 pr-[80px] sm:pr-[100px]">
                       <div className="flex flex-col gap-10">
                         <h3 className="text-3xl font-extrabold text-black dark:text-white">
                           {item.title}

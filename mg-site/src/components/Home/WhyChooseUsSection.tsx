@@ -60,7 +60,7 @@ function WhyChooseUsSection() {
         variants={wrapperVariants}
       >
         <motion.div
-          className="px-10 lg:px-20 py-2 sm:py-4 lg:py-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+          className="px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-4 lg:py-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={wrapperVariants}
         >
           {/* Heading */}
@@ -68,7 +68,7 @@ function WhyChooseUsSection() {
             className="flex gap-2 md:items-start "
             variants={headingVariants}
           >
-            <h2 className="text-3xl md:text-4xl text-[#828282] mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-[#828282] mb-4 leading-tight">
               Why Choose Us?
             </h2>
             <SvgIconComponent
@@ -78,7 +78,7 @@ function WhyChooseUsSection() {
             />
           </motion.div>
           <motion.h1
-            className="text-4xl mb-4 leading-tight md:px-0 font-extrabold text-radiant"
+            className="text-2xl md:text-3xl lg:text-4xl mb-4 leading-tight md:px-0 font-extrabold text-radiant"
             variants={headingVariants}
           >
             Shaping Purpose fit AI Innovation
@@ -99,7 +99,7 @@ function WhyChooseUsSection() {
         {/* Content Grid */}
         <motion.div
           variants={wrapperVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 overflow-x-auto px-[20px] md:px-[40px] gap-6 flex-wrap justify-start mt-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 px-4 sm:px-6 md:px-10 lg:px-[40px] gap-4 md:gap-6 mt-8 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         >
           {/* Box 1 
           bg-gradient-to-r from-[#EAF9FD] to-[#DEF8FF] 
@@ -114,7 +114,7 @@ function WhyChooseUsSection() {
                 viewport={{ once: true, amount: 0.2 }}
                 className="
             bg-gradient-to-b from-white to-gray-100 dark:from-[#1C1C1C] dark:to-[#000000]
-            grid p-6 pb-4 border border-gray-200 dark:border-gray-800 w-[250px] h-[240px] 
+            grid p-6 pb-4 border border-gray-200 dark:border-gray-800 w-full min-h-[200px] md:h-[240px] 
             items-center-safe "
               >
                 <SvgIconComponent

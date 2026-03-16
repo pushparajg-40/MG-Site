@@ -195,7 +195,7 @@ export default function IndustryFocusSection() {
 
   return (
     <>
-      <section className="bg-slate-50 dark:bg-[#0a0a0a] pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+      <section className="bg-slate-50 dark:bg-[#0a0a0a] pt-8 md:pt-12 pb-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         <style>
           {`  .active-card {
       box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
@@ -265,7 +265,7 @@ export default function IndustryFocusSection() {
         </style>
         <div className="flex flex-col items-start justify-center px-4 sm:px-6 md:px-12 lg:px-[120px]">
           <div className="flex gap-2 items-start">
-            <h2 className="text-2xl md:text-4xl text-[#828282] mb-4 leading-tight">
+            <h2 className="text-xl md:text-2xl lg:text-4xl text-[#828282] mb-4 leading-tight">
               Industry Focus
             </h2>
             <SvgIconComponent
@@ -274,7 +274,7 @@ export default function IndustryFocusSection() {
               className="pt-3 text-gray-600 dark:text-white"
             />
           </div>
-          <h1 className="text-3xl md:text-4xl  mb-4 leading-tight font-extrabold text-gradient">
+          <h1 className="text-xl md:text-2xl lg:text-4xl mb-4 leading-tight font-extrabold text-gradient">
             Transforming Industries with Intelligent & Scalable Solutions
           </h1>
           <p className="text-sm md:text-base text-gray-700 dark:text-[#FFFFFF] font-normal mb-8 leading-[26px] max-w-4xl">

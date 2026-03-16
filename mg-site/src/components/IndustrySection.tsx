@@ -72,10 +72,10 @@ export default function IndustrySection({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-800 dark:text-white">
           {/* Overview */}
           <div className="slide-left" data-delay="100">
-            <h3 className="text-3xl text-[#1783F7] dark:text-white mb-2">
+            <h3 className="text-xl md:text-3xl text-[#1783F7] dark:text-white mb-2">
               Overview
             </h3>
-            <p className="text-lg">{overview}</p>
+            <p className="text-sm md:text-base lg:text-lg">{overview}</p>
           </div>
 
           {/* Key Solutions */}
@@ -83,7 +83,7 @@ export default function IndustrySection({
             data-delay="200"
             className="slide-up border-t md:border-t-0 md:border-l md:border-r border-gray-300 dark:border-[#6B6B6B] px-0 md:px-6 md:pl-[30px] pt-[20px] md:pt-0"
           >
-            <h3 className="text-3xl text-[#1783F7] dark:text-white mb-2">
+            <h3 className="text-xl md:text-3xl text-[#1783F7] dark:text-white mb-2">
               Key Solutions
             </h3>
             <ul className="space-y-2 text-[#666666] dark:text-white">
@@ -103,7 +103,7 @@ export default function IndustrySection({
             data-delay="300"
             className="slide-right border-t md:border-t-0 pt-[20px] md:pt-0 border-gray-300 dark:border-[#6B6B6B] px-0 md:px-6"
           >
-            <h3 className="text-3xl text-[#1783F7] dark:text-white mb-2">
+            <h3 className="text-xl md:text-3xl text-[#1783F7] dark:text-white mb-2">
               Business Impact
             </h3>
             <ul className="space-y-2 text-[#666666] dark:text-white">
@@ -125,7 +125,7 @@ export default function IndustrySection({
           data-delay="400"
         >
           <div className="w-full md:w-1/2">
-            <h2 className="text-black font-medium text-[35px] dark:text-white md:pr-[100px]">
+            <h2 className="text-xl md:text-2xl lg:text-[35px] font-medium text-black dark:text-white md:pr-[100px]">
               {caseStudyTitle}
             </h2>
             <NavLink

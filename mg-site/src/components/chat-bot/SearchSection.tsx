@@ -205,8 +205,8 @@ function AnswerText({ text }: { text: string }): React.ReactElement {
                                     fontSize: 10, fontWeight: 700, color: "#fff",
                                     marginTop: 2, flexShrink: 0,
                                 }}>
-                  {num}
-                </span>
+                                    {num}
+                                </span>
                             ) : (
                                 <span style={{
                                     minWidth: 6, height: 6, borderRadius: "50%",
@@ -215,8 +215,8 @@ function AnswerText({ text }: { text: string }): React.ReactElement {
                                 }} />
                             )}
                             <span style={{ color: "#d0d0d0", fontSize: 13, lineHeight: "1.65" }}>
-                <InlineText text={isNumbered ? bulletContent : node.text} />
-              </span>
+                                <InlineText text={isNumbered ? bulletContent : node.text} />
+                            </span>
                         </div>
 
                         {/* Sub-bullets */}
@@ -227,13 +227,13 @@ function AnswerText({ text }: { text: string }): React.ReactElement {
                             }}>
                                 {node.children.map((child, ci) => (
                                     <div key={ci} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                    <span style={{
-                        minWidth: 4, height: 4, borderRadius: "50%",
-                        background: "#555", marginTop: 7, flexShrink: 0,
-                    }} />
+                                        <span style={{
+                                            minWidth: 4, height: 4, borderRadius: "50%",
+                                            background: "#555", marginTop: 7, flexShrink: 0,
+                                        }} />
                                         <span style={{ color: "#a0a0a0", fontSize: 12.5, lineHeight: "1.6" }}>
-                      <InlineText text={child.text} />
-                    </span>
+                                            <InlineText text={child.text} />
+                                        </span>
                                     </div>
                                 ))}
                             </div>
@@ -246,9 +246,9 @@ function AnswerText({ text }: { text: string }): React.ReactElement {
 }
 // ─── Sidebar Response Content ─────────────────────────────────────────────────
 function ResponseContent({
-                             data,
-                             onFollowupClick,
-                         }: {
+    data,
+    onFollowupClick,
+}: {
     data: SidebarData;
     onFollowupClick: (q: string) => void;
 }): React.ReactElement {
@@ -276,9 +276,9 @@ function ResponseContent({
                     padding: "8px 12px", background: "#141414",
                     border: "1px solid #222", borderRadius: 6,
                 }}>
-          <span style={{ fontSize: 10.5, color: "#828282", letterSpacing: "0.06em", textTransform: "uppercase" as const }}>
-            Source
-          </span>
+                    <span style={{ fontSize: 10.5, color: "#828282", letterSpacing: "0.06em", textTransform: "uppercase" as const }}>
+                        Source
+                    </span>
                     <span style={{ color: "#2e2e2e", fontSize: 11 }}>·</span>
                     <a
                         href={sources.startsWith("http") ? sources : `https://${sources}`}
@@ -335,15 +335,15 @@ function ResponseContent({
 
 // ─── Main SearchSection ───────────────────────────────────────────────────────
 const SearchSection: React.FC = () => {
-    const [selectedQ, setSelectedQ]       = useState<string | null>(null);
-    const [sidebarOpen, setSidebarOpen]   = useState<boolean>(false);
-    const [loading, setLoading]           = useState<boolean>(false);
+    const [selectedQ, setSelectedQ] = useState<string | null>(null);
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const [responseData, setResponseData] = useState<SidebarData | null>(null);
-    const [apiError, setApiError]         = useState<string | null>(null);
-    const [followUp, setFollowUp]         = useState<string>("");
+    const [apiError, setApiError] = useState<string | null>(null);
+    const [followUp, setFollowUp] = useState<string>("");
 
     const scrollRef = useRef<HTMLDivElement>(null);
-    const abortRef  = useRef<AbortController | null>(null);
+    const abortRef = useRef<AbortController | null>(null);
 
     const askQuestion = useCallback(async (question: string): Promise<void> => {
         if (abortRef.current) abortRef.current.abort();
@@ -372,11 +372,11 @@ const SearchSection: React.FC = () => {
             const json: ApiResponse = await res.json();
 
             setResponseData({
-                    question: json.question,
-                    answer:   json.answer,
-                    followups: json.followups ?? [],
-                    sources:  json.sources,
-                });
+                question: json.question,
+                answer: json.answer,
+                followups: json.followups ?? [],
+                sources: json.sources,
+            });
 
         } catch (err) {
             if ((err as Error).name === "AbortError") return;
@@ -439,14 +439,14 @@ const SearchSection: React.FC = () => {
       `}</style>
 
             {/* ── Right column: search bar + chip grid ── */}
-            <div className="w-4/6 text-[#5f5f5f] flex flex-col gap-0 text-slate-">
+            <div className="w-full text-[#5f5f5f] flex flex-col gap-0">
 
                 {/* Search bar — white, full width, with star icon */}
                 <form onSubmit={handleFollowUp} className="w-full">
                     <div className="relative w-full flex items-center">
                         {/* Left star icon */}
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <img src="assets/updated/star_icon.svg" alt="" className="w-[18px] h-[18px]"/>
+                            <img src="assets/updated/star_icon.svg" alt="" className="w-[18px] h-[18px]" />
                         </div>
 
                         {/* Input */}
@@ -466,23 +466,16 @@ const SearchSection: React.FC = () => {
                                 aria-label="Submit question"
                             >
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                     strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <line x1="12" y1="19" x2="12" y2="5"/>
-                                    <polyline points="5 12 12 5 19 12"/>
+                                    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="12" y1="19" x2="12" y2="5" />
+                                    <polyline points="5 12 12 5 19 12" />
                                 </svg>
                             </button>
                         )}
                     </div>
                 </form>
                 {/* 3-column chip grid — no gaps between chips, matching the design */}
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr 1fr",
-                        gap: "16px",
-                        marginTop: "16px",
-                    }}
-                >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-4">
                     {PRESET_QUESTIONS.map((q, idx) => (
                         <button
                             key={idx}
@@ -502,7 +495,7 @@ const SearchSection: React.FC = () => {
                     top: 0,
                     right: 0,
                     height: "100vh",
-                    width: 460,
+                    width: "min(460px, 100vw)",
                     background: "#0f0f0f",
                     borderLeft: "1px solid #1e1e1e",
                     zIndex: 1000,

@@ -87,7 +87,7 @@ export function ServicesSection() {
 
   return (
     <section className="bg-white dark:bg-black">
-      <div className="px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+      <div className="px-4 sm:px-6 md:px-[50px] lg:px-[120px] py-8 sm:py-12 lg:py-16 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
         {/* Heading */}
         <motion.div
           className="flex flex-col justify-center mb-12 mt-8"
@@ -100,7 +100,7 @@ export function ServicesSection() {
             className="flex gap-2 items-center mb-4"
             variants={headingVariants}
           >
-            <h2 className="text-[#828282] text-3xl md:text-2xl mb-2">
+            <h2 className="text-xl md:text-2xl text-[#828282] mb-2">
               Services
             </h2>
             <SvgIconComponent
@@ -111,7 +111,7 @@ export function ServicesSection() {
           </motion.div>
 
           <motion.h1
-            className="text-4xl text-radiant md:text-4xl font-extrabold text-black dark:text-white"
+            className="text-2xl md:text-3xl lg:text-4xl text-radiant font-extrabold text-black dark:text-white"
             variants={headingVariants}
           >
             Transforming Ideas into Intelligent Realities
@@ -137,7 +137,7 @@ export function ServicesSection() {
               >
                 <img
                   src={service.image}
-                  className="h-[11rem]"
+                  className="h-32 sm:h-36 md:h-[11rem] w-auto"
                   alt={service.title}
                 />
                 <div className="flex flex-col justify-center gap-4 md:gap-8">

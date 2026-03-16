@@ -54,12 +54,12 @@ function WhatWeOfferSection({
         variants={containerVariants}
       >
         <motion.div
-          className="flex flex-col items-start justify-center px-10 md:px-[50px] lg:px-[120px] space-y-6 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+          className="flex flex-col items-start justify-center px-4 sm:px-6 md:px-[50px] lg:px-[120px] space-y-4 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
           variants={containerVariants}
         >
           <div className="flex gap-2 md:items-start  ">
             <motion.h2
-              className="text-4xl text-[#828282] mb-4 leading-tight"
+              className="text-2xl md:text-3xl lg:text-4xl text-[#828282] mb-4 leading-tight"
               variants={headingVariants}
             >
               {title}
@@ -72,7 +72,7 @@ function WhatWeOfferSection({
           </div>
 
           <motion.h1
-            className="text-4xl text-gradient mb-2 leading-tight md:px-0 font-extrabold"
+            className="text-2xl md:text-3xl lg:text-4xl text-gradient mb-2 leading-tight md:px-0 font-extrabold"
             variants={headingVariants}
           >
             {subtitle}
@@ -86,11 +86,11 @@ function WhatWeOfferSection({
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-10 md:px-[40px] lg:px-[30px] gap-6 mt-12 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 px-4 sm:px-6 md:px-[40px] lg:px-[60px] gap-4 md:gap-6 mt-8 md:mt-12 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           {cards.map((card, idx) => (
             <div key={idx}>
               <motion.div
-                className="text-black dark:text-white w-[264px] md:w-[300px]  "
+                className="text-black dark:text-white w-full"
                 variants={cardVariants}
                 custom={idx * 0.2}
                 viewport={{ once: true, amount: 0.2 }}
@@ -109,10 +109,10 @@ function WhatWeOfferSection({
                     />
                   </div>
 
-                  <p className="text-2xl text-[#1783F7] mt-4 pr-16 font-semibold relative z-10">
+                  <p className="text-2xl text-[#1783F7] dark:text-white mt-4 pr-16 font-semibold relative z-10">
                     {card.title}
                   </p>
-                  <p className="text-4xl text-[#1783F7] font-bold mt-20 relative z-10">
+                  <p className="text-4xl text-[#1783F7] dark:text-white font-bold mt-20 relative z-10">
                     {card.number}
                   </p>
                 </div>

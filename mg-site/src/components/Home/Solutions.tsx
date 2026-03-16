@@ -182,10 +182,10 @@ function Solutions() {
     <>
       <section
         id="solutions-section"
-        className="bg-slate-50 dark:bg-[#0a0a0a] pt-[100px] pb-[100px] "
+        className="bg-slate-50 dark:bg-[#0a0a0a] pt-[80px] md:pt-[100px] pb-[80px] md:pb-[100px] "
       >
         <div
-          className="2xl-plus:max-w-9xl 2xl-plus:mx-auto px-10 md:px-[50px] lg:px-20 py-8 sm:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="2xl-plus:max-w-9xl 2xl-plus:mx-auto px-4 sm:px-6 md:px-[50px] lg:px-20 py-4 sm:py-8 md:py-12 lg:py-16 space-y-6 opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="100"
         >
           {/* <!-- heading --> */}
@@ -193,7 +193,7 @@ function Solutions() {
             className="flex gap-2 items-start opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="200"
           >
-            <h2 className="text-4xl text-[#828282] mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-[#828282] mb-4 leading-tight">
               Enterprise Solution
             </h2>
             <SvgIconComponent
@@ -204,14 +204,14 @@ function Solutions() {
           </div>
 
           <h1
-            className="text-4xl text-[#055CC0] mb-4 leading-tight  md:px-0 font-extrabold text-gradient opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            className="text-2xl md:text-3xl lg:text-4xl text-[#055CC0] mb-4 leading-tight md:px-0 font-extrabold text-gradient opacity-0 translate-y-10 transition-all duration-700 ease-out"
             data-delay="300"
           >
             AI Framework & Partners Products
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 sm:px-6 md:px-[50px] lg:px-[70px] 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
           <div className="flex flex-col justify-start text-black dark:text-white space-y-2 ">
             {cards &&
               cards.map((card) => {

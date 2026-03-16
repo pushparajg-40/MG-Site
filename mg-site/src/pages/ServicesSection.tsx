@@ -57,17 +57,17 @@ export default function ServiceSection({
     <>
    
       <motion.section
-        className={`  py-16 px-4 md:pl-20 ${bgColor}`}
+        className={`py-12 sm:py-14 lg:py-16 px-4 sm:px-6 md:pl-20 ${bgColor}`}
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="mb-10 text-left 2xl-plus:max-w-7xl 2xl-plus:mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#687DA9] dark:text-white mb-2">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#687DA9] dark:text-white mb-2">
             {title}
           </h2>
-          <p className="text-[#666666] dark:text-white">{description}</p>
+          <p className="text-sm md:text-base text-[#666666] dark:text-[#ccc]">{description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start 2xl-plus:max-w-7xl 2xl-plus:mx-auto">
@@ -75,13 +75,13 @@ export default function ServiceSection({
             <img
               src={image}
               alt={title}
-              className="w-full h-auto md:h-[510px] object-cover aspect-square md:aspect-auto"
+              className="w-full h-auto md:h-[510px] object-cover aspect-video md:aspect-auto"
             />
           </div>
 
           <div className="flex flex-col gap-10 text-gray-800">
             <div>
-              <h3 className="text-[#1783F7] dark:text-white text-base text-xl mb-4">
+              <h3 className="text-[#1783F7] dark:text-white text-lg md:text-xl mb-4">
                 What We Offer
               </h3>
               <ul className="space-y-2 text-[#666666] dark:text-white">
@@ -103,7 +103,7 @@ export default function ServiceSection({
             </div>
 
             <div>
-              <h3 className="text-[#1783F7] dark:text-white text-base text-xl mb-4">
+              <h3 className="text-[#1783F7] dark:text-white text-lg md:text-xl mb-4">
                 Why Choose Us
               </h3>
               <ul className="space-y-2 text-[#666666] dark:text-white">
