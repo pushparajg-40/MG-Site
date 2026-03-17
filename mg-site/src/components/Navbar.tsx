@@ -200,6 +200,7 @@ const Navbar = () => {
                   // ["AutoDocX.AI", "/autodocx"],
                   ["Patient360", "/patient360"],
                   ["Salesforce", "/salesforce"],
+                  ["Ziplo", "/ziplo"],
                 ].map(([label, link]) => (
                   <NavLink
                     key={label}

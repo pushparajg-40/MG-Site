@@ -1,29 +1,75 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- HTTPS Redirection -->
-    <script>
-      if (location.protocol !== "https:" && location.hostname !== "localhost") {
-        location.replace(
-          `https://${location.host}${location.pathname}${location.search}`,
-        );
-      }
-    </script>
 
-    <!-- Content-Security-Policy (CSP): -->
-    <!--
-    CSP notes:
-    - script-src uses hashes for the two inline scripts below instead of 'unsafe-inline'.
-      If you change whitespace inside either <script> block, recompute the hashes:
-        python3 -c "import hashlib,base64; print('sha256-'+base64.b64encode(hashlib.sha256(open('index.html').read().encode()).digest()).decode())"
-      Or use: https://csp-evaluator.withgoogle.com/
-    - The two hashes below correspond exactly to the inline scripts in this file.
-      Hash 1 (HTTPS redirect): sha256-L1FLYzOzkG54VzfnOuU1/OLC4dAfj8P8FRJ9l3zXo0U=
-      Hash 2 (GTM init):       sha256-Rs86ePUAEMrfxiNiqkn6au8fI9GVq5av2O54m9EJ5+U=
-  -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self';
+<head>
+  <!--
+    ============================================================
+      SECURITY HEADERS — FRONTEND LAYER
+      Last reviewed: 2026-03-17
+    ============================================================
+
+    WHAT IS CONFIGURED HERE (meta tags / inline JS):
+      ✅ HTTPS Redirection     — JS redirect (best-effort; server redirect is authoritative)
+      ✅ Content-Security-Policy (CSP) — meta http-equiv (full policy)
+      ✅ frame-ancestors 'none' — inside CSP (replaces X-Frame-Options)
+      ✅ upgrade-insecure-requests — inside CSP
+      ✅ Referrer-Policy        — meta name="referrer"
+      ✅ Permissions-Policy     — meta http-equiv
+
+    WHAT REQUIRES SERVER / CDN CONFIGURATION (cannot be set via HTML):
+      ❌ HTTP Strict Transport Security (HSTS)
+         → Add to server: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+         → Netlify: _headers file or netlify.toml [[headers]] block
+         → Vercel: vercel.json headers array
+         → Nginx: add_header Strict-Transport-Security ...;
+      ❌ X-Content-Type-Options: nosniff
+         → Cannot be set via meta tag; must be an HTTP response header.
+         → Netlify _headers / Vercel headers / Nginx add_header
+      ❌ X-Frame-Options (XFO)
+         → Superseded by CSP frame-ancestors below (preferred); still add at server
+           level for older browsers: X-Frame-Options: DENY
+      ❌ SRI for GTM (gtag.js)
+         → GTM's script URL is versioned dynamically by Google; SRI is impractical.
+         → Mitigation: strict CSP allowlist (https://www.googletagmanager.com only)
+         → For full SRI on self-hosted assets, Vite auto-injects hashes at build time.
+
+    CSP INLINE SCRIPT HASHES:
+      If you change whitespace inside any inline <script> block, recompute hashes:
+        node -e "const c=require('crypto'),fs=require('fs');
+          const src=fs.readFileSync('index.html','utf8');
+          // extract script text and hash it"
+      Or: https://csp-evaluator.withgoogle.com/
+
+      Hash assignments (must match exactly):
+        sha256-N6mjn6TMdNUYnKJWgvjlH6m9z/DDsVq8D2jJ8L27NXg= → HTTPS redirect script (below)
+        sha256-Rs86ePUAEMrfxiNiqkn6au8fI9GVq5av2O54m9EJ5+U= → GTM dataLayer init script (below)
+
+    CSP KNOWN WEAKNESSES:
+      ⚠ style-src includes 'unsafe-inline' — required by React/Vite inline styles.
+        To harden: migrate to CSS Modules / PostCSS and remove 'unsafe-inline'.
+        Consider adopting a nonce-based CSP at the server layer for full compliance.
+    ============================================================
+    -->
+
+  <!-- ① HTTPS Redirection (best-effort JS; server-level redirect is the authoritative fix) -->
+  <script>
+    if (location.protocol !== "https:" && location.hostname !== "localhost") {
+      location.replace(
+        `https://${location.host}${location.pathname}${location.search}`,
+      );
+    }
+  </script>
+
+  <!-- ② Content-Security-Policy -->
+  <!--
+      frame-ancestors 'none'  → prevents clickjacking (replaces X-Frame-Options)
+      upgrade-insecure-requests → upgrades HTTP sub-resources to HTTPS
+      CSP via meta tag is honoured by all modern browsers (Chrome, Firefox, Safari, Edge).
+      NOTE: frame-ancestors in a meta tag is intentionally IGNORED by browsers (spec §6.4.2).
+            The authoritative frame-ancestors must be sent as an HTTP response header.
+            See server config notes above.
+    -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
             script-src 'self'
               https://www.googletagmanager.com
               'sha256-N6mjn6TMdNUYnKJWgvjlH6m9z/DDsVq8D2jJ8L27NXg='
@@ -33,52 +79,75 @@
               https://www.googletagmanager.com
               https://docs.google.com
               https://api.emailjs.com;
-            img-src 'self' https://purecatamphetamine.github.io data:;
-            style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-            font-src 'self' https://fonts.gstatic.com;
+            img-src 'self'
+              https://purecatamphetamine.github.io
+              data:;
+            style-src 'self'
+              https://fonts.googleapis.com
+              'unsafe-inline';
+            font-src 'self'
+              https://fonts.gstatic.com;
             frame-src 'none';
+            frame-ancestors 'none';
             object-src 'none';
             base-uri 'self';
-            form-action 'self' https://docs.google.com;
+            form-action 'self'
+              https://docs.google.com;
             manifest-src 'self';
             worker-src 'none';
-            upgrade-insecure-requests;"
-    />
+            upgrade-insecure-requests;" />
 
-    <!-- Referrer Policy -->
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <!-- ③ Referrer Policy — prevents URL leakage on cross-origin navigations -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <meta charset="UTF-8" />
+  <!--
+      ④ Permissions-Policy — disables powerful browser features not used by this site.
+         Reduces attack surface for feature-abuse exploits.
+         NOTE: This meta tag form is experimental; authoritative enforcement requires
+               the Permissions-Policy HTTP response header on the server.
+    -->
+  <meta http-equiv="Permissions-Policy" content="camera=(),
+               microphone=(),
+               geolocation=(),
+               payment=(),
+               usb=(),
+               interest-cohort=()" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MindGraph" />
-    <link rel="manifest" href="/site.webmanifest" />
+  <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MindGraph" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-    <title>Mind Graph</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-P20D15MBZW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-P20D15MBZW");
-    </script>
-  </head>
+  <title>Mind Graph</title>
 
-  <body class="dark:bg-black">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!--
+      ⑤ Google Tag Manager
+         SRI NOTE: GTM's gtag/js URL is versioned dynamically by Google; adding a static
+         integrity hash would break on every GTM update. Mitigation: the CSP allowlist above
+         restricts script-src to https://www.googletagmanager.com only.
+         For self-hosted analytics alternatives (e.g. Plausible, Fathom), SRI is fully feasible.
+    -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P20D15MBZW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-P20D15MBZW");
+  </script>
+</head>
+
+<body class="dark:bg-black">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

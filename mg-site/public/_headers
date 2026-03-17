@@ -1,0 +1,44 @@
+## MG-Site Security Posture
+## Netlify / CDN _headers file
+##
+## Place this file in the `public/` folder (Vite copies it to dist/ root on build).
+## This sets HTTP response headers for ALL routes (*).
+##
+## These headers CANNOT be set via HTML meta tags and must be sent by the server.
+## Reference: https://docs.netlify.com/routing/headers/
+
+/*
+  # ── HSTS ─────────────────────────────────────────────────────────────────────
+  # Forces browsers to use HTTPS for 1 year (31536000s), including subdomains.
+  # "preload" opts the domain into the HSTS preload list (https://hstspreload.org).
+  # ⚠ Do NOT enable preload until you are certain ALL subdomains support HTTPS.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # ── X-Content-Type-Options ───────────────────────────────────────────────────
+  # Prevents MIME-sniffing; browsers must respect the declared Content-Type.
+  X-Content-Type-Options: nosniff
+
+  # ── X-Frame-Options ──────────────────────────────────────────────────────────
+  # Legacy clickjacking protection for older browsers that don't support CSP
+  # frame-ancestors. Modern browsers use the frame-ancestors directive in CSP.
+  X-Frame-Options: DENY
+
+  # ── Referrer-Policy ──────────────────────────────────────────────────────────
+  # Authoritative server-sent version (supplements the meta tag in index.html).
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # ── Permissions-Policy ───────────────────────────────────────────────────────
+  # Disables browser features not needed by this site.
+  # Authoritative server-sent version (supplements the meta tag in index.html).
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # ── Content-Security-Policy ──────────────────────────────────────────────────
+  # Sent as an HTTP header, this is MORE POWERFUL than the meta tag in index.html:
+  #   - frame-ancestors is only honoured as an HTTP header (not meta tag).
+  #   - sandbox directive only works as an HTTP header.
+  # Copy the CSP from index.html here and ADD frame-ancestors + report-uri.
+  #
+  # ⚠ IMPORTANT: The script hashes below MUST match the inline scripts in index.html.
+  #   If you modify any inline <script>, recompute the hash and update BOTH places.
+  #
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-N6mjn6TMdNUYnKJWgvjlH6m9z/DDsVq8D2jJ8L27NXg=' 'sha256-Rs86ePUAEMrfxiNiqkn6au8fI9GVq5av2O54m9EJ5+U='; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://docs.google.com https://api.emailjs.com; img-src 'self' https://purecatamphetamine.github.io data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://docs.google.com; manifest-src 'self'; worker-src 'none'; upgrade-insecure-requests;
