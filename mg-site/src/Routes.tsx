@@ -26,6 +26,7 @@ import Regology from "./pages/Products/Regology";
 import Salesforce from "./pages/Products/Salesforce";
 import { SmartSustain } from "./pages/Products/SmartSustain";
 import TalentSeek from "./pages/Products/TalentSeek";
+import Ziplo from "./pages/Products/Ziplo";
 // import Service from "./pages/Service";
 import AIDI_Services from "./pages/Services/AI&DI_Services";
 import AppDevServices from "./pages/Services/AppDevServices";
@@ -170,12 +171,16 @@ export const routes = [
     path: "/patient360",
     element: <Patient360></Patient360>,
   },
-    {
+  {
     path: "/regology",
     element: <Regology></Regology>,
   },
-     {
+  {
     path: "/salesforce",
     element: <Salesforce></Salesforce>,
+  },
+  {
+    path: "/ziplo",
+    element: <Ziplo></Ziplo>,
   },
 ];

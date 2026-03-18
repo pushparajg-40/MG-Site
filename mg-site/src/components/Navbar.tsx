@@ -408,9 +408,10 @@ const Navbar = () => {
                       <NavLink to="/mathops" className="block">MATHOPS</NavLink>
                       <NavLink to="/opsbeat" className="block">OpsBeat</NavLink>
                       <NavLink to="/smartSustain" className="block">SmartSustain.AI</NavLink>
-                      <NavLink to="/autodocx" className="block">AutoDocX.AI</NavLink>
+                      {/* <NavLink to="/autodocx" className="block">AutoDocX.AI</NavLink> */}
                       <NavLink to="/patient360" className="block">Patient360</NavLink>
                       <NavLink to="/salesforce" className="block">Salesforce</NavLink>
+                      <NavLink to="/ziplo" className="block">Ziplo</NavLink>
                     </div>
 
                     {/* Partners group */}
