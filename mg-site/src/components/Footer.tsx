@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
           className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
           data-delay="100"
         >
-          <div className="sm:flex sm:flex-col sm:items-center">
+          <div className="flex flex-col items-center">
             <Link to="/">
               <img
                 src="/assets/updated/MgLogo.svg"
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
 
         {/* Column 2 */}
         <div
-          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0"
           data-delay="200"
         >
           <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
 
         {/* Column 3 */}
         <div
-          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0"
           data-delay="300"
         >
           <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
@@ -214,7 +214,7 @@ const Footer: React.FC = () => {
 
         {/* Column 4 */}
         <div
-          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0"
           data-delay="300"
         >
           <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
@@ -298,7 +298,7 @@ const Footer: React.FC = () => {
 
         {/* Column 5 */}
         <div
-          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out"
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0"
           data-delay="400"
         >
           <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
@@ -343,7 +343,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Section */}
       <div
-        className="mx-10 md:mx-0 pt-6 pb-6 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
+        className="mx-8 md:mx-0 pt-6 pb-6 border-t-2 opacity-0 translate-y-10 transition-all duration-700 ease-out 2xl-plus:max-w-9xl 2xl-plus:mx-auto"
         data-delay="500"
       >
         <div className="flex flex-col md:flex-row justify-between items-center sm:gap-5 sm:text-center">

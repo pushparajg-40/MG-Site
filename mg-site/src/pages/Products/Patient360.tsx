@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
 import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
-import SquareChevronRight from "../../components/ui/SquareChevronRight";
+// import SquareChevronRight from "../../components/ui/SquareChevronRight";
+import Patient360Logo from "../../../public/assets/patient360/patient-360-hero-logo.svg?react";
+import SvgIconComponent from "../../components/ui/SvgIconComponent";
 
 interface FeatureColumn {
   title: string;
@@ -41,7 +43,7 @@ const keyFeatures: FeatureColumn[] = [
   },
   {
     title: "Enterprise-Grade Compliance & Security",
-    description: "",
+    description: "Patient360 is built on Microsoft Azure with role-based access control, strong data encryption, and full compliance with HIPAA and regional health regulations.",
     icon: "assets/patient360/enterprise-grade-icon.svg",
     iconDark: "assets/patient360/enterprise-grade-icon.svg",
   },
@@ -86,7 +88,7 @@ const capabilityItems = [
 ];
 
 export default function Patient360() {
-  const isDark = document.documentElement.classList.contains("dark");
+  // const isDark = document.documentElement.classList.contains("dark");
 
   const navigate = useNavigate();
 
@@ -117,7 +119,7 @@ export default function Patient360() {
           }
         `}</style>
             <div className="hero-section flex flex-col w-full md:w-1/2 justify-center items-start pl-12 pr-0 md:pr-[70px]">
-              <div className="object-contain h-10 w-auto mb-5">
+              {/* <div className="object-contain h-10 w-auto mb-5">
                 <img
                   src={
                     isDark
@@ -127,6 +129,9 @@ export default function Patient360() {
                   alt="patient-360-logo"
                   className="h-full"
                 />
+              </div> */}
+              <div>
+                <SvgIconComponent icon={Patient360Logo} className="w-40 h-10"/>
               </div>
               <p
                 className="font-semibold md:font-medium text-[#1783F7] dark:text-white mb-5"
@@ -136,12 +141,11 @@ export default function Patient360() {
                 Platform
               </p>
               <p className="text-[#667085] dark:text-white text-sm leading-relaxed mb-6">
-                Patient360.ai is a powerful, healthcare-specific Customer Data
-                Platform (CDP) designed to deliver a 360-degree view of every
-                patient. Built to streamline communication, enhance operational
-                efficiency, and enable data-driven care, Patient360 empowers
-                healthcare providers to deliver personalized, proactive
-                treatment across every touchpoint.
+                Patient360.ai is a powerful, healthcare-specific Customer Data Platform (CDP)
+                designed to deliver a 360-degree view of every patient.
+                Built to streamline communication, enhance operational efficiency,
+                and enable data-driven care, Patient360 empowers healthcare providers
+                to deliver personalized, proactive treatment across every touchpoint.
               </p>
               <button
                 className="w-60 text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center justify-center transition-all hover:opacity-90 
@@ -167,58 +171,45 @@ export default function Patient360() {
           </section>
 
           {/* Key Features */}
-          <section className="w-full dark:bg-black py-9 md:py-16 bg-white">
-            <div className="flex flex-col md:flex-row">
-              <div className="sm:flex-col md:w-1/3 w-full px-6 py-12 lg:pl-[120px]">
-                <h3 className="text-[#1783F7] dark:text-white text-2xl font-medium mb-3">
-                  Key Features of Patient360.ai
+          <section className="w-full dark:bg-[#181818] py-16 px-4 sm:px-8 lg:px-10 bg-white">
+            <div className="flex flex-col gap-6">
+              <div className="sm:flex-col w-full text-center mb-6">
+                <h3 className="text-gray-600 dark:text-white text-2xl font-medium mb-3">
+                  Key Features
                 </h3>
-                <div className="mt-20 lg:mt-48 mb-5 sm:mx-auto">
-                  <img
-                    src="assets/patient360/patient-360-med-delivery.png"
-                    alt="patient-360-medicine-delivery"
-                    className="w-64 lg:w-[475px] h-auto object-fit-contain"
-                  />
-                </div>
+                <h2 className="text-[#1783F7] dark:text-white text-4xl font-semibold mb-3">
+                  Patient360.ai
+                </h2>
+                <p className="text-[#667085] dark:text-white md:w-3/5 w-full mx-auto">
+                  From individuals to teams, AutoDocX.AI streamlines
+                  your document workflows—sorting, tagging, retrieving,
+                  and managing files with zero hassle.
+                </p>
               </div>
 
-              <div
-                className="md:w-2/3 w-full px-6 py-12 md:rounded-tl-3xl md:rounded-bl-3xl md:pl-16 lg:pr-[80px] lg:ml-[100px]
-                bg-[linear-gradient(to_bottom_right,_#E8F5FF,_#FBFFFA,_#E8F1EF,_#D3ECFF)] dark:bg-none dark:bg-[#181818] transition-all duration-500 ease-in"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 max-w-6xl mx-auto">
-                  {keyFeatures.map((feature, idx) => (
-                    <div key={idx} className="flex flex-col items-start gap-3">
-                      <img
-                        src={feature.icon}
-                        data-light={feature.icon}
-                        data-dark={feature.iconDark}
-                        alt={feature.title}
-                        className={`w-[55px] h-[55px] mt-1 theme-image ${isDark ? "text-white" : "text-[#1783F7]"}`}
-                      />
-                      <div>
-                        <h4 className="font-semibold text-xl text-[#687DA9] dark:text-white">
-                          {feature.title}
-                        </h4>
-                        <p className="text-base text-[#667085] dark:text-white mt-4">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-4 md:gap-6">
+                {keyFeatures.map((feature, idx) => (
+                  <div key={idx} className="flex flex-col items-start gap-3">
+                    <h4 className="font-semibold text-xl text-[#687DA9] dark:text-white">
+                      {feature.title}
+                    </h4>
+                    <p className="text-sm text-[#667085] dark:text-white mt-4">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
           {/* Transforming workflows */}
-          <section className="bg-white dark:bg-black transition-all duration-500 ease-in">
+          <section className="bg-white dark:bg-black transition-all duration-500 ease-in py-16 px-4 sm:px-8 lg:px-10">
             <style>{`
           .section-5 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            padding: 40px;
             justify-items: center;
             align-items: start;
           }
@@ -228,20 +219,20 @@ export default function Patient360() {
             }
           }
         `}</style>
-            <h2 className="text-[#1783F7] dark:text-white text-center text-3xl font-medium mb-3">
-              Transforming Workflows Across Healthcare Roles
+            <h2 className="text-[#1783F7] dark:text-white text-center text-4xl font-medium mb-6">
+              Transforming Workflows Across <br /> Healthcare Roles
             </h2>
             <div className="section-5 mt-5 md:mt-0">
               {/* For Clinicians */}
-              <div className="flex flex-col justify-start items-start pl-5 md:pl-10 pr-2 md:pr-0">
-                <h3 className="text-[#687DA9] dark:text-white font-normal text-lg md:text-xl mt-8 md:mt-0 mb-4">
+              <div className="flex flex-col justify-start items-start">
+                <h3 className="text-[#687DA9] font-medium dark:text-white text-lg md:text-xl mt-8 md:mt-0 mb-4">
                   For Clinicians
                 </h3>
-                <img
+                {/* <img
                   src="assets/patient360/clinical-img.png"
                   alt="For Clinicians"
                   className="mb-2"
-                />
+                /> */}
                 <p className="text-[#667085] dark:text-white font-normal text-base leading-6 mb-5">
                   Gain instant access to comprehensive patient data, allowing
                   for quicker, evidence-based decisions. With ongoing health
@@ -251,15 +242,15 @@ export default function Patient360() {
               </div>
 
               {/* For Healthcare Administrators */}
-              <div className="flex flex-col justify-start items-start pl-5 md:pl-10 pr-2 md:pr-0">
-                <h3 className="text-[#687DA9] dark:text-white font-normal text-lg md:text-xl mt-8 md:mt-0 mb-4">
+              <div className="flex flex-col justify-start items-start">
+                <h3 className="text-[#687DA9] font-medium dark:text-white text-lg md:text-xl mt-8 md:mt-0 mb-4">
                   For Healthcare Administrators
                 </h3>
-                <img
+                {/* <img
                   src="assets/patient360/health-administration-img.png"
                   alt="For Healthcare Administrators"
                   className="mb-2"
-                />
+                /> */}
                 <p className="text-[#667085] dark:text-white font-normal text-base leading-6 mb-5">
                   Automate routine tasks like appointment reminders and patient
                   follow-ups. Optimize resource allocation with centralized
@@ -271,57 +262,45 @@ export default function Patient360() {
           </section>
 
           {/* Why choose section */}
-          <section className="py-16 px-4 sm:px-8 lg:px-20 dark:bg-black">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#1783F7] dark:text-white mb-2">
-                Why Choose Patient360?
-              </h2>
+          <section className="py-16 px-4 sm:px-8 lg:px-10 dark:bg-black flex flex-col items-center">
+            <h2 className="text-2xl md:text-4xl font-medium text-[#1783F7] dark:text-white mb-4">
+              Why Choose Patient360?
+            </h2>
 
-              <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:-mt-20 z-10 md:hidden">
-                <div className="max-w-sm lg:max-w-md overflow-hidden bg-white px-[20px] mt-[10px]">
-                  <img
-                    src="assets/patient360/why-choose-patient-360-img.png"
-                    alt="why choose patient 360"
-                    className="md:w-full md:h-auto object-cover aspect-square"
-                  />
-                </div>
-              </div>
 
-              <div className="relative max-w-7xl mx-auto bg-[#F8FBFE] dark:bg-[#181818] transition-all duration-500 ease-in p-6 sm:p-10 flex flex-col lg:flex-row items-start gap-10 mt-[20px]">
-                <div className="w-full lg:w-2/3 space-y-8 lg:pr-[50px]">
-                  {capabilityItems.map((item, idx) => (
-                    <div key={idx} className="flex items-start">
-                      <SquareChevronRight className="mt-1" />
-                      <div className="ml-2">
-                        <h3 className="text-lg font-semibold text-[#687DA9] dark:text-white flex items-center gap-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-[#667085] dark:text-white mt-1">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="w-full lg:w-1/3  justify-center lg:justify-end lg:-mt-20 z-10 hidden md:flex">
-                  <div className="max-w-sm lg:max-w-md overflow-hidden bg-white">
-                    <img
-                      src="assets/patient360/why-choose-patient-360-img.png"
-                      alt="why choose patient 360"
-                      className="md:w-full md:h-auto object-cover aspect-square"
-                    />
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-10">
+              {capabilityItems.map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <div className="ml-2">
+                    <h3 className="text-xl font-medium text-[#687DA9] dark:text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-[#667085] dark:text-white mt-1">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
+
+            <div className="w-full">
+              <img
+                src="assets/patient360/patient-360-why-choose-us.png"
+                alt="why choose patient 360"
+                className="object-cover"
+              />
+            </div>
+
           </section>
 
-          {/* Built for Today section */}
-          <section className={`py-5 px-4 sm:px-8 lg:px-20 dark:bg-black`}>
-            <div className="flex items-center justify-center border-t-2 py-6 border-b-2 border-gray-200 dark:border-gray-600">
-              <div className="w-3/5 px-4">
-                <p className="text-sm text-[#667085] dark:text-white mt-1">
+          {/* Built for Today section & Let's Transform Section*/}
+          <section className={`py-16 px-4 sm:px-8 lg:px-10 dark:bg-black`}>
+            <div className="border-t border-b border-gray-200 dark:border-gray-600 flex flex-col md:flex-row md:justify-center">
+              <div className="px-6 py-6 w-full md:w-1/2">
+                <h2 className="text-black font-medium text-2xl dark:text-white text-center">
+                  Built for Today. <br /> Ready for Tomorrow.
+                </h2>
+                <p className="text-sm text-[#667085] dark:text-white mt-2 text-center">
                   Patient360 is not just a platform—it’s a strategic partner in
                   digital healthcare transformation. Whether you're modernizing
                   patient engagement, enhancing care coordination, or scaling
@@ -329,16 +308,21 @@ export default function Patient360() {
                   with your organization's needs.
                 </p>
               </div>
-              <div className="w-2/5 px-4 border-l border-gray-200 dark:border-gray-600">
-                <h2 className="text-black font-medium text-[30px] dark:text-white">
-                  Built for Today. <br/> Ready for Tomorrow.
+              <div className="px-6 py-6 w-full md:w-1/2">
+                <h2 className="text-black font-medium text-2xl dark:text-white text-center">
+                  Let’s Transform <br /> Healthcare, Together
                 </h2>
+                <p className="text-sm text-[#667085] dark:text-white mt-2 text-center">
+                  Schedule a personalized demo and see how Patient360 can elevate
+                  care delivery and operational efficiency for your organization.
+                </p>
               </div>
             </div>
+
           </section>
 
           {/* Let's Transform Section */}
-          <section className={`py-5 px-4 sm:px-8 lg:px-20 dark:bg-black`}>
+          {/* <section className={`py-5 px-4 sm:px-8 lg:px-20 dark:bg-black`}>
             <div className="py-10 flex flex-col md:flex-row gap-6 border-b-2 border-gray-200 dark:border-gray-600">
               <div className="w-full md:w-1/2">
                 <h2 className="text-black font-medium text-[35px] dark:text-white md:pr-[100px]">
@@ -364,7 +348,7 @@ export default function Patient360() {
                 />
               </div>
             </div>
-          </section>
+          </section> */}
         </main>
       </PageTransition>
     </>

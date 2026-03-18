@@ -19,7 +19,7 @@ export default function NotFound() {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-4xl font-bold text-gray-200"
+        className="text-4xl font-bold text-gray-600 dark:text-gray-200"
       >
         Page Not Found
       </motion.h1>

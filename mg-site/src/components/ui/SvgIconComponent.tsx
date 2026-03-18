@@ -1,6 +1,6 @@
 type SvgIconProps = {
   icon: React.ElementType;
-  size?: number; // Kept for backwards compatibility 
+  size?: number;
   width?: number | string;
   height?: number | string;
   className?: string;
