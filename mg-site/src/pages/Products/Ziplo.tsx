@@ -1,306 +1,273 @@
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../../components/PageTransition";
-import ZiploLogo from "../../../public/assets/ziplo-hero-logo.svg?react";
-import SvgIconComponent from "../../components/ui/SvgIconComponent";
 import RoundedArrowRightIcon from "../../components/ui/RoundedArrowRightIcon";
 
-interface FeatureColumn {
-    title: string;
-    description: string;
-    items: string[];
-}
-
 export default function Ziplo() {
-    const isDark = document.documentElement.classList.contains("dark");
-
-    const features: FeatureColumn[] = [
-        {
-            title: "Smart Dashboard",
-            description:
-                "Monitor workforce dynamics with real-time dashboards showing onboarding/offboarding trends, location-based distributions, and request activity all in one place.",
-            items: [
-                "View total employee stats: onboarded, offboarded, and active.",
-                "Get real-time charts by location, role, and profile activity.",
-                "Visual insights into onboarding/offboarding trends.",
-            ],
-        },
-
-        {
-            title: "Inventory Manager",
-            description:
-                "Easily configure organizational hierarchies by adding roles, designations, departments, and skill sets. Ensure structured growth with mandatory role mapping.",
-            items: [
-                "Add roles, designations, departments, and skills.",
-                "Mandatory role selection for designation mapping.",
-            ],
-        },
-        {
-            title: "Employee Directory",
-            description:
-                "Access complete employee lists onboarded or offboarded with advanced search, filtering, and detailed profiles. Perform single or bulk onboarding with ease.",
-            items: [
-                "Searchable, filterable lists of onboarded/offboarded staff.",
-                "Bulk and single onboarding options.",
-                "Edit employee details, track offboarding status, and revoke with reasons.",
-                "Ensure asset, ID, and dues clearance before final offboarding.",
-            ],
-        },
-
-        {
-            title: "Collaborate",
-            description:
-                "Explore team structures and profiles with smart filtering. Simplify internal communication by making people and their skills easily discoverable.",
-            items: [
-                "Discover and explore employee profiles in detail.",
-                "Filter by team, department, or location.",
-            ],
-        },
-        {
-            title: "Project Management",
-            description:
-                "Onboard new projects, assign team members, and edit details all in one view. Stay on top of project performance, resources, and timelines.",
-            items: [
-                "Onboard new projects with ease.",
-                "View project-level details, assign team members, and edit tasks.",
-                "Centralized view of resources, timelines, and deliverables.",
-            ],
-        },
-        {
-            title: "Timesheet & Task Logs",
-            description:
-                "Log daily tasks, track working hours, and get approval from reporting managers. Includes smart validations, edit options, and custom reporting filters.",
-            items: [
-                "Auto-calculated hours.",
-                "Backdated fill requests.",
-                "Quick approvals & edits.",
-                "Smart filtering by date range",
-            ],
-        },
-    ];
-
-    const onePlatform: Omit<FeatureColumn, "description">[] = [
-        {
-            title: "Super Admin",
-            items: [
-                "Full access to all modules.",
-                "Manage employee lifecycles.",
-                "Project control & task assignments.",
-                "Track all types of user activity and data",
-            ],
-        },
-
-        {
-            title: "Human Resource",
-            items: [
-                "Onboard/offboard employees.",
-                "Manage employee data and request approvals.",
-                "Ensure compliance during exits.",
-            ],
-        },
-        {
-            title: "Manager",
-            items: [
-                "Timesheet approvals: pending, accepted, rejected.",
-                "Assign and review project tasks.",
-                "Grade completed tasks or reject with feedback.",
-                "Track task submissions and project health.",
-                "Manage certificates and reporting",
-            ],
-        },
-
-        {
-            title: "Employee",
-            items: [
-                "View hot skills, project involvement, and work locations.",
-                "Fill, submit, and track timesheets.",
-                "Request to edit past entries.",
-                "Complete assigned tasks.",
-                "Use calendar to view task status by date",
-            ],
-        },
-    ];
-
     const navigate = useNavigate();
 
+    const testingServices = [
+        {
+            title: "Security & Adversarial Testing",
+            subtitle: "Protect Your Agent from Malicious Inputs",
+            items: [
+                "1,000+ prompt injection patterns tested against your agent's input handling",
+                "Jailbreak testing via role-playing, hypotheticals, and creative prompt manipulation",
+                "Indirect prompt injection detection across emails, PDFs, web pages, and user documents",
+                "Context leakage prevention — system prompts, API keys, and internal instructions stay hidden",
+                "Toxicity detection even under adversarial baiting scenarios",
+            ],
+        },
+        {
+            title: "Behavioral & Quality Validation",
+            subtitle: "Ensure Your Agent Behaves as Intended",
+            items: [
+                "Hallucination detection — every claim verified against ground truth data",
+                "Persona drift testing across long conversations and adversarial prompts",
+                "Out-of-scope handling — graceful declines without revealing internal constraints",
+                "Circular loop detection when the agent gets stuck in repetitive patterns",
+                "Handoff accuracy verification ensuring full context transfer to humans or downstream systems",
+            ],
+        },
+        {
+            title: "Guardrail & Tool Verification",
+            subtitle: "Validate Every Layer of Your Agent Stack",
+            items: [
+                "End-to-end agent testing — tools, system prompts, and business logic included",
+                "Guardrail failure identification across all defined safety boundaries",
+                "Tool call accuracy and error handling validation",
+                "Framework-aware testing for LangChain, CrewAI, AutoGen, and custom setups",
+                "Automated fix suggestions with copy-paste code for every failed test",
+            ],
+        },
+        {
+            title: "LLM Migration & Model Validation",
+            subtitle: "Switch Models Without Surprises",
+            items: [
+                "Cross-provider validation when migrating between OpenAI, Anthropic, and other LLMs",
+                "Behavioral parity testing — same quality, same guardrails, no regressions",
+                "Side-by-side model comparison for informed upgrade decisions",
+                "Continuous re-testing on model version changes",
+                "CI/CD integration for automated testing on every deployment",
+            ],
+        },
+        {
+            title: "Adaptive Threat Intelligence",
+            subtitle: "Stay Ahead of Evolving Attack Patterns",
+            items: [
+                "Adaptive attack engine that learns and evolves beyond static test suites",
+                "Continuous test library updates reflecting the latest adversarial techniques",
+                "Overnight test runs with results ready before the next dev cycle",
+                "Slack and email alerts for immediate failure notifications",
+                "30-day result history for trend analysis and compliance audits",
+            ],
+        },
+    ];
+
+    const riskReductions = [
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    <path d="M12 7v2" />
+                    <path d="M12 13h.01" />
+                </svg>
+            ),
+            title: "Catch failures before production",
+            description: "Reduce user-facing incidents and agent downtime"
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+            ),
+            title: "Fix faster with copy-paste code",
+            description: "Dramatically cut time-to-resolution for test failures"
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <line x1="9" y1="1" x2="9" y2="4" />
+                    <line x1="15" y1="1" x2="15" y2="4" />
+                    <line x1="9" y1="20" x2="9" y2="23" />
+                    <line x1="15" y1="20" x2="15" y2="23" />
+                    <line x1="20" y1="9" x2="23" y2="9" />
+                    <line x1="20" y1="14" x2="23" y2="14" />
+                    <line x1="1" y1="9" x2="4" y2="9" />
+                    <line x1="1" y1="14" x2="4" y2="14" />
+                </svg>
+            ),
+            title: "Confidently migrate LLMs",
+            description: "Zero unexpected behavioral regressions across providers"
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 22h14" />
+                    <path d="M5 2h14" />
+                    <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+                    <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+                </svg>
+            ),
+            title: "Ship agents in hours, not weeks",
+            description: "5-minute setup with overnight results ready at standup"
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                    <path d="M3 3v5h5" />
+                    <path d="M12 7v5l4 2" />
+                </svg>
+            ),
+            title: "Continuous compliance-readiness",
+            description: "Audit-ready test history and traceable failure documentation"
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+            ),
+            title: "Reduce security exposure",
+            description: "Harden against prompt injection, jailbreaks, and data leakage"
+        }
+    ];
+
+    const differentiators = [
+        { text: "Tests the complete agent — tools, system prompts, guardrails, and business logic, not just the model", indent: false },
+        { text: "Actionable fix suggestions with copy-paste code for every failed test case", indent: true },
+        { text: "Adaptive attack engine that evolves beyond static patterns to catch emerging vulnerabilities", indent: false },
+        { text: "Speed-first architecture — agent verified to run first, thousands of tests executed overnight", indent: false },
+        { text: "Seamless LLM migration validation ensuring behavioral parity across providers", indent: true },
+        { text: "Built by engineers who have shipped 70+ AI agents in regulated industries", indent: true }
+    ];
+
     return (
-        <>
-            <PageTransition>
-                <main className="transition-all duration-500 ease-in">
-                    {/* Hero Section */}
-                    <section
-                        className="flex flex-col md:flex-row justify-between items-center md:items-center bg-white dark:bg-black transition-all duration-500 ease-in"
-                    >
-                        {/* Mobile adjustments */}
-                        <style>{`
-          @media screen and (max-width: 769px) {
-            .hero-section {
-              height: 630px;
-              padding-top: 30px;
-            }
-          }
-          @media screen and (max-width: 426px) {
-            .hero-section {
-              flex-direction: column;
-              height: auto;
-            }
-            .hero-description {
-              padding-left: 20px !important;
-              padding-right: 10px !important;
-              width: 100% !important;
-            }
-          }
-        `}</style>
-                        <div className="hero-section flex flex-col w-full md:w-1/2 justify-center items-start pl-12 pr-0 md:pr-[70px]">
-                            <div>
-                                <SvgIconComponent icon={ZiploLogo} className="w-40 h-10" />
+        <PageTransition>
+            <main className="bg-[#0B0C0E] min-h-screen text-white font-sans w-full">
+                {/* Hero Section */}
+                <section className="w-full px-4 md:px-6 lg:px-20">
+                    <div className="flex flex-col lg:flex-row justify-between items-stretch 2xl-plus:max-w-9xl 2xl-plus:mx-auto">
+                        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start lg:pr-12 py-16 lg:py-24">
+                            <h3 className="text-xl md:text-2xl font-medium mb-4 text-white">
+                                Ziplo Services
+                            </h3>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.1] text-white">
+                                AI Agent Testing & <br className="hidden lg:block" /> Quality Assurance
+                            </h1>
+                            <div className="space-y-6 text-gray-300 text-sm md:text-base mb-10 leading-relaxed font-light">
+                                <p>
+                                    Ziplo helps engineering teams ship AI agents with confidence.
+                                    Before your agent reaches production, Ziplo runs comprehensive
+                                    security, quality, and reliability tests — surfacing prompt injections,
+                                    guardrail failures, hallucinations, and tool errors so you can fix them
+                                    before your users find them.
+                                </p>
+                                <p>
+                                    Through an intelligent, automated testing framework, Ziplo enables teams
+                                    to validate AI agents against real-world attack patterns, edge cases, and
+                                    behavioral benchmarks — delivering detailed fix suggestions, not just reports.
+                                </p>
+                                <p>
+                                    From security hardening to behavioral validation and LLM migration testing,
+                                    Ziplo provides fast, actionable, and developer-ready AI agent quality assurance.
+                                </p>
                             </div>
-                            <p
-                                className="font-semibold md:font-medium text-[#1783F7] dark:text-white mb-5"
-                                style={{ fontSize: "40px", lineHeight: "1.2" }}
-                            >
-                                AI Agent Testing & <br /> Quality Assurance
-                            </p>
-                            <p className="text-[#667085] dark:text-white text-base leading-relaxed mb-6">
-                                Ziplo helps engineering teams ship AI agents with confidence. Before your agent reaches production, Ziplo runs comprehensive security, quality, and reliability tests — surfacing prompt injections, guardrail failures, hallucinations, and tool errors so you can fix them before your users find them.
-                                Through an intelligent, automated testing framework, Ziplo enables teams to validate AI agents against real-world attack patterns, edge cases, and behavioral benchmarks — delivering detailed fix suggestions, not just reports.
-                                From security hardening to behavioral validation and LLM migration testing, Ziplo provides fast, actionable, and developer-ready AI agent quality assurance.
-                            </p>
                             <button
-                                className="w-60 text-white dark:text-black font-semibold py-3 px-8 rounded-full flex items-center justify-center transition-all hover:opacity-90 
-            bg-gradient-to-r from-[#8B8B8B] to-[#1783F7] 
-            dark:from-white dark:to-white dark:bg-white 
-            hover:from-[#787878] hover:to-[#0653A7] 
-            dark:hover:from-gray-200 dark:hover:to-gray-400"
-                                onClick={() => {
-                                    navigate("/contactUs");
-                                }}
+                                onClick={() => navigate("/contactUs")}
+                                className="bg-white text-black font-semibold py-3 px-6 md:px-8 rounded-full flex items-center justify-center transition-all hover:bg-gray-200"
                             >
-                                Talk to Our Experts
-                                <RoundedArrowRightIcon className="w-5 h-5 mx-1" />
+                                Talk to our experts
+                                <span className="ml-3 bg-black text-white rounded-full p-1 border border-transparent">
+                                    <RoundedArrowRightIcon className="w-4 h-4 md:w-5 md:h-5" />
+                                </span>
                             </button>
                         </div>
-                        <div className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end ">
+                        <div className="w-full lg:w-1/2 mt-16 lg:mt-0 flex">
                             <img
-                                src="assets/ziplo-hero-img.png"
-                                alt="ziplo"
-                                className="w-auto h-auto max-w-full"
+                                src="assets/ziplo.svg"
+                                alt="Ziplo Action Dashboard"
+                                className="w-full h-full object-cover"
                             />
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    {/* Key Modules Header Section */}
-                    <section className="bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in pt-9 md:pt-16 pb-8">
-                        <div className="flex flex-col justify-center items-center text-center">
-                            <p className="text-[#2FC1FF] dark:text-white font-medium text-lg mb-6">
-                                Key Modules
-                            </p>
-                            <p className="text-[#687DA9] dark:text-white font-normal text-xl sm:text-3xl lg:text-5xl leading-tight mb-5 px-4">
-                                Empowering Every Role to Work Smarter
-                            </p>
-                            <p className="text-[#667085] dark:text-white font-normal text-base leading-6 max-w-3xl px-4">
-                                From HR to managers to employees, TMS delivers tailored tools
-                                and insights that streamline workflows, automate tasks, and
-                                foster seamless collaboration—so every role performs at its
-                                best.
-                            </p>
+                {/* Services Section */}
+                <section className="w-full px-4 md:px-6 lg:px-20 py-20 bg-[#121415] border-t border-[#1C1E20]">
+                    <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto w-full">
+                        <div className="text-center mb-16 mx-auto">
+                            <h4 className="text-xl md:text-2xl text-gray-300 mb-2 font-light">Our Ziplo Testing Services</h4>
+                            <h2 className="text-4xl md:text-5xl font-semibold text-white">Test. Detect. Fix. Ship.</h2>
                         </div>
-                    </section>
 
-                    {/* Feature Columns Section */}
-                    <section className="bg-[#F6FAFF] dark:bg-[#181818] transition-all duration-500 ease-in">
-                        <style>{`
-          .section-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            padding: 40px;
-            justify-items: center;
-            align-items: start;
-            padding-bottom: 40px;
-          }
-          @media screen and (max-width: 426px) {
-            .section-3 {
-              padding: 0 !important;
-            }
-          }
-        `}</style>
-                        <div className="section-3">
-                            {[...features].map((column, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex flex-col justify-start items-start pl-5 md:pl-10 pr-2 md:pr-0"
-                                >
-                                    <p className="text-[#687DA9] dark:text-white font-semibold text-2xl md:text-3xl mb-5">
-                                        {column.title}
-                                    </p>
-                                    <p className="text-[#667085] dark:text-white font-normal text-base leading-6 mb-5">
-                                        {column.description}
-                                    </p>
-                                    <ul className="text-[#666666] dark:text-white font-normal text-base leading-6 list-disc ml-8">
-                                        {column.items.map((item, i) => (
-                                            <li key={i}>{item}</li>
+                        <div className="flex flex-wrap justify-center gap-x-12 gap-y-16 items-start">
+                            {testingServices.map((service, idx) => (
+                                <div key={idx} className="flex flex-col w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(100%/3-2rem)]">
+                                    <h3 className="text-2xl md:text-3xl font-medium text-white mb-2">{service.title}</h3>
+                                    <p className="text-gray-300 mb-8 font-light text-base md:text-lg">{service.subtitle}</p>
+                                    <ul className="space-y-4">
+                                        {service.items.map((item, i) => (
+                                            <li key={i} className="flex items-start text-gray-400 text-sm md:text-base leading-relaxed">
+                                                <span className="text-gray-500 mr-3 mt-1 text-[10px]">●</span>
+                                                <span>{item}</span>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
                             ))}
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    {/* Role Based Views Header Section */}
-                    <section className="bg-white dark:bg-black transition-all duration-500 ease-in pt-9 md:pt-16 pb-8">
-                        <div className="flex flex-col justify-center items-center text-center">
-                            <p className="text-[#2FC1FF] dark:text-white font-medium text-lg mb-6">
-                                Role Based Views
-                            </p>
-                            <p className="text-[#687DA9] dark:text-white font-normal text-xl sm:text-3xl lg:text-5xl leading-tight mb-5 px-4">
-                                One Platform. Tailored for Every Role.
-                            </p>
-                            <p className="text-[#666666] dark:text-white font-normal text-base leading-6 max-w-3xl px-4">
-                                From HR and managers to employees and admins, TMS offers
-                                role-specific dashboards, permissions, and workflows ensuring
-                                everyone gets exactly what they need to work efficiently and
-                                stay aligned.
-                            </p>
-                        </div>
-                    </section>
+                {/* Measurable Quality & Risk Reduction */}
+                <section className="w-full px-4 md:px-6 lg:px-20 py-24 bg-black text-center border-t border-[#1C1E20]">
+                    <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto w-full">
+                        <h2 className="text-3xl md:text-5xl font-semibold text-white mb-20 mx-auto">
+                            Measurable Quality & Risk Reduction
+                        </h2>
 
-                    {/* One Platform Column Section */}
-                    <section className="bg-white dark:bg-black transition-all duration-500 ease-in">
-                        <style>{`
-          .section-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0px 20px 40px 0px;
-            justify-items: center;
-            align-items: start;
-          }
-          @media screen and (max-width: 426px) {
-            .section-4 {
-              padding: 0 !important;
-            }
-          }
-        `}</style>
-                        <div className="section-4">
-                            {[...onePlatform].map((column, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex flex-col justify-start items-start pl-5 md:pl-10 pr-2 md:pr-0"
-                                >
-                                    <p className="text-[#687DA9] dark:text-white font-semibold text-2xl md:text-3xl mb-5">
-                                        {column.title}
-                                    </p>
-                                    <ul className="text-[#666666] dark:text-white font-normal text-base leading-6 list-disc ml-8">
-                                        {column.items.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mx-auto">
+                            {riskReductions.map((item, idx) => (
+                                <div key={idx} className="flex flex-col items-center">
+                                    <div className="w-[50px] h-[50px] flex items-center justify-center border border-gray-700/50 bg-[#16181A] rounded-xl mb-6 text-white shadow-sm">
+                                        {item.icon}
+                                    </div>
+                                    <h4 className="text-lg md:text-xl font-medium text-white mb-3">{item.title}</h4>
+                                    <p className="text-gray-400 text-sm md:text-base max-w-[280px] font-light leading-relaxed">{item.description}</p>
                                 </div>
                             ))}
                         </div>
-                    </section>
-                </main>
-            </PageTransition>
-        </>
+                    </div>
+                </section>
+
+                {/* What Makes Ziplo Different */}
+                <section className="w-full px-4 md:px-6 lg:px-20 py-24 bg-[#0B0C0E] border-t border-[#1C1E20]">
+                    <div className="2xl-plus:max-w-9xl 2xl-plus:mx-auto w-full">
+                        <div className="text-center mb-14 mx-auto">
+                            <h4 className="text-xl md:text-2xl text-gray-300 mb-4 font-light">What Makes Ziplo Different</h4>
+                            <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-wide">
+                                Developer-First. Agent-Native. Fix-Oriented
+                            </h2>
+                        </div>
+
+                        <div className="mx-auto flex flex-col items-center px-4 w-full">
+                            <ul className="text-gray-300 md:text-lg space-y-5 text-left w-full max-w-[850px]">
+                                {differentiators.map((diff, idx) => (
+                                    <li key={idx} className={`flex items-start ${diff.indent ? 'ml-6 md:ml-12' : ''}`}>
+                                        <span className="text-gray-500 mr-4 mt-2 text-[10px]">●</span>
+                                        <span className="font-light leading-relaxed">{diff.text}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </PageTransition>
     );
 }

@@ -43,9 +43,9 @@ const cards: SolutionsCard[] = [
     productName: "Patient360.AI",
   },
   {
-    pageLink: "autodocx",
-    id: "AutoDocX",
-    productName: "AutoDocX.AI",
+    pageLink: "ziplo",
+    id: "ziplo",
+    productName: "Ziplo",
   },
   {
     pageLink: "salesforce",
