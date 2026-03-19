@@ -44,7 +44,7 @@ const cards: SolutionsCard[] = [
   },
   {
     pageLink: "ziplo",
-    id: "ziplo",
+    id: "Ziplo",
     productName: "Ziplo",
   },
   {
@@ -104,6 +104,11 @@ const items = [
     selector: "#Regology",
     image: "/assets/regulatory-intelligence.png",
     text: "Regulatory Intelligence at Scale.",
+  },
+  {
+    selector: "#Ziplo",
+    image: "/assets/ziplo-hero-img.png",
+    text: "Ship AI agents with confidence",
   },
 ];
 
@@ -252,7 +257,7 @@ function Solutions() {
               <img
                 id="solution-image"
                 src="/assets/mathOps.png"
-                className="w-[500px] h-auto transition-opacity duration-700 z-10"
+                className="w-[500px] h-auto max-h-[350px] lg:max-h-[400px] object-contain object-left transition-opacity duration-700 z-10"
               />
               <div
                 className="absolute right-[-30px] top-[70px] w-[450px] md:h-[250px] lg:h-[320px] xl:h-[350px] 

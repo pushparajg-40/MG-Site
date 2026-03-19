@@ -200,7 +200,6 @@ const Navbar = () => {
                   // ["AutoDocX.AI", "/autodocx"],
                   ["Patient360", "/patient360"],
                   ["Salesforce", "/salesforce"],
-                  ["Ziplo", "/ziplo"],
                 ].map(([label, link]) => (
                   <NavLink
                     key={label}
@@ -225,6 +224,12 @@ const Navbar = () => {
                   className="block px-4 py-2 dark:text-white text-[#7E7E7E] hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                 >
                   Regology
+                </NavLink>
+                <NavLink
+                  to="/ziplo"
+                  className="block px-4 py-2 dark:text-white text-[#7E7E7E] hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                >
+                  Ziplo
                 </NavLink>
               </div>
             </div>
@@ -411,7 +416,6 @@ const Navbar = () => {
                       {/* <NavLink to="/autodocx" className="block">AutoDocX.AI</NavLink> */}
                       <NavLink to="/patient360" className="block">Patient360</NavLink>
                       <NavLink to="/salesforce" className="block">Salesforce</NavLink>
-                      <NavLink to="/ziplo" className="block">Ziplo</NavLink>
                     </div>
 
                     {/* Partners group */}
@@ -420,6 +424,7 @@ const Navbar = () => {
                     </p>
                     <div className="space-y-2 pl-2">
                       <NavLink to="/regology" className="block">Regology</NavLink>
+                      <NavLink to="/ziplo" className="block">Ziplo</NavLink>
                     </div>
                   </div>
                 )}

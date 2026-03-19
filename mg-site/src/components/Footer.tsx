@@ -256,14 +256,6 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/autodocx"
-              >
-                AutoDocX.AI
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
                 to="/patient360"
               >
                 Patient360
@@ -283,6 +275,14 @@ const Footer: React.FC = () => {
                 to="/regology"
               >
                 Regology
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[#7E7E7E] dark:text-white hover:text-black"
+                to="/Ziplo"
+              >
+                Ziplo
               </Link>
             </li>
             {/* <li>
