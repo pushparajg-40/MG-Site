@@ -107,7 +107,7 @@ const items = [
   },
   {
     selector: "#Ziplo",
-    image: "/assets/ziplo-hero-img.png",
+    image: "/assets/ziplo-landing-page.jpeg",
     text: "Ship AI agents with confidence",
   },
 ];
