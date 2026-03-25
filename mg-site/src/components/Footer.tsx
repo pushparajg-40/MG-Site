@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
       {/* GRID */}
       <div
         className="
-        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 
+        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-6 
         gap-10 sm:gap-10 2xl-plus:max-w-9xl 2xl-plus:mx-auto border-t border-gray-500 py-10
       "
       >
@@ -214,86 +214,101 @@ const Footer: React.FC = () => {
 
         {/* Column 4 */}
         <div
-          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0"
+          className="footer-column opacity-0 translate-y-10 transition-all duration-700 ease-out px-8 md:px-0 lg:col-span-2 md:col-span-2"
           data-delay="300"
         >
           <h6 className="text-[#0C426E] dark:text-gray-400 font-semibold text-base mb-4">
             Enterprise Solutions
           </h6>
-          <ul className="space-y-3 sm:space-y-2">
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/mathops"
-              >
-                MATHOPS
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/smartSustain"
-              >
-                SmartSustain.AI
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/opsbeat"
-              >
-                OpsBeat
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/customerDlens"
-              >
-                CustomerDlens
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/patient360"
-              >
-                Patient360
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/salesforce"
-              >
-                Salesforce
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/regology"
-              >
-                Regology
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/Ziplo"
-              >
-                Ziplo
-              </Link>
-            </li>
-            {/* <li>
-              <Link
-                className="text-[#7E7E7E] dark:text-white hover:text-black"
-                to="/optiSaas"
-              >
-                OptiSaaS
-              </Link>
-            </li> */}
-          </ul>
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
+            <div>
+              <p className="text-[#828282] font-semibold text-xs tracking-widest mb-3">
+                Our Solutions
+              </p>
+              <ul className="space-y-3 sm:space-y-2">
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/mathops"
+                  >
+                    MATHOPS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/smartSustain"
+                  >
+                    SmartSustain.AI
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/opsbeat"
+                  >
+                    OpsBeat
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/customerDlens"
+                  >
+                    CustomerDlens
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/patient360"
+                  >
+                    Patient360
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/salesforce"
+                  >
+                    Salesforce
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-[#828282] font-semibold text-xs tracking-widest mb-3">
+                Partners
+              </p>
+              <ul className="space-y-3 sm:space-y-2">
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/regology"
+                  >
+                    Regology
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/Ziplo"
+                  >
+                    Ziplo
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link
+                    className="text-[#7E7E7E] dark:text-white hover:text-black"
+                    to="/optiSaas"
+                  >
+                    OptiSaaS
+                  </Link>
+                </li> */}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Column 5 */}
